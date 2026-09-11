@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold:       #C9A84C;
+  --color-gold-light: #E0C070;
+  --color-gold-dark:  #9A7A30;
+  --color-navy:       #080808;
+  --color-navy-800:   #111111;
+  --color-navy-700:   #1a1a1a;
+  --color-cream:      #F5F0E8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 2px; }
+
+::selection { background: rgba(201,168,76,0.2); color: #9A7A30; }
+
+/* ─── Fonts ───────────────────────────────────── */
+.font-serif { font-family: var(--font-serif), Georgia, 'Times New Roman', serif; }
+
+/* ─── Gold text gradient ──────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #9A7A30 0%, #C9A84C 45%, #E0C070 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Grain texture overlay ───────────────────── */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* ─── Gold shimmer CTA button ─────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #9A7A30 0%, #C9A84C 50%, #E0C070 75%, #C9A84C 100%);
+  background-size: 220% auto;
+  color: #080808;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 4px;
+  transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+}
+
+/* Keep old btn for compatibility */
+.btn-gold-shimmer {
+  background: linear-gradient(135deg, #9A7A30, #C9A84C, #E0C070, #C9A84C, #9A7A30);
+  background-size: 200% auto;
+  color: #080808;
+  font-weight: 700;
+  transition: background-position 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gold-shimmer:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+}
+
+/* ─── Thin gold line ──────────────────────────── */
+.gold-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, #C9A84C, #E0C070);
+}
+
+/* ─── Section label ───────────────────────────── */
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #C9A84C;
+}
+
+/* ─── Keyframes ───────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer-line {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-fade-up { animation: fade-up 0.7s ease forwards; }
+
+/* ─── Glass card ──────────────────────────────── */
+.glass-dark {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201,168,76,0.12);
+}

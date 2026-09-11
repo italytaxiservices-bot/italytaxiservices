@@ -1,0 +1,66 @@
+import type { City } from '@/types'
+
+export const cities: City[] = [
+  {
+    id: 'milan',
+    name: 'Milan',
+    slug: 'milan',
+    region: 'Lombardy',
+    description: "Italy's fashion and financial capital. Gateway to Lake Como, the Italian Lakes, and the Alps.",
+    airportCodes: ['MXP', 'LIN', 'BGY'],
+    metaTitle: 'Private Chauffeur Service Milan | NCC Milan | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Milan. Airport transfers to Malpensa, Linate, Bergamo. Lake Como, city rides, corporate travel. Book today.',
+  },
+  {
+    id: 'rome',
+    name: 'Rome',
+    slug: 'rome',
+    region: 'Lazio',
+    description: "The Eternal City. Italy's capital, home to the Vatican, Colosseum, and gateway to the Amalfi Coast.",
+    airportCodes: ['FCO', 'CIA'],
+    metaTitle: 'Private Chauffeur Service Rome | NCC Rome | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Rome. Fiumicino & Ciampino airport transfers, Vatican, Amalfi Coast, Civitavecchia cruise port. Book today.',
+  },
+  {
+    id: 'venice',
+    name: 'Venice',
+    slug: 'venice',
+    region: 'Veneto',
+    description: "The floating city. Private transfers to Venice's mainland, Marco Polo Airport, and cruise terminals.",
+    airportCodes: ['VCE'],
+    metaTitle: 'Private Chauffeur Service Venice | NCC Venice | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Book today.',
+  },
+  {
+    id: 'florence',
+    name: 'Florence',
+    slug: 'florence',
+    region: 'Tuscany',
+    description: 'The cradle of the Renaissance. Gateway to Tuscany — Siena, Pisa, Chianti, and beyond.',
+    airportCodes: ['FLR', 'PSA'],
+    metaTitle: 'Private Chauffeur Service Florence | NCC Florence | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Florence. Airport transfers, Tuscany day trips, Siena, Pisa, Chianti. Book today.',
+  },
+  {
+    id: 'naples',
+    name: 'Naples',
+    slug: 'naples',
+    region: 'Campania',
+    description: 'Gateway to the Amalfi Coast, Positano, Sorrento, Pompeii, and the Bay of Naples.',
+    airportCodes: ['NAP'],
+    metaTitle: 'Private Chauffeur Service Naples | NCC Naples | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Naples. Amalfi Coast, Positano, Sorrento, Pompeii. Airport transfers and private tours. Book today.',
+  },
+  {
+    id: 'bologna',
+    name: 'Bologna',
+    slug: 'bologna',
+    region: 'Emilia-Romagna',
+    description: "La Grassa — Italy's food capital. Centrally located for northern Italy private transfers.",
+    airportCodes: ['BLQ'],
+    metaTitle: 'Private Chauffeur Service Bologna | NCC Bologna | Italy Chauffeur',
+    metaDescription: 'Professional private chauffeur and NCC service in Bologna. Airport transfers and private driver services across Emilia-Romagna. Book today.',
+  },
+]
+
+export const getCityBySlug = (slug: string) => cities.find(c => c.slug === slug)
