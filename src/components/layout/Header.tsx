@@ -172,7 +172,7 @@ export default function Header() {
                           boxShadow: '0 24px 60px rgba(0,0,0,0.6)',
                         }}
                       >
-                        {link.children.map((child) => (
+                        {link.children?.map((child) => (
                           <Link
                             key={child.label}
                             href={child.href}
@@ -251,7 +251,7 @@ export default function Header() {
                     </button>
                     {mobileSub === link.label && (
                       <div className="pl-4 py-2 space-y-2">
-                        {link.children.map((child) => (
+                        {link.children?.map((child) => (
                           <Link
                             key={child.label}
                             href={child.href}
