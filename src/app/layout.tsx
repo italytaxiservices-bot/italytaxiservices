@@ -19,22 +19,22 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Italy Chauffeur | Private NCC Transfers Across Italy',
-    template: '%s | Italy Chauffeur',
+    default: 'Italy Taxi Services | Private NCC Transfers Across Italy',
+    template: '%s | Italy Taxi Services',
   },
   description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers, luxury chauffeur, and long-distance private transfers. Licensed operators, fixed prices, meet & greet.',
-  keywords: ['italy chauffeur', 'private driver italy', 'NCC italy', 'airport transfer italy', 'malpensa transfer', 'fiumicino transfer', 'private chauffeur milan', 'private chauffeur rome'],
-  authors: [{ name: 'Italy Chauffeur' }],
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://italychauffeur.com'),
+  keywords: ['italy taxi services', 'private driver italy', 'NCC italy', 'airport transfer italy', 'malpensa transfer', 'fiumicino transfer', 'private chauffeur milan', 'private chauffeur rome'],
+  authors: [{ name: 'Italy Taxi Services' }],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://italytaxiservices.com'),
   openGraph: {
     type: 'website',
-    siteName: 'Italy Chauffeur',
-    title: 'Italy Chauffeur | Private NCC Transfers Across Italy',
+    siteName: 'Italy Taxi Services',
+    title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
     description: 'Professional private chauffeur and NCC transfer service across Italy. Fixed prices, meet & greet, 24/7.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Italy Chauffeur | Private NCC Transfers',
+    title: 'Italy Taxi Services | Private NCC Transfers',
     description: 'Professional private chauffeur and NCC transfer service across Italy.',
   },
   robots: {

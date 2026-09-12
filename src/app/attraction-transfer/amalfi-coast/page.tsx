@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Chauffeur',
+  title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Taxi Services',
   description: 'Private NCC transfer to the Amalfi Coast. Positano, Amalfi, Ravello, Praiano. From Rome, Naples, Sorrento. Expert drivers on the SS163. Book today.',
 }
 

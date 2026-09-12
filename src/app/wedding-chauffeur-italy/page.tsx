@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers | Italy Chauffeur',
+  title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers | Italy Taxi Services',
   description: 'Luxury NCC wedding chauffeur service across Italy. Bridal car, guest transfers, Tuscany weddings, Lake Como, Amalfi Coast. Fixed prices. Book today.',
 }
 

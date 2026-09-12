@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Pompeii Transfer | Private Chauffeur to Pompeii | Italy Chauffeur',
+  title: 'Pompeii Transfer | Private Chauffeur to Pompeii | Italy Taxi Services',
   description: 'Private NCC transfer to Pompeii. From Rome, Naples airport, Naples city, Sorrento. Day trips with driver waiting. Fixed prices. Book today.',
 }
 

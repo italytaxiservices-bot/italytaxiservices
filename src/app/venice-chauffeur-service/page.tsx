@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { getCityBySlug } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Venice | NCC Venice | Italy Chauffeur',
+  title: 'Private Chauffeur Service Venice | NCC Venice | Italy Taxi Services',
   description: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Fixed prices, meet & greet.',
 }
 

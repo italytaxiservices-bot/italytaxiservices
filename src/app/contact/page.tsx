@@ -4,11 +4,11 @@ import { ArrowRight, Phone, Mail, MessageCircle, Clock } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/lib/utils'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
-const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italychauffeur.com'
+const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italytaxiservices.com'
 
 export const metadata: Metadata = {
-  title: 'Contact Italy Chauffeur | Book a Private Transfer in Italy',
-  description: 'Contact Italy Chauffeur for private NCC transfers. WhatsApp, email, or use our quote form. We reply within minutes.',
+  title: 'Contact Italy Taxi Services | Book a Private Transfer in Italy',
+  description: 'Contact Italy Taxi Services for private NCC transfers. WhatsApp, email, or use our quote form. We reply within minutes.',
 }
 
 export default function ContactPage() {

@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato Milano | NCC Milano | Italy Chauffeur',
+  title: 'Servizio Chauffeur Privato Milano | NCC Milano | Italy Taxi Services',
   description: 'Chauffeur privato NCC a Milano. Transfer Malpensa, Linate, Bergamo. Lago di Como, Lugano, centri congressi. Prezzi fissi, disponibilità 24/7. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-milano',

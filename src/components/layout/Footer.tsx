@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/lib/utils'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
-const EMAIL    = process.env.NEXT_PUBLIC_CONTACT_EMAIL    ?? 'info@italychauffeur.com'
+const EMAIL    = process.env.NEXT_PUBLIC_CONTACT_EMAIL    ?? 'info@italytaxiservices.com'
 
 const cols = {
   Services: [
@@ -60,7 +60,7 @@ export default function Footer() {
                 className="font-black text-white text-2xl tracking-tight leading-none mb-2 italic"
                 style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
               >
-                Italy Chauffeur
+                Italy Taxi Services
               </p>
               <span className="section-label" style={{ fontSize: '0.6rem', letterSpacing: '0.25em' }}>
                 Private NCC Transfers
@@ -127,7 +127,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
         >
           <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            © {new Date().getFullYear()} Italy Chauffeur. All rights reserved. NCC licensed transfer intermediary.
+            © {new Date().getFullYear()} Italy Taxi Services. All rights reserved. NCC licensed transfer intermediary.
           </p>
           <div className="flex items-center gap-6">
             {[

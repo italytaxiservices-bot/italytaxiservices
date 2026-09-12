@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Chauffeur',
+  title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Taxi Services',
   description: 'Hire a private NCC chauffeur by the hour in Italy. City tours, business meetings, shopping trips, half-day or full-day hire. Milan, Rome, Florence, Venice.',
 }
 

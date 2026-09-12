@@ -6,8 +6,8 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'About Italy Chauffeur — NCC Transfer Intermediary',
-  description: 'Italy Chauffeur connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
+  title: 'About Italy Taxi Services — NCC Transfer Intermediary',
+  description: 'Italy Taxi Services connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
 }
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
               NCC Transfer Intermediary
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              About Italy Chauffeur
+              About Italy Taxi Services
             </h1>
             <p className="text-gray-300 text-xl leading-relaxed">
               We connect international travellers with licensed NCC (Noleggio con Conducente) operators across Italy — providing a seamless, trusted booking experience for private chauffeur transfers.

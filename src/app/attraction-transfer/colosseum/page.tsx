@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome | Italy Chauffeur',
+  title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome | Italy Taxi Services',
   description: 'Private NCC transfer to the Colosseum in Rome. From Fiumicino, Ciampino, hotels, and cruise ships. Fixed prices. Book today.',
 }
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Italy Chauffeur',
-  description: 'Privacy policy for Italy Chauffeur NCC transfer service. How we collect, use, and protect your personal data.',
+  title: 'Privacy Policy | Italy Taxi Services',
+  description: 'Privacy policy for Italy Taxi Services NCC transfer service. How we collect, use, and protect your personal data.',
 }
 
 export default function PrivacyPage() {
@@ -19,8 +19,8 @@ export default function PrivacyPage() {
           <div className="space-y-8 text-gray-700 leading-relaxed">
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">1. Who We Are</h2>
-              <p>Italy Chauffeur operates as a transfer intermediary service, connecting travellers with licensed NCC (Noleggio con Conducente) operators across Italy. Our website is <strong>italychauffeur.com</strong>.</p>
-              <p className="mt-3">For privacy enquiries, contact us at: <a href="mailto:info@italychauffeur.com" className="text-green-600">info@italychauffeur.com</a></p>
+              <p>Italy Taxi Services operates as a transfer intermediary service, connecting travellers with licensed NCC (Noleggio con Conducente) operators across Italy. Our website is <strong>italytaxiservices.com</strong>.</p>
+              <p className="mt-3">For privacy enquiries, contact us at: <a href="mailto:info@italytaxiservices.com" className="text-green-600">info@italytaxiservices.com</a></p>
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">2. Data We Collect</h2>
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">6. Your Rights (GDPR)</h2>
-              <p>Under GDPR, you have the right to: access your data, correct inaccurate data, request deletion, object to processing, and data portability. Contact us at info@italychauffeur.com to exercise any of these rights.</p>
+              <p>Under GDPR, you have the right to: access your data, correct inaccurate data, request deletion, object to processing, and data portability. Contact us at info@italytaxiservices.com to exercise any of these rights.</p>
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">7. Cookies</h2>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">8. Contact</h2>
-              <p>For any privacy-related queries: <a href="mailto:info@italychauffeur.com" className="text-green-600">info@italychauffeur.com</a></p>
+              <p>For any privacy-related queries: <a href="mailto:info@italytaxiservices.com" className="text-green-600">info@italytaxiservices.com</a></p>
             </div>
           </div>
         </div>

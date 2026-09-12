@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna | Italy Chauffeur',
+  title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna | Italy Taxi Services',
   description: 'Private NCC transfer to Lake Como. Como, Bellagio, Varenna, Menaggio, Cernobbio from Malpensa, Linate, Milan. Fixed prices. Book today.',
 }
 

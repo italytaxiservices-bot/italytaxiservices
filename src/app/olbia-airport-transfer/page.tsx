@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Olbia Airport Transfer | Private Chauffeur OLB Costa Smeralda | Italy Chauffeur',
+  title: 'Olbia Airport Transfer | Private Chauffeur OLB Costa Smeralda | Italy Taxi Services',
   description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €80, Olbia €35, Porto Rotondo €60, La Maddalena €70. Fixed prices. Book today.',
 }
 

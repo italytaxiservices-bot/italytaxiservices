@@ -13,7 +13,7 @@ export const routes: Route[] = [
     distance: '48 km',
     description: 'Private chauffeur transfer from Milan Malpensa Airport (MXP) to Milan city centre. Door-to-door NCC service with meet & greet at arrivals, flight monitoring, and fixed pricing.',
     highlights: ['Meet & greet at arrivals hall', 'Flight delay monitoring', 'Fixed price — no meter', 'All areas of Milan'],
-    metaTitle: 'Malpensa to Milan Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Malpensa to Milan Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private NCC transfer from Malpensa Airport to Milan. From €85. Professional chauffeur, meet & greet, flight monitoring. Book your Milan airport transfer today.',
   },
   {
@@ -28,7 +28,7 @@ export const routes: Route[] = [
     distance: '75 km',
     description: 'Private chauffeur transfer from Malpensa Airport to Lake Como. The most popular route in northern Italy — direct from the airport to Como, Varenna, Menaggio, or your villa.',
     highlights: ['Direct route via A8/A9', 'All Lake Como towns served', 'Meet & greet', 'Fixed price'],
-    metaTitle: 'Malpensa to Lake Como Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Malpensa to Lake Como Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private transfer from Malpensa Airport to Lake Como. From €130. Direct NCC chauffeur service to Como, Bellagio, Varenna, Menaggio. Book today.',
   },
   {
@@ -43,7 +43,7 @@ export const routes: Route[] = [
     distance: '90 km',
     description: "Private chauffeur transfer from Malpensa Airport to Bellagio — the pearl of Lake Como. Arrive relaxed at one of Italy's most beautiful lakeside towns.",
     highlights: ['Direct route to Bellagio', 'Scenic Lake Como drive', 'Meet & greet', 'Fixed price'],
-    metaTitle: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Professional NCC chauffeur. Book your Bellagio transfer today.',
   },
   {
@@ -58,7 +58,7 @@ export const routes: Route[] = [
     distance: '35 km',
     description: 'Private chauffeur transfer from Rome Fiumicino Airport (FCO) to Rome city centre. Meet & greet at arrivals with name board. Flight monitoring included.',
     highlights: ['Meet & greet at arrivals', 'Flight monitoring', 'All Rome areas', 'Fixed price'],
-    metaTitle: 'Fiumicino to Rome Transfer | Private Chauffeur FCO | Italy Chauffeur',
+    metaTitle: 'Fiumicino to Rome Transfer | Private Chauffeur FCO | Italy Taxi Services',
     metaDescription: 'Private NCC transfer from Fiumicino Airport to Rome. From €65. Meet & greet, flight monitoring. All Rome areas. Book your Rome airport transfer today.',
   },
   {
@@ -73,7 +73,7 @@ export const routes: Route[] = [
     distance: '80 km',
     description: 'Private chauffeur transfer from Fiumicino Airport directly to Civitavecchia cruise port. The most convenient route for cruise passengers — no train changes, no taxis.',
     highlights: ['Cruise port specialist', 'Large vehicle options', 'Early morning service', 'Fixed price'],
-    metaTitle: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Chauffeur',
+    metaTitle: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Taxi Services',
     metaDescription: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
   },
   {
@@ -88,7 +88,7 @@ export const routes: Route[] = [
     distance: '280 km',
     description: 'Private long-distance chauffeur transfer from Rome to the Amalfi Coast. Serving Positano, Amalfi, Ravello, and Praiano. Our drivers know every curve of this iconic road.',
     highlights: ['Experienced Amalfi drivers', 'Positano, Amalfi, Ravello', 'Comfortable long-distance vehicles', 'Door to door'],
-    metaTitle: 'Rome to Amalfi Coast Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Rome to Amalfi Coast Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private chauffeur transfer from Rome to Amalfi Coast. From €380. Positano, Amalfi, Ravello served. Direct NCC service. Book today.',
   },
   {
@@ -103,7 +103,7 @@ export const routes: Route[] = [
     distance: '270 km',
     description: 'Private long-distance transfer from Milan to Venice (Mestre mainland). Skip the train — door-to-door comfort directly to your hotel.',
     highlights: ['Skip the train', 'Door-to-door service', 'Comfortable vehicles', 'Flexible departure time'],
-    metaTitle: 'Milan to Venice Private Transfer | Chauffeur Service | Italy Chauffeur',
+    metaTitle: 'Milan to Venice Private Transfer | Chauffeur Service | Italy Taxi Services',
     metaDescription: 'Private chauffeur transfer from Milan to Venice. From €280. Skip the train — direct, comfortable door-to-door NCC service. Book today.',
   },
   {
@@ -118,7 +118,7 @@ export const routes: Route[] = [
     distance: '80 km',
     description: 'Private chauffeur transfer from Florence to Pisa. Visit the Leaning Tower and the Piazza dei Miracoli with door-to-door comfort. Day trip or one-way.',
     highlights: ['Day trip or one-way', 'Leaning Tower drop-off', 'Scenic Tuscan route', 'Fixed price'],
-    metaTitle: 'Florence to Pisa Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Florence to Pisa Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private transfer from Florence to Pisa. From €95. Day trips and one-way transfers. Professional NCC chauffeur service. Book today.',
   },
   {
@@ -133,7 +133,7 @@ export const routes: Route[] = [
     distance: '75 km',
     description: 'Private chauffeur transfer from Florence to Siena, through the Chianti hills. One of the most scenic drives in Tuscany.',
     highlights: ['Chianti route option', 'Scenic wine country', 'Day trip available', 'Fixed price'],
-    metaTitle: 'Florence to Siena Transfer | Private Chauffeur | Italy Chauffeur',
+    metaTitle: 'Florence to Siena Transfer | Private Chauffeur | Italy Taxi Services',
     metaDescription: 'Private transfer from Florence to Siena through the Chianti hills. From €105. NCC chauffeur service. Day trips available. Book today.',
   },
   {
@@ -148,7 +148,7 @@ export const routes: Route[] = [
     distance: '225 km',
     description: 'Private long-distance transfer from Rome to Naples. Skip the Trenitalia queues — private, direct, door to door.',
     highlights: ['Direct route via A1', 'Door to door', 'Skip the train queues', 'Fixed price'],
-    metaTitle: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Chauffeur',
+    metaTitle: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Taxi Services',
     metaDescription: 'Private chauffeur transfer from Rome to Naples. From €260. Direct NCC service. Skip the train. Book today.',
   },
 ]

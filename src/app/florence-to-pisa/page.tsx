@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Florence to Pisa Transfer | Private Chauffeur | Italy Chauffeur',
+  title: 'Florence to Pisa Transfer | Private Chauffeur | Italy Taxi Services',
   description: 'Private transfer from Florence to Pisa. From €95. Day trips and one-way transfers. NCC chauffeur service. Book today.',
 }
 

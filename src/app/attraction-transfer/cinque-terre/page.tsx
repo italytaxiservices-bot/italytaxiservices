@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre | Italy Chauffeur',
+  title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre | Italy Taxi Services',
   description: 'Private NCC transfer to Cinque Terre. La Spezia, Riomaggiore, Vernazza. From Genoa, Pisa airport, Florence. Fixed prices. Book today.',
 }
 

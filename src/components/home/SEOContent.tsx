@@ -12,7 +12,7 @@ export default function SEOContent() {
           </h2>
           <div className="space-y-4 text-[15px] text-gray-600 leading-relaxed">
             <p>
-              <strong>Italy Chauffeur</strong> is a professional <Link href="/chauffeur-service-italy" className="text-amber-700 hover:underline font-medium">private chauffeur and NCC transfer service</Link> operating
+              <strong>Italy Taxi Services</strong> is a professional <Link href="/chauffeur-service-italy" className="text-amber-700 hover:underline font-medium">private chauffeur and NCC transfer service</Link> operating
               at every major Italian airport, city, and cruise port. Whether you need an{' '}
               <Link href="/airport-transfers" className="text-amber-700 hover:underline font-medium">airport transfer in Italy</Link>,
               a <Link href="/luxury-chauffeur-italy" className="text-amber-700 hover:underline font-medium">luxury private driver</Link> for a day of sightseeing,
@@ -21,7 +21,7 @@ export default function SEOContent() {
               the same standard every time — fixed price, professional meet &amp; greet, and real-time flight monitoring.
             </p>
             <p>
-              Unlike public taxis or ride-hailing apps, every transfer booked through Italy Chauffeur is
+              Unlike public taxis or ride-hailing apps, every transfer booked through Italy Taxi Services is
               pre-arranged with a confirmed fixed price. There are no meters, no surge charges, and no
               unpleasant surprises when you arrive at your destination. Your driver is at arrivals before
               you land, holding a name board, ready to handle your luggage and take you directly to your hotel,
@@ -477,7 +477,7 @@ export default function SEOContent() {
                 is the final price — full stop.
               </p>
               <p>
-                All Italy Chauffeur partner operators hold valid NCC licences verified by their Italian
+                All Italy Taxi Services partner operators hold valid NCC licences verified by their Italian
                 municipality. Every vehicle carries full passenger liability insurance as required by
                 Italian law. Every driver holds the CQC (Certificato di Qualificazione del Conducente) —
                 the professional driver certification required for NCC operation.
@@ -496,7 +496,7 @@ export default function SEOContent() {
             <div className="space-y-0 text-xs">
               <div className="grid grid-cols-[100px_1fr_1fr] gap-2 pb-2 mb-2" style={{ borderBottom: '1px solid #f3f4f6' }}>
                 <p className="font-black text-gray-500 uppercase tracking-wider text-[10px]">Feature</p>
-                <p className="font-black uppercase tracking-wider text-[10px]" style={{ color: '#C9A84C' }}>NCC / Italy Chauffeur</p>
+                <p className="font-black uppercase tracking-wider text-[10px]" style={{ color: '#C9A84C' }}>NCC / Italy Taxi Services</p>
                 <p className="font-black text-gray-400 uppercase tracking-wider text-[10px]">Street Taxi</p>
               </div>
               {[
@@ -588,7 +588,7 @@ export default function SEOContent() {
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px w-10 shrink-0" style={{ background: '#C9A84C' }} />
-            <h2 className="text-2xl font-black text-gray-900">All Italy Chauffeur Services</h2>
+            <h2 className="text-2xl font-black text-gray-900">All Italy Taxi Services Services</h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[

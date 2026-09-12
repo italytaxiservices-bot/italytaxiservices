@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Chauffeur',
+  title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Taxi Services',
   description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
 }
 

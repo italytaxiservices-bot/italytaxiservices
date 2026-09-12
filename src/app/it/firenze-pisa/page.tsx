@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Firenze Pisa | Torre Pendente | Italy Chauffeur',
+  title: 'Transfer Privato Firenze Pisa | Torre Pendente | Italy Taxi Services',
   description: 'Transfer privato NCC da Firenze a Pisa. Torre Pendente, gita giornaliera o one-way. Da €95. Autista in attesa. Prenota ora.',
   alternates: {
     canonical: '/it/firenze-pisa',

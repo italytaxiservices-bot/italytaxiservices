@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { getCityBySlug } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Rome | NCC Rome | Italy Chauffeur',
+  title: 'Private Chauffeur Service Rome | NCC Rome | Italy Taxi Services',
   description: 'Professional private chauffeur and NCC service in Rome. Fiumicino & Ciampino airport transfers, Vatican, Civitavecchia cruise port, Amalfi Coast. Fixed prices.',
 }
 

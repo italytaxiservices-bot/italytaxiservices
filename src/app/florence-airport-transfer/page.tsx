@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Chauffeur',
+  title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
   description: 'Private NCC transfer from Florence Peretola Airport (FLR). Florence city, Pisa, Siena, Tuscany tours. Fixed prices, meet & greet. Book today.',
 }
 

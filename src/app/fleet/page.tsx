@@ -7,7 +7,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Our Fleet — Luxury & Business Vehicles | Italy Chauffeur',
+  title: 'Our Fleet — Luxury & Business Vehicles | Italy Taxi Services',
   description: 'Explore our premium fleet: Mercedes E-Class, S-Class, V-Class van, and luxury SUV. All NCC licensed, fully insured, available across Italy.',
 }
 

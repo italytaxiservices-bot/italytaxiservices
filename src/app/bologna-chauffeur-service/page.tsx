@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Bologna | NCC Bologna | Italy Chauffeur',
+  title: 'Private Chauffeur Service Bologna | NCC Bologna | Italy Taxi Services',
   description: 'Private chauffeur NCC service in Bologna. Marconi airport transfers, Modena, Florence, Motor Valley tours, Rimini. Fixed prices, 24/7. Book today.',
   alternates: { canonical: '/bologna-chauffeur-service' },
 }

@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Chauffeur',
+  title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
   description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
 }
 

@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { getCityBySlug } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Florence | NCC Florence | Italy Chauffeur',
+  title: 'Private Chauffeur Service Florence | NCC Florence | Italy Taxi Services',
   description: 'Professional private chauffeur and NCC service in Florence. Airport transfers, Tuscany tours, Siena, Pisa, Chianti. Fixed prices, licensed operators.',
 }
 

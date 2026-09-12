@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Chauffeur',
+  title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
   description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
 }
 

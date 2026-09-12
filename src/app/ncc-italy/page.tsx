@@ -6,7 +6,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy | Italy Chauffeur',
+  title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy | Italy Taxi Services',
   description: 'NCC (Noleggio con Conducente) explained. Italy\'s legal private hire vehicle service — licensed, fixed prices, pre-booked. Not a taxi. Find out why NCC is the right choice.',
 }
 

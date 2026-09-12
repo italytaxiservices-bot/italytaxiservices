@@ -11,16 +11,16 @@ import FinalCTA from '@/components/home/FinalCTA'
 import SEOContent from '@/components/home/SEOContent'
 
 export const metadata: Metadata = {
-  title: 'Italy Chauffeur | Private NCC Transfers Across Italy',
+  title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
   description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
 }
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Italy Chauffeur',
+  name: 'Italy Taxi Services',
   description: 'Professional private chauffeur and NCC transfer service across Italy',
-  url: 'https://italychauffeur.com',
+  url: 'https://italytaxiservices.com',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
@@ -33,7 +33,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Private Chauffeur & NCC Transfer Service Italy',
-  provider: { '@type': 'Organization', name: 'Italy Chauffeur' },
+  provider: { '@type': 'Organization', name: 'Italy Taxi Services' },
   description: 'Licensed NCC private chauffeur transfers across Italy including airport transfers, long-distance routes, and luxury chauffeur service.',
   areaServed: { '@type': 'Country', name: 'Italy' },
   serviceType: 'Private Chauffeur Transfer',

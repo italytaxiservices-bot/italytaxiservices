@@ -1,4 +1,4 @@
--- Italy Chauffeur — Supabase Schema
+-- Italy Taxi Services — Supabase Schema
 -- Run this in your Supabase SQL editor
 
 -- Leads table

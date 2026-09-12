@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Chauffeur',
+  title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Taxi Services',
   description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
 }
 

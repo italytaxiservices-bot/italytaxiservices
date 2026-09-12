@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Chauffeur',
+  title: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Taxi Services',
   description: 'Private NCC transfer from Rome to Naples. From €260. Direct door-to-door, skip the train. Fixed price chauffeur service. Book today.',
   alternates: { canonical: '/rome-to-naples' },
 }

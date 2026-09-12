@@ -7,7 +7,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Luxury Chauffeur Italy | Premium NCC Service | Italy Chauffeur',
+  title: 'Luxury Chauffeur Italy | Premium NCC Service | Italy Taxi Services',
   description: 'Luxury NCC chauffeur service across Italy. Mercedes S-Class, V-Class, luxury SUV. VIP airport transfers, private tours, corporate travel. Fixed prices.',
 }
 
@@ -58,7 +58,7 @@ export default function LuxuryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Italy Chauffeur Standard</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Italy Taxi Services Standard</h2>
               <div className="space-y-4">
                 {[
                   { icon: Star, title: 'Senior Chauffeurs', desc: 'Experienced, English-speaking, professional. Presented in formal attire.' },

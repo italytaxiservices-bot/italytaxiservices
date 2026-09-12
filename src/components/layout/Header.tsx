@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/lib/utils'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
-const EMAIL    = process.env.NEXT_PUBLIC_CONTACT_EMAIL    ?? 'info@italychauffeur.com'
+const EMAIL    = process.env.NEXT_PUBLIC_CONTACT_EMAIL    ?? 'info@italytaxiservices.com'
 
 const navLinks = [
   {
@@ -136,7 +136,7 @@ export default function Header() {
               className="font-black text-white tracking-tight group-hover:text-amber-300 transition-colors"
               style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}
             >
-              Italy Chauffeur
+              Italy Taxi Services
             </span>
             <span className="section-label" style={{ fontSize: '0.58rem', letterSpacing: '0.22em' }}>
               Private NCC Transfers

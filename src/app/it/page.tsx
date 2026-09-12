@@ -5,7 +5,7 @@ import { buildWhatsAppUrl } from '@/lib/utils'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Chauffeur',
+  title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Taxi Services',
   description: 'Servizio chauffeur privato NCC in tutta Italia. Transfer aeroporto Milano Malpensa, Roma Fiumicino, Venezia, Firenze. Prezzi fissi, meet & greet incluso. Prenota ora.',
   alternates: { canonical: '/it', languages: { en: '/', it: '/it' } },
 }

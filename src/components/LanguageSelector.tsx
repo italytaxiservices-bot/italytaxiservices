@@ -43,7 +43,7 @@ export default function LanguageSelector() {
           className="font-black text-white mb-1"
           style={{ fontSize: '2rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}
         >
-          Italy Chauffeur
+          Italy Taxi Services
         </p>
         <p className="section-label mb-12" style={{ fontSize: '0.6rem', letterSpacing: '0.25em' }}>
           Private NCC Transfers

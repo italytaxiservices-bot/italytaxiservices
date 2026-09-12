@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportBySlug } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Chauffeur',
+  title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
   description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
 }
 
