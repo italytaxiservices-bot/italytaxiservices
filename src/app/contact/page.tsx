@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Phone, Mail, MessageCircle, Clock } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/lib/utils'
+import ContactForm from '@/components/ContactForm'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italytaxiservices.com'
@@ -104,6 +105,18 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Send Us a Message</h2>
+            <p className="text-gray-600">General enquiries, corporate requests, or feedback — we reply within 2 hours.</p>
+          </div>
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+            <ContactForm />
           </div>
         </div>
       </section>

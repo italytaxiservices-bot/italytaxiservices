@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
+import { sendBookingNotification } from '@/lib/mailer'
 
 export async function POST(req: NextRequest) {
   try {
@@ -34,6 +35,12 @@ export async function POST(req: NextRequest) {
     if (supabase) {
       const { error } = await supabase.from('leads').insert(lead)
       if (error) console.error('Supabase insert error:', error)
+    }
+
+    try {
+      await sendBookingNotification(lead)
+    } catch (err) {
+      console.error('Booking email notification error:', err)
     }
 
     return NextResponse.json({ success: true })
