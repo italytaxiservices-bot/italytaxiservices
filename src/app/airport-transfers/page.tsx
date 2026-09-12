@@ -2,9 +2,6 @@
 import Link from 'next/link'
 import { ArrowRight, Clock, Shield, Plane, MapPin } from 'lucide-react'
 import { airports } from '@/data/airports'
-import { buildWhatsAppUrl } from '@/lib/utils'
-
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
   title: 'Airport Transfers Italy — NCC Private Service | Italy Taxi Services',
@@ -53,14 +50,6 @@ export default function AirportTransfersPage() {
               >
                 Book Airport Transfer <ArrowRight className="w-4 h-4" />
               </Link>
-              <a
-                href={buildWhatsAppUrl(WHATSAPP, 'Hello, I need a private airport transfer in Italy.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5A] transition-colors"
-              >
-                WhatsApp Us
-              </a>
             </div>
           </div>
         </div>

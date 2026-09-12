@@ -4,10 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { MapPin, Calendar, Clock, Users, Car, User, Phone, Mail, Loader2 } from 'lucide-react'
-import { buildWhatsAppUrl, buildLeadMessage } from '@/lib/utils'
-
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
+import { MapPin, Calendar, Clock, Users, Car, User, Phone, Mail, Loader2, CheckCircle } from 'lucide-react'
 
 const schema = z.object({
   pickup:     z.string().min(3, 'Enter pickup location'),
@@ -25,10 +22,12 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 export default function QuoteForm() {
-  const [step, setStep]           = useState<1 | 2>(1)
+  const [step, setStep]             = useState<1 | 2>(1)
   const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted]   = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
-  const { register, handleSubmit, trigger, getValues, formState: { errors } } = useForm<FormData>({
+  const { register, handleSubmit, trigger, getValues, reset, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
   })
 
@@ -39,15 +38,20 @@ export default function QuoteForm() {
 
   const onSubmit = async (data: FormData) => {
     setSubmitting(true)
+    setSubmitError(false)
     try {
-      await fetch('/api/leads', {
+      const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data, source_url: window.location.href }),
       })
-    } catch { /* fire and forget */ }
-    const message = buildLeadMessage({ name: data.name, phone: data.phone, pickup: data.pickup, dropoff: data.dropoff, date: data.date, time: data.time, passengers: data.passengers, vehicle: data.vehicle, notes: data.notes })
-    window.open(buildWhatsAppUrl(WHATSAPP, message), '_blank')
+      if (!res.ok) throw new Error('Request failed')
+      setSubmitted(true)
+      reset()
+      setStep(1)
+    } catch {
+      setSubmitError(true)
+    }
     setSubmitting(false)
   }
 
@@ -104,6 +108,24 @@ export default function QuoteForm() {
 
       {/* Form body */}
       <div className="px-7 py-6">
+        {submitted ? (
+          <div className="text-center py-6">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(201,168,76,0.12)' }}>
+              <CheckCircle className="w-7 h-7" style={{ color: '#C9A84C' }} />
+            </div>
+            <p className="text-white font-bold mb-1">Request received!</p>
+            <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.5)' }}>
+              We&apos;ll email your fixed-price quote within 2 hours.
+            </p>
+            <button
+              onClick={() => setSubmitted(false)}
+              className="text-xs font-semibold"
+              style={{ color: '#C9A84C' }}
+            >
+              Request another transfer
+            </button>
+          </div>
+        ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           {step === 1 && (
             <div className="space-y-4">
@@ -194,7 +216,7 @@ export default function QuoteForm() {
                 {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
               </div>
               <div>
-                <label className={lbl} style={lblStyle}><span className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> Phone / WhatsApp</span></label>
+                <label className={lbl} style={lblStyle}><span className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> Phone</span></label>
                 <input {...register('phone')} placeholder="+39 or international number" className={inp(errors.phone)} />
                 {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
               </div>
@@ -212,21 +234,18 @@ export default function QuoteForm() {
                 type="submit"
                 disabled={submitting}
                 className="w-full py-4 rounded-sm font-bold text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-60"
-                style={{ background: '#25D366', color: '#fff', boxShadow: '0 4px 20px rgba(37,211,102,0.25)', letterSpacing: '0.05em' }}
+                style={{ background: 'linear-gradient(135deg, #9A7A30, #C9A84C, #E0C070)', color: '#000', letterSpacing: '0.05em' }}
               >
-                {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : (
-                  <>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    Get My Quote on WhatsApp
-                  </>
-                )}
+                {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Get My Free Quote'}
               </button>
-              <p className="text-center text-[11px]" style={{ color: 'rgba(255,255,255,0.25)' }}>Reply within minutes. No commitment required.</p>
+              {submitError && (
+                <p className="text-center text-red-400 text-xs">Something went wrong — please try again.</p>
+              )}
+              <p className="text-center text-[11px]" style={{ color: 'rgba(255,255,255,0.25)' }}>We&apos;ll reply within 2 hours. No commitment required.</p>
             </div>
           )}
         </form>
+        )}
       </div>
     </div>
   )

@@ -1,9 +1,7 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Shield, Star, Clock, Users, MapPin, CheckCircle } from 'lucide-react'
-import { buildWhatsAppUrl } from '@/lib/utils'
 
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
   title: 'About Italy Taxi Services — NCC Transfer Intermediary',
@@ -191,14 +189,6 @@ export default function AboutPage() {
             >
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href={buildWhatsAppUrl(WHATSAPP, 'Hello, I would like to book a private chauffeur transfer in Italy.')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#20BA5A] transition-colors"
-            >
-              WhatsApp Us
-            </a>
           </div>
         </div>
       </section>

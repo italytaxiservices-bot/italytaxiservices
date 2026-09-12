@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Clock, MapPin, Star, Shield } from 'lucide-react'
-import { buildWhatsAppUrl } from '@/lib/utils'
 
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
   title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Taxi Services',
@@ -80,7 +78,6 @@ export default function HourlyPage() {
           <p className="text-gray-400 mb-8">Tell us your city, date, approximate hours needed, and your itinerary. We'll send you a fixed price within minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get Hourly Hire Quote <ArrowRight className="w-4 h-4" /></Link>
-            <a href={buildWhatsAppUrl(WHATSAPP, 'Hello, I need a chauffeur by the hour in Italy.')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-8 py-4 rounded-xl">WhatsApp Us</a>
           </div>
         </div>
       </section>

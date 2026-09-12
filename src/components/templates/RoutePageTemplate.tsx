@@ -3,9 +3,6 @@ import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
 import { formatPrice } from '@/lib/utils'
-import { buildWhatsAppUrl } from '@/lib/utils'
-
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 interface RoutePageTemplateProps {
   route: Route
@@ -27,7 +24,6 @@ const T = {
     pickup: 'Pickup',
     destination: 'Destination',
     bookTransfer: 'Book This Transfer',
-    whatsapp: 'WhatsApp',
     vehicles: 'Choose Your Vehicle',
     aboutTitle: 'About This Transfer',
     includedTitle: "What's Included",
@@ -48,7 +44,6 @@ const T = {
     pickup: 'Partenza',
     destination: 'Destinazione',
     bookTransfer: 'Prenota Questo Transfer',
-    whatsapp: 'Scrivici su WhatsApp',
     vehicles: 'Scegli il Tuo Veicolo',
     aboutTitle: 'Informazioni sul Transfer',
     includedTitle: 'Cosa è Incluso',
@@ -118,14 +113,6 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
                 >
                   {t.bookTransfer} <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a
-                  href={buildWhatsAppUrl(WHATSAPP, `Hello, I need a private transfer from ${route.fromName} to ${route.toName}.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5A] transition-colors"
-                >
-                  {t.whatsapp}
-                </a>
               </div>
             </div>
 

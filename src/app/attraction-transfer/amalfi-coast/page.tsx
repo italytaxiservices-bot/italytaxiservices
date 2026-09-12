@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Clock } from 'lucide-react'
-import { buildWhatsAppUrl } from '@/lib/utils'
 
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
   title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Taxi Services',
@@ -27,7 +25,6 @@ export default function AmalfiCoastTransferPage() {
             <p className="text-gray-300 text-xl leading-relaxed">Private NCC chauffeur transfer to all Amalfi Coast towns — Positano, Amalfi, Ravello, Praiano. Our drivers are experienced on the SS163 coastal road.</p>
             <div className="flex gap-4 mt-8">
               <Link href="/rome-to-amalfi-coast" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl">Rome → Amalfi Route <ArrowRight className="w-4 h-4" /></Link>
-              <a href={buildWhatsAppUrl(WHATSAPP, 'Hello, I need a transfer to the Amalfi Coast.')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl">WhatsApp</a>
             </div>
           </div>
         </div>

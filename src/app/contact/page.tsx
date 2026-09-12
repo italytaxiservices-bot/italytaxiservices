@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Phone, Mail, MessageCircle, Clock } from 'lucide-react'
-import { buildWhatsAppUrl } from '@/lib/utils'
+import { ArrowRight, Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
@@ -9,7 +8,7 @@ const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italytaxiservices.c
 
 export const metadata: Metadata = {
   title: 'Contact Italy Taxi Services | Book a Private Transfer in Italy',
-  description: 'Contact Italy Taxi Services for private NCC transfers. WhatsApp, email, or use our quote form. We reply within minutes.',
+  description: 'Contact Italy Taxi Services for private NCC transfers. Email, phone, or use our quote form. We reply within 2 hours.',
 }
 
 export default function ContactPage() {
@@ -20,7 +19,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Contact Us</h1>
-            <p className="text-gray-300 text-xl leading-relaxed">Get in touch for a quote, a question, or to book your private NCC transfer in Italy. We reply within minutes via WhatsApp.</p>
+            <p className="text-gray-300 text-xl leading-relaxed">Get in touch for a quote, a question, or to book your private NCC transfer in Italy. We reply within 2 hours.</p>
           </div>
         </div>
       </section>
@@ -31,19 +30,6 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
               <div className="space-y-5">
-                <a href={buildWhatsAppUrl(WHATSAPP, 'Hello, I would like to book a private transfer in Italy.')} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-5 p-6 bg-green-50 border border-green-200 rounded-2xl hover:bg-green-100 transition-all group">
-                  <div className="w-14 h-14 bg-[#25D366] rounded-2xl flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-lg">WhatsApp</p>
-                    <p className="text-gray-500 text-sm">Fastest response — we reply within minutes</p>
-                    <p className="text-green-700 font-semibold text-sm mt-1">{WHATSAPP}</p>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-green-600 ml-auto transition-colors" />
-                </a>
-
                 <a href={`mailto:${EMAIL}`}
                   className="flex items-center gap-5 p-6 bg-gray-50 border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all group">
                   <div className="w-14 h-14 bg-navy rounded-2xl flex items-center justify-center shrink-0">
@@ -76,13 +62,13 @@ export default function ContactPage() {
                   <Clock className="w-4 h-4 text-green-600" />
                   <p className="font-semibold text-gray-900 text-sm">Response Times</p>
                 </div>
-                <p className="text-sm text-gray-600">WhatsApp: within minutes (24/7) · Email: within 2 hours · Urgent bookings: call directly</p>
+                <p className="text-sm text-gray-600">Email: within 2 hours · Urgent bookings: call directly</p>
               </div>
             </div>
 
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Or Get an Instant Quote</h2>
-              <p className="text-gray-600 mb-6">Fill in our transfer form and we'll send your fixed-price quote via WhatsApp within minutes.</p>
+              <p className="text-gray-600 mb-6">Fill in our transfer form and we'll send your fixed-price quote by email within 2 hours.</p>
               <Link href="/#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">
                 Go to Quote Form <ArrowRight className="w-4 h-4" />
               </Link>
@@ -101,7 +87,7 @@ export default function ContactPage() {
                       <span>{q}</span>
                     </div>
                   ))}
-                  <p className="text-gray-400 text-xs mt-4">Ask us any of these via WhatsApp — we'll answer immediately.</p>
+                  <p className="text-gray-400 text-xs mt-4">Ask us any of these by email or phone — we'll answer quickly.</p>
                 </div>
               </div>
             </div>

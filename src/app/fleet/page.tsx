@@ -2,9 +2,6 @@
 import Link from 'next/link'
 import { ArrowRight, Users, Briefcase, Star, Shield } from 'lucide-react'
 import { vehicles } from '@/data/fleet'
-import { buildWhatsAppUrl } from '@/lib/utils'
-
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 
 export const metadata: Metadata = {
   title: 'Our Fleet — Luxury & Business Vehicles | Italy Taxi Services',
@@ -134,14 +131,6 @@ export default function FleetPage() {
                       >
                         Book {v.name} <ArrowRight className="w-4 h-4" />
                       </Link>
-                      <a
-                        href={buildWhatsAppUrl(WHATSAPP, `Hello, I'd like to book the ${v.name} (${v.model}) for a transfer in Italy.`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-5 py-3 rounded-xl hover:bg-[#20BA5A] transition-colors text-sm"
-                      >
-                        WhatsApp
-                      </a>
                     </div>
                   </div>
                 </div>
