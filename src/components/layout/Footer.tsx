@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/lib/utils'
 
@@ -56,6 +57,13 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" className="block mb-8">
+              <Image
+                src="/logo.webp"
+                alt="Italy Taxi Services"
+                width={64}
+                height={64}
+                className="h-14 w-14 mb-3"
+              />
               <p
                 className="font-black text-white text-2xl tracking-tight leading-none mb-2 italic"
                 style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}

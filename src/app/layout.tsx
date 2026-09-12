@@ -26,16 +26,23 @@ export const metadata: Metadata = {
   keywords: ['italy taxi services', 'private driver italy', 'NCC italy', 'airport transfer italy', 'malpensa transfer', 'fiumicino transfer', 'private chauffeur milan', 'private chauffeur rome'],
   authors: [{ name: 'Italy Taxi Services' }],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://italytaxiservices.com'),
+  icons: {
+    icon: '/logo.webp',
+    shortcut: '/logo.webp',
+    apple: '/logo.webp',
+  },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
     description: 'Professional private chauffeur and NCC transfer service across Italy. Fixed prices, meet & greet, 24/7.',
+    images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Italy Taxi Services | Private NCC Transfers',
     description: 'Professional private chauffeur and NCC transfer service across Italy.',
+    images: ['/logo.webp'],
   },
   robots: {
     index: true,

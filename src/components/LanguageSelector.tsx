@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 
@@ -39,6 +40,13 @@ export default function LanguageSelector() {
       <div className="text-center px-8 max-w-md w-full">
 
         {/* Logo */}
+        <Image
+          src="/logo.webp"
+          alt="Italy Taxi Services"
+          width={80}
+          height={80}
+          className="h-20 w-20 mx-auto mb-3"
+        />
         <p
           className="font-black text-white mb-1"
           style={{ fontSize: '2rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}

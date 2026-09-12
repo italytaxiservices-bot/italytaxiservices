@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
@@ -131,15 +132,25 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="group flex flex-col leading-none">
-            <span
-              className="font-black text-white tracking-tight group-hover:text-amber-300 transition-colors"
-              style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}
-            >
-              Italy Taxi Services
-            </span>
-            <span className="section-label" style={{ fontSize: '0.58rem', letterSpacing: '0.22em' }}>
-              Private NCC Transfers
+          <Link href="/" className="group flex items-center gap-2 leading-none">
+            <Image
+              src="/logo.webp"
+              alt="Italy Taxi Services"
+              width={48}
+              height={48}
+              className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105"
+              priority
+            />
+            <span className="flex flex-col">
+              <span
+                className="font-black text-white tracking-tight group-hover:text-amber-300 transition-colors"
+                style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}
+              >
+                Italy Taxi Services
+              </span>
+              <span className="section-label" style={{ fontSize: '0.58rem', letterSpacing: '0.22em' }}>
+                Private NCC Transfers
+              </span>
             </span>
           </Link>
 
