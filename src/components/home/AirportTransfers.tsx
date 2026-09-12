@@ -8,12 +8,6 @@ const priceMap: Record<string, string> = {
   FLR: '€55', PSA: '€95',
 }
 
-const slugMap: Record<string, string> = {
-  MXP: 'malpensa', LIN: 'linate', BGY: 'bergamo',
-  FCO: 'fiumicino', CIA: 'ciampino', VCE: 'marco-polo',
-  FLR: 'florence', PSA: 'pisa',
-}
-
 const featured = ['MXP', 'FCO', 'VCE']
 
 const cityDesc: Record<string, string> = {
@@ -59,7 +53,7 @@ export default function AirportTransfers() {
           {featuredAirports.map((airport) => (
             <Link
               key={airport.code}
-              href={`/${slugMap[airport.code]}-airport-transfer`}
+              href={`/${airport.slug}-airport-transfer`}
               className="group relative rounded-2xl overflow-hidden flex flex-col justify-between min-h-[220px] p-7 transition-all duration-500 hover:-translate-y-1"
               style={{ background: '#0f0f0f', border: '1px solid rgba(201,168,76,0.12)' }}
             >
@@ -116,7 +110,7 @@ export default function AirportTransfers() {
           {otherAirports.map((airport, i) => (
             <Link
               key={airport.code}
-              href={`/${slugMap[airport.code]}-airport-transfer`}
+              href={`/${airport.slug}-airport-transfer`}
               className="group flex items-center justify-between px-6 py-4 bg-white transition-all duration-200 hover:bg-gray-50"
               style={i < otherAirports.length - 1 ? { borderBottom: '1px solid #f3f4f6' } : {}}
             >
@@ -133,7 +127,9 @@ export default function AirportTransfers() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <span className="font-bold text-sm" style={{ color: '#A07830' }}>{priceMap[airport.code]}</span>
+                {priceMap[airport.code] && (
+                  <span className="font-bold text-sm" style={{ color: '#A07830' }}>{priceMap[airport.code]}</span>
+                )}
                 <ArrowRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-amber-500 transition-colors" />
               </div>
             </Link>

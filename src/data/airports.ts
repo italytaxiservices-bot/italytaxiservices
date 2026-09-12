@@ -81,14 +81,14 @@ export const airports: Airport[] = [
     metaDescription: 'Private chauffeur transfers from Rome Ciampino Airport (CIA). Rome city and beyond. Meet & greet, fixed price NCC service. Book today.',
   },
   {
-    code: 'FLR', name: 'Florence Peretola Airport', slug: 'florence-airport',
+    code: 'FLR', name: 'Florence Peretola Airport', slug: 'florence',
     citySlug: 'florence', cityName: 'Florence', region: 'Tuscany',
     description: 'Florence Peretola (FLR) is the city airport of Florence, serving Tuscany. Located 5km from the historic centre.',
     metaTitle: 'Florence Airport Transfer | Private Chauffeur FLR | Italy Taxi Services',
     metaDescription: 'Private chauffeur transfers from Florence Airport (FLR). Florence city, Tuscany, Siena, Pisa. Meet & greet included. Fixed price NCC service. Book today.',
   },
   {
-    code: 'PSA', name: 'Pisa Galileo Galilei Airport', slug: 'pisa-airport',
+    code: 'PSA', name: 'Pisa Galileo Galilei Airport', slug: 'pisa',
     citySlug: 'florence', cityName: 'Pisa / Florence', region: 'Tuscany',
     description: 'Pisa Galileo Galilei (PSA) is the main airport of western Tuscany, serving Florence, Pisa, Lucca, and the wider region.',
     metaTitle: 'Pisa Airport Transfer | Private Chauffeur PSA | Italy Taxi Services',
