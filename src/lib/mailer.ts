@@ -118,6 +118,32 @@ export async function sendCustomerBookingConfirmation(lead: {
   })
 }
 
+export async function sendMail(options: {
+  from?: string
+  to: string
+  subject: string
+  text: string
+  html?: string
+  replyTo?: string
+  bcc?: string
+  attachments?: { filename: string; content: Buffer; contentType?: string }[]
+}) {
+  if (!transporter) {
+    console.error('SMTP not configured — skipping email:', options.subject)
+    return
+  }
+  await transporter.sendMail({
+    from: options.from || `"Italy Taxi Services" <${smtpUser}>`,
+    to: options.to,
+    replyTo: options.replyTo || undefined,
+    bcc: options.bcc,
+    subject: options.subject,
+    text: options.text,
+    html: options.html,
+    attachments: options.attachments,
+  })
+}
+
 export async function sendContactNotification(msg: {
   name: string
   email: string

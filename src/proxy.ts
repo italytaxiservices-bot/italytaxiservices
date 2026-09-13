@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { NodeHtmlMarkdown } from 'node-html-markdown'
+import { updateSession } from '@/lib/supabase/proxy'
 
 const PASSTHROUGH_HEADER = 'x-markdown-source-fetch'
 
 export default async function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    return updateSession(request)
+  }
+
   const accept = request.headers.get('accept') ?? ''
   const wantsMarkdown = accept.includes('text/markdown')
   const isPassthrough = request.headers.has(PASSTHROUGH_HEADER)

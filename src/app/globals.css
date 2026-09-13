@@ -8,6 +8,22 @@
   --color-navy-800:   #111111;
   --color-navy-700:   #1a1a1a;
   --color-cream:      #F5F0E8;
+
+  /* Admin panel theme — kept separate from the marketing site's gold/navy
+     tokens above (different hex values), so admin/* files use an
+     "admin-" prefix instead of reusing the marketing names. */
+  --color-admin-ink:        #12161f;
+  --color-admin-ink-soft:   #2a2f3a;
+  --color-admin-navy:       #0d1526;
+  --color-admin-navy-deep:  #070b14;
+  --color-admin-ivory:      #faf7f1;
+  --color-admin-ivory-deep: #f2ede2;
+  --color-admin-stone:      #6f6a60;
+  --color-admin-gold:       #8a6329;
+  --color-admin-gold-light: #cba565;
+  --color-admin-gold-pale:  #e9dcbf;
+  --color-admin-line:       #e3ddcf;
+  --font-display: var(--font-playfair);
 }
 
 * { box-sizing: border-box; }
@@ -120,4 +136,29 @@ html { scroll-behavior: smooth; }
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(201,168,76,0.12);
+}
+
+/* ─── Admin panel ─────────────────────────────── */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.input-luxe {
+  width: 100%;
+  border: 1px solid var(--color-admin-line);
+  border-radius: 2px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-admin-ink);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input-luxe:focus {
+  border-color: var(--color-admin-gold);
+}
+
+.input-luxe::placeholder {
+  color: #a39d90;
 }
