@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Playfair_Display } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -50,6 +51,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: '3QLSx2WvXzTiR7hiJWkJlj5Fmk5-8I5u0mboY-0j1Jo',
+    other: {
+      'msvalidate.01': 'BC23B2D9B8C6EFC647D1245BDFAD512B',
+    },
   },
 }
 
@@ -61,6 +65,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Z3KBQT2WL1" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Z3KBQT2WL1');
+          `}
+        </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "yhm4fipxmh");
+          `}
+        </Script>
+
+        {/* Ahrefs Analytics */}
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="rRfBWj06sPesk+Nayz+xmQ" strategy="afterInteractive" />
       </body>
     </html>
   )
