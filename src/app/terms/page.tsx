@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Italy Taxi Services',
   description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+  alternates: { canonical: '/terms' },
 }
 
 export default function TermsPage() {

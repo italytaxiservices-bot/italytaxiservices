@@ -5,6 +5,7 @@ import { getRouteBySlug } from '@/data/routes'
 export const metadata: Metadata = {
   title: 'Rome to Amalfi Coast Transfer | Private Chauffeur | Italy Taxi Services',
   description: 'Private chauffeur transfer from Rome to Amalfi Coast. From €380. Positano, Amalfi, Ravello served. Direct NCC service. Book today.',
+  alternates: { canonical: '/rome-to-amalfi-coast' },
 }
 
 const route = getRouteBySlug('rome-to-amalfi-coast')!

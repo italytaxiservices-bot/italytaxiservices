@@ -5,6 +5,7 @@ import { getCityBySlug } from '@/data/cities'
 export const metadata: Metadata = {
   title: 'Private Chauffeur Service Milan | NCC Milan | Italy Taxi Services',
   description: 'Professional private chauffeur and NCC service in Milan. Malpensa, Linate, Bergamo airport transfers. Lake Como, corporate travel, city rides. Fixed prices, licensed operators.',
+  alternates: { canonical: '/milan-chauffeur-service' },
 }
 
 const city = getCityBySlug('milan')!

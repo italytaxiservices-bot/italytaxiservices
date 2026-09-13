@@ -5,6 +5,7 @@ import { getAirportBySlug } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
   description: 'Private chauffeur transfers from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring. Rome city, Vatican, Civitavecchia cruise port. Fixed prices.',
+  alternates: { canonical: '/fiumicino-airport-transfer' },
 }
 
 const airport = getAirportBySlug('fiumicino')!

@@ -6,6 +6,7 @@ import { vehicles } from '@/data/fleet'
 export const metadata: Metadata = {
   title: 'Our Fleet — Luxury & Business Vehicles | Italy Taxi Services',
   description: 'Explore our premium fleet: Mercedes E-Class, S-Class, V-Class van, and luxury SUV. All NCC licensed, fully insured, available across Italy.',
+  alternates: { canonical: '/fleet' },
 }
 
 const vehicleDetails = [

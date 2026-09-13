@@ -6,6 +6,7 @@ import { ArrowRight, MapPin, Clock, Shield } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Pompeii Transfer | Private Chauffeur to Pompeii | Italy Taxi Services',
   description: 'Private NCC transfer to Pompeii. From Rome, Naples airport, Naples city, Sorrento. Day trips with driver waiting. Fixed prices. Book today.',
+  alternates: { canonical: '/attraction-transfer/pompeii' },
 }
 
 export default function PompeiiTransferPage() {

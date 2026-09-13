@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy | Italy Taxi Services',
   description: 'Privacy policy for Italy Taxi Services NCC transfer service. How we collect, use, and protect your personal data.',
+  alternates: { canonical: '/privacy-policy' },
 }
 
 export default function PrivacyPage() {

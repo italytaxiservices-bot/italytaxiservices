@@ -6,6 +6,7 @@ import { ArrowRight, Shield, Star, Clock, Users, MapPin, CheckCircle } from 'luc
 export const metadata: Metadata = {
   title: 'About Italy Taxi Services — NCC Transfer Intermediary',
   description: 'Italy Taxi Services connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
+  alternates: { canonical: '/about' },
 }
 
 export default function AboutPage() {

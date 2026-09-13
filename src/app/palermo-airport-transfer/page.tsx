@@ -5,6 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino | Italy Taxi Services',
   description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+  alternates: { canonical: '/palermo-airport-transfer' },
 }
 
 const airport = getAirportByCode('PMO')!

@@ -6,6 +6,7 @@ import { ArrowRight, Clock, MapPin, Star, Shield } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Taxi Services',
   description: 'Hire a private NCC chauffeur by the hour in Italy. City tours, business meetings, shopping trips, half-day or full-day hire. Milan, Rome, Florence, Venice.',
+  alternates: { canonical: '/hourly-chauffeur-italy' },
 }
 
 export default function HourlyPage() {

@@ -5,6 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
   description: 'Private NCC transfer from Florence Peretola Airport (FLR). Florence city, Pisa, Siena, Tuscany tours. Fixed prices, meet & greet. Book today.',
+  alternates: { canonical: '/florence-airport-transfer' },
 }
 
 const airport = getAirportByCode('FLR')!

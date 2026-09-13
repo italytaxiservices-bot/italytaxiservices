@@ -5,6 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla | Italy Taxi Services',
   description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+  alternates: { canonical: '/bari-airport-transfer' },
 }
 
 const airport = getAirportByCode('BRI')!

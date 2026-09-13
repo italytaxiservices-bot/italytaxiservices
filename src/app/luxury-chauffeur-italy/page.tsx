@@ -7,6 +7,7 @@ import { vehicles } from '@/data/fleet'
 export const metadata: Metadata = {
   title: 'Luxury Chauffeur Italy | Premium NCC Service | Italy Taxi Services',
   description: 'Luxury NCC chauffeur service across Italy. Mercedes S-Class, V-Class, luxury SUV. VIP airport transfers, private tours, corporate travel. Fixed prices.',
+  alternates: { canonical: '/luxury-chauffeur-italy' },
 }
 
 export default function LuxuryPage() {

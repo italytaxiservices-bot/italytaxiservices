@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers, luxury chauffeur, and long-distance private transfers. Licensed operators, fixed prices, meet & greet.',
   keywords: ['italy taxi services', 'private driver italy', 'NCC italy', 'airport transfer italy', 'malpensa transfer', 'fiumicino transfer', 'private chauffeur milan', 'private chauffeur rome'],
   authors: [{ name: 'Italy Taxi Services' }],
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://italytaxiservices.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.italytaxiservices.com'),
   icons: {
     icon: '/logo.webp',
     shortcut: '/logo.webp',

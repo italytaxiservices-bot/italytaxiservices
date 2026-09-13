@@ -5,6 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Genoa Airport Transfer | Private Chauffeur GOA | Italy Taxi Services',
   description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €40, Portofino €65, Cinque Terre €90, Santa Margherita €60. Fixed prices. Book today.',
+  alternates: { canonical: '/genoa-airport-transfer' },
 }
 
 const airport = getAirportByCode('GOA')!

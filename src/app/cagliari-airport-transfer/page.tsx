@@ -5,6 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas | Italy Taxi Services',
   description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+  alternates: { canonical: '/cagliari-airport-transfer' },
 }
 
 const airport = getAirportByCode('CAG')!

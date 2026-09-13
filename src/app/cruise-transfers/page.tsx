@@ -6,6 +6,7 @@ import { ArrowRight, Ship, Shield, Clock, MapPin } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Cruise Port Transfers Italy | NCC Civitavecchia, Naples, Venice | Italy Taxi Services',
   description: 'Private NCC transfers to and from Italian cruise ports. Civitavecchia, Naples, Venice, Genoa, Livorno. Fixed prices, large vehicle options. Book today.',
+  alternates: { canonical: '/cruise-transfers' },
 }
 
 const ports = [

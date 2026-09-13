@@ -6,6 +6,7 @@ import { ArrowRight, Car, MapPin, Shield, Star } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Private Chauffeur Service Italy | NCC Transfers Across Italy | Italy Taxi Services',
   description: 'Professional private chauffeur and NCC service across Italy. Airport transfers, city rides, long-distance, tours. Milan, Rome, Venice, Florence, Naples. Fixed prices.',
+  alternates: { canonical: '/chauffeur-service-italy' },
 }
 
 const services = [

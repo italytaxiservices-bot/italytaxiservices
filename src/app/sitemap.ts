@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://italytaxiservices.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.italytaxiservices.com'
 
 function getRoutes(dir: string, base = ''): string[] {
   const routes: string[] = []

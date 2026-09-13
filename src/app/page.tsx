@@ -13,6 +13,7 @@ import SEOContent from '@/components/home/SEOContent'
 export const metadata: Metadata = {
   title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
   description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+  alternates: { canonical: '/' },
 }
 
 const organizationSchema = {
@@ -20,7 +21,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Italy Taxi Services',
   description: 'Professional private chauffeur and NCC transfer service across Italy',
-  url: 'https://italytaxiservices.com',
+  url: 'https://www.italytaxiservices.com',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',

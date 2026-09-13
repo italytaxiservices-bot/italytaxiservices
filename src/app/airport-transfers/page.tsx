@@ -6,6 +6,7 @@ import { airports } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Airport Transfers Italy — NCC Private Service | Italy Taxi Services',
   description: 'Private NCC airport transfers across Italy. Malpensa, Fiumicino, Marco Polo, Linate, Ciampino, Florence. Fixed prices, meet & greet, flight monitoring included.',
+  alternates: { canonical: '/airport-transfers' },
 }
 
 const airportsByRegion = [
