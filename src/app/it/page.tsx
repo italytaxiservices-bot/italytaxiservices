@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Taxi Services',
   description: 'Servizio chauffeur privato NCC in tutta Italia. Transfer aeroporto Milano Malpensa, Roma Fiumicino, Venezia, Firenze. Prezzi fissi, meet & greet incluso. Prenota ora.',
-  alternates: { canonical: '/it', languages: { en: '/', it: '/it' } },
+  alternates: { canonical: '/it', languages: { en: '/', it: '/it', 'x-default': '/' } },
 }
 
 const airports = [

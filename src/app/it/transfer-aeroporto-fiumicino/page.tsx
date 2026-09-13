@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-fiumicino',
-    languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino' },
+    languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' },
   },
 }
 

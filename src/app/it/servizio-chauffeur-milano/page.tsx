@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Chauffeur privato NCC a Milano. Transfer Malpensa, Linate, Bergamo. Lago di Como, Lugano, centri congressi. Prezzi fissi, disponibilità 24/7. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-milano',
-    languages: { en: '/milan-chauffeur-service', it: '/it/servizio-chauffeur-milano' },
+    languages: { en: '/milan-chauffeur-service', it: '/it/servizio-chauffeur-milano', 'x-default': '/milan-chauffeur-service' },
   },
 }
 

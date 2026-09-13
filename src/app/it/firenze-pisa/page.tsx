@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC da Firenze a Pisa. Torre Pendente, gita giornaliera o one-way. Da €95. Autista in attesa. Prenota ora.',
   alternates: {
     canonical: '/it/firenze-pisa',
-    languages: { en: '/florence-to-pisa', it: '/it/firenze-pisa' },
+    languages: { en: '/florence-to-pisa', it: '/it/firenze-pisa', 'x-default': '/florence-to-pisa' },
   },
 }
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €380. Autisti esperti sulla SS163. Prenota ora.',
   alternates: {
     canonical: '/it/roma-costiera-amalfitana',
-    languages: { en: '/rome-to-amalfi-coast', it: '/it/roma-costiera-amalfitana' },
+    languages: { en: '/rome-to-amalfi-coast', it: '/it/roma-costiera-amalfitana', 'x-default': '/rome-to-amalfi-coast' },
   },
 }
 

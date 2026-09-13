@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-malpensa',
-    languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa' },
+    languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' },
   },
 }
 

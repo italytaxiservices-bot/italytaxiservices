@@ -5,7 +5,7 @@ import { getRouteBySlug } from '@/data/routes'
 export const metadata: Metadata = {
   title: 'Malpensa to Lake Como Transfer | Private Chauffeur | Italy Taxi Services',
   description: 'Private transfer from Malpensa Airport to Lake Como. From €130. Direct NCC chauffeur to Como, Bellagio, Varenna, Menaggio. Book today.',
-  alternates: { canonical: '/malpensa-to-lake-como', languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como' } },
+  alternates: { canonical: '/malpensa-to-lake-como', languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como', 'x-default': '/malpensa-to-lake-como' } },
 }
 
 const route = getRouteBySlug('malpensa-to-lake-como')!

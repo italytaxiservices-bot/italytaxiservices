@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Chauffeur privato NCC a Roma. Transfer Fiumicino FCO, Ciampino CIA, Civitavecchia, Costiera Amalfitana. Prezzi fissi, meet & greet. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-roma',
-    languages: { en: '/rome-chauffeur-service', it: '/it/servizio-chauffeur-roma' },
+    languages: { en: '/rome-chauffeur-service', it: '/it/servizio-chauffeur-roma', 'x-default': '/rome-chauffeur-service' },
   },
 }
 

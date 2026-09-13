@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €85. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-milano',
-    languages: { en: '/malpensa-to-milan', it: '/it/malpensa-milano' },
+    languages: { en: '/malpensa-to-milan', it: '/it/malpensa-milano', 'x-default': '/malpensa-to-milan' },
   },
 }
 

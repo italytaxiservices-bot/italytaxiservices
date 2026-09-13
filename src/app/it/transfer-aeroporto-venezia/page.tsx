@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Venezia Marco Polo (VCE). Mestre, Venezia, Padova, Verona, Treviso, Bologna. Prezzi fissi. Meet & greet. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-venezia',
-    languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia' },
+    languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia', 'x-default': '/marco-polo-airport-transfer' },
   },
 }
 

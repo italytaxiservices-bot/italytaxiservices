@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-lago-como',
-    languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como' },
+    languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como', 'x-default': '/malpensa-to-lake-como' },
   },
 }
 

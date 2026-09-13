@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Fiumicino FCO a Roma. Da €65. Prezzo fisso, meet & greet, monitoraggio volo. Prenota ora.',
   alternates: {
     canonical: '/it/fiumicino-roma',
-    languages: { en: '/fiumicino-to-rome', it: '/it/fiumicino-roma' },
+    languages: { en: '/fiumicino-to-rome', it: '/it/fiumicino-roma', 'x-default': '/fiumicino-to-rome' },
   },
 }
 

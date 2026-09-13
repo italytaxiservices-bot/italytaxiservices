@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC da Fiumicino FCO al porto crociere di Civitavecchia. Da €110. Ideale per imbarco e sbarco crociere. Prenota ora.',
   alternates: {
     canonical: '/it/fiumicino-civitavecchia',
-    languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia' },
+    languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia', 'x-default': '/fiumicino-to-civitavecchia' },
   },
 }
 

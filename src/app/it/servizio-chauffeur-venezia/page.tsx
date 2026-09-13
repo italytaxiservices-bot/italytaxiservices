@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Chauffeur privato NCC a Venezia. Transfer Marco Polo VCE, Treviso. Terminal crociere, Verona, Padova, Bologna. Prezzi fissi. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-venezia',
-    languages: { en: '/venice-chauffeur-service', it: '/it/servizio-chauffeur-venezia' },
+    languages: { en: '/venice-chauffeur-service', it: '/it/servizio-chauffeur-venezia', 'x-default': '/venice-chauffeur-service' },
   },
 }
 

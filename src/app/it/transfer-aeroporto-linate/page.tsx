@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-linate',
-    languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate' },
+    languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' },
   },
 }
 

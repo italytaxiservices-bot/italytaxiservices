@@ -5,7 +5,7 @@ import { getAirportBySlug } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
   description: 'Private chauffeur transfers from Milan Malpensa Airport (MXP). Meet & greet, flight monitoring. Milan city, Lake Como, Bellagio, Lugano. Fixed prices. Book today.',
-  alternates: { canonical: '/malpensa-airport-transfer', languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa' } },
+  alternates: { canonical: '/malpensa-airport-transfer', languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' } },
 }
 
 const airport = getAirportBySlug('malpensa')!

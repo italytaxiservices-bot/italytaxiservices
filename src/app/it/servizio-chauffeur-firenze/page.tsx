@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Chauffeur privato NCC a Firenze. Transfer Peretola FLR, Pisa PSA. Tour Toscana, Siena, Chianti, Pisa, Roma. Prezzi fissi. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-firenze',
-    languages: { en: '/florence-chauffeur-service', it: '/it/servizio-chauffeur-firenze' },
+    languages: { en: '/florence-chauffeur-service', it: '/it/servizio-chauffeur-firenze', 'x-default': '/florence-chauffeur-service' },
   },
 }
 

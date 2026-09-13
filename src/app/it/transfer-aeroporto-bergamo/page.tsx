@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €90, Lago di Como €140, Brescia €80. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-bergamo',
-    languages: { en: '/bergamo-airport-transfer', it: '/it/transfer-aeroporto-bergamo' },
+    languages: { en: '/bergamo-airport-transfer', it: '/it/transfer-aeroporto-bergamo', 'x-default': '/bergamo-airport-transfer' },
   },
 }
 
