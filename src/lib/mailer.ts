@@ -3,6 +3,13 @@ import nodemailer from 'nodemailer'
 const smtpUser = process.env.SMTP_USER ?? ''
 const smtpPass = process.env.SMTP_PASS ?? ''
 
+// booking@/info@ are forwarding aliases that redirect back to smtpUser's own
+// inbox. Sending notifications there (from that same account) creates a
+// send-to-self loop that Gmail silently drops or spam-flags due to DMARC
+// misalignment on the forwarded copy — so notifications go straight to the
+// real mailbox instead.
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || smtpUser
+
 const transporter = smtpUser && smtpPass
   ? nodemailer.createTransport({
       host: process.env.SMTP_HOST ?? 'smtp.gmail.com',
@@ -64,7 +71,7 @@ export async function sendBookingNotification(lead: {
   ]
 
   await send({
-    to: ['booking@italytaxiservices.com'],
+    to: [NOTIFY_EMAIL],
     replyTo: lead.email,
     subject: `New booking request from ${lead.name} — ${lead.pickup} → ${lead.dropoff}`,
     text: rows.map(([label, value]) => `${label}: ${value}`).join('\n'),
@@ -84,7 +91,7 @@ export async function sendContactNotification(msg: {
   ]
 
   await send({
-    to: ['info@italytaxiservices.com'],
+    to: [NOTIFY_EMAIL],
     replyTo: msg.email,
     subject: `New contact message from ${msg.name}`,
     text: rows.map(([label, value]) => `${label}: ${value}`).join('\n'),
