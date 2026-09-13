@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { requireUser } from "@/lib/auth/dal";
-import { canManageOps, canManageFinance, canViewFinance } from "@/lib/auth/roles";
+import { canManageOps, canManageFinance, canViewFinance, isAdminRole } from "@/lib/auth/roles";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Section } from "@/components/admin/ui/Section";
@@ -11,7 +11,7 @@ import { EntityPicker } from "@/components/admin/ui/EntityPicker";
 import { ConfirmButton } from "@/components/admin/ui/ConfirmButton";
 import { BookingForm } from "@/components/admin/bookings/BookingForm";
 import { formatDateTime, formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
-import { updateBooking, setBookingStatus, assignDriverAndVehicle, cancelBookingWithDetails, markNoShowWithDetails } from "@/lib/admin/actions/bookings";
+import { updateBooking, setBookingStatus, assignDriverAndVehicle, cancelBookingWithDetails, markNoShowWithDetails, deleteBooking } from "@/lib/admin/actions/bookings";
 import { createInvoiceForBooking } from "@/lib/admin/actions/invoices";
 import { buildWhatsAppLink } from "@/lib/notifications/whatsapp";
 import { changedFields, formatDiffValue } from "@/lib/admin/activityDiff";
@@ -412,6 +412,21 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
                   >
                     Send pickup reminder
                   </a>
+                </div>
+              </Section>
+            ) : null}
+
+            {isAdminRole(profile.role) ? (
+              <Section title="Danger zone">
+                <div className="p-4">
+                  <form action={deleteBooking.bind(null, id)}>
+                    <ConfirmButton
+                      confirmMessage={`Permanently delete booking ${booking.booking_reference}? This cannot be undone. Any linked invoice/payment/receipt stays but is unlinked from this booking.`}
+                      className="w-full text-sm px-3 py-2 rounded-sm border border-red-200 bg-red-50 text-red-700 hover:bg-red-100"
+                    >
+                      Delete booking permanently
+                    </ConfirmButton>
+                  </form>
                 </div>
               </Section>
             ) : null}

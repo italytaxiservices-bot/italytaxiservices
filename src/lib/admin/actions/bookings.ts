@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/auth/dal";
-import { MANAGE_OPS } from "@/lib/auth/roles";
+import { MANAGE_OPS, ADMIN_ONLY } from "@/lib/auth/roles";
 import { notifyCustomer } from "@/lib/notifications/service";
 import { formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
 import type { Json } from "@/lib/supabase/types";
@@ -366,6 +366,32 @@ export async function markNoShowWithDetails(id: string, formData: FormData): Pro
   revalidatePath(`/admin/bookings/${id}`);
   revalidatePath("/admin/bookings");
   revalidatePath("/admin/dispatch");
+}
+
+/**
+ * Hard delete — unlike cancellation, this removes the row entirely (child
+ * records with `on delete cascade`, e.g. status history/passengers/driver
+ * assignments, go with it; invoices/payments/receipts/expenses/reviews only
+ * have `on delete set null` on booking_id, so they survive, just unlinked).
+ * Restricted to ADMIN_ONLY — irreversible, so this is deliberately a higher
+ * bar than the OPERATIONS-level edit/cancel actions above.
+ */
+export async function deleteBooking(id: string) {
+  await requireRole(ADMIN_ONLY);
+  const supabase = await createClient();
+
+  const { error } = await supabase.from("bookings").delete().eq("id", id);
+  if (error) redirect(`/admin/bookings/${id}?error=${encodeURIComponent(error.message)}`);
+
+  await logActivitySafe(supabase, {
+    p_action: "booking.deleted",
+    p_entity_type: "booking",
+    p_entity_id: id,
+    p_metadata: {},
+  });
+
+  revalidatePath("/admin/bookings");
+  redirect("/admin/bookings?success=Booking+deleted");
 }
 
 export async function assignDriverAndVehicle(id: string, formData: FormData) {
