@@ -10,12 +10,18 @@ function getRoutes(dir: string, base = ''): string[] {
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue
-    if (entry.name === 'api') continue
+    // Never expose the private CRM to the public sitemap.
+    if (entry.name === 'api' || entry.name === 'admin') continue
+    // Dynamic segments ([id], [[...slug]]) have no fixed URL to list.
+    if (entry.name.startsWith('[')) continue
 
     const fullPath = path.join(dir, entry.name)
-    const routePath = `${base}/${entry.name}`
+    // Route groups "(name)" are a Next.js organizational device and add no
+    // path segment to the actual URL — recurse without extending `base`.
+    const isRouteGroup = entry.name.startsWith('(') && entry.name.endsWith(')')
+    const routePath = isRouteGroup ? base : `${base}/${entry.name}`
 
-    if (fs.existsSync(path.join(fullPath, 'page.tsx'))) {
+    if (!isRouteGroup && fs.existsSync(path.join(fullPath, 'page.tsx'))) {
       routes.push(routePath)
     }
     routes.push(...getRoutes(fullPath, routePath))

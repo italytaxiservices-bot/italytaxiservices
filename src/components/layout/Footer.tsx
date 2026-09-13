@@ -124,6 +124,8 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-6">
             {[
+              { name: 'About',          href: '/about' },
+              { name: 'Contact',        href: '/contact' },
               { name: 'Privacy Policy', href: '/privacy-policy' },
               { name: 'Terms',          href: '/terms' },
               { name: 'About NCC',      href: '/ncc-italy' },
