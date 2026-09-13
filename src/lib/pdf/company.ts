@@ -25,7 +25,7 @@ export async function getCompanySettings(supabaseClient?: SupabaseClient<Databas
   const { data } = await supabase.from("company_settings").select("*").limit(1).maybeSingle();
   return (
     data ?? {
-      company_name: "Italy Limo Service",
+      company_name: "Italy Taxi Services",
       legal_name: null,
       logo_url: null,
       email: null,

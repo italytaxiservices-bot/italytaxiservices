@@ -117,7 +117,7 @@ export async function POST(req: NextRequest) {
 
   try {
     await sendMail({
-      from: `"Italy Limo Service — Booking" <${from}>`,
+      from: `"Italy Taxi Services — Booking" <${from}>`,
       to,
       subject,
       text,
