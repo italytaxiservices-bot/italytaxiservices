@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     google: '3QLSx2WvXzTiR7hiJWkJlj5Fmk5-8I5u0mboY-0j1Jo',
     other: {
       'msvalidate.01': 'BC23B2D9B8C6EFC647D1245BDFAD512B',
+      'p:domain_verify': '73d2c7f39b34f69816303282fd47a177',
     },
   },
 }
