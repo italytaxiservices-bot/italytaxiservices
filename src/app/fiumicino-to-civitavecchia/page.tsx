@@ -5,7 +5,7 @@ import { getRouteBySlug } from '@/data/routes'
 export const metadata: Metadata = {
   title: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Taxi Services',
   description: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
-  alternates: { canonical: '/fiumicino-to-civitavecchia' },
+  alternates: { canonical: '/fiumicino-to-civitavecchia', languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia' } },
 }
 
 const route = getRouteBySlug('fiumicino-to-civitavecchia')!

@@ -5,7 +5,7 @@ import { getAirportByCode } from '@/data/airports'
 export const metadata: Metadata = {
   title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
   description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
-  alternates: { canonical: '/linate-airport-transfer' },
+  alternates: { canonical: '/linate-airport-transfer', languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate' } },
 }
 
 const airport = getAirportByCode('LIN')!
