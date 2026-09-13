@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
-import { sendBookingNotification } from '@/lib/mailer'
+import { sendBookingNotification, sendCustomerBookingConfirmation } from '@/lib/mailer'
 
 export async function POST(req: NextRequest) {
   try {
@@ -41,6 +41,12 @@ export async function POST(req: NextRequest) {
       await sendBookingNotification(lead)
     } catch (err) {
       console.error('Booking email notification error:', err)
+    }
+
+    try {
+      await sendCustomerBookingConfirmation(lead)
+    } catch (err) {
+      console.error('Customer confirmation email error:', err)
     }
 
     return NextResponse.json({ success: true })
