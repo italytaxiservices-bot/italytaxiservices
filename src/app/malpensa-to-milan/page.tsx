@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Malpensa to Milan Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Malpensa to Milan Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Milan. From €85. Professional chauffeur, meet & greet, flight monitoring included. Book today.',
   alternates: { canonical: '/malpensa-to-milan', languages: { en: '/malpensa-to-milan', it: '/it/malpensa-milano', 'x-default': '/malpensa-to-milan' } },
 }

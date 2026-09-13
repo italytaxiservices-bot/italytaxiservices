@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Taxi Services',
+  title: 'Fiumicino to Civitavecchia Transfer | Cruise Port',
   description: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
   alternates: { canonical: '/fiumicino-to-civitavecchia', languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia', 'x-default': '/fiumicino-to-civitavecchia' } },
 }

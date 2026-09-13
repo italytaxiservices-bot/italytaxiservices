@@ -7,7 +7,7 @@ const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+390000000000'
 const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italytaxiservices.com'
 
 export const metadata: Metadata = {
-  title: 'Contact Italy Taxi Services | Book a Private Transfer in Italy',
+  title: 'Contact Us | Book a Private Transfer in Italy',
   description: 'Contact Italy Taxi Services for private NCC transfers. Email, phone, or use our quote form. We reply within 2 hours.',
   alternates: { canonical: '/contact' },
 }

@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { getCityBySlug } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Venice | NCC Venice | Italy Taxi Services',
+  title: 'Private Chauffeur Service Venice | NCC Venice',
   description: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Fixed prices, meet & greet.',
   alternates: { canonical: '/venice-chauffeur-service', languages: { en: '/venice-chauffeur-service', it: '/it/servizio-chauffeur-venezia', 'x-default': '/venice-chauffeur-service' } },
 }

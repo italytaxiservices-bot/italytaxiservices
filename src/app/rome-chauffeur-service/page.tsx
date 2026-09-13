@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { getCityBySlug } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Rome | NCC Rome | Italy Taxi Services',
+  title: 'Private Chauffeur Service Rome | NCC Rome',
   description: 'Professional private chauffeur and NCC service in Rome. Fiumicino & Ciampino airport transfers, Vatican, Civitavecchia cruise port, Amalfi Coast. Fixed prices.',
   alternates: { canonical: '/rome-chauffeur-service', languages: { en: '/rome-chauffeur-service', it: '/it/servizio-chauffeur-roma', 'x-default': '/rome-chauffeur-service' } },
 }

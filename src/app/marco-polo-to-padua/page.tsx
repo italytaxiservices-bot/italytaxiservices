@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Marco Polo to Padua Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Marco Polo to Padua Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Venice Marco Polo Airport to Padua. From €80. Professional chauffeur, fixed price, meet & greet. Book today.',
   alternates: { canonical: '/marco-polo-to-padua' },
 }

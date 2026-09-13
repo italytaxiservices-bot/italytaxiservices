@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Clock } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Taxi Services',
+  title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello',
   description: 'Private NCC transfer to the Amalfi Coast. Positano, Amalfi, Ravello, Praiano. From Rome, Naples, Sorrento. Expert drivers on the SS163. Book today.',
   alternates: { canonical: '/attraction-transfer/amalfi-coast' },
 }

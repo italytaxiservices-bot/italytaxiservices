@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa | Italy Taxi Services',
+  title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa',
   description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-malpensa',

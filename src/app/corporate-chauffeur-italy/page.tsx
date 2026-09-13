@@ -4,7 +4,7 @@ import { ArrowRight, Briefcase, Shield, Clock, Star, Users, CreditCard } from 'l
 
 
 export const metadata: Metadata = {
-  title: 'Corporate Chauffeur Italy | Business Travel & NCC Service | Italy Taxi Services',
+  title: 'Corporate Chauffeur Italy | Business Travel & NCC Service',
   description: 'Corporate NCC chauffeur service across Italy. Business travel, roadshows, executive transfers, trade fair logistics. Fixed prices, invoiced billing. Book today.',
   alternates: { canonical: '/corporate-chauffeur-italy' },
 }

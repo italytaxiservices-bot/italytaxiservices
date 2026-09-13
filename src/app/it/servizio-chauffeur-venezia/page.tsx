@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato Venezia | NCC Venezia | Italy Taxi Services',
+  title: 'Servizio Chauffeur Privato Venezia | NCC Venezia',
   description: 'Chauffeur privato NCC a Venezia. Transfer Marco Polo VCE, Treviso. Terminal crociere, Verona, Padova, Bologna. Prezzi fissi. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-venezia',

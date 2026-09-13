@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Clock } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Vatican Museums Transfer | Private Chauffeur to Vatican Rome | Italy Taxi Services',
+  title: 'Vatican Museums Transfer | Private Chauffeur to Vatican Rome',
   description: 'Private NCC transfer to the Vatican Museums, Sistine Chapel & St Peter\'s Basilica in Rome. From Fiumicino, hotels, cruise ships. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/vatican-museums' },
 }

@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Fiumicino to Tivoli Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Fiumicino to Tivoli Transfer | Private Chauffeur',
   description: "Private NCC transfer from Fiumicino Airport to Tivoli. From €120. Villa d'Este, Hadrian's Villa. Professional chauffeur. Book today.",
   alternates: { canonical: '/fiumicino-to-tivoli' },
 }

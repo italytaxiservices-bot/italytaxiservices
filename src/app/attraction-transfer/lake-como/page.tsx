@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Clock } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna | Italy Taxi Services',
+  title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna',
   description: 'Private NCC transfer to Lake Como. Como, Bellagio, Varenna, Menaggio, Cernobbio from Malpensa, Linate, Milan. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/lake-como' },
 }

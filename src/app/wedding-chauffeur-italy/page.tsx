@@ -4,7 +4,7 @@ import { ArrowRight, Heart, Star, Shield, Car } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers | Italy Taxi Services',
+  title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers',
   description: 'Luxury NCC wedding chauffeur service across Italy. Bridal car, guest transfers, Tuscany weddings, Lake Como, Amalfi Coast. Fixed prices. Book today.',
   alternates: { canonical: '/wedding-chauffeur-italy' },
 }

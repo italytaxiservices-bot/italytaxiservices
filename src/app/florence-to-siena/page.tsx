@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Florence to Siena Transfer | Private Chauffeur Chianti | Italy Taxi Services',
+  title: 'Florence to Siena Transfer | Private Chauffeur Chianti',
   description: 'Private NCC transfer from Florence to Siena through the Chianti hills. From €105. Day trips available. Scenic Tuscan route. Book today.',
   alternates: { canonical: '/florence-to-siena' },
 }

@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Clock, Shield } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome | Italy Taxi Services',
+  title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome',
   description: 'Private NCC transfer to the Colosseum in Rome. From Fiumicino, Ciampino, hotels, and cruise ships. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/colosseum' },
 }

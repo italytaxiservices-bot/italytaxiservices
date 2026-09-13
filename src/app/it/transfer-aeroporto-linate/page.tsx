@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano | Italy Taxi Services',
+  title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano',
   description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-linate',

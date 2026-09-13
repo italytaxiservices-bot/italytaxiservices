@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Treviso Airport Transfer | Private Chauffeur TSF | Italy Taxi Services',
+  title: 'Treviso Airport Transfer | Private Chauffeur TSF',
   description: 'Private NCC transfer from Treviso Antonio Canova Airport (TSF). Venice €70, Treviso city €25, Padova €65, Verona €120. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/treviso-airport-transfer' },
 }

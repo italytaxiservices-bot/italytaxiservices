@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Malpensa Lago di Como | NCC Como | Italy Taxi Services',
+  title: 'Transfer Privato Malpensa Lago di Como | NCC Como',
   description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-lago-como',

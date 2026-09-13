@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato Roma | NCC Roma | Italy Taxi Services',
+  title: 'Servizio Chauffeur Privato Roma | NCC Roma',
   description: 'Chauffeur privato NCC a Roma. Transfer Fiumicino FCO, Ciampino CIA, Civitavecchia, Costiera Amalfitana. Prezzi fissi, meet & greet. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-roma',

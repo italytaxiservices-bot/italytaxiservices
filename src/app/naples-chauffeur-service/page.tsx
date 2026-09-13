@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Private Chauffeur Service Naples | NCC Naples & Amalfi | Italy Taxi Services',
+  title: 'Private Chauffeur Service Naples | NCC Naples & Amalfi',
   description: 'Private chauffeur NCC service in Naples. Capodichino airport transfers, Amalfi Coast, Positano, Sorrento, Pompeii. Fixed prices, 24/7. Book today.',
   alternates: { canonical: '/naples-chauffeur-service' },
 }

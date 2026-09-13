@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Malpensa Milano | NCC MXP Milano | Italy Taxi Services',
+  title: 'Transfer Privato Malpensa Milano | NCC MXP Milano',
   description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €85. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-milano',

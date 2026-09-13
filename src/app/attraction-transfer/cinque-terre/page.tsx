@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Clock } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre | Italy Taxi Services',
+  title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre',
   description: 'Private NCC transfer to Cinque Terre. La Spezia, Riomaggiore, Vernazza. From Genoa, Pisa airport, Florence. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/cinque-terre' },
 }

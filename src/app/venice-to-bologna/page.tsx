@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Venice to Bologna Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Venice to Bologna Transfer | Private Chauffeur',
   description: 'Private chauffeur transfer from Venice to Bologna. From €220. Direct NCC service via the A13. Door-to-door comfort. Book today.',
   alternates: { canonical: '/venice-to-bologna' },
 }

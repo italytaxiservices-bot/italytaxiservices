@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle | Italy Taxi Services',
+  title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle',
   description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
   alternates: { canonical: '/turin-airport-transfer' },
 }

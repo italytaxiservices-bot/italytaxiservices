@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome | Italy Taxi Services',
+  title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome',
   description: 'Private NCC transfer from Rome Ciampino Airport (CIA). Rome city centre from €55. Fixed prices, meet & greet, flight monitoring. Book today.',
   alternates: { canonical: '/ciampino-airport-transfer' },
 }

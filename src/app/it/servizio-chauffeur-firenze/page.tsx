@@ -3,7 +3,7 @@ import CityPageTemplate from '@/components/templates/CityPageTemplate'
 import { cities } from '@/data/cities'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato Firenze | NCC Firenze | Italy Taxi Services',
+  title: 'Servizio Chauffeur Privato Firenze | NCC Firenze',
   description: 'Chauffeur privato NCC a Firenze. Transfer Peretola FLR, Pisa PSA. Tour Toscana, Siena, Chianti, Pisa, Roma. Prezzi fissi. Prenota ora.',
   alternates: {
     canonical: '/it/servizio-chauffeur-firenze',

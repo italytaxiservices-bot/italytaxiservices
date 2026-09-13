@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Marco Polo to Treviso Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Marco Polo to Treviso Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Venice Marco Polo Airport to Treviso. From €65. Fast, direct service. Fixed price. Book today.',
   alternates: { canonical: '/marco-polo-to-treviso' },
 }

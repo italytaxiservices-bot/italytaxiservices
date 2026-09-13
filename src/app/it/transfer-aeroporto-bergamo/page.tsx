@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Aeroporto Bergamo BGY | NCC Orio al Serio | Italy Taxi Services',
+  title: 'Transfer Privato Aeroporto Bergamo BGY | NCC Orio al Serio',
   description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €90, Lago di Como €140, Brescia €80. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-bergamo',

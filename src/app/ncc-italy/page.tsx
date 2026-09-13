@@ -4,7 +4,7 @@ import { ArrowRight, Shield, CheckCircle, FileText, Car } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy | Italy Taxi Services',
+  title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy',
   description: 'NCC (Noleggio con Conducente) explained. Italy\'s legal private hire vehicle service — licensed, fixed prices, pre-booked. Not a taxi. Find out why NCC is the right choice.',
   alternates: { canonical: '/ncc-italy' },
 }

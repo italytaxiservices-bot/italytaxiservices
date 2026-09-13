@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Venice Cruise Port Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Venice Cruise Port Transfer | Private Chauffeur',
   description: 'Private transfer from Venice Marco Polo Airport to the Venice cruise terminal. From €65. Direct NCC service for cruise passengers. Book today.',
   alternates: { canonical: '/venice-cruise-transfer' },
 }

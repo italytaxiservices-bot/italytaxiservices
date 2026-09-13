@@ -3,7 +3,7 @@ import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
-  title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa | Italy Taxi Services',
+  title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa',
   description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/catania-airport-transfer' },
 }

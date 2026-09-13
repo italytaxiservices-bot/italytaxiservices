@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Malpensa to Bergamo Transfer | Private Chauffeur | Italy Taxi Services',
+  title: 'Malpensa to Bergamo Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Bergamo. From €95. Professional chauffeur, meet & greet, fixed price. Book today.',
   alternates: { canonical: '/malpensa-to-bergamo' },
 }

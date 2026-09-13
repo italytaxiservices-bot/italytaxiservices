@@ -3,7 +3,7 @@ import RoutePageTemplate from '@/components/templates/RoutePageTemplate'
 import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
-  title: 'Transfer Privato Fiumicino Civitavecchia | Porto Crociere | Italy Taxi Services',
+  title: 'Transfer Privato Fiumicino Civitavecchia | Porto Crociere',
   description: 'Transfer privato NCC da Fiumicino FCO al porto crociere di Civitavecchia. Da €110. Ideale per imbarco e sbarco crociere. Prenota ora.',
   alternates: {
     canonical: '/it/fiumicino-civitavecchia',
