@@ -66,10 +66,10 @@ export default function WhyUs() {
         {/* Stats strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 mt-24 pt-10" style={{ borderTop: '1px solid rgba(201,168,76,0.1)' }}>
           {[
-            { v: '10,000+', l: 'Transfers Completed' },
-            { v: '4.9 / 5', l: 'Average Rating' },
-            { v: '50+',     l: 'NCC Partners' },
-            { v: '8 yrs',   l: 'In Operation' },
+            { v: 'Fixed',   l: 'Prices, Always' },
+            { v: 'Licensed', l: 'NCC Operators' },
+            { v: 'English', l: 'Speaking Drivers' },
+            { v: '24 / 7',  l: 'Availability' },
           ].map(({ v, l }, i) => (
             <div key={l} className="text-center py-8" style={{ borderRight: i < 3 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
               <p className="font-black text-3xl mb-1" style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}>{v}</p>

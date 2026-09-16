@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import QuoteForm from './QuoteForm'
+import { airports } from '@/data/airports'
+import { destinations } from '@/lib/data/destinations'
 
+// Counts are derived from the actual data models rather than hardcoded, so
+// this strip never overstates coverage as the site grows (or shrinks).
+// Deliberately no "X,000+ transfers" or star-rating stat here — those
+// aren't figures we can currently substantiate.
 const stats = [
-  { value: '10,000+', label: 'Transfers' },
-  { value: '4.9 / 5', label: 'Rating' },
-  { value: '30+', label: 'Airports' },
+  { value: `${destinations.length}+`, label: 'Destinations' },
+  { value: 'English', label: 'Speaking Drivers' },
+  { value: `${airports.length}+`, label: 'Airports' },
   { value: '24 / 7', label: 'Support' },
 ]
 

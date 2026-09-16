@@ -28,7 +28,7 @@ export default function AirportTransfers() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-xl">
             <p className="text-xs tracking-[0.25em] uppercase font-medium mb-4" style={{ color: '#C9A84C' }}>
-              — 30+ Airports Covered
+              — {airports.length}+ Airports Covered
             </p>
             <h2
               className="text-4xl sm:text-5xl font-black text-gray-900 leading-[1.1]"
