@@ -11,76 +11,75 @@ const EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@italytaxiservices.c
 const navLinks = [
   {
     label: 'Services',
+    href: '/services',
     children: [
-      { label: 'Airport Transfers',   href: '/airport-transfers' },
-      { label: 'Chauffeur Service',   href: '/chauffeur-service-italy' },
-      { label: 'Corporate Travel',    href: '/corporate-chauffeur-italy' },
-      { label: 'Cruise Transfers',    href: '/cruise-transfers' },
-      { label: 'Wedding Cars',        href: '/wedding-chauffeur-italy' },
-      { label: 'Hourly Hire',         href: '/hourly-chauffeur-italy' },
-      { label: 'Luxury Transfers',    href: '/luxury-chauffeur-italy' },
-      { label: 'City-to-City Transfers', href: '/city-to-city-transfers' },
-      { label: 'Private Tours',       href: '/italy-private-tours' },
-      { label: 'Event Transportation', href: '/event-transportation' },
-      { label: 'International Transfers', href: '/international-border-crossing-transfers' },
+      { label: 'Airport Transfers',      href: '/airport-transfers' },
+      { label: 'City-to-City',           href: '/city-to-city-transfers' },
+      { label: 'Hotel Transfers',        href: '/hotel-transfers' },
+      { label: 'Cruise Ports',           href: '/cruise-transfers' },
+      { label: 'Corporate & Business',   href: '/corporate-chauffeur-italy' },
+      { label: 'Wedding Cars',           href: '/wedding-chauffeur-italy' },
+      { label: 'Beach Transfers',        href: '/beach-transfers' },
+      { label: 'Hourly Hire',            href: '/hourly-chauffeur-italy' },
+      { label: 'Private Tours',          href: '/italy-private-tours' },
+      { label: 'Border Crossings',       href: '/international-border-crossing-transfers' },
     ],
   },
   {
     label: 'Airports',
+    href: '/airport-transfers',
     children: [
-      { label: 'Malpensa (MXP)',      href: '/malpensa-airport-transfer' },
-      { label: 'Fiumicino (FCO)',     href: '/fiumicino-airport-transfer' },
-      { label: 'Marco Polo (VCE)',    href: '/marco-polo-airport-transfer' },
-      { label: 'Linate (LIN)',        href: '/linate-airport-transfer' },
-      { label: 'Ciampino (CIA)',      href: '/ciampino-airport-transfer' },
-      { label: 'Florence (FLR)',      href: '/florence-airport-transfer' },
-      { label: 'Pisa (PSA)',          href: '/pisa-airport-transfer' },
-      { label: 'Naples (NAP)',        href: '/naples-airport-transfer' },
+      { label: 'Malpensa (MXP)',   href: '/malpensa-airport-transfer' },
+      { label: 'Fiumicino (FCO)',  href: '/fiumicino-airport-transfer' },
+      { label: 'Marco Polo (VCE)', href: '/marco-polo-airport-transfer' },
+      { label: 'Linate (LIN)',     href: '/linate-airport-transfer' },
+      { label: 'Ciampino (CIA)',   href: '/ciampino-airport-transfer' },
+      { label: 'Florence (FLR)',   href: '/florence-airport-transfer' },
+      { label: 'Naples (NAP)',     href: '/naples-airport-transfer' },
+      { label: 'Pisa (PSA)',       href: '/pisa-airport-transfer' },
     ],
   },
   {
     label: 'Destinations',
     href: '/destinations',
-  },
-  {
-    label: 'Cities',
     children: [
-      { label: 'Milan',     href: '/milan-chauffeur-service' },
-      { label: 'Rome',      href: '/rome-chauffeur-service' },
-      { label: 'Venice',    href: '/venice-chauffeur-service' },
-      { label: 'Florence',  href: '/florence-chauffeur-service' },
-      { label: 'Naples',    href: '/naples-chauffeur-service' },
-      { label: 'Bologna',   href: '/bologna-chauffeur-service' },
+      { label: 'Milan',        href: '/milan-chauffeur-service' },
+      { label: 'Rome',         href: '/rome-chauffeur-service' },
+      { label: 'Venice',       href: '/venice-chauffeur-service' },
+      { label: 'Florence',     href: '/florence-chauffeur-service' },
+      { label: 'Naples',       href: '/naples-chauffeur-service' },
+      { label: 'Amalfi Coast', href: '/destinations/amalfi-coast' },
+      { label: 'Lake Como',    href: '/destinations/lake-como' },
+      { label: 'Tuscany',      href: '/destinations/tuscany' },
+      { label: 'All Destinations', href: '/destinations' },
     ],
   },
   {
     label: 'Routes',
+    href: '/routes',
     children: [
-      { label: 'Malpensa → Milan',           href: '/malpensa-to-milan' },
-      { label: 'Malpensa → Lake Como',       href: '/malpensa-to-lake-como' },
-      { label: 'Fiumicino → Rome',           href: '/fiumicino-to-rome' },
-      { label: 'Fiumicino → Civitavecchia', href: '/fiumicino-to-civitavecchia' },
-      { label: 'Rome → Amalfi Coast',        href: '/rome-to-amalfi-coast' },
-      { label: 'Milan → Venice',             href: '/milan-to-venice' },
-      { label: 'Florence → Pisa',            href: '/florence-to-pisa' },
-      { label: 'Florence → Siena',           href: '/florence-to-siena' },
-      { label: 'All Routes',                 href: '/routes' },
+      { label: 'Malpensa → Milan',      href: '/malpensa-to-milan' },
+      { label: 'Malpensa → Lake Como',  href: '/malpensa-to-lake-como' },
+      { label: 'Fiumicino → Rome',      href: '/fiumicino-to-rome' },
+      { label: 'Rome → Amalfi Coast',   href: '/rome-to-amalfi-coast' },
+      { label: 'Rome → Florence',       href: '/rome-to-florence' },
+      { label: 'Milan → Venice',        href: '/milan-to-venice' },
+      { label: 'Florence → Pisa',       href: '/florence-to-pisa' },
+      { label: 'All Routes',            href: '/routes' },
     ],
   },
+  { label: 'Fleet',  href: '/fleet' },
+  { label: 'Blog',   href: '/blog' },
   {
-    label: 'Tours',
+    label: 'About',
+    href: '/about',
     children: [
-      { label: 'Amalfi Coast',    href: '/attraction-transfer/amalfi-coast' },
-      { label: 'Lake Como',       href: '/attraction-transfer/lake-como' },
-      { label: 'Colosseum',       href: '/attraction-transfer/colosseum' },
-      { label: 'Vatican Museums', href: '/attraction-transfer/vatican-museums' },
-      { label: 'Pompeii',         href: '/attraction-transfer/pompeii' },
-      { label: 'Cinque Terre',    href: '/attraction-transfer/cinque-terre' },
+      { label: 'About Us',    href: '/about' },
+      { label: 'Our Drivers', href: '/our-drivers' },
+      { label: 'Contact',     href: '/contact' },
+      { label: 'FAQ',         href: '/faq' },
     ],
   },
-  { label: 'Fleet',       href: '/fleet' },
-  { label: 'Blog',        href: '/blog' },
-  { label: 'Our Drivers', href: '/our-drivers' },
 ]
 
 export default function Header() {
@@ -172,15 +171,28 @@ export default function Header() {
               >
                 {'children' in link ? (
                   <>
-                    <button
-                      className="flex items-center gap-1 px-3.5 py-2 text-xs font-medium tracking-wide uppercase transition-colors rounded"
-                      style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.08em' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = '#C9A84C')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
-                    >
-                      {link.label}
-                      <ChevronDown className="w-3 h-3 opacity-60" />
-                    </button>
+                    {'href' in link ? (
+                      <Link
+                        href={(link as { href: string }).href}
+                        className="flex items-center gap-1 px-3.5 py-2 text-xs font-medium tracking-wide uppercase transition-colors rounded"
+                        style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.08em' }}
+                        onMouseEnter={e => (e.currentTarget.style.color = '#C9A84C')}
+                        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                      >
+                        {link.label}
+                        <ChevronDown className="w-3 h-3 opacity-60" />
+                      </Link>
+                    ) : (
+                      <button
+                        className="flex items-center gap-1 px-3.5 py-2 text-xs font-medium tracking-wide uppercase transition-colors rounded"
+                        style={{ color: 'rgba(255,255,255,0.6)', letterSpacing: '0.08em' }}
+                        onMouseEnter={e => (e.currentTarget.style.color = '#C9A84C')}
+                        onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                      >
+                        {(link as { label: string }).label}
+                        <ChevronDown className="w-3 h-3 opacity-60" />
+                      </button>
+                    )}
                     {activeDropdown === link.label && (
                       <div
                         className="absolute top-full left-0 mt-1 w-56 py-2 z-50 rounded-sm"
