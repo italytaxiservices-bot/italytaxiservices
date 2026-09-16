@@ -7,7 +7,7 @@ import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions | Italy Taxi Services',
+  title: 'Frequently Asked Questions',
   description:
     'Answers to common questions about booking a private chauffeur in Italy — pricing, airport pickups, luggage, vehicles, cross-border travel and more.',
   alternates: { canonical: '/faq' },

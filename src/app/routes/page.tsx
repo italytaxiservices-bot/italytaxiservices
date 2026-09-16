@@ -7,7 +7,7 @@ import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'Private Transfer Routes Across Italy | Italy Taxi Services',
+  title: 'Private Transfer Routes Across Italy',
   description:
     'Direct, door-to-door private chauffeur routes between Italian cities, plus international transfers to Switzerland, France, Austria and Slovenia. Fixed prices.',
   alternates: { canonical: '/routes' },
