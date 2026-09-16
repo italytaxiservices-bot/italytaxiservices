@@ -10,62 +10,39 @@ import Reviews from '@/components/home/Reviews'
 import FAQ from '@/components/home/FAQ'
 import FinalCTA from '@/components/home/FinalCTA'
 import SEOContent from '@/components/home/SEOContent'
+import { JsonLd, localBusinessSchema, webSiteSchema, taxiServiceSchema } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
-  description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+  title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
+  description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
   alternates: { canonical: '/', languages: { en: '/', it: '/it', 'x-default': '/' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/',
-    title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
-    description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+    title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
+    description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
-    description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+    title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
+    description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
     images: ['/logo.webp'],
   },
-}
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Italy Taxi Services',
-  description: 'Professional private chauffeur and NCC transfer service across Italy',
-  url: 'https://www.italytaxiservices.com',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer service',
-    availableLanguage: ['English', 'Italian'],
-  },
-  areaServed: { '@type': 'Country', name: 'Italy' },
-}
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Private Chauffeur & NCC Transfer Service Italy',
-  provider: { '@type': 'Organization', name: 'Italy Taxi Services' },
-  description: 'Licensed NCC private chauffeur transfers across Italy including airport transfers, long-distance routes, and luxury chauffeur service.',
-  areaServed: { '@type': 'Country', name: 'Italy' },
-  serviceType: 'Private Chauffeur Transfer',
 }
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+      <JsonLd data={localBusinessSchema()} />
+      <JsonLd data={webSiteSchema()} />
+      <JsonLd data={taxiServiceSchema({
+        name: 'Private NCC Transfer Service Italy',
+        description: 'Licensed NCC private chauffeur transfers across Italy. Airport transfers, city-to-city, Amalfi Coast, Lake Como, cruise ports. Fixed prices, meet & greet, 24/7.',
+        url: '/',
+        priceFrom: 45,
+      })} />
       <Hero />
       <AirportTransfers />
       <PopularRoutes />

@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Linate Airport Transfer | Private Chauffeur LIN Milan',
-  description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
+  description: 'Rated 4.9★ · Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
   alternates: { canonical: '/linate-airport-transfer', languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/linate-airport-transfer',
     title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
-    description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
+    description: 'Rated 4.9★ · Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
-    description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
+    description: 'Rated 4.9★ · Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
     images: ['/logo.webp'],
   },
 }

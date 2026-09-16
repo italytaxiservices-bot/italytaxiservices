@@ -1,23 +1,25 @@
 import type { Metadata } from 'next'
 import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportBySlug } from '@/data/airports'
+import { JsonLd, taxiServiceSchema, breadcrumbSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE',
-  description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
+  description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
   alternates: { canonical: '/marco-polo-airport-transfer', languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia', 'x-default': '/marco-polo-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/marco-polo-airport-transfer',
     title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
-    description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
+    description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
-    description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
+    description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
     images: ['/logo.webp'],
   },
 }

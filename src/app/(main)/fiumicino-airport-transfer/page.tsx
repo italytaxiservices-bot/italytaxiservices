@@ -1,23 +1,25 @@
 import type { Metadata } from 'next'
 import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportBySlug } from '@/data/airports'
+import { JsonLd, taxiServiceSchema, breadcrumbSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Fiumicino Airport Transfer | Private Chauffeur FCO',
-  description: 'Private chauffeur transfers from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring. Rome city, Vatican, Civitavecchia cruise port. Fixed prices.',
+  description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
   alternates: { canonical: '/fiumicino-airport-transfer', languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/fiumicino-airport-transfer',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Private chauffeur transfers from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring. Rome city, Vatican, Civitavecchia cruise port. Fixed prices.',
+    description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Private chauffeur transfers from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring. Rome city, Vatican, Civitavecchia cruise port. Fixed prices.',
+    description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
 }
@@ -26,7 +28,10 @@ const airport = getAirportBySlug('fiumicino')!
 
 export default function FiumicinoTransferPage() {
   return (
-    <AirportPageTemplate
+    <>
+      <JsonLd data={taxiServiceSchema({ name: 'Rome Fiumicino Airport Transfer', description: 'Private NCC transfer from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring, door-to-door to Rome city, Vatican, Civitavecchia.', url: '/fiumicino-airport-transfer', priceFrom: 65 })} />
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', url: siteConfig.domain }, { name: 'Airport Transfers', url: `${siteConfig.domain}/airport-transfers` }, { name: 'Fiumicino Airport Transfer', url: `${siteConfig.domain}/fiumicino-airport-transfer` }])} />
+      <AirportPageTemplate
       airport={airport}
       popularDestinations={[
         { name: 'Rome City Centre', href: '/fiumicino-to-rome', time: '40–60 min', priceFrom: 65 },
@@ -49,5 +54,6 @@ Rome's traffic can be unpredictable, particularly on major ring roads. Our profe
         'NCC (pre-booked private chauffeur) is distinct from and must not be confused with Rome taxis. NCC services must be pre-booked and do not operate as street taxis.',
       ]}
     />
+    </>
   )
 }

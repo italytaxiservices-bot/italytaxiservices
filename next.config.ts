@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://analytics.ahrefs.com;
+  script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.clarity.ms https://analytics.ahrefs.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https://images.unsplash.com https://*.clarity.ms;
   font-src 'self' data:;

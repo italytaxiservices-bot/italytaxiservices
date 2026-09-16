@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geist.variable} ${playfair.variable} h-full`}>
-      <body className={`${playfair.variable} min-h-full flex flex-col`}>
+      <body className={`${playfair.variable} min-h-full flex flex-col`} suppressHydrationWarning>
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

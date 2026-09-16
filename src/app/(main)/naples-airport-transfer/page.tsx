@@ -1,23 +1,25 @@
 import type { Metadata } from 'next'
 import AirportPageTemplate from '@/components/templates/AirportPageTemplate'
 import { getAirportByCode } from '@/data/airports'
+import { JsonLd, taxiServiceSchema, breadcrumbSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Naples Airport Transfer | Private Chauffeur NAP',
-  description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
+  description: 'Rated 4.9★ · Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
   alternates: { canonical: '/naples-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/naples-airport-transfer',
     title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
-    description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
+    description: 'Rated 4.9★ · Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
-    description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
+    description: 'Rated 4.9★ · Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
     images: ['/logo.webp'],
   },
 }
