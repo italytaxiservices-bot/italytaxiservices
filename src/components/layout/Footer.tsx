@@ -37,6 +37,15 @@ const cols = {
     { name: 'Rome → Amalfi Coast',       href: '/rome-to-amalfi-coast' },
     { name: 'Milan → Venice',            href: '/milan-to-venice' },
     { name: 'Florence → Pisa',           href: '/florence-to-pisa' },
+    { name: 'All Routes',                href: '/routes' },
+  ],
+  Destinations: [
+    { name: 'Lake Como',       href: '/destinations/lake-como' },
+    { name: 'Tuscany',         href: '/destinations/tuscany' },
+    { name: 'Amalfi Coast',    href: '/destinations/amalfi-coast' },
+    { name: 'Sicily',          href: '/destinations/sicily' },
+    { name: 'Cinque Terre',    href: '/destinations/cinque-terre' },
+    { name: 'All Destinations', href: '/destinations' },
   ],
 }
 
@@ -125,6 +134,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             {[
               { name: 'About',          href: '/about' },
+              { name: 'FAQ',            href: '/faq' },
               { name: 'Contact',        href: '/contact' },
               { name: 'Privacy Policy', href: '/privacy-policy' },
               { name: 'Terms',          href: '/terms' },

@@ -1,6 +1,9 @@
 import type { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
+import { destinations } from '@/lib/data/destinations'
+import { fleet } from '@/lib/data/fleet'
+import { newRoutes } from '@/lib/data/routesIndex'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.italytaxiservices.com'
 
@@ -32,7 +35,17 @@ function getRoutes(dir: string, base = ''): string[] {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), 'src/app')
-  const routes = ['/', ...getRoutes(appDir)]
+  const staticRoutes = ['/', ...getRoutes(appDir)]
+
+  // generateStaticParams-driven routes ([slug] segments) aren't picked up by
+  // the directory walk above, so their real slugs are listed explicitly.
+  const dynamicRoutes = [
+    ...destinations.map((d) => `/destinations/${d.slug}`),
+    ...fleet.map((f) => `/fleet/${f.slug}`),
+    ...newRoutes.map((r) => `/routes/${r.slug}`),
+  ]
+
+  const routes = [...staticRoutes, ...dynamicRoutes]
 
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,

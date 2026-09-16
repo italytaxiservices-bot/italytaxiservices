@@ -19,6 +19,10 @@ const navLinks = [
       { label: 'Wedding Cars',        href: '/wedding-chauffeur-italy' },
       { label: 'Hourly Hire',         href: '/hourly-chauffeur-italy' },
       { label: 'Luxury Transfers',    href: '/luxury-chauffeur-italy' },
+      { label: 'City-to-City Transfers', href: '/city-to-city-transfers' },
+      { label: 'Private Tours',       href: '/italy-private-tours' },
+      { label: 'Event Transportation', href: '/event-transportation' },
+      { label: 'International Transfers', href: '/international-border-crossing-transfers' },
     ],
   },
   {
@@ -33,6 +37,10 @@ const navLinks = [
       { label: 'Pisa (PSA)',          href: '/pisa-airport-transfer' },
       { label: 'Naples (NAP)',        href: '/naples-airport-transfer' },
     ],
+  },
+  {
+    label: 'Destinations',
+    href: '/destinations',
   },
   {
     label: 'Cities',
@@ -56,6 +64,7 @@ const navLinks = [
       { label: 'Milan → Venice',             href: '/milan-to-venice' },
       { label: 'Florence → Pisa',            href: '/florence-to-pisa' },
       { label: 'Florence → Siena',           href: '/florence-to-siena' },
+      { label: 'All Routes',                 href: '/routes' },
     ],
   },
   {

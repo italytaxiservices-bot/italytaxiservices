@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Hero from '@/components/home/Hero'
 import AirportTransfers from '@/components/home/AirportTransfers'
 import PopularRoutes from '@/components/home/PopularRoutes'
+import DestinationsSection from '@/components/home/DestinationsSection'
 import HowItWorks from '@/components/home/HowItWorks'
 import FleetSection from '@/components/home/FleetSection'
 import WhyUs from '@/components/home/WhyUs'
@@ -54,6 +55,7 @@ export default function HomePage() {
       <Hero />
       <AirportTransfers />
       <PopularRoutes />
+      <DestinationsSection />
       <HowItWorks />
       <FleetSection />
       <WhyUs />

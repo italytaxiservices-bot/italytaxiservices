@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { ArrowRight, Users, Briefcase, Star, Shield } from 'lucide-react'
 import { vehicles } from '@/data/fleet'
+import { fleet as fleetCategories } from '@/lib/data/fleet'
 
 export const metadata: Metadata = {
   title: 'Our Fleet — Luxury & Business Vehicles',
@@ -159,6 +160,27 @@ export default function FleetPage() {
                 <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Category detail pages */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Compare Vehicle Categories</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl">
+            A closer look at capacity, luggage space and who each category suits best.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {fleetCategories.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/fleet/${c.slug}`}
+                className="px-5 py-2.5 bg-gray-50 border border-gray-100 rounded-full text-sm font-medium text-gray-700 hover:border-gold/40 hover:text-gray-900 transition-colors"
+              >
+                {c.name}
+              </Link>
             ))}
           </div>
         </div>
