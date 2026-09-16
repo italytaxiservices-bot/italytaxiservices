@@ -148,15 +148,14 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="flex items-center gap-2">
+            <span className="flex flex-col gap-0.5">
               <span
                 className="font-black text-white leading-none group-hover:text-gold transition-colors duration-300 whitespace-nowrap"
                 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif), Georgia, serif', letterSpacing: '-0.01em' }}
               >
                 Italy Taxi Services
               </span>
-              <span className="hidden sm:block w-px h-4 shrink-0" style={{ background: 'rgba(201,168,76,0.4)' }} />
-              <span className="hidden sm:block whitespace-nowrap" style={{ fontSize: '0.56rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: '#C9A84C' }}>
+              <span className="whitespace-nowrap" style={{ fontSize: '0.56rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: '#C9A84C' }}>
                 Private NCC Transfers
               </span>
             </span>
