@@ -197,6 +197,7 @@ export default function Footer() {
               { name: 'Contact',        href: '/contact' },
               { name: 'Privacy Policy', href: '/privacy-policy' },
               { name: 'Terms',          href: '/terms' },
+              { name: 'Refund Policy',  href: '/refund-policy' },
               { name: 'About NCC',      href: '/ncc-italy' },
             ].map(({ name, href }) => (
               <Link key={name} href={href} className="text-[11px] transition-colors hover:text-amber-400" style={{ color: 'rgba(255,255,255,0.55)' }}>
