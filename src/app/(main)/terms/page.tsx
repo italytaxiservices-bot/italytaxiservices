@@ -2,20 +2,20 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+  description: 'Booking terms for Italy Taxi Services: our NCC intermediary model, fixed pricing, cancellation policy, flight delay handling, and traveller responsibilities.',
   alternates: { canonical: '/terms' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/terms',
     title: 'Terms & Conditions | Italy Taxi Services',
-    description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+    description: 'Booking terms for Italy Taxi Services: our NCC intermediary model, fixed pricing, cancellation policy, flight delay handling, and traveller responsibilities.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms & Conditions | Italy Taxi Services',
-    description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+    description: 'Booking terms for Italy Taxi Services: our NCC intermediary model, fixed pricing, cancellation policy, flight delay handling, and traveller responsibilities.',
     images: ['/logo.webp'],
   },
 }
