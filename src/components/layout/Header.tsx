@@ -78,7 +78,9 @@ const navLinks = [
       { label: 'Cinque Terre',    href: '/attraction-transfer/cinque-terre' },
     ],
   },
-  { label: 'Fleet', href: '/fleet' },
+  { label: 'Fleet',       href: '/fleet' },
+  { label: 'Blog',        href: '/blog' },
+  { label: 'Our Drivers', href: '/our-drivers' },
 ]
 
 export default function Header() {
@@ -135,24 +137,29 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-2 leading-none">
-            <Image
-              src="/logo.webp"
-              alt="Italy Taxi Services"
-              width={48}
-              height={48}
-              className="h-11 w-11 shrink-0 transition-transform group-hover:scale-105"
-              priority
-            />
-            <span className="flex flex-col">
+          <Link href="/" className="group flex items-center gap-3 leading-none">
+            <div className="relative shrink-0">
+              <Image
+                src="/logo.webp"
+                alt="Italy Taxi Services"
+                width={44}
+                height={44}
+                className="h-10 w-10 transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
+            </div>
+            <span className="flex flex-col gap-0.5">
               <span
-                className="font-black text-white tracking-tight group-hover:text-amber-300 transition-colors"
-                style={{ fontSize: '1.15rem', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}
+                className="font-black text-white leading-none group-hover:text-gold transition-colors duration-300"
+                style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif), Georgia, serif', letterSpacing: '-0.01em' }}
               >
                 Italy Taxi Services
               </span>
-              <span className="section-label" style={{ fontSize: '0.58rem', letterSpacing: '0.22em' }}>
-                Private NCC Transfers
+              <span className="flex items-center gap-1.5">
+                <span className="w-3 h-[1px]" style={{ background: '#C9A84C' }} />
+                <span style={{ fontSize: '0.56rem', letterSpacing: '0.28em', textTransform: 'uppercase', fontWeight: 600, color: '#C9A84C' }}>
+                  Private NCC Transfers
+                </span>
               </span>
             </span>
           </Link>
