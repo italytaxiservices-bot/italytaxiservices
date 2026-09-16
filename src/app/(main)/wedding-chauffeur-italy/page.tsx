@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers',
   description: 'Luxury NCC wedding chauffeur service across Italy. Bridal car, guest transfers, Tuscany weddings, Lake Como, Amalfi Coast. Fixed prices. Book today.',
   alternates: { canonical: '/wedding-chauffeur-italy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/wedding-chauffeur-italy',
+    title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers | Italy Taxi Services',
+    description: 'Luxury NCC wedding chauffeur service across Italy. Bridal car, guest transfers, Tuscany weddings, Lake Como, Amalfi Coast. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wedding Chauffeur Italy | Luxury Wedding Cars & Transfers | Italy Taxi Services',
+    description: 'Luxury NCC wedding chauffeur service across Italy. Bridal car, guest transfers, Tuscany weddings, Lake Como, Amalfi Coast. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function WeddingPage() {

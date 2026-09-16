@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description:
     'Direct, door-to-door private chauffeur routes between Italian cities, plus international transfers to Switzerland, France, Austria and Slovenia. Fixed prices.',
   alternates: { canonical: '/routes' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/routes',
+    title: 'Private Transfer Routes Across Italy | Italy Taxi Services',
+    description: 'Direct, door-to-door private chauffeur routes between Italian cities, plus international transfers to Switzerland, France, Austria and Slovenia. Fixed prices.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Transfer Routes Across Italy | Italy Taxi Services',
+    description: 'Direct, door-to-door private chauffeur routes between Italian cities, plus international transfers to Switzerland, France, Austria and Slovenia. Fixed prices.',
+    images: ['/logo.webp'],
+  },
 }
 
 const HUB_GROUPS: { key: 'switzerland' | 'france' | 'austria' | 'slovenia'; label: string }[] = [

@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description:
     'Answers to common questions about booking a private chauffeur in Italy — pricing, airport pickups, luggage, vehicles, cross-border travel and more.',
   alternates: { canonical: '/faq' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/faq',
+    title: 'Frequently Asked Questions | Italy Taxi Services',
+    description: 'Answers to common questions about booking a private chauffeur in Italy — pricing, airport pickups, luggage, vehicles, cross-border travel and more.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Frequently Asked Questions | Italy Taxi Services',
+    description: 'Answers to common questions about booking a private chauffeur in Italy — pricing, airport pickups, luggage, vehicles, cross-border travel and more.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function FaqPage() {

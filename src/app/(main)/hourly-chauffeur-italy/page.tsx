@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Hourly Chauffeur Italy | Hire by the Hour',
   description: 'Hire a private NCC chauffeur by the hour in Italy. City tours, business meetings, shopping trips, half-day or full-day hire. Milan, Rome, Florence, Venice.',
   alternates: { canonical: '/hourly-chauffeur-italy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/hourly-chauffeur-italy',
+    title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Taxi Services',
+    description: 'Hire a private NCC chauffeur by the hour in Italy. City tours, business meetings, shopping trips, half-day or full-day hire. Milan, Rome, Florence, Venice.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hourly Chauffeur Italy | Hire by the Hour | Italy Taxi Services',
+    description: 'Hire a private NCC chauffeur by the hour in Italy. City tours, business meetings, shopping trips, half-day or full-day hire. Milan, Rome, Florence, Venice.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function HourlyPage() {

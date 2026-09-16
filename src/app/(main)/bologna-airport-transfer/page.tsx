@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi',
   description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/bologna-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/bologna-airport-transfer',
+    title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Taxi Services',
+    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Taxi Services',
+    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('BLQ')!

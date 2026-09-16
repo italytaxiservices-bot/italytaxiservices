@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy',
   description: 'NCC (Noleggio con Conducente) explained. Italy\'s legal private hire vehicle service — licensed, fixed prices, pre-booked. Not a taxi. Find out why NCC is the right choice.',
   alternates: { canonical: '/ncc-italy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/ncc-italy',
+    title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy | Italy Taxi Services',
+    description: 'NCC (Noleggio con Conducente) explained. Italy\'s legal private hire vehicle service — licensed, fixed prices, pre-booked. Not a taxi. Find out why NCC is the right choice.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NCC Italy — What is NCC? Licensed Private Hire in Italy | Italy Taxi Services',
+    description: 'NCC (Noleggio con Conducente) explained. Italy\'s legal private hire vehicle service — licensed, fixed prices, pre-booked. Not a taxi. Find out why NCC is the right choice.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function NccItalyPage() {

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla',
   description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
   alternates: { canonical: '/bari-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/bari-airport-transfer',
+    title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla | Italy Taxi Services',
+    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla | Italy Taxi Services',
+    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('BRI')!

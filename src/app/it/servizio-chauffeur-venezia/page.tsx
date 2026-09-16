@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/servizio-chauffeur-venezia',
     languages: { en: '/venice-chauffeur-service', it: '/it/servizio-chauffeur-venezia', 'x-default': '/venice-chauffeur-service' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/servizio-chauffeur-venezia',
+    title: 'Servizio Chauffeur Privato Venezia | NCC Venezia | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Venezia. Transfer Marco Polo VCE, Treviso. Terminal crociere, Verona, Padova, Bologna. Prezzi fissi. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servizio Chauffeur Privato Venezia | NCC Venezia | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Venezia. Transfer Marco Polo VCE, Treviso. Terminal crociere, Verona, Padova, Bologna. Prezzi fissi. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = cities.find(c => c.slug === 'venice')!

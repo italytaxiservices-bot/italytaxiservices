@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur',
   description: 'Private NCC transfer from Florence Peretola Airport (FLR). Florence city, Pisa, Siena, Tuscany tours. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/florence-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/florence-airport-transfer',
+    title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Florence Peretola Airport (FLR). Florence city, Pisa, Siena, Tuscany tours. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Florence Peretola Airport (FLR). Florence city, Pisa, Siena, Tuscany tours. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('FLR')!

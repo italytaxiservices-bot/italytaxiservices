@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/malpensa-lago-como',
     languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como', 'x-default': '/malpensa-to-lake-como' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/malpensa-lago-como',
+    title: 'Transfer Privato Malpensa Lago di Como | NCC Como | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Malpensa Lago di Como | NCC Como | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-lake-como')!

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Lake Como Transfer | Private Chauffeur',
   description: 'Private transfer from Malpensa Airport to Lake Como. From €130. Direct NCC chauffeur to Como, Bellagio, Varenna, Menaggio. Book today.',
   alternates: { canonical: '/malpensa-to-lake-como', languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como', 'x-default': '/malpensa-to-lake-como' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-lake-como',
+    title: 'Malpensa to Lake Como Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private transfer from Malpensa Airport to Lake Como. From €130. Direct NCC chauffeur to Como, Bellagio, Varenna, Menaggio. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Lake Como Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private transfer from Malpensa Airport to Lake Como. From €130. Direct NCC chauffeur to Como, Bellagio, Varenna, Menaggio. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-lake-como')!

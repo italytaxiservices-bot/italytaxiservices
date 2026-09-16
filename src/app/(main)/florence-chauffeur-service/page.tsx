@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Private Chauffeur Service Florence | NCC Florence',
   description: 'Professional private chauffeur and NCC service in Florence. Airport transfers, Tuscany tours, Siena, Pisa, Chianti. Fixed prices, licensed operators.',
   alternates: { canonical: '/florence-chauffeur-service', languages: { en: '/florence-chauffeur-service', it: '/it/servizio-chauffeur-firenze', 'x-default': '/florence-chauffeur-service' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/florence-chauffeur-service',
+    title: 'Private Chauffeur Service Florence | NCC Florence | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Florence. Airport transfers, Tuscany tours, Siena, Pisa, Chianti. Fixed prices, licensed operators.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Chauffeur Service Florence | NCC Florence | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Florence. Airport transfers, Tuscany tours, Siena, Pisa, Chianti. Fixed prices, licensed operators.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = getCityBySlug('florence')!

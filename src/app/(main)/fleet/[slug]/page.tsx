@@ -13,10 +13,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const category = getFleetBySlug(slug)
   if (!category) return {}
+  const fullTitle = `${category.metaTitle} | Italy Taxi Services`
+  const url = `/fleet/${category.slug}`
   return {
     title: category.metaTitle,
     description: category.metaDescription,
-    alternates: { canonical: `/fleet/${category.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      siteName: 'Italy Taxi Services',
+      url,
+      title: fullTitle,
+      description: category.metaDescription,
+      images: ['/logo.webp'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: category.metaDescription,
+      images: ['/logo.webp'],
+    },
   }
 }
 

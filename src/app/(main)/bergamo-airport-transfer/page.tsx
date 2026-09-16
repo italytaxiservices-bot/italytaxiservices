@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio',
   description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/bergamo-airport-transfer', languages: { en: '/bergamo-airport-transfer', it: '/it/transfer-aeroporto-bergamo', 'x-default': '/bergamo-airport-transfer' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/bergamo-airport-transfer',
+    title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio | Italy Taxi Services',
+    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio | Italy Taxi Services',
+    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('BGY')!

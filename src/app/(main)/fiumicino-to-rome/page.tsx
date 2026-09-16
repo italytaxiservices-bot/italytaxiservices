@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Fiumicino to Rome Transfer | Private Chauffeur FCO',
   description: 'Private NCC transfer from Fiumicino Airport to Rome. From €65. Meet & greet, flight monitoring. All Rome areas. Book your Rome airport transfer today.',
   alternates: { canonical: '/fiumicino-to-rome', languages: { en: '/fiumicino-to-rome', it: '/it/fiumicino-roma', 'x-default': '/fiumicino-to-rome' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/fiumicino-to-rome',
+    title: 'Fiumicino to Rome Transfer | Private Chauffeur FCO | Italy Taxi Services',
+    description: 'Private NCC transfer from Fiumicino Airport to Rome. From €65. Meet & greet, flight monitoring. All Rome areas. Book your Rome airport transfer today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fiumicino to Rome Transfer | Private Chauffeur FCO | Italy Taxi Services',
+    description: 'Private NCC transfer from Fiumicino Airport to Rome. From €65. Meet & greet, flight monitoring. All Rome areas. Book your Rome airport transfer today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('fiumicino-to-rome')!

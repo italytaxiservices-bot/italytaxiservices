@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino',
   description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/palermo-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/palermo-airport-transfer',
+    title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino | Italy Taxi Services',
+    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino | Italy Taxi Services',
+    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('PMO')!

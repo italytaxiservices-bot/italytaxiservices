@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei',
   description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
   alternates: { canonical: '/pisa-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/pisa-airport-transfer',
+    title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei | Italy Taxi Services',
+    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei | Italy Taxi Services',
+    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('PSA')!

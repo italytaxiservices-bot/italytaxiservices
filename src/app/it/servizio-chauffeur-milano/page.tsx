@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/servizio-chauffeur-milano',
     languages: { en: '/milan-chauffeur-service', it: '/it/servizio-chauffeur-milano', 'x-default': '/milan-chauffeur-service' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/servizio-chauffeur-milano',
+    title: 'Servizio Chauffeur Privato Milano | NCC Milano | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Milano. Transfer Malpensa, Linate, Bergamo. Lago di Como, Lugano, centri congressi. Prezzi fissi, disponibilità 24/7. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servizio Chauffeur Privato Milano | NCC Milano | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Milano. Transfer Malpensa, Linate, Bergamo. Lago di Como, Lugano, centri congressi. Prezzi fissi, disponibilità 24/7. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = cities.find(c => c.slug === 'milan')!

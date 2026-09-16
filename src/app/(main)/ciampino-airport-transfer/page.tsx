@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome',
   description: 'Private NCC transfer from Rome Ciampino Airport (CIA). Rome city centre from €55. Fixed prices, meet & greet, flight monitoring. Book today.',
   alternates: { canonical: '/ciampino-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/ciampino-airport-transfer',
+    title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome | Italy Taxi Services',
+    description: 'Private NCC transfer from Rome Ciampino Airport (CIA). Rome city centre from €55. Fixed prices, meet & greet, flight monitoring. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome | Italy Taxi Services',
+    description: 'Private NCC transfer from Rome Ciampino Airport (CIA). Rome city centre from €55. Fixed prices, meet & greet, flight monitoring. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('CIA')!

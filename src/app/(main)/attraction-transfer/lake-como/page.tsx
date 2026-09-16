@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna',
   description: 'Private NCC transfer to Lake Como. Como, Bellagio, Varenna, Menaggio, Cernobbio from Malpensa, Linate, Milan. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/lake-como' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/lake-como',
+    title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna | Italy Taxi Services',
+    description: 'Private NCC transfer to Lake Como. Como, Bellagio, Varenna, Menaggio, Cernobbio from Malpensa, Linate, Milan. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lake Como Transfer | Private Chauffeur Como, Bellagio, Varenna | Italy Taxi Services',
+    description: 'Private NCC transfer to Lake Como. Como, Bellagio, Varenna, Menaggio, Cernobbio from Malpensa, Linate, Milan. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function LacomoTransferPage() {

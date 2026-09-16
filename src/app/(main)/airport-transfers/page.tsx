@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Airport Transfers Italy — NCC Private Service',
   description: 'Private NCC airport transfers across Italy. Malpensa, Fiumicino, Marco Polo, Linate, Ciampino, Florence. Fixed prices, meet & greet, flight monitoring included.',
   alternates: { canonical: '/airport-transfers' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/airport-transfers',
+    title: 'Airport Transfers Italy — NCC Private Service | Italy Taxi Services',
+    description: 'Private NCC airport transfers across Italy. Malpensa, Fiumicino, Marco Polo, Linate, Ciampino, Florence. Fixed prices, meet & greet, flight monitoring included.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Airport Transfers Italy — NCC Private Service | Italy Taxi Services',
+    description: 'Private NCC airport transfers across Italy. Malpensa, Fiumicino, Marco Polo, Linate, Ciampino, Florence. Fixed prices, meet & greet, flight monitoring included.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airportsByRegion = [

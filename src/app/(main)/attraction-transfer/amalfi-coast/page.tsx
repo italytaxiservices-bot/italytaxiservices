@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello',
   description: 'Private NCC transfer to the Amalfi Coast. Positano, Amalfi, Ravello, Praiano. From Rome, Naples, Sorrento. Expert drivers on the SS163. Book today.',
   alternates: { canonical: '/attraction-transfer/amalfi-coast' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/amalfi-coast',
+    title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Taxi Services',
+    description: 'Private NCC transfer to the Amalfi Coast. Positano, Amalfi, Ravello, Praiano. From Rome, Naples, Sorrento. Expert drivers on the SS163. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Amalfi Coast Transfer | Private Chauffeur Positano Ravello | Italy Taxi Services',
+    description: 'Private NCC transfer to the Amalfi Coast. Positano, Amalfi, Ravello, Praiano. From Rome, Naples, Sorrento. Expert drivers on the SS163. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function AmalfiCoastTransferPage() {

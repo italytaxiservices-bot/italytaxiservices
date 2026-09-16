@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Fiumicino to Civitavecchia Transfer | Cruise Port',
   description: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
   alternates: { canonical: '/fiumicino-to-civitavecchia', languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia', 'x-default': '/fiumicino-to-civitavecchia' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/fiumicino-to-civitavecchia',
+    title: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Taxi Services',
+    description: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fiumicino to Civitavecchia Transfer | Cruise Port | Italy Taxi Services',
+    description: 'Private transfer from Fiumicino Airport to Civitavecchia cruise port. From €110. Direct NCC service. Perfect for cruise passengers. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('fiumicino-to-civitavecchia')!

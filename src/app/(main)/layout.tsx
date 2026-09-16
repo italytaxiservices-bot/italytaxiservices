@@ -32,6 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
+    url: '/',
     title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
     description: 'Professional private chauffeur and NCC transfer service across Italy. Fixed prices, meet & greet, 24/7.',
     images: ['/logo.webp'],

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa',
   description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/catania-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/catania-airport-transfer',
+    title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa | Italy Taxi Services',
+    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa | Italy Taxi Services',
+    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('CTA')!

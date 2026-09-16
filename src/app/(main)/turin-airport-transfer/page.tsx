@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle',
   description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
   alternates: { canonical: '/turin-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/turin-airport-transfer',
+    title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle | Italy Taxi Services',
+    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle | Italy Taxi Services',
+    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('TRN')!

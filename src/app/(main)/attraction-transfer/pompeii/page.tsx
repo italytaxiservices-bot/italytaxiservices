@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Pompeii Transfer | Private Chauffeur to Pompeii',
   description: 'Private NCC transfer to Pompeii. From Rome, Naples airport, Naples city, Sorrento. Day trips with driver waiting. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/pompeii' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/pompeii',
+    title: 'Pompeii Transfer | Private Chauffeur to Pompeii | Italy Taxi Services',
+    description: 'Private NCC transfer to Pompeii. From Rome, Naples airport, Naples city, Sorrento. Day trips with driver waiting. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pompeii Transfer | Private Chauffeur to Pompeii | Italy Taxi Services',
+    description: 'Private NCC transfer to Pompeii. From Rome, Naples airport, Naples city, Sorrento. Day trips with driver waiting. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function PompeiiTransferPage() {

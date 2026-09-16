@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'About Us — NCC Transfer Intermediary',
   description: 'Italy Taxi Services connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/about',
+    title: 'About Us — NCC Transfer Intermediary | Italy Taxi Services',
+    description: 'Italy Taxi Services connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us — NCC Transfer Intermediary | Italy Taxi Services',
+    description: 'Italy Taxi Services connects travellers with licensed NCC operators across Italy. Learn about our model, our standards, and why we are different from taxi booking platforms.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function AboutPage() {

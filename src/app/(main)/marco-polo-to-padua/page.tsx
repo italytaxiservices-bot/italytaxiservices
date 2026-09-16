@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Marco Polo to Padua Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Venice Marco Polo Airport to Padua. From €80. Professional chauffeur, fixed price, meet & greet. Book today.',
   alternates: { canonical: '/marco-polo-to-padua' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/marco-polo-to-padua',
+    title: 'Marco Polo to Padua Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Venice Marco Polo Airport to Padua. From €80. Professional chauffeur, fixed price, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marco Polo to Padua Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Venice Marco Polo Airport to Padua. From €80. Professional chauffeur, fixed price, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('marco-polo-to-padua')!

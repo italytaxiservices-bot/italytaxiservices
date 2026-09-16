@@ -2,9 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Servizio Chauffeur Privato & Transfer NCC in Italia',
+  title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Taxi Services',
   description: 'Servizio chauffeur privato NCC in tutta Italia. Transfer aeroporto Milano Malpensa, Roma Fiumicino, Venezia, Firenze. Prezzi fissi, meet & greet incluso. Prenota ora.',
   alternates: { canonical: '/it', languages: { en: '/', it: '/it', 'x-default': '/' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it',
+    title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Taxi Services',
+    description: 'Servizio chauffeur privato NCC in tutta Italia. Transfer aeroporto Milano Malpensa, Roma Fiumicino, Venezia, Firenze. Prezzi fissi, meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servizio Chauffeur Privato & Transfer NCC in Italia | Italy Taxi Services',
+    description: 'Servizio chauffeur privato NCC in tutta Italia. Transfer aeroporto Milano Malpensa, Roma Fiumicino, Venezia, Firenze. Prezzi fissi, meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airports = [

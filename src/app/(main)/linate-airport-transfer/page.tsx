@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Linate Airport Transfer | Private Chauffeur LIN Milan',
   description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
   alternates: { canonical: '/linate-airport-transfer', languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/linate-airport-transfer',
+    title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
+    description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
+    description: 'Private NCC transfer from Milan Linate Airport (LIN). Milan city centre, business districts, Lake Como. Fixed prices, meet & greet included. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('LIN')!

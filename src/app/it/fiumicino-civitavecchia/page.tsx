@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/fiumicino-civitavecchia',
     languages: { en: '/fiumicino-to-civitavecchia', it: '/it/fiumicino-civitavecchia', 'x-default': '/fiumicino-to-civitavecchia' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/fiumicino-civitavecchia',
+    title: 'Transfer Privato Fiumicino Civitavecchia | Porto Crociere | Italy Taxi Services',
+    description: 'Transfer privato NCC da Fiumicino FCO al porto crociere di Civitavecchia. Da €110. Ideale per imbarco e sbarco crociere. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Fiumicino Civitavecchia | Porto Crociere | Italy Taxi Services',
+    description: 'Transfer privato NCC da Fiumicino FCO al porto crociere di Civitavecchia. Da €110. Ideale per imbarco e sbarco crociere. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('fiumicino-to-civitavecchia')!

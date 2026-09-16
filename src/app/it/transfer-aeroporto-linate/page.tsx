@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/transfer-aeroporto-linate',
     languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/transfer-aeroporto-linate',
+    title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('LIN')!

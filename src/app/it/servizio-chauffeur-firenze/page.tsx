@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/servizio-chauffeur-firenze',
     languages: { en: '/florence-chauffeur-service', it: '/it/servizio-chauffeur-firenze', 'x-default': '/florence-chauffeur-service' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/servizio-chauffeur-firenze',
+    title: 'Servizio Chauffeur Privato Firenze | NCC Firenze | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Firenze. Transfer Peretola FLR, Pisa PSA. Tour Toscana, Siena, Chianti, Pisa, Roma. Prezzi fissi. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servizio Chauffeur Privato Firenze | NCC Firenze | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Firenze. Transfer Peretola FLR, Pisa PSA. Tour Toscana, Siena, Chianti, Pisa, Roma. Prezzi fissi. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = cities.find(c => c.slug === 'florence')!

@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/transfer-aeroporto-venezia',
     languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia', 'x-default': '/marco-polo-airport-transfer' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/transfer-aeroporto-venezia',
+    title: 'Transfer Privato Aeroporto Venezia Marco Polo VCE | NCC Venezia | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Venezia Marco Polo (VCE). Mestre, Venezia, Padova, Verona, Treviso, Bologna. Prezzi fissi. Meet & greet. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Aeroporto Venezia Marco Polo VCE | NCC Venezia | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Venezia Marco Polo (VCE). Mestre, Venezia, Padova, Verona, Treviso, Bologna. Prezzi fissi. Meet & greet. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('VCE')!

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Bergamo Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Bergamo. From €95. Professional chauffeur, meet & greet, fixed price. Book today.',
   alternates: { canonical: '/malpensa-to-bergamo' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-bergamo',
+    title: 'Malpensa to Bergamo Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Bergamo. From €95. Professional chauffeur, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Bergamo Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Bergamo. From €95. Professional chauffeur, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-bergamo')!

@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'it_IT',
     siteName: 'Italy Taxi Services',
+    url: '/it',
     title: 'Italy Taxi Services — Servizio NCC Privato in Italia',
     description: 'Servizio chauffeur privato e transfer NCC in Italia. Prezzi fissi, meet & greet, 24/7.',
     images: ['/logo.webp'],

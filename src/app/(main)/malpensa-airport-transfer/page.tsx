@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa Airport Transfer | Private Chauffeur MXP',
   description: 'Private chauffeur transfers from Milan Malpensa Airport (MXP). Meet & greet, flight monitoring. Milan city, Lake Como, Bellagio, Lugano. Fixed prices. Book today.',
   alternates: { canonical: '/malpensa-airport-transfer', languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-airport-transfer',
+    title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
+    description: 'Private chauffeur transfers from Milan Malpensa Airport (MXP). Meet & greet, flight monitoring. Milan city, Lake Como, Bellagio, Lugano. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
+    description: 'Private chauffeur transfers from Milan Malpensa Airport (MXP). Meet & greet, flight monitoring. Milan city, Lake Como, Bellagio, Lugano. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportBySlug('malpensa')!

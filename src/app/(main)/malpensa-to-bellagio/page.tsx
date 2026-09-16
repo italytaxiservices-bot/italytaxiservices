@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Bellagio Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
   alternates: { canonical: '/malpensa-to-bellagio' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-bellagio',
+    title: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-bellagio')!

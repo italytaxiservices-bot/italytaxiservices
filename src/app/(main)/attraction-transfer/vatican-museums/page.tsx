@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Vatican Museums Transfer | Private Chauffeur to Vatican Rome',
   description: 'Private NCC transfer to the Vatican Museums, Sistine Chapel & St Peter\'s Basilica in Rome. From Fiumicino, hotels, cruise ships. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/vatican-museums' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/vatican-museums',
+    title: 'Vatican Museums Transfer | Private Chauffeur to Vatican Rome | Italy Taxi Services',
+    description: 'Private NCC transfer to the Vatican Museums, Sistine Chapel & St Peter\'s Basilica in Rome. From Fiumicino, hotels, cruise ships. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vatican Museums Transfer | Private Chauffeur to Vatican Rome | Italy Taxi Services',
+    description: 'Private NCC transfer to the Vatican Museums, Sistine Chapel & St Peter\'s Basilica in Rome. From Fiumicino, hotels, cruise ships. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function VaticanTransferPage() {

@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome',
   description: 'Private NCC transfer to the Colosseum in Rome. From Fiumicino, Ciampino, hotels, and cruise ships. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/colosseum' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/colosseum',
+    title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome | Italy Taxi Services',
+    description: 'Private NCC transfer to the Colosseum in Rome. From Fiumicino, Ciampino, hotels, and cruise ships. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Colosseum Transfer | Private Chauffeur to Colosseo Rome | Italy Taxi Services',
+    description: 'Private NCC transfer to the Colosseum in Rome. From Fiumicino, Ciampino, hotels, and cruise ships. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function ColosseumTransferPage() {

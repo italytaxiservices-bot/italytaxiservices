@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/firenze-pisa',
     languages: { en: '/florence-to-pisa', it: '/it/firenze-pisa', 'x-default': '/florence-to-pisa' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/firenze-pisa',
+    title: 'Transfer Privato Firenze Pisa | Torre Pendente | Italy Taxi Services',
+    description: 'Transfer privato NCC da Firenze a Pisa. Torre Pendente, gita giornaliera o one-way. Da €95. Autista in attesa. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Firenze Pisa | Torre Pendente | Italy Taxi Services',
+    description: 'Transfer privato NCC da Firenze a Pisa. Torre Pendente, gita giornaliera o one-way. Da €95. Autista in attesa. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('florence-to-pisa')!

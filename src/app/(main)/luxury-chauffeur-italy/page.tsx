@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: 'Luxury Chauffeur Italy | Premium NCC Service',
   description: 'Luxury NCC chauffeur service across Italy. Mercedes S-Class, V-Class, luxury SUV. VIP airport transfers, private tours, corporate travel. Fixed prices.',
   alternates: { canonical: '/luxury-chauffeur-italy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/luxury-chauffeur-italy',
+    title: 'Luxury Chauffeur Italy | Premium NCC Service | Italy Taxi Services',
+    description: 'Luxury NCC chauffeur service across Italy. Mercedes S-Class, V-Class, luxury SUV. VIP airport transfers, private tours, corporate travel. Fixed prices.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Luxury Chauffeur Italy | Premium NCC Service | Italy Taxi Services',
+    description: 'Luxury NCC chauffeur service across Italy. Mercedes S-Class, V-Class, luxury SUV. VIP airport transfers, private tours, corporate travel. Fixed prices.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function LuxuryPage() {

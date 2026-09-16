@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca',
   description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/verona-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/verona-airport-transfer',
+    title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Taxi Services',
+    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Taxi Services',
+    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('VRN')!

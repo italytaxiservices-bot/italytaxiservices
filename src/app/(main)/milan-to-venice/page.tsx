@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Milan to Venice Private Transfer | Chauffeur Service',
   description: 'Private NCC transfer from Milan to Venice. From €280. Skip the train — direct door-to-door comfort. Fixed price chauffeur service. Book today.',
   alternates: { canonical: '/milan-to-venice' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/milan-to-venice',
+    title: 'Milan to Venice Private Transfer | Chauffeur Service | Italy Taxi Services',
+    description: 'Private NCC transfer from Milan to Venice. From €280. Skip the train — direct door-to-door comfort. Fixed price chauffeur service. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Milan to Venice Private Transfer | Chauffeur Service | Italy Taxi Services',
+    description: 'Private NCC transfer from Milan to Venice. From €280. Skip the train — direct door-to-door comfort. Fixed price chauffeur service. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('milan-to-venice')!

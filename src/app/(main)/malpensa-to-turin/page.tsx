@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Turin Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Turin. From €195. Professional chauffeur, fixed price. Book your Turin transfer today.',
   alternates: { canonical: '/malpensa-to-turin' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-turin',
+    title: 'Malpensa to Turin Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Turin. From €195. Professional chauffeur, fixed price. Book your Turin transfer today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Turin Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Turin. From €195. Professional chauffeur, fixed price. Book your Turin transfer today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-turin')!

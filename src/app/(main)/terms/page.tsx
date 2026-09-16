@@ -4,6 +4,20 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions',
   description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
   alternates: { canonical: '/terms' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/terms',
+    title: 'Terms & Conditions | Italy Taxi Services',
+    description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions | Italy Taxi Services',
+    description: 'Terms and conditions for Italy Taxi Services NCC private transfer booking service.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function TermsPage() {

@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
   description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
   alternates: { canonical: '/', languages: { en: '/', it: '/it', 'x-default': '/' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/',
+    title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
+    description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Italy Taxi Services | Private NCC Transfers Across Italy',
+    description: 'Professional private chauffeur and NCC transfer service across Italy. Airport transfers from Malpensa, Fiumicino, Marco Polo. Luxury transfers to Lake Como, Amalfi Coast, and beyond. Fixed prices, meet & greet.',
+    images: ['/logo.webp'],
+  },
 }
 
 const organizationSchema = {

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Venice to Bologna Transfer | Private Chauffeur',
   description: 'Private chauffeur transfer from Venice to Bologna. From €220. Direct NCC service via the A13. Door-to-door comfort. Book today.',
   alternates: { canonical: '/venice-to-bologna' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/venice-to-bologna',
+    title: 'Venice to Bologna Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private chauffeur transfer from Venice to Bologna. From €220. Direct NCC service via the A13. Door-to-door comfort. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Venice to Bologna Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private chauffeur transfer from Venice to Bologna. From €220. Direct NCC service via the A13. Door-to-door comfort. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('venice-to-bologna')!

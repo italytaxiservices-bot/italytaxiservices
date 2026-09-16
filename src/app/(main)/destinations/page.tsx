@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   description:
     'Private chauffeur transfers and touring drivers to Italy’s most-requested destinations — Lake Como, Tuscany, the Amalfi Coast, Sicily and more. Fixed prices, English-speaking drivers.',
   alternates: { canonical: '/destinations' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/destinations',
+    title: 'Private Transfers to Italy’s Top Destinations | Italy Taxi Services',
+    description: 'Private chauffeur transfers and touring drivers to Italy’s most-requested destinations — Lake Como, Tuscany, the Amalfi Coast, Sicily and more. Fixed prices, English-speaking drivers.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Transfers to Italy’s Top Destinations | Italy Taxi Services',
+    description: 'Private chauffeur transfers and touring drivers to Italy’s most-requested destinations — Lake Como, Tuscany, the Amalfi Coast, Sicily and more. Fixed prices, English-speaking drivers.',
+    images: ['/logo.webp'],
+  },
 }
 
 const REGION_ORDER = [

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Milan Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Milan. From €85. Professional chauffeur, meet & greet, flight monitoring included. Book today.',
   alternates: { canonical: '/malpensa-to-milan', languages: { en: '/malpensa-to-milan', it: '/it/malpensa-milano', 'x-default': '/malpensa-to-milan' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-milan',
+    title: 'Malpensa to Milan Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Milan. From €85. Professional chauffeur, meet & greet, flight monitoring included. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Milan Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Milan. From €85. Professional chauffeur, meet & greet, flight monitoring included. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-milan')!

@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/fiumicino-roma',
     languages: { en: '/fiumicino-to-rome', it: '/it/fiumicino-roma', 'x-default': '/fiumicino-to-rome' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/fiumicino-roma',
+    title: 'Transfer Privato Fiumicino Roma | NCC FCO Roma | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino FCO a Roma. Da €65. Prezzo fisso, meet & greet, monitoraggio volo. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Fiumicino Roma | NCC FCO Roma | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino FCO a Roma. Da €65. Prezzo fisso, meet & greet, monitoraggio volo. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('fiumicino-to-rome')!

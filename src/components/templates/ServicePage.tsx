@@ -45,9 +45,24 @@ export function ServicePageBody({ slug }: { slug: string }) {
 export function getServiceMetadata(slug: string): Metadata {
   const service = getServiceBySlug(slug)
   if (!service) return {}
+  const fullTitle = `${service.metaTitle} | Italy Taxi Services`
   return {
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: { canonical: `/${service.slug}` },
+    openGraph: {
+      type: 'website',
+      siteName: 'Italy Taxi Services',
+      url: `/${service.slug}`,
+      title: fullTitle,
+      description: service.metaDescription,
+      images: ['/logo.webp'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: service.metaDescription,
+      images: ['/logo.webp'],
+    },
   }
 }

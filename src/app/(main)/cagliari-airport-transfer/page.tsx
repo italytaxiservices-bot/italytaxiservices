@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas',
   description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/cagliari-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/cagliari-airport-transfer',
+    title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas | Italy Taxi Services',
+    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas | Italy Taxi Services',
+    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('CAG')!

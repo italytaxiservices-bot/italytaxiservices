@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: 'Contact Us | Book a Private Transfer in Italy',
   description: 'Contact Italy Taxi Services for private NCC transfers. Email, phone, or use our quote form. We reply within 2 hours.',
   alternates: { canonical: '/contact' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/contact',
+    title: 'Contact Us | Book a Private Transfer in Italy | Italy Taxi Services',
+    description: 'Contact Italy Taxi Services for private NCC transfers. Email, phone, or use our quote form. We reply within 2 hours.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Book a Private Transfer in Italy | Italy Taxi Services',
+    description: 'Contact Italy Taxi Services for private NCC transfers. Email, phone, or use our quote form. We reply within 2 hours.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function ContactPage() {

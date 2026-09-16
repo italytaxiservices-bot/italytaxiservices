@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/transfer-aeroporto-malpensa',
     languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/transfer-aeroporto-malpensa',
+    title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('MXP')!

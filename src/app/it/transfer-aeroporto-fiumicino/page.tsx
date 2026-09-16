@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/transfer-aeroporto-fiumicino',
     languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/transfer-aeroporto-fiumicino',
+    title: 'Transfer Privato Aeroporto Fiumicino FCO | NCC Roma | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Transfer Privato Aeroporto Fiumicino FCO | NCC Roma | Italy Taxi Services',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('FCO')!

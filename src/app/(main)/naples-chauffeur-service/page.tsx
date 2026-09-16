@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Private Chauffeur Service Naples | NCC Naples & Amalfi',
   description: 'Private chauffeur NCC service in Naples. Capodichino airport transfers, Amalfi Coast, Positano, Sorrento, Pompeii. Fixed prices, 24/7. Book today.',
   alternates: { canonical: '/naples-chauffeur-service' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/naples-chauffeur-service',
+    title: 'Private Chauffeur Service Naples | NCC Naples & Amalfi | Italy Taxi Services',
+    description: 'Private chauffeur NCC service in Naples. Capodichino airport transfers, Amalfi Coast, Positano, Sorrento, Pompeii. Fixed prices, 24/7. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Chauffeur Service Naples | NCC Naples & Amalfi | Italy Taxi Services',
+    description: 'Private chauffeur NCC service in Naples. Capodichino airport transfers, Amalfi Coast, Positano, Sorrento, Pompeii. Fixed prices, 24/7. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = cities.find(c => c.slug === 'naples')!

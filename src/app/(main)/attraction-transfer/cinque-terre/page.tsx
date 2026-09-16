@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre',
   description: 'Private NCC transfer to Cinque Terre. La Spezia, Riomaggiore, Vernazza. From Genoa, Pisa airport, Florence. Fixed prices. Book today.',
   alternates: { canonical: '/attraction-transfer/cinque-terre' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/attraction-transfer/cinque-terre',
+    title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre | Italy Taxi Services',
+    description: 'Private NCC transfer to Cinque Terre. La Spezia, Riomaggiore, Vernazza. From Genoa, Pisa airport, Florence. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cinque Terre Transfer | Private Chauffeur to Cinque Terre | Italy Taxi Services',
+    description: 'Private NCC transfer to Cinque Terre. La Spezia, Riomaggiore, Vernazza. From Genoa, Pisa airport, Florence. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function CinqueTerreTransferPage() {

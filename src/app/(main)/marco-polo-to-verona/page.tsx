@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Marco Polo to Verona Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Venice Marco Polo Airport to Verona. From €150. Professional chauffeur, meet & greet, fixed price. Book today.',
   alternates: { canonical: '/marco-polo-to-verona' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/marco-polo-to-verona',
+    title: 'Marco Polo to Verona Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Venice Marco Polo Airport to Verona. From €150. Professional chauffeur, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marco Polo to Verona Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Venice Marco Polo Airport to Verona. From €150. Professional chauffeur, meet & greet, fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('marco-polo-to-verona')!

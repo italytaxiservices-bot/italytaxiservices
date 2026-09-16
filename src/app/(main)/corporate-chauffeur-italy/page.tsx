@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: 'Corporate Chauffeur Italy | Business Travel & NCC Service',
   description: 'Corporate NCC chauffeur service across Italy. Business travel, roadshows, executive transfers, trade fair logistics. Fixed prices, invoiced billing. Book today.',
   alternates: { canonical: '/corporate-chauffeur-italy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/corporate-chauffeur-italy',
+    title: 'Corporate Chauffeur Italy | Business Travel & NCC Service | Italy Taxi Services',
+    description: 'Corporate NCC chauffeur service across Italy. Business travel, roadshows, executive transfers, trade fair logistics. Fixed prices, invoiced billing. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Corporate Chauffeur Italy | Business Travel & NCC Service | Italy Taxi Services',
+    description: 'Corporate NCC chauffeur service across Italy. Business travel, roadshows, executive transfers, trade fair logistics. Fixed prices, invoiced billing. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function CorporatePage() {

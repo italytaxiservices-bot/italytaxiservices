@@ -9,6 +9,20 @@ export const metadata: Metadata = {
     canonical: '/it/servizio-chauffeur-roma',
     languages: { en: '/rome-chauffeur-service', it: '/it/servizio-chauffeur-roma', 'x-default': '/rome-chauffeur-service' },
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/it/servizio-chauffeur-roma',
+    title: 'Servizio Chauffeur Privato Roma | NCC Roma | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Roma. Transfer Fiumicino FCO, Ciampino CIA, Civitavecchia, Costiera Amalfitana. Prezzi fissi, meet & greet. Prenota ora.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servizio Chauffeur Privato Roma | NCC Roma | Italy Taxi Services',
+    description: 'Chauffeur privato NCC a Roma. Transfer Fiumicino FCO, Ciampino CIA, Civitavecchia, Costiera Amalfitana. Prezzi fissi, meet & greet. Prenota ora.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = cities.find(c => c.slug === 'rome')!

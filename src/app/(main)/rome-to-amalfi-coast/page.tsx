@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Rome to Amalfi Coast Transfer | Private Chauffeur',
   description: 'Private chauffeur transfer from Rome to Amalfi Coast. From €380. Positano, Amalfi, Ravello served. Direct NCC service. Book today.',
   alternates: { canonical: '/rome-to-amalfi-coast', languages: { en: '/rome-to-amalfi-coast', it: '/it/roma-costiera-amalfitana', 'x-default': '/rome-to-amalfi-coast' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/rome-to-amalfi-coast',
+    title: 'Rome to Amalfi Coast Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private chauffeur transfer from Rome to Amalfi Coast. From €380. Positano, Amalfi, Ravello served. Direct NCC service. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rome to Amalfi Coast Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private chauffeur transfer from Rome to Amalfi Coast. From €380. Positano, Amalfi, Ravello served. Direct NCC service. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('rome-to-amalfi-coast')!

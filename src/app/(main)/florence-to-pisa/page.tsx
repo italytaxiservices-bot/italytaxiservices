@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Florence to Pisa Transfer | Private Chauffeur',
   description: 'Private transfer from Florence to Pisa. From €95. Day trips and one-way transfers. NCC chauffeur service. Book today.',
   alternates: { canonical: '/florence-to-pisa', languages: { en: '/florence-to-pisa', it: '/it/firenze-pisa', 'x-default': '/florence-to-pisa' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/florence-to-pisa',
+    title: 'Florence to Pisa Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private transfer from Florence to Pisa. From €95. Day trips and one-way transfers. NCC chauffeur service. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Florence to Pisa Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private transfer from Florence to Pisa. From €95. Day trips and one-way transfers. NCC chauffeur service. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('florence-to-pisa')!

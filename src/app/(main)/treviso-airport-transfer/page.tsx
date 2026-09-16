@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Treviso Airport Transfer | Private Chauffeur TSF',
   description: 'Private NCC transfer from Treviso Antonio Canova Airport (TSF). Venice €70, Treviso city €25, Padova €65, Verona €120. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/treviso-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/treviso-airport-transfer',
+    title: 'Treviso Airport Transfer | Private Chauffeur TSF | Italy Taxi Services',
+    description: 'Private NCC transfer from Treviso Antonio Canova Airport (TSF). Venice €70, Treviso city €25, Padova €65, Verona €120. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Treviso Airport Transfer | Private Chauffeur TSF | Italy Taxi Services',
+    description: 'Private NCC transfer from Treviso Antonio Canova Airport (TSF). Venice €70, Treviso city €25, Padova €65, Verona €120. Fixed prices, meet & greet. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('TSF')!

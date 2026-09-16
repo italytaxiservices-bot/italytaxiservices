@@ -4,6 +4,20 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy policy for Italy Taxi Services NCC transfer service. How we collect, use, and protect your personal data.',
   alternates: { canonical: '/privacy-policy' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/privacy-policy',
+    title: 'Privacy Policy | Italy Taxi Services',
+    description: 'Privacy policy for Italy Taxi Services NCC transfer service. How we collect, use, and protect your personal data.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Italy Taxi Services',
+    description: 'Privacy policy for Italy Taxi Services NCC transfer service. How we collect, use, and protect your personal data.',
+    images: ['/logo.webp'],
+  },
 }
 
 export default function PrivacyPage() {

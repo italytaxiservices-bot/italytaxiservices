@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Naples Airport Transfer | Private Chauffeur NAP',
   description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
   alternates: { canonical: '/naples-airport-transfer' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/naples-airport-transfer',
+    title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
+    description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
+    description: 'Private NCC transfer from Naples Capodichino Airport (NAP). Naples €45, Pompeii €55, Amalfi Coast €130, Sorrento €90, Positano €120. Fixed prices. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportByCode('NAP')!

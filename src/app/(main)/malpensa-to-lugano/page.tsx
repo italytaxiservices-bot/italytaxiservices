@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Malpensa to Lugano Transfer | Private Chauffeur',
   description: 'Private NCC transfer from Malpensa Airport to Lugano, Switzerland. From €145. Direct cross-border service. Fixed price. Book today.',
   alternates: { canonical: '/malpensa-to-lugano' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/malpensa-to-lugano',
+    title: 'Malpensa to Lugano Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Lugano, Switzerland. From €145. Direct cross-border service. Fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Malpensa to Lugano Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Malpensa Airport to Lugano, Switzerland. From €145. Direct cross-border service. Fixed price. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('malpensa-to-lugano')!

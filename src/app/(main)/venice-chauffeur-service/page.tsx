@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Private Chauffeur Service Venice | NCC Venice',
   description: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Fixed prices, meet & greet.',
   alternates: { canonical: '/venice-chauffeur-service', languages: { en: '/venice-chauffeur-service', it: '/it/servizio-chauffeur-venezia', 'x-default': '/venice-chauffeur-service' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/venice-chauffeur-service',
+    title: 'Private Chauffeur Service Venice | NCC Venice | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Fixed prices, meet & greet.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Chauffeur Service Venice | NCC Venice | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Venice. Marco Polo airport transfers, cruise port connections, Mestre. Fixed prices, meet & greet.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = getCityBySlug('venice')!

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Florence to Siena Transfer | Private Chauffeur Chianti',
   description: 'Private NCC transfer from Florence to Siena through the Chianti hills. From €105. Day trips available. Scenic Tuscan route. Book today.',
   alternates: { canonical: '/florence-to-siena' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/florence-to-siena',
+    title: 'Florence to Siena Transfer | Private Chauffeur Chianti | Italy Taxi Services',
+    description: 'Private NCC transfer from Florence to Siena through the Chianti hills. From €105. Day trips available. Scenic Tuscan route. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Florence to Siena Transfer | Private Chauffeur Chianti | Italy Taxi Services',
+    description: 'Private NCC transfer from Florence to Siena through the Chianti hills. From €105. Day trips available. Scenic Tuscan route. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('florence-to-siena')!

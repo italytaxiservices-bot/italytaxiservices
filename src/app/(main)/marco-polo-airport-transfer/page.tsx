@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE',
   description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
   alternates: { canonical: '/marco-polo-airport-transfer', languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia', 'x-default': '/marco-polo-airport-transfer' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/marco-polo-airport-transfer',
+    title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
+    description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
+    description: 'Private chauffeur transfers from Venice Marco Polo Airport (VCE). Mestre, Tronchetto, cruise terminal. Meet & greet included. Fixed price NCC service.',
+    images: ['/logo.webp'],
+  },
 }
 
 const airport = getAirportBySlug('marco-polo')!

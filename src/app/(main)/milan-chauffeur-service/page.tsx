@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Private Chauffeur Service Milan | NCC Milan',
   description: 'Professional private chauffeur and NCC service in Milan. Malpensa, Linate, Bergamo airport transfers. Lake Como, corporate travel, city rides. Fixed prices, licensed operators.',
   alternates: { canonical: '/milan-chauffeur-service', languages: { en: '/milan-chauffeur-service', it: '/it/servizio-chauffeur-milano', 'x-default': '/milan-chauffeur-service' } },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/milan-chauffeur-service',
+    title: 'Private Chauffeur Service Milan | NCC Milan | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Milan. Malpensa, Linate, Bergamo airport transfers. Lake Como, corporate travel, city rides. Fixed prices, licensed operators.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Private Chauffeur Service Milan | NCC Milan | Italy Taxi Services',
+    description: 'Professional private chauffeur and NCC service in Milan. Malpensa, Linate, Bergamo airport transfers. Lake Como, corporate travel, city rides. Fixed prices, licensed operators.',
+    images: ['/logo.webp'],
+  },
 }
 
 const city = getCityBySlug('milan')!

@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: 'Fiumicino to Tivoli Transfer | Private Chauffeur',
   description: "Private NCC transfer from Fiumicino Airport to Tivoli. From €120. Villa d'Este, Hadrian's Villa. Professional chauffeur. Book today.",
   alternates: { canonical: '/fiumicino-to-tivoli' },
+  openGraph: {
+    type: 'website',
+    siteName: 'Italy Taxi Services',
+    url: '/fiumicino-to-tivoli',
+    title: 'Fiumicino to Tivoli Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Fiumicino Airport to Tivoli. From €120. Villa d\'Este, Hadrian\'s Villa. Professional chauffeur. Book today.',
+    images: ['/logo.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fiumicino to Tivoli Transfer | Private Chauffeur | Italy Taxi Services',
+    description: 'Private NCC transfer from Fiumicino Airport to Tivoli. From €120. Villa d\'Este, Hadrian\'s Villa. Professional chauffeur. Book today.',
+    images: ['/logo.webp'],
+  },
 }
 
 const route = getRouteBySlug('fiumicino-to-tivoli')!

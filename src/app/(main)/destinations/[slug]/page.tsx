@@ -21,10 +21,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const destination = getDestinationBySlug(slug)
   if (!destination) return {}
+  const fullTitle = `${destination.metaTitle} | Italy Taxi Services`
+  const url = `/destinations/${destination.slug}`
   return {
     title: destination.metaTitle,
     description: destination.metaDescription,
-    alternates: { canonical: `/destinations/${destination.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      siteName: 'Italy Taxi Services',
+      url,
+      title: fullTitle,
+      description: destination.metaDescription,
+      images: ['/logo.webp'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: destination.metaDescription,
+      images: ['/logo.webp'],
+    },
   }
 }
 
