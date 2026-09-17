@@ -59,18 +59,19 @@ export default function ItHomepage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden grain" style={{ background: '#080808' }}>
+      <section
+        className="relative min-h-screen flex flex-col overflow-hidden grain"
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 75% 20%, rgba(201,168,76,0.10), transparent), linear-gradient(160deg, #0d0d0d 0%, #080808 55%, #050505 100%)' }}
+      >
         <div className="absolute inset-0">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center 40%',
+              backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
+              backgroundSize: '48px 48px',
+              opacity: 0.05,
             }}
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,8,8,0.88) 0%, rgba(8,8,8,0.65) 55%, rgba(8,8,8,0.4) 100%)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 55%)' }} />
         </div>
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 

@@ -1,26 +1,25 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { destinations } from '@/lib/data/destinations'
 
 const FEATURED = [
-  { slug: 'lake-como',    highlight: 'Villa d\'Este · Bellagio · Varenna',     photo: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&q=80' },
-  { slug: 'tuscany',      highlight: 'Florence · Siena · Chianti',              photo: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=80' },
-  { slug: 'amalfi-coast', highlight: 'Positano · Ravello · Amalfi',             photo: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80' },
-  { slug: 'venice',       highlight: 'Tronchetto · Mestre · Murano',            photo: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&q=80' },
-  { slug: 'sicily',       highlight: 'Taormina · Palermo · Etna',               photo: 'https://images.unsplash.com/photo-1529516548873-9ce57c8f155e?w=600&q=80' },
-  { slug: 'cinque-terre', highlight: 'Monterosso · Vernazza · Riomaggiore',     photo: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80' },
-  { slug: 'portofino',    highlight: 'Santa Margherita · Rapallo',              photo: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
-  { slug: 'sorrento',     highlight: 'Capri Ferry · Pompeii · Naples',          photo: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600&q=80' },
+  { slug: 'lake-como',    highlight: 'Villa d\'Este · Bellagio · Varenna' },
+  { slug: 'tuscany',      highlight: 'Florence · Siena · Chianti' },
+  { slug: 'amalfi-coast', highlight: 'Positano · Ravello · Amalfi' },
+  { slug: 'venice',       highlight: 'Tronchetto · Mestre · Murano' },
+  { slug: 'sicily',       highlight: 'Taormina · Palermo · Etna' },
+  { slug: 'cinque-terre', highlight: 'Monterosso · Vernazza · Riomaggiore' },
+  { slug: 'portofino',    highlight: 'Santa Margherita · Rapallo' },
+  { slug: 'sorrento',     highlight: 'Capri Ferry · Pompeii · Naples' },
 ]
 
 export default function DestinationsSection() {
   const featured = FEATURED
-    .map(({ slug, highlight, photo }) => {
+    .map(({ slug, highlight }) => {
       const d = destinations.find((d) => d.slug === slug)
-      return d ? { ...d, highlight, photo } : null
+      return d ? { ...d, highlight } : null
     })
-    .filter(Boolean) as (typeof destinations[number] & { highlight: string; photo: string })[]
+    .filter(Boolean) as (typeof destinations[number] & { highlight: string })[]
 
   return (
     <section className="py-28 overflow-hidden" style={{ background: '#F5F0E8' }}>
@@ -54,17 +53,15 @@ export default function DestinationsSection() {
               className="group relative bg-white rounded-sm overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               style={{ border: '1px solid rgba(201,168,76,0.12)' }}
             >
-              {/* Photo */}
-              <div className="relative h-44 overflow-hidden">
-                <Image
-                  src={d.photo}
-                  alt={d.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+              {/* Decorative placeholder — no verified photo for this destination yet */}
+              <div className="relative h-44 overflow-hidden bg-gradient-to-br from-navy to-navy-800">
+                <div
+                  className="absolute inset-0 opacity-[0.07] transition-opacity duration-500 group-hover:opacity-[0.12]"
+                  style={{
+                    backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                  }}
                 />
-                <div className="absolute inset-0 transition-opacity duration-300" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)' }} />
-                {/* Region badge on photo */}
                 <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm" style={{ background: 'rgba(8,8,8,0.7)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.3)', backdropFilter: 'blur(8px)' }}>
                   {d.region}
                 </span>

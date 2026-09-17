@@ -16,20 +16,21 @@ export default function Hero() {
   const waUrl = `https://wa.me/${WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20book%20a%20private%20transfer%20in%20Italy.`
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden grain" style={{ background: '#080808' }}>
+    <section
+      className="relative min-h-screen flex flex-col overflow-hidden grain"
+      style={{ background: 'radial-gradient(ellipse 80% 60% at 75% 20%, rgba(201,168,76,0.10), transparent), linear-gradient(160deg, #0d0d0d 0%, #080808 55%, #050505 100%)' }}
+    >
 
-      {/* Background image */}
+      {/* Subtle gold grid pattern — no stock photo, matches the treatment used elsewhere on the site */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 40%',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+            opacity: 0.05,
           }}
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,8,8,0.88) 0%, rgba(8,8,8,0.65) 55%, rgba(8,8,8,0.30) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.80) 0%, transparent 50%)' }} />
       </div>
 
       {/* Top gold accent */}

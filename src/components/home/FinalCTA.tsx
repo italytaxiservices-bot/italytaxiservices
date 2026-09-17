@@ -4,15 +4,14 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden grain" style={{ background: '#050505' }}>
 
-      {/* Background image — subtle */}
+      {/* Subtle gold grid pattern — no stock photo, matches the treatment used elsewhere on the site */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.12,
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+            opacity: 0.05,
           }}
         />
       </div>
