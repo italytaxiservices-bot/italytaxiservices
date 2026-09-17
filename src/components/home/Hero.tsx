@@ -125,7 +125,7 @@ export default function Hero() {
                 <p className="font-black text-xl mb-0.5" style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}>
                   {value}
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                <p className="text-[10px] uppercase tracking-[0.2em]" style={{ color: 'rgba(255,255,255,0.55)' }}>
                   {label}
                 </p>
               </div>

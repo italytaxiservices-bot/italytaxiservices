@@ -86,7 +86,7 @@ export default function HowItWorks() {
                   {/* Number */}
                   <span
                     className="text-[10px] font-black uppercase tracking-widest mb-1"
-                    style={{ color: 'rgba(201,168,76,0.5)' }}
+                    style={{ color: '#C9A84C' }}
                   >
                     {num}
                   </span>

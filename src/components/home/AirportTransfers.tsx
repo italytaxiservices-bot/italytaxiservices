@@ -78,12 +78,12 @@ export default function AirportTransfers() {
                   {airport.code}
                 </div>
                 <h3 className="text-white font-bold text-lg leading-snug mb-1">{airport.name}</h3>
-                <p className="text-xs mb-4" style={{ color: 'rgba(255,255,255,0.4)' }}>{cityDesc[airport.code]}</p>
+                <p className="text-xs mb-4" style={{ color: 'rgba(255,255,255,0.65)' }}>{cityDesc[airport.code]}</p>
               </div>
 
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-[11px] uppercase tracking-widest mb-1" style={{ color: 'rgba(255,255,255,0.3)' }}>From</p>
+                  <p className="text-[11px] uppercase tracking-widest mb-1" style={{ color: 'rgba(255,255,255,0.55)' }}>From</p>
                   <p
                     className="text-2xl font-black"
                     style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}

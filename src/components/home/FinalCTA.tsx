@@ -44,7 +44,7 @@ export default function FinalCTA() {
 
             <p
               className="text-lg leading-relaxed mb-0 max-w-md italic"
-              style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-serif), Georgia, serif' }}
+              style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-serif), Georgia, serif' }}
             >
               Fixed prices. Licensed NCC. Meet &amp; greet at every airport and
               port across Italy. Ready when you are.
@@ -60,8 +60,8 @@ export default function FinalCTA() {
 
             <div className="grid grid-cols-3 gap-3 pt-2">
               {['No booking fee', 'Fast reply', 'Free cancel'].map((t) => (
-                <div key={t} className="text-center py-3 rounded-sm" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                  <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.3)' }}>{t}</p>
+                <div key={t} className="text-center py-3 rounded-sm" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.15)' }}>
+                  <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.65)' }}>{t}</p>
                 </div>
               ))}
             </div>

@@ -51,7 +51,7 @@ export default function WhyUs() {
 
               <span
                 className="block font-black mb-6 leading-none"
-                style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: '3.5rem', color: 'rgba(201,168,76,0.25)', transition: 'color 0.3s' }}
+                style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: '3.5rem', color: 'rgba(201,168,76,0.45)', transition: 'color 0.3s' }}
               >
                 {num}
               </span>
