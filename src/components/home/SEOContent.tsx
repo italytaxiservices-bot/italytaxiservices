@@ -588,7 +588,7 @@ export default function SEOContent() {
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px w-10 shrink-0" style={{ background: '#C9A84C' }} />
-            <h2 className="text-2xl font-black text-gray-900">All Italy Taxi Services Services</h2>
+            <h2 className="text-2xl font-black text-gray-900">All Our Private Transfer Services</h2>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[

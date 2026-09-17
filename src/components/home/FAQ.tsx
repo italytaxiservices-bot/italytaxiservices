@@ -53,7 +53,7 @@ export default function FAQ() {
     <section className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gold/10 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full mb-4" style={{ background: 'rgba(201,168,76,0.1)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.2)' }}>
             FAQs
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">

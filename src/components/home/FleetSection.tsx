@@ -89,16 +89,16 @@ export default function FleetSection() {
                 >
                   {vehicle.name}
                 </h3>
-                <p className="text-xs mb-4" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.35)' : '#9ca3af' }}>
+                <p className="text-xs mb-4" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.6)' : '#6b7280' }}>
                   {vehicle.model}
                 </p>
 
                 <div className="flex gap-4 mb-4">
-                  <div className="flex items-center gap-1.5 text-xs" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.45)' : '#9ca3af' }}>
+                  <div className="flex items-center gap-1.5 text-xs" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.7)' : '#6b7280' }}>
                     <Users className="w-3.5 h-3.5" style={{ color: '#C9A84C' }} />
                     {vehicle.passengers} pax
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.45)' : '#9ca3af' }}>
+                  <div className="flex items-center gap-1.5 text-xs" style={{ color: idx % 2 === 0 ? 'rgba(255,255,255,0.7)' : '#6b7280' }}>
                     <Briefcase className="w-3.5 h-3.5" style={{ color: '#C9A84C' }} />
                     {vehicle.luggage} bags
                   </div>
@@ -111,7 +111,7 @@ export default function FleetSection() {
                       className="text-[10px] px-2 py-0.5 rounded-full"
                       style={idx % 2 === 0
                         ? { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)', border: '1px solid rgba(255,255,255,0.08)' }
-                        : { background: '#f5f5f5', color: '#9ca3af', border: '1px solid #eeeeee' }
+                        : { background: '#f3f4f6', color: '#4b5563', border: '1px solid #e5e7eb' }
                       }
                     >
                       {f}
