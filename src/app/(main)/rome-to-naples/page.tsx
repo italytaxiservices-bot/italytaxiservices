@@ -4,20 +4,20 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Rome to Naples Private Transfer | Chauffeur Service',
-  description: 'Rated 4.9★ · Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
+  description: 'Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
   alternates: { canonical: '/rome-to-naples' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/rome-to-naples',
     title: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
+    description: 'Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rome to Naples Private Transfer | Chauffeur Service | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
+    description: 'Rome to Naples private transfer. From €260. Door-to-door in 2.5 hrs — no train changes. Licensed NCC chauffeur. Fixed price, no hidden fees. Instant quote.',
     images: ['/logo.webp'],
   },
 }

@@ -39,23 +39,8 @@ export function serviceSchema(opts: { name: string; description: string; areaSer
   }
 }
 
-/** Shows ★ star rating in Google SERP results — highest CTR impact */
-export function aggregateRatingSchema(opts: {
-  ratingValue?: number
-  reviewCount?: number
-  bestRating?: number
-}) {
-  return {
-    '@type': 'AggregateRating',
-    ratingValue: opts.ratingValue ?? 4.9,
-    reviewCount: opts.reviewCount ?? 847,
-    bestRating: opts.bestRating ?? 5,
-    worstRating: 1,
-  }
-}
-
-/** LocalBusiness with star rating — appears in Google Knowledge Panel & SERP */
-export function localBusinessSchema(opts?: { url?: string; reviewCount?: number }) {
+/** LocalBusiness schema — appears in Google Knowledge Panel & SERP */
+export function localBusinessSchema(opts?: { url?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -73,7 +58,6 @@ export function localBusinessSchema(opts?: { url?: string; reviewCount?: number 
       '@type': 'PostalAddress',
       addressCountry: 'IT',
     },
-    aggregateRating: aggregateRatingSchema({ reviewCount: opts?.reviewCount }),
     sameAs: [
       'https://www.italytaxiservices.com',
     ],
@@ -87,7 +71,6 @@ export function taxiServiceSchema(opts: {
   url: string
   areaServed?: string
   priceFrom?: number
-  reviewCount?: number
 }) {
   return {
     '@context': 'https://schema.org',
@@ -117,7 +100,6 @@ export function taxiServiceSchema(opts: {
         },
       },
     }),
-    aggregateRating: aggregateRatingSchema({ reviewCount: opts.reviewCount }),
   }
 }
 
@@ -164,6 +146,5 @@ export function routeOfferSchema(opts: {
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@type': 'Organization', name: 'Italy Taxi Services' },
     },
-    aggregateRating: aggregateRatingSchema({}),
   }
 }

@@ -91,8 +91,8 @@ export default function LuxuryPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: '4.9/5', label: 'Rating' },
-                { num: '10K+', label: 'Transfers' },
+                { num: 'Licensed', label: 'NCC Operators' },
+                { num: 'English', label: 'Speaking Drivers' },
                 { num: '4 yrs', label: 'Max vehicle age' },
                 { num: '24/7', label: 'Available' },
               ].map(({ num, label }) => (

@@ -4,20 +4,20 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Rome to Florence Transfer | Private Chauffeur',
-  description: 'Rated 4.9★ · Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
+  description: 'Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
   alternates: { canonical: '/rome-to-florence' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/rome-to-florence',
     title: 'Rome to Florence Transfer | Private Chauffeur | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
+    description: 'Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Rome to Florence Transfer | Private Chauffeur | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
+    description: 'Rome to Florence private transfer. From €350. Skip the Frecciarossa — door-to-door, no luggage stress. Licensed NCC chauffeur. Fixed price, instant quote.',
     images: ['/logo.webp'],
   },
 }

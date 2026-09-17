@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Malpensa Airport Transfer | Private Chauffeur MXP',
-  description: 'Rated 4.9★ · Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+  description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
   alternates: { canonical: '/malpensa-airport-transfer', languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/malpensa-airport-transfer',
     title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
-    description: 'Rated 4.9★ · Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+    description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
-    description: 'Rated 4.9★ · Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+    description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
     images: ['/logo.webp'],
   },
 }

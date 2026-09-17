@@ -176,9 +176,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { num: '10,000+', label: 'Transfers completed' },
-              { num: '4.9/5', label: 'Average customer rating' },
-              { num: '50+', label: 'NCC partner operators' },
+              { num: 'Licensed', label: 'NCC Operators' },
+              { num: 'Fixed', label: 'Transparent Pricing' },
+              { num: 'English', label: 'Speaking Drivers' },
               { num: '24/7', label: 'Service availability' },
             ].map(({ num, label }) => (
               <div key={label}>

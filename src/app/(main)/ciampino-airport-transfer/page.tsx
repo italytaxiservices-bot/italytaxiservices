@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome',
-  description: 'Rated 4.9★ · Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
+  description: 'Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
   alternates: { canonical: '/ciampino-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/ciampino-airport-transfer',
     title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
+    description: 'Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ciampino Airport Transfer | Private Chauffeur CIA Rome | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
+    description: 'Rome Ciampino (CIA) private transfer. From €55 to city centre. No Ryanair taxi queue — meet & greet, flight monitoring. Licensed NCC. Fixed price instant quote.',
     images: ['/logo.webp'],
   },
 }

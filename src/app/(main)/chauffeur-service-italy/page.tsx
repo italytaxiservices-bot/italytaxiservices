@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, Car, MapPin, Shield, Star } from 'lucide-react'
+import { ArrowRight, Car, Clock, MapPin, Shield } from 'lucide-react'
+import { airports } from '@/data/airports'
 
 
 export const metadata: Metadata = {
@@ -100,9 +101,9 @@ export default function ChauffeurItalyPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
               { icon: Shield, stat: 'Licensed NCC', desc: 'All operators hold ministerial NCC licence' },
-              { icon: Star, stat: '4.9/5 Rating', desc: 'From 500+ verified customer reviews' },
-              { icon: Car, stat: '10,000+ Transfers', desc: 'Completed across Italy' },
-              { icon: MapPin, stat: '19 Airports', desc: 'All major Italian airports covered' },
+              { icon: Clock, stat: '24/7', desc: 'Available every hour, every day' },
+              { icon: Car, stat: 'Fixed Prices', desc: 'Agreed before you travel, no meter' },
+              { icon: MapPin, stat: `${airports.length} Airports`, desc: 'All major Italian airports covered' },
             ].map(({ icon: Icon, stat, desc }) => (
               <div key={stat} className="bg-white rounded-2xl p-6 border border-green-100">
                 <Icon className="w-7 h-7 text-green-600 mx-auto mb-3" />

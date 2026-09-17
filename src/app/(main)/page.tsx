@@ -14,20 +14,20 @@ import { JsonLd, localBusinessSchema, webSiteSchema, taxiServiceSchema } from '@
 
 export const metadata: Metadata = {
   title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
-  description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
+  description: 'Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
   alternates: { canonical: '/', languages: { en: '/', it: '/it', 'x-default': '/' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/',
     title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
-    description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
+    description: 'Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Italy Taxi Services | Private NCC Transfers — Fixed Prices, 24/7',
-    description: 'Rated 4.9★ by 847 travellers. Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
+    description: 'Licensed NCC chauffeurs across Italy — airport transfers, city routes, Amalfi Coast, Lake Como. Fixed price, meet & greet, instant quote.',
     images: ['/logo.webp'],
   },
 }

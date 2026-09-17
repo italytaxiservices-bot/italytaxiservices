@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Fiumicino Airport Transfer | Private Chauffeur FCO',
-  description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+  description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
   alternates: { canonical: '/fiumicino-airport-transfer', languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/fiumicino-airport-transfer',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+    description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Rated 4.9★ · Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+    description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
 }

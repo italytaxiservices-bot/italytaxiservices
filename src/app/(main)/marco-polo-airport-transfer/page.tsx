@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE',
-  description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
+  description: 'Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
   alternates: { canonical: '/marco-polo-airport-transfer', languages: { en: '/marco-polo-airport-transfer', it: '/it/transfer-aeroporto-venezia', 'x-default': '/marco-polo-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/marco-polo-airport-transfer',
     title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
-    description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
+    description: 'Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Venice Marco Polo Airport Transfer | Private Chauffeur VCE | Italy Taxi Services',
-    description: 'Rated 4.9★ · Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
+    description: 'Venice Marco Polo (VCE) private transfer. Tronchetto, Mestre, cruise terminal. No water-taxi stress — meet & greet, flight tracking. Fixed price NCC service.',
     images: ['/logo.webp'],
   },
 }

@@ -6,7 +6,7 @@ import { destinations } from '@/lib/data/destinations'
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '393148932631'
 
 const stats = [
-  { value: '4.9★', label: 'Avg. Rating' },
+  { value: 'Licensed', label: 'NCC Operators' },
   { value: `${destinations.length}+`, label: 'Destinations' },
   { value: `${airports.length}+`, label: 'Airports' },
   { value: '24 / 7', label: 'Support' },
@@ -44,12 +44,8 @@ export default function Hero() {
 
             {/* Badge */}
             <div className="inline-flex items-center gap-3 mb-10 px-4 py-2 rounded-sm" style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)' }}>
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-3 h-3" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                ))}
-              </div>
-              <span className="section-label" style={{ fontSize: '0.6rem' }}>Rated 4.9 · 847 Travellers · Licensed NCC</span>
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2.5"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22z"/></svg>
+              <span className="section-label" style={{ fontSize: '0.6rem' }}>Licensed NCC Operators · Fixed Prices</span>
             </div>
 
             {/* Heading */}
