@@ -124,28 +124,15 @@ export default function Header() {
 
       {/* ── Main nav bar ── */}
       <nav
-        className="transition-all duration-500 relative overflow-hidden"
+        className="transition-all duration-500"
         style={{
-          background: transparent ? 'transparent' : 'rgba(8,8,8,0.98)',
+          background: transparent ? 'rgba(8,8,8,0.5)' : 'rgba(8,8,8,0.98)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
           borderBottom: transparent ? '1px solid rgba(201,168,76,0.08)' : '1px solid rgba(201,168,76,0.12)',
           boxShadow: transparent ? 'none' : '0 8px 40px rgba(0,0,0,0.4)',
         }}
       >
-        {/* Background image — visible only before scroll */}
-        {transparent && (
-          <div
-            className="absolute inset-0 -z-10"
-            style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=60")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center 30%',
-            }}
-          >
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0.85) 100%)' }} />
-          </div>
-        )}
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
 
           {/* Logo */}
