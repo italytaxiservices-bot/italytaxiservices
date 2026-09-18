@@ -18,11 +18,14 @@ export const metadata: Metadata = {
 }
 
 const groups = [
-  { label: 'From Rome',       slugs: ['rome-to-florence-distance','rome-to-naples-distance','rome-to-amalfi-coast-distance','rome-to-venice-distance','rome-to-milan-distance','fiumicino-to-rome-distance'] },
-  { label: 'From Milan',      slugs: ['milan-to-venice-distance','milan-to-florence-distance','milan-lake-como-distance','malpensa-to-milan-distance','malpensa-to-lake-como-distance','milan-to-turin-distance'] },
-  { label: 'From Florence',   slugs: ['florence-to-pisa-distance','florence-to-siena-distance','bologna-to-florence-distance'] },
-  { label: 'From Naples',     slugs: ['naples-to-amalfi-coast-distance','naples-to-pompeii-distance','naples-to-sorrento-distance'] },
-  { label: 'From Venice',     slugs: ['venice-to-verona-distance','venice-to-florence-distance'] },
+  { label: 'From Rome', slugs: ['rome-to-florence-distance','rome-to-naples-distance','rome-to-amalfi-coast-distance','rome-to-venice-distance','rome-to-milan-distance','rome-to-sorrento-distance','rome-to-pompeii-distance','rome-to-civitavecchia-distance','rome-to-bologna-distance','rome-to-orvieto-distance','fiumicino-to-rome-distance'] },
+  { label: 'From Milan', slugs: ['milan-to-venice-distance','milan-to-florence-distance','milan-lake-como-distance','malpensa-to-milan-distance','malpensa-to-lake-como-distance','milan-to-turin-distance','milan-to-genoa-distance','milan-to-bergamo-distance','milan-to-verona-distance','milan-to-lugano-distance','milan-to-bologna-distance','milan-to-zurich-distance'] },
+  { label: 'From Florence', slugs: ['florence-to-pisa-distance','florence-to-siena-distance','florence-to-venice-distance','florence-to-naples-distance','florence-to-bologna-distance','florence-to-cinque-terre-distance','bologna-to-florence-distance'] },
+  { label: 'From Naples', slugs: ['naples-to-amalfi-coast-distance','naples-to-pompeii-distance','naples-to-sorrento-distance','naples-airport-to-positano-distance','naples-airport-to-amalfi-distance','bari-to-naples-distance'] },
+  { label: 'From Venice', slugs: ['venice-to-verona-distance','venice-to-florence-distance','venice-to-bologna-distance','venice-to-padua-distance','venice-to-ljubljana-distance','marco-polo-to-florence-distance','marco-polo-airport-to-verona-distance'] },
+  { label: 'Sicily & Sardinia', slugs: ['catania-airport-to-taormina-distance','palermo-airport-to-cefalu-distance','olbia-airport-to-porto-cervo-distance'] },
+  { label: 'International', slugs: ['milan-to-lugano-distance','milan-to-zurich-distance','turin-to-geneva-distance','rome-to-monaco-distance','venice-to-ljubljana-distance'] },
+  { label: 'From Bari & South', slugs: ['bari-to-naples-distance','bari-to-rome-distance'] },
 ]
 
 export default function DistanceListingPage() {
