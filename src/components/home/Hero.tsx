@@ -25,15 +25,17 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=80")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80")',
             backgroundSize: 'cover',
-            backgroundPosition: 'center 60%',
+            backgroundPosition: 'center 40%',
           }}
         />
-        {/* Left-to-right dark fade — keeps copy readable, shows car on right */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.80) 45%, rgba(8,8,8,0.45) 70%, rgba(8,8,8,0.25) 100%)' }} />
-        {/* Bottom fade */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 40%)' }} />
+        {/* Dark overlay — heavy on left for text, lighter on right to show car */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, rgba(5,5,5,0.97) 0%, rgba(5,5,5,0.88) 35%, rgba(5,5,5,0.65) 60%, rgba(5,5,5,0.4) 100%)' }} />
+        {/* Top & bottom vignette */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(5,5,5,0.5) 0%, transparent 30%, transparent 65%, rgba(5,5,5,0.7) 100%)' }} />
+        {/* Subtle gold tint on right */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(201,168,76,0.07), transparent)' }} />
       </div>
 
       <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
