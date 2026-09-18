@@ -20,22 +20,16 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col overflow-hidden grain"
       style={{ background: 'radial-gradient(ellipse 80% 60% at 75% 20%, rgba(201,168,76,0.10), transparent), linear-gradient(160deg, #0d0d0d 0%, #080808 55%, #050505 100%)' }}
     >
-      {/* Car background image */}
+      {/* Background pattern */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1920&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+            opacity: 0.04,
           }}
         />
-        {/* Dark overlay — heavy on left for text, lighter on right to show car */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, rgba(5,5,5,0.97) 0%, rgba(5,5,5,0.88) 35%, rgba(5,5,5,0.65) 60%, rgba(5,5,5,0.4) 100%)' }} />
-        {/* Top & bottom vignette */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(5,5,5,0.5) 0%, transparent 30%, transparent 65%, rgba(5,5,5,0.7) 100%)' }} />
-        {/* Subtle gold tint on right */}
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(201,168,76,0.07), transparent)' }} />
       </div>
 
       <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
