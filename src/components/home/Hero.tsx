@@ -25,9 +25,9 @@ export default function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1920&q=80")',
             backgroundSize: 'cover',
-            backgroundPosition: 'center 40%',
+            backgroundPosition: 'center center',
           }}
         />
         {/* Dark overlay — heavy on left for text, lighter on right to show car */}
