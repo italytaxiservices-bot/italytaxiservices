@@ -20,15 +20,20 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col overflow-hidden grain"
       style={{ background: 'radial-gradient(ellipse 80% 60% at 75% 20%, rgba(201,168,76,0.10), transparent), linear-gradient(160deg, #0d0d0d 0%, #080808 55%, #050505 100%)' }}
     >
+      {/* Car background image */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-            opacity: 0.04,
+            backgroundImage: 'url("https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=80")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 60%',
           }}
         />
+        {/* Left-to-right dark fade — keeps copy readable, shows car on right */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.80) 45%, rgba(8,8,8,0.45) 70%, rgba(8,8,8,0.25) 100%)' }} />
+        {/* Bottom fade */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 40%)' }} />
       </div>
 
       <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
