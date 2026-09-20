@@ -10,9 +10,9 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section style={{ background: '#ffffff', borderTop: '1px solid #E8E2D9', padding: '96px 0' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
 
           {/* LEFT — steps */}
           <div>

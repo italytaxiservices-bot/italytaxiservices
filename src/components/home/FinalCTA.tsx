@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '393148932631'
 
@@ -7,7 +8,7 @@ export default function FinalCTA() {
 
   return (
     <section style={{ background: '#0f0d0a', padding: '80px 0' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1fr_400px] gap-16 items-center">
 
           {/* Copy */}
@@ -46,8 +47,16 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          {/* Blank image area */}
-          <div style={{ background: '#1e1c18', borderRadius: '4px', height: '300px', border: '1px solid rgba(201,168,76,0.1)' }} />
+          {/* Image */}
+          <div className="relative overflow-hidden" style={{ borderRadius: '4px', height: '300px', border: '1px solid rgba(201,168,76,0.15)' }}>
+            <Image
+              src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80"
+              alt="Italy at night"
+              fill
+              sizes="(max-width: 1024px) 100vw, 400px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

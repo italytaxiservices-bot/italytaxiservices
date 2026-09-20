@@ -1,11 +1,19 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Users, Briefcase, ArrowRight } from 'lucide-react'
 import { vehicles } from '@/data/fleet'
+
+const fleetImages: Record<string, string> = {
+  sedan:    'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=600&q=80',
+  business: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
+  van:      'https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?auto=format&fit=crop&w=600&q=80',
+  luxury:   'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80',
+}
 
 export default function FleetSection() {
   return (
     <section style={{ background: '#ffffff', borderTop: '1px solid #E8E2D9', padding: '96px 0' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
@@ -31,8 +39,16 @@ export default function FleetSection() {
               key={vehicle.id}
               style={{ border: '1px solid #E8E2D9', borderRadius: '4px', overflow: 'hidden', background: '#FAF7F2' }}
             >
-              {/* Blank vehicle image area */}
-              <div style={{ background: '#EDE8E0', height: '140px' }} />
+              {/* Vehicle image */}
+              <div className="relative overflow-hidden" style={{ height: '150px' }}>
+                <Image
+                  src={fleetImages[vehicle.category] ?? fleetImages.sedan}
+                  alt={vehicle.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
 
               <div className="p-5">
                 <h3

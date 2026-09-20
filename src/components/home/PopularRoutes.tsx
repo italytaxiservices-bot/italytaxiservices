@@ -6,7 +6,7 @@ import { formatPrice } from '@/lib/utils'
 export default function PopularRoutes() {
   return (
     <section style={{ background: '#FAF7F2', borderTop: '1px solid #E8E2D9', padding: '96px 0' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">

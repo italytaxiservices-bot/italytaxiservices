@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const features = [
   {
     title: 'Coach-flat Rates',
@@ -24,14 +26,19 @@ const features = [
 export default function WhyUs() {
   return (
     <section style={{ background: '#FAF7F2', borderTop: '1px solid #E8E2D9', padding: '96px 0' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
 
-          {/* LEFT — blank image placeholder */}
-          <div>
-            {/* Placeholder */}
-            <div style={{ background: '#EDE8E0', borderRadius: '4px', height: '400px', width: '100%', marginBottom: '24px' }} />
+          {/* LEFT — real car interior image */}
+          <div className="relative overflow-hidden" style={{ borderRadius: '4px', height: '440px' }}>
+            <Image
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
+              alt="Luxury chauffeur vehicle"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
 
           {/* RIGHT — content */}
