@@ -17,15 +17,16 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1554744512-d6c603f27c54?auto=format&fit=crop&w=1920&q=80"
-          alt="Luxury private car transfer in Italy"
+          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1920&q=80"
+          alt="Black luxury Mercedes chauffeur car in Italy"
           fill
-          className="object-cover object-center"
+          className="object-cover"
+          style={{ objectPosition: 'right center' }}
           priority
         />
-        {/* Layered overlays */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,8,5,0.88) 0%, rgba(10,8,5,0.72) 50%, rgba(10,8,5,0.45) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,8,5,0.6) 0%, transparent 60%)' }} />
+        {/* Layered overlays — heavier on left so copy stays crisp, car visible on right */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,8,5,0.94) 0%, rgba(10,8,5,0.80) 45%, rgba(10,8,5,0.40) 75%, rgba(10,8,5,0.25) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,8,5,0.7) 0%, transparent 55%)' }} />
       </div>
 
       {/* Content */}
