@@ -17,8 +17,8 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1920&q=80"
-          alt="Black luxury Mercedes chauffeur car in Italy"
+          src="https://images.unsplash.com/photo-1525499114766-eeaf451f8a5e?auto=format&fit=crop&w=1920&q=80"
+          alt="Black luxury Mercedes-Benz chauffeur sedan"
           fill
           className="object-cover"
           style={{ objectPosition: 'right center' }}
