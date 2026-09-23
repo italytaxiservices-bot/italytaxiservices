@@ -46,7 +46,9 @@ html { scroll-behavior: smooth; }
 ::selection { background: rgba(201,168,76,0.2); color: #9A7A30; }
 
 /* ─── Fonts ───────────────────────────────────── */
-.font-serif { font-family: var(--font-serif), Georgia, 'Times New Roman', serif; }
+/* --font-serif now carries Poppins (a Google Sans-style geometric sans), so
+   the fallback chain is sans-serif to match. */
+.font-serif { font-family: var(--font-serif), system-ui, -apple-system, sans-serif; }
 
 /* ─── Typography scale ────────────────────────── */
 .heading-display {

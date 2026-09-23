@@ -1,18 +1,21 @@
 import type { Metadata } from 'next'
-import { Geist, Playfair_Display } from 'next/font/google'
+import { Roboto, Poppins } from 'next/font/google'
 import '../globals.css'
 
-const playfair = Playfair_Display({
+// Google-style typography: Roboto for body/UI, Poppins (a free Google Sans-like
+// geometric sans) for display headings. Mapped onto the existing --font-sans /
+// --font-serif CSS variables so no component styles need to change.
+const poppins = Poppins({
   variable: '--font-serif',
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500', '600', '700', '800'],
 })
 import SiteChrome from '@/components/layout/SiteChrome'
 
-const geist = Geist({
+const roboto = Roboto({
   variable: '--font-sans',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '700', '900'],
 })
 
 export const metadata: Metadata = {
@@ -58,8 +61,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${playfair.variable} h-full`}>
-      <body className={`${playfair.variable} min-h-full flex flex-col`} suppressHydrationWarning>
+    <html lang="en" className={`${roboto.variable} ${poppins.variable} h-full`}>
+      <body className={`${poppins.variable} min-h-full flex flex-col`} suppressHydrationWarning>
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

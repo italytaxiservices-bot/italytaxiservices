@@ -1,18 +1,18 @@
 import type { Metadata } from 'next'
-import { Geist, Playfair_Display } from 'next/font/google'
+import { Roboto, Poppins } from 'next/font/google'
 import '../globals.css'
 import SiteChrome from '@/components/layout/SiteChrome'
 
-const playfair = Playfair_Display({
+const poppins = Poppins({
   variable: '--font-serif',
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500', '600', '700', '800'],
 })
 
-const geist = Geist({
+const roboto = Roboto({
   variable: '--font-sans',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '700', '900'],
 })
 
 export const metadata: Metadata = {
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
 
 export default function ItRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${geist.variable} ${playfair.variable} h-full`}>
-      <body className={`${playfair.variable} min-h-full flex flex-col`}>
+    <html lang="it" className={`${roboto.variable} ${poppins.variable} h-full`}>
+      <body className={`${poppins.variable} min-h-full flex flex-col`}>
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
