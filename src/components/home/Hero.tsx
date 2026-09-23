@@ -40,10 +40,10 @@ export default function Hero() {
             </p>
 
             <h1
-              className="font-black leading-[1.02] mb-6"
-              style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: 'clamp(2.6rem, 5.5vw, 4.8rem)', color: '#FAF7F2' }}
+              className="font-black leading-[1.05] mb-6"
+              style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: 'clamp(1.9rem, 3.6vw, 3.2rem)', color: '#FAF7F2' }}
             >
-              Private Chauffeur<br />
+              Private Chauffeur{' '}
               <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Service Across Italy</span>
             </h1>
 
