@@ -12,20 +12,20 @@ export default function Hero() {
   const waUrl = `https://wa.me/${WHATSAPP}?text=Hello%2C%20I%20would%20like%20to%20book%20a%20private%20transfer%20in%20Italy.`
 
   return (
-    <section className="relative overflow-hidden" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <section className="relative overflow-hidden" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#0f0d0a' }}>
 
-      {/* Background image */}
+      {/* Hero background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1525499114766-eeaf451f8a5e?auto=format&fit=crop&w=1920&q=80"
-          alt="Black luxury Mercedes-Benz chauffeur sedan"
+          src="/hero-chauffeur.webp"
+          alt="Private chauffeur opening a luxury Mercedes S-Class door"
           fill
           className="object-cover"
           style={{ objectPosition: 'right center' }}
           priority
         />
-        {/* Layered overlays — heavier on left so copy stays crisp, car visible on right */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,8,5,0.94) 0%, rgba(10,8,5,0.80) 45%, rgba(10,8,5,0.40) 75%, rgba(10,8,5,0.25) 100%)' }} />
+        {/* Overlays — heavier on left so copy stays crisp, image visible on right */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,8,5,0.94) 0%, rgba(10,8,5,0.78) 45%, rgba(10,8,5,0.40) 75%, rgba(10,8,5,0.22) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,8,5,0.7) 0%, transparent 55%)' }} />
       </div>
 

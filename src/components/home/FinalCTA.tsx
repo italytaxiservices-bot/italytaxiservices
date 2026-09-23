@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '393148932631'
 
@@ -47,16 +46,8 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative overflow-hidden" style={{ borderRadius: '4px', height: '300px', border: '1px solid rgba(201,168,76,0.15)' }}>
-            <Image
-              src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80"
-              alt="Italy at night"
-              fill
-              sizes="(max-width: 1024px) 100vw, 400px"
-              className="object-cover"
-            />
-          </div>
+          {/* TODO: image */}
+          <div style={{ background: '#1e1c18', borderRadius: '4px', height: '300px', border: '1px solid rgba(201,168,76,0.1)' }} />
         </div>
       </div>
     </section>

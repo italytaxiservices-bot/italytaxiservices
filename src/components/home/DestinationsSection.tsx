@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { destinations } from '@/lib/data/destinations'
 
@@ -87,16 +86,8 @@ export default function DestinationsSection() {
               Licensed NCC operators for cross-border private transfers. Border crossing included, fixed price, door-to-door.
             </p>
 
-            {/* Italy scenery image */}
-            <div className="relative overflow-hidden" style={{ borderRadius: '4px', height: '180px', marginBottom: '20px' }}>
-              <Image
-                src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80"
-                alt="Italian scenery"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            {/* TODO: image */}
+            <div style={{ background: '#F0EBE1', borderRadius: '4px', height: '180px', marginBottom: '20px', border: '1px solid #E8E2D9' }} />
 
             <div className="space-y-0">
               {borders.map(({ label, href }, i) => (
