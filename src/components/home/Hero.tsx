@@ -36,27 +36,24 @@ export default function Hero() {
           {/* LEFT — copy */}
           <div className="pt-4">
             <p className="text-xs uppercase tracking-[0.3em] mb-5 font-semibold" style={{ color: '#C9A84C' }}>
-              Private Transfer Service
+              Licensed NCC Private Transfers
             </p>
 
             <h1
-              className="font-black leading-[1.0] mb-6"
-              style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: 'clamp(2.6rem, 5.5vw, 5rem)', color: '#FAF7F2' }}
+              className="font-black leading-[1.02] mb-6"
+              style={{ fontFamily: 'var(--font-serif), Georgia, serif', fontSize: 'clamp(2.6rem, 5.5vw, 4.8rem)', color: '#FAF7F2' }}
             >
-              Private Transfers<br />
-              <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Across Italy.</span><br />
-              <span style={{ fontSize: '55%', fontStyle: 'italic', color: 'rgba(250,247,242,0.6)', fontWeight: 400 }}>
-                Across the border, too.
-              </span>
+              Private Chauffeur<br />
+              <span style={{ color: '#C9A84C', fontStyle: 'italic' }}>Service Across Italy</span>
             </h1>
 
-            <p className="text-base leading-relaxed mb-3 max-w-md" style={{ color: 'rgba(250,247,242,0.65)' }}>
-              Private chauffeur transfers from every Italian airport, city, and cruise port.
-              Licensed NCC drivers. Door-to-door. Fixed prices, 24/7.
+            <p className="text-base leading-relaxed mb-5 max-w-md" style={{ color: 'rgba(250,247,242,0.7)' }}>
+              Door-to-door transfers from every Italian airport, city, and cruise port —
+              and across the border. Licensed drivers, fixed prices, available 24/7.
             </p>
 
-            <p className="text-sm leading-relaxed mb-8 max-w-sm" style={{ color: 'rgba(250,247,242,0.45)' }}>
-              Rome · Milan · Venice · Florence · Naples · Amalfi Coast · Lake Como · Switzerland · France
+            <p className="text-xs leading-relaxed mb-8 max-w-sm uppercase tracking-wider" style={{ color: 'rgba(250,247,242,0.45)' }}>
+              Rome · Milan · Venice · Florence · Naples · Amalfi Coast · Lake Como
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
