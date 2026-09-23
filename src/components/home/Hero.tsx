@@ -30,7 +30,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-6 lg:px-12 pt-28 pb-10">
+      <div className="relative z-10 flex-1 flex items-center max-w-6xl mx-auto w-full px-6 lg:px-10 pt-28 pb-10">
         <div className="w-full grid lg:grid-cols-[1fr_420px] gap-12 items-start">
 
           {/* LEFT — copy */}
@@ -97,7 +97,7 @@ export default function Hero() {
 
       {/* Stats strip */}
       <div className="relative z-10" style={{ background: 'rgba(10,8,5,0.85)', backdropFilter: 'blur(16px)', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 sm:grid-cols-4">
             {[
               { v: '4.9★',               l: 'Avg. Rating' },
