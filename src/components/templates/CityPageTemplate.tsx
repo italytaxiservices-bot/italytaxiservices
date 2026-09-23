@@ -4,6 +4,8 @@ import type { City } from '@/types'
 import { airports } from '@/data/airports'
 import { routes } from '@/data/routes'
 import { formatPrice } from '@/lib/utils'
+import RelatedLinks from '@/components/RelatedLinks'
+import { getCityRelatedLinks } from '@/lib/internalLinks'
 
 interface CityPageTemplateProps {
   city: City
@@ -62,6 +64,7 @@ export default function CityPageTemplate({
   routeHrefFn = (slug) => `/${slug}`,
 }: CityPageTemplateProps) {
   const t = T[locale]
+  const relatedLinks = locale === 'en' ? getCityRelatedLinks(city.slug) : []
   const cityAirports = airports.filter(a => a.citySlug === city.slug)
   const cityRoutes = routes.filter(r =>
     r.fromSlug.includes(city.slug) || r.toSlug === city.slug ||
@@ -224,6 +227,9 @@ export default function CityPageTemplate({
           </div>
         </section>
       )}
+
+      {/* Related internal links */}
+      <RelatedLinks title="Chauffeur Service Across Italy" links={relatedLinks} />
 
       {/* CTA */}
       <section className="py-16 bg-navy">

@@ -2,6 +2,8 @@
 import { ArrowRight, Clock, Shield, Plane } from 'lucide-react'
 import type { Airport } from '@/types'
 import { formatPrice } from '@/lib/utils'
+import RelatedLinks from '@/components/RelatedLinks'
+import { getAirportRelatedLinks } from '@/lib/internalLinks'
 
 interface AirportPageTemplateProps {
   airport: Airport
@@ -61,6 +63,7 @@ export default function AirportPageTemplate({
 }: AirportPageTemplateProps) {
   const t = T[locale]
   const hubHref = airportTransfersHref ?? `${baseHref}/airport-transfers`
+  const relatedLinks = locale === 'en' ? getAirportRelatedLinks(airport) : []
 
   return (
     <div className="pt-20">
@@ -186,6 +189,9 @@ export default function AirportPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* Related internal links */}
+      <RelatedLinks title="Chauffeur Services & Nearby Airports" links={relatedLinks} />
 
       {/* CTA */}
       <section className="py-16 bg-navy">

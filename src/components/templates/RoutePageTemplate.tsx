@@ -3,6 +3,8 @@ import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
 import { formatPrice } from '@/lib/utils'
+import RelatedLinks from '@/components/RelatedLinks'
+import { getRouteRelatedLinks } from '@/lib/internalLinks'
 
 interface RoutePageTemplateProps {
   route: Route
@@ -58,6 +60,7 @@ const T = {
 
 export default function RoutePageTemplate({ route, about, included, faqs, locale = 'en', baseHref = '' }: RoutePageTemplateProps) {
   const t = T[locale]
+  const relatedLinks = locale === 'en' ? getRouteRelatedLinks(route) : []
 
   return (
     <div className="pt-20">
@@ -230,6 +233,9 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
           </div>
         </section>
       )}
+
+      {/* Related internal links */}
+      <RelatedLinks title="Related Transfers & Services" links={relatedLinks} />
 
       {/* CTA */}
       <section className="py-16 bg-navy">
