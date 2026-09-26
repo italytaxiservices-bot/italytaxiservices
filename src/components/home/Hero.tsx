@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(45deg, #C9A84C 1px, transparent 1px), linear-gradient(-45deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex items-center max-w-6xl mx-auto w-full px-6 lg:px-10 pt-28 pb-10">
+      <div className="relative z-10 flex-1 flex items-center max-w-6xl mx-auto w-full px-6 lg:px-10 pt-40 pb-14">
         <div className="w-full grid lg:grid-cols-[1fr_420px] gap-12 items-start">
 
           {/* LEFT — copy */}
