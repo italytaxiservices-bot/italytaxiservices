@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function SEOContent() {
   return (
     <section className="bg-white py-20 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
         {/* ── INTRO ─────────────────────────────────────────────── */}
         <div className="max-w-4xl mb-20">
