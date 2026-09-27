@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, ArrowLeft, Clock, BookOpen } from 'lucide-react'
 import { blogPosts, getBlogPostBySlug, blogContent } from '@/lib/data/blog'
+import RelatedLinks from '@/components/RelatedLinks'
+import { getServiceRelatedLinks } from '@/lib/internalLinks'
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }))
@@ -162,6 +164,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </section>
+
+      {/* ── MONEY-PAGE LINKS ─────────────────────────────── */}
+      <RelatedLinks title="Book a Private Transfer in Italy" links={getServiceRelatedLinks('/blog')} />
 
       {/* ── BACK TO BLOG ─────────────────────────────────── */}
       <section className="py-8 border-t" style={{ background: '#F5F0E8', borderColor: 'rgba(201,168,76,0.15)' }}>

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Clock, MapPin, Car, Train, CreditCard, ChevronDown } from 'lucide-react'
 import { distanceRoutes, getDistanceRouteBySlug } from '@/lib/data/distances'
+import RelatedLinks from '@/components/RelatedLinks'
+import { getServiceRelatedLinks } from '@/lib/internalLinks'
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/lib/siteConfig'
 
@@ -282,6 +284,9 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
           </div>
         </section>
       )}
+
+      {/* ── MONEY-PAGE LINKS ── */}
+      <RelatedLinks title="Private Transfers & Chauffeur Services" links={getServiceRelatedLinks('/distance')} />
 
       {/* ── CTA ── */}
       <section className="py-20" style={{ background: '#F5F0E8' }}>
