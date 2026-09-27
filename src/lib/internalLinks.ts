@@ -138,3 +138,41 @@ export function getCityRelatedLinks(citySlug: string): RelatedLink[] {
     `/${citySlug}-chauffeur-service`
   ).slice(0, 7)
 }
+
+/** City chauffeur pages, as links (used for service/destination cross-linking). */
+const cityChauffeurLinks = (): RelatedLink[] =>
+  [...CITY_CHAUFFEUR].map((s) => ({ label: `${cap(s)} Chauffeur Service`, href: `/${s}-chauffeur-service` }))
+
+/**
+ * Cross-links for a top-level service page (e.g. /airport-transfers,
+ * /cruise-transfers): sibling service hubs plus the main city pages.
+ */
+export function getServiceRelatedLinks(selfHref: string): RelatedLink[] {
+  return dedupe(
+    [
+      { label: 'Airport Transfers', href: '/airport-transfers' },
+      { label: 'Italy Chauffeur Service', href: '/chauffeur-service-italy' },
+      { label: 'City-to-City Transfers', href: '/city-to-city-transfers' },
+      { label: 'Cruise Port Transfers', href: '/cruise-transfers' },
+      { label: 'Private Tours', href: '/italy-private-tours' },
+      ...cityChauffeurLinks().slice(0, 4),
+    ],
+    selfHref
+  ).slice(0, 7)
+}
+
+/**
+ * Cross-links for a destination page (e.g. /destinations/lake-como):
+ * the matching city chauffeur page (when one exists) plus hubs.
+ */
+export function getDestinationRelatedLinks(slug: string, name: string): RelatedLink[] {
+  return dedupe(
+    [
+      CITY_CHAUFFEUR.has(slug) ? { label: `${name} Chauffeur Service`, href: `/${slug}-chauffeur-service` } : null,
+      { label: 'Italy Chauffeur Service', href: '/chauffeur-service-italy' },
+      { label: 'Italy Airport Transfers', href: '/airport-transfers' },
+      { label: 'All Destinations', href: '/destinations' },
+    ],
+    `/destinations/${slug}`
+  ).slice(0, 6)
+}

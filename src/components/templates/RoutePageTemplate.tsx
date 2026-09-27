@@ -1,4 +1,4 @@
-﻿import Link from 'next/link'
+import Link from 'next/link'
 import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
@@ -15,140 +15,108 @@ interface RoutePageTemplateProps {
   baseHref?: string
 }
 
+// ── Cream editorial palette ──
+const INK = '#1a1410'
+const GOLD = '#8B7340'
+const CREAM = '#FAF7F2'
+const LINE = '#E8E2D9'
+const MUTED = '#7a7268'
+
 const T = {
   en: {
-    home: 'Home',
-    badge: 'Private Transfer',
+    home: 'Home', routes: 'Routes', badge: 'Private Transfer',
     h1: (from: string, to: string) => `${from} to ${to} Private Transfer`,
-    journeyTime: 'Journey Time',
-    distance: 'Distance',
-    priceFrom: 'Price From',
-    pickup: 'Pickup',
-    destination: 'Destination',
-    bookTransfer: 'Book This Transfer',
-    vehicles: 'Choose Your Vehicle',
-    aboutTitle: 'About This Transfer',
-    includedTitle: "What's Included",
+    journeyTime: 'Journey Time', distance: 'Distance', priceFrom: 'Price From',
+    pickup: 'Pickup', destination: 'Destination',
+    bookTransfer: 'Book This Transfer', vehicles: 'Choose Your Vehicle',
+    aboutTitle: 'About This Transfer', includedTitle: "What's Included",
     faqTitle: (from: string, to: string) => `FAQs — ${from} to ${to}`,
     ctaTitle: (from: string, to: string) => `Book: ${from} → ${to}`,
     ctaDesc: (price: string) => `Fixed price from ${price}. Professional NCC chauffeur. Door to door.`,
-    bookNow: (price: string) => `Book Now — from ${price}`,
-    from: 'from',
-    bags: 'bags',
+    bookNow: (price: string) => `Book Now — from ${price}`, from: 'from', bags: 'bags',
   },
   it: {
-    home: 'Home',
-    badge: 'Transfer Privato',
+    home: 'Home', routes: 'Percorsi', badge: 'Transfer Privato',
     h1: (from: string, to: string) => `Transfer Privato ${from} - ${to}`,
-    journeyTime: 'Durata Viaggio',
-    distance: 'Distanza',
-    priceFrom: 'A Partire Da',
-    pickup: 'Partenza',
-    destination: 'Destinazione',
-    bookTransfer: 'Prenota Questo Transfer',
-    vehicles: 'Scegli il Tuo Veicolo',
-    aboutTitle: 'Informazioni sul Transfer',
-    includedTitle: 'Cosa è Incluso',
+    journeyTime: 'Durata Viaggio', distance: 'Distanza', priceFrom: 'A Partire Da',
+    pickup: 'Partenza', destination: 'Destinazione',
+    bookTransfer: 'Prenota Questo Transfer', vehicles: 'Scegli il Tuo Veicolo',
+    aboutTitle: 'Informazioni sul Transfer', includedTitle: 'Cosa è Incluso',
     faqTitle: (from: string, to: string) => `Domande Frequenti — ${from} - ${to}`,
     ctaTitle: (from: string, to: string) => `Prenota: ${from} → ${to}`,
     ctaDesc: (price: string) => `Prezzo fisso da ${price}. Chauffeur NCC professionale. Porta a porta.`,
-    bookNow: (price: string) => `Prenota Ora — da ${price}`,
-    from: 'da',
-    bags: 'bagagli',
+    bookNow: (price: string) => `Prenota Ora — da ${price}`, from: 'da', bags: 'bagagli',
   },
 }
+
+const serifHeading = { fontFamily: 'var(--font-serif), Georgia, serif' }
 
 export default function RoutePageTemplate({ route, about, included, faqs, locale = 'en', baseHref = '' }: RoutePageTemplateProps) {
   const t = T[locale]
   const relatedLinks = locale === 'en' ? getRouteRelatedLinks(route) : []
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="bg-navy py-20 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
-            <Link href={`${baseHref}/`} className="hover:text-gold transition-colors">{t.home}</Link>
+    <div>
+      {/* ── HERO ── */}
+      <section className="pt-32 pb-20" style={{ background: '#0f0d0a' }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <nav className="flex items-center gap-2 text-xs mb-8" style={{ color: 'rgba(250,247,242,0.4)' }}>
+            <Link href={`${baseHref}/`} className="hover:text-amber-400 transition-colors">{t.home}</Link>
             <span>/</span>
-            <span className="text-gray-300">{route.fromName} → {route.toName}</span>
+            <span style={{ color: GOLD }}>{route.fromName} → {route.toName}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-                {t.badge}
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                {t.h1(route.fromName, route.toName)}
+              <p className="text-xs uppercase tracking-[0.25em] font-semibold mb-5" style={{ color: GOLD }}>{t.badge}</p>
+              <h1 className="font-black leading-[1.05] mb-5" style={{ ...serifHeading, fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: CREAM }}>
+                {route.fromName} to <span style={{ color: GOLD, fontStyle: 'italic' }}>{route.toName}</span>
               </h1>
-              <p className="text-gray-300 text-xl leading-relaxed mb-8">
+              <p className="text-base leading-relaxed mb-8 max-w-lg" style={{ color: 'rgba(250,247,242,0.65)' }}>
                 {route.description}
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                  <p className="text-xs text-gray-400 mb-1">{t.journeyTime}</p>
-                  <p className="text-white font-bold">{route.estimatedTime}</p>
-                </div>
-                {route.distance && (
-                  <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                    <p className="text-xs text-gray-400 mb-1">{t.distance}</p>
-                    <p className="text-white font-bold">{route.distance}</p>
+              <div className="grid grid-cols-3 gap-3 mb-8 max-w-md">
+                {[
+                  { l: t.journeyTime, v: route.estimatedTime },
+                  ...(route.distance ? [{ l: t.distance, v: route.distance }] : []),
+                  { l: t.priceFrom, v: formatPrice(route.priceFrom), gold: true },
+                ].map(({ l, v, gold }) => (
+                  <div key={l} className="text-center py-3 px-2 rounded-sm" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}>
+                    <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'rgba(250,247,242,0.4)' }}>{l}</p>
+                    <p className="font-bold text-sm" style={{ color: gold ? GOLD : CREAM }}>{v}</p>
                   </div>
-                )}
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
-                  <p className="text-xs text-gray-400 mb-1">{t.priceFrom}</p>
-                  <p className="text-gold font-bold text-xl">{formatPrice(route.priceFrom)}</p>
-                </div>
+                ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={`${baseHref}/#quote-form`}
-                  className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl hover:bg-gold-light transition-colors"
-                >
-                  {t.bookTransfer} <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+              <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+                {t.bookTransfer} <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
             {/* Route card */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <div className="rounded-sm p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}>
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">{t.pickup}</p>
+                  <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: 'rgba(250,247,242,0.4)' }}>{t.pickup}</p>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-gold shrink-0" />
-                    <p className="text-white font-semibold">{route.fromName}</p>
+                    <MapPin className="w-4 h-4 shrink-0" style={{ color: GOLD }} />
+                    <p className="font-semibold text-sm" style={{ color: CREAM }}>{route.fromName}</p>
                   </div>
                 </div>
-                <div className="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-gold" />
-                </div>
+                <ArrowRight className="w-5 h-5 shrink-0" style={{ color: GOLD }} />
                 <div className="flex-1 min-w-0 text-right">
-                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">{t.destination}</p>
+                  <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: 'rgba(250,247,242,0.4)' }}>{t.destination}</p>
                   <div className="flex items-center justify-end gap-2">
-                    <p className="text-white font-semibold">{route.toName}</p>
-                    <MapPin className="w-4 h-4 text-gold shrink-0" />
+                    <p className="font-semibold text-sm" style={{ color: CREAM }}>{route.toName}</p>
+                    <MapPin className="w-4 h-4 shrink-0" style={{ color: GOLD }} />
                   </div>
                 </div>
               </div>
-
-              <div className="space-y-3">
+              <div className="space-y-3 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
                 {route.highlights.map((h) => (
-                  <div key={h} className="flex items-center gap-2 text-sm text-gray-300">
-                    <div className="w-4 h-4 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
-                      <svg className="w-2.5 h-2.5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
+                  <div key={h} className="flex items-center gap-2.5 text-sm" style={{ color: 'rgba(250,247,242,0.7)' }}>
+                    <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                     {h}
                   </div>
                 ))}
@@ -158,25 +126,25 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         </div>
       </section>
 
-      {/* Vehicle options */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10">{t.vehicles}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* ── VEHICLES ── */}
+      <section className="py-20" style={{ background: CREAM }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <h2 className="text-2xl font-black mb-10" style={{ ...serifHeading, color: INK }}>{t.vehicles}</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {vehicles.map((v) => (
-              <div key={v.id} className="bg-white rounded-2xl border border-gray-100 p-5">
-                <div className="h-24 bg-gradient-to-br from-navy to-navy-800 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-20 h-12 text-gold/60" viewBox="0 0 200 80" fill="currentColor">
+              <div key={v.id} className="bg-white rounded-sm p-5" style={{ border: `1px solid ${LINE}` }}>
+                <div className="h-20 rounded-sm flex items-center justify-center mb-4" style={{ background: '#F0EBE1' }}>
+                  <svg className="w-20 h-12" style={{ color: '#D4B86A' }} viewBox="0 0 200 80" fill="currentColor">
                     <path d="M20 55 C20 55 30 35 50 32 L80 28 C90 26 100 24 115 24 L145 24 C158 24 168 30 175 40 L182 50 C185 50 190 52 190 56 L190 60 C190 62 188 64 186 64 L174 64 C173 70 167 75 160 75 C153 75 147 70 146 64 L64 64 C63 70 57 75 50 75 C43 75 37 70 36 64 L24 64 C22 64 20 62 20 60 Z" />
                   </svg>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-0.5">{v.name}</h3>
-                <p className="text-xs text-gray-400 mb-3">{v.model}</p>
-                <div className="flex gap-4 mb-3 text-sm text-gray-500">
-                  <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5 text-gold" /> {v.passengers}</span>
-                  <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5 text-gold" /> {v.luggage} {t.bags}</span>
+                <h3 className="font-bold text-sm mb-0.5" style={{ ...serifHeading, color: INK }}>{v.name}</h3>
+                <p className="text-xs mb-3" style={{ color: '#9a8f83' }}>{v.model}</p>
+                <div className="flex gap-4 mb-3 text-xs" style={{ color: MUTED }}>
+                  <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" style={{ color: GOLD }} /> {v.passengers}</span>
+                  <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5" style={{ color: GOLD }} /> {v.luggage} {t.bags}</span>
                 </div>
-                <p className="text-gold font-bold text-sm">
+                <p className="font-bold text-sm" style={{ color: GOLD }}>
                   {t.from} {formatPrice(Math.round(route.priceFrom * v.priceMultiplier))}
                 </p>
               </div>
@@ -185,28 +153,23 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         </div>
       </section>
 
-      {/* About + Included */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      {/* ── ABOUT + INCLUDED ── */}
+      <section className="py-20 bg-white" style={{ borderTop: `1px solid ${LINE}` }}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.aboutTitle}</h2>
+              <h2 className="text-2xl font-black mb-6" style={{ ...serifHeading, color: INK }}>{t.aboutTitle}</h2>
               {about.split('\n\n').map((para, i) => (
-                <p key={i} className="text-gray-600 leading-relaxed mb-4">{para}</p>
+                <p key={i} className="text-sm leading-relaxed mb-4" style={{ color: MUTED }}>{para}</p>
               ))}
             </div>
-
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-5">{t.includedTitle}</h3>
+              <h3 className="text-lg font-black mb-5" style={{ ...serifHeading, color: INK }}>{t.includedTitle}</h3>
               <div className="space-y-3">
                 {included.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-gold rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">{item}</p>
+                    <svg className="w-4 h-4 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                    <p className="text-sm" style={{ color: '#5a5248' }}>{item}</p>
                   </div>
                 ))}
               </div>
@@ -215,18 +178,16 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         </div>
       </section>
 
-      {/* FAQs */}
+      {/* ── FAQs ── */}
       {faqs.length > 0 && (
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-10">
-              {t.faqTitle(route.fromName, route.toName)}
-            </h2>
-            <div className="space-y-5">
+        <section className="py-20" style={{ background: CREAM }}>
+          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+            <h2 className="text-2xl font-black mb-8" style={{ ...serifHeading, color: INK }}>{t.faqTitle(route.fromName, route.toName)}</h2>
+            <div className="space-y-px">
               {faqs.map((faq, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100">
-                  <h3 className="font-semibold text-gray-900 mb-3">{faq.q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                <div key={i} className="py-5" style={i < faqs.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}}>
+                  <h3 className="font-bold text-sm mb-2" style={{ color: INK }}>{faq.q}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: MUTED }}>{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -234,26 +195,17 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         </section>
       )}
 
-      {/* Related internal links */}
+      {/* ── RELATED LINKS ── */}
       <RelatedLinks title="Related Transfers & Services" links={relatedLinks} />
 
-      {/* CTA */}
-      <section className="py-16 bg-navy">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            {t.ctaTitle(route.fromName, route.toName)}
-          </h2>
-          <p className="text-gray-400 mb-8">
-            {t.ctaDesc(formatPrice(route.priceFrom))}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={`${baseHref}/#quote-form`}
-              className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors"
-            >
-              {t.bookNow(formatPrice(route.priceFrom))} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+      {/* ── CTA ── */}
+      <section className="py-16" style={{ background: '#0f0d0a' }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+          <h2 className="text-2xl font-black mb-4" style={{ ...serifHeading, color: CREAM }}>{t.ctaTitle(route.fromName, route.toName)}</h2>
+          <p className="text-sm mb-8" style={{ color: 'rgba(250,247,242,0.55)' }}>{t.ctaDesc(formatPrice(route.priceFrom))}</p>
+          <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+            {t.bookNow(formatPrice(route.priceFrom))} <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>
