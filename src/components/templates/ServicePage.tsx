@@ -4,6 +4,7 @@ import { getServiceBySlug } from '@/lib/data/services'
 import ContentPageTemplate from './ContentPageTemplate'
 import { JsonLd, breadcrumbSchema, serviceSchema, faqSchema } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/lib/siteConfig'
+import { getServiceRelatedLinks } from '@/lib/internalLinks'
 
 /** Shared body for the small set of genuinely new, top-level service pages (see src/lib/data/services.ts). */
 export function ServicePageBody({ slug }: { slug: string }) {
@@ -11,6 +12,7 @@ export function ServicePageBody({ slug }: { slug: string }) {
   if (!service) notFound()
 
   const breadcrumbs = [{ label: 'Home', href: '/' }, { label: service.name }]
+  const relatedLinks = getServiceRelatedLinks(`/${service.slug}`)
 
   return (
     <>
@@ -35,6 +37,8 @@ export function ServicePageBody({ slug }: { slug: string }) {
         ]}
         faqTitle={`${service.name} — FAQs`}
         faqs={service.faqs}
+        relatedTitle="Explore More Services"
+        relatedLinks={relatedLinks}
         ctaTitle={`Request ${service.name}`}
         ctaDescription={service.shortDescription}
       />
