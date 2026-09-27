@@ -363,6 +363,13 @@ html { scroll-behavior: smooth; }
   background: rgba(201,168,76,0.1) !important;
 }
 
+/* Light footer variant */
+.social-icon-light:hover {
+  color: #8B7340 !important;
+  border-color: rgba(139,115,64,0.4) !important;
+  background: rgba(139,115,64,0.07) !important;
+}
+
 /* ─── Admin panel ─────────────────────────────── */
 .font-display {
   font-family: var(--font-display), Georgia, serif;

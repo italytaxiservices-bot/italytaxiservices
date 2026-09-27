@@ -80,21 +80,26 @@ const cols = {
   ],
 }
 
+const INK = '#1a1410'
+const GOLD = '#8B7340'
+const MUTED = '#5a5248'
+const LINE = '#E8E2D9'
+
 export default function Footer() {
   return (
-    <footer className="relative grain" style={{ background: '#060606' }}>
+    <footer className="relative" style={{ background: '#FAF7F2', borderTop: `1px solid ${LINE}` }}>
 
       {/* Top gold separator */}
-      <div className="h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.35) 35%, rgba(224,192,112,0.55) 55%, rgba(201,168,76,0.35) 75%, transparent 95%)' }} />
+      <div className="h-[2px]" style={{ background: 'linear-gradient(90deg, transparent 5%, rgba(139,115,64,0.35) 35%, rgba(201,168,76,0.55) 55%, rgba(139,115,64,0.35) 75%, transparent 95%)' }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-12">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 pt-20 pb-12">
 
         {/* Main grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16 mb-16">
 
           {/* Brand column */}
           <div>
-            <Link href="/" className="block mb-8">
+            <Link href="/" className="block mb-7">
               <Image
                 src="/logo.webp"
                 alt="Italy Taxi Services"
@@ -103,17 +108,17 @@ export default function Footer() {
                 className="h-14 w-14 mb-3"
               />
               <p
-                className="font-black text-white text-2xl tracking-tight leading-none mb-2 italic"
-                style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
+                className="font-black text-2xl tracking-tight leading-none mb-2"
+                style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: INK }}
               >
                 Italy Taxi Services
               </p>
-              <span className="section-label" style={{ fontSize: '0.6rem', letterSpacing: '0.25em' }}>
+              <span className="text-[0.6rem] font-semibold uppercase" style={{ letterSpacing: '0.25em', color: GOLD }}>
                 Private NCC Transfers
               </span>
             </Link>
 
-            <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-serif), Georgia, serif', fontStyle: 'italic' }}>
+            <p className="text-sm leading-relaxed mb-7" style={{ color: MUTED }}>
               Licensed NCC private transfer service across Italy. Fixed prices, professional chauffeurs, door-to-door.
             </p>
 
@@ -121,12 +126,12 @@ export default function Footer() {
               <a
                 href={`mailto:${EMAIL}`}
                 className="group flex items-center gap-3 text-xs transition-colors"
-                style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '0.05em' }}
+                style={{ color: MUTED, letterSpacing: '0.03em' }}
               >
-                <div className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0" style={{ background: 'rgba(201,168,76,0.06)', border: '1px solid rgba(201,168,76,0.12)' }}>
-                  <Mail className="w-3.5 h-3.5" style={{ color: '#C9A84C' }} />
+                <div className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0" style={{ background: '#fff', border: `1px solid ${LINE}` }}>
+                  <Mail className="w-3.5 h-3.5" style={{ color: GOLD }} />
                 </div>
-                <span className="group-hover:text-amber-400 transition-colors text-white/80">{EMAIL}</span>
+                <span className="group-hover:text-amber-800 transition-colors">{EMAIL}</span>
               </a>
 
               {/* Social icons */}
@@ -139,8 +144,8 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={name}
-                      className="w-9 h-9 rounded-sm flex items-center justify-center transition-all hover:-translate-y-0.5 hover:text-gold social-icon"
-                      style={{ background: 'rgba(201,168,76,0.06)', border: '1px solid rgba(201,168,76,0.12)', color: 'rgba(255,255,255,0.5)' }}
+                      className="w-9 h-9 rounded-sm flex items-center justify-center transition-all hover:-translate-y-0.5 social-icon-light"
+                      style={{ background: '#fff', border: `1px solid ${LINE}`, color: '#9a8f83' }}
                     >
                       {icon}
                     </a>
@@ -149,7 +154,7 @@ export default function Footer() {
                       key={name}
                       title={`${name} coming soon`}
                       className="w-9 h-9 rounded-sm flex items-center justify-center cursor-not-allowed"
-                      style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.08)', color: 'rgba(255,255,255,0.2)' }}
+                      style={{ background: '#F0EBE1', border: `1px solid ${LINE}`, color: '#c9bfae' }}
                     >
                       {icon}
                     </div>
@@ -163,14 +168,14 @@ export default function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
             {Object.entries(cols).map(([cat, items]) => (
               <div key={cat}>
-                <p className="section-label mb-6" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>{cat}</p>
+                <p className="text-[0.6rem] font-bold uppercase mb-5" style={{ letterSpacing: '0.22em', color: GOLD }}>{cat}</p>
                 <ul className="space-y-3">
                   {items.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-xs transition-colors hover:text-amber-400"
-                        style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '0.02em' }}
+                        className="text-xs transition-colors hover:text-amber-800"
+                        style={{ color: MUTED, letterSpacing: '0.02em' }}
                       >
                         {item.name}
                       </Link>
@@ -185,12 +190,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
+          style={{ borderTop: `1px solid ${LINE}` }}
         >
-          <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <p className="text-[11px]" style={{ color: '#9a8f83' }}>
             © {new Date().getFullYear()} Italy Taxi Services. All rights reserved. NCC licensed transfer intermediary.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {[
               { name: 'About',          href: '/about' },
               { name: 'FAQ',            href: '/faq' },
@@ -200,7 +205,7 @@ export default function Footer() {
               { name: 'Refund Policy',  href: '/refund-policy' },
               { name: 'About NCC',      href: '/ncc-italy' },
             ].map(({ name, href }) => (
-              <Link key={name} href={href} className="text-[11px] transition-colors hover:text-amber-400" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              <Link key={name} href={href} className="text-[11px] transition-colors hover:text-amber-800" style={{ color: '#9a8f83' }}>
                 {name}
               </Link>
             ))}
