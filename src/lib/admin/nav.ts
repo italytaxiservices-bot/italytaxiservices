@@ -1,6 +1,7 @@
 import {
   LayoutDashboard,
   Target,
+  PhoneCall,
   Users,
   FileText,
   CalendarClock,
@@ -45,6 +46,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/leads", label: "Leads", icon: Target, roles: ["SUPER_ADMIN", "ADMIN", "OPERATIONS", "FINANCE", "VIEWER"] },
+  { href: "/admin/upcoming-leads", label: "Upcoming trips", icon: PhoneCall, roles: ["SUPER_ADMIN", "ADMIN", "OPERATIONS", "FINANCE", "VIEWER"] },
   { href: "/admin/customers", label: "Customers", icon: Users },
   { href: "/admin/quotations", label: "Quotations", icon: FileText, roles: ["SUPER_ADMIN", "ADMIN", "OPERATIONS", "FINANCE", "VIEWER"] },
   { href: "/admin/bookings", label: "Bookings", icon: CalendarClock },

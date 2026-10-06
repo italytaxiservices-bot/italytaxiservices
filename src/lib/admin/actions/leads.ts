@@ -122,6 +122,36 @@ export async function setLeadStatus(id: string, status: LeadStatus) {
   revalidatePath("/admin/leads");
 }
 
+/**
+ * Called when staff reach out to a lead from the Upcoming trips page:
+ * leaves a timestamped internal note and moves a NEW lead to CONTACTED so
+ * it drops off the "To contact" list. Never downgrades a lead that's
+ * already further along (QUOTED, WON, ...).
+ */
+export async function markLeadContacted(id: string, channel: "whatsapp" | "email" | "phone" | "manual") {
+  const profile = await requireRole(MANAGE_CRM);
+  const supabase = await createClient();
+
+  const { data: lead } = await supabase.from("leads").select("status").eq("id", id).maybeSingle();
+  if (!lead) return;
+  if (lead.status === "NEW") {
+    const { error } = await supabase.from("leads").update({ status: "CONTACTED" }).eq("id", id);
+    if (error) throw new Error(error.message);
+  }
+
+  const how = { whatsapp: "via WhatsApp", email: "by email", phone: "by phone", manual: "" }[channel];
+  await supabase.from("internal_notes").insert({
+    entity_type: "lead",
+    entity_id: id,
+    note: `Customer contacted ${how}`.trim(),
+    created_by: profile.id,
+  });
+
+  revalidatePath("/admin/upcoming-leads");
+  revalidatePath(`/admin/leads/${id}`);
+  revalidatePath("/admin/leads");
+}
+
 export async function assignLead(id: string, formData: FormData) {
   await requireRole(MANAGE_CRM);
   const assignedTo = formData.get("assignedTo")?.toString();

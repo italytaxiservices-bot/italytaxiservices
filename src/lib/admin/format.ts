@@ -55,6 +55,12 @@ export function formatReceived(date: string | Date | null | undefined, now = new
   return relative ? `${relative} · ${absolute}` : absolute;
 }
 
+/** Today's date in the business time zone as YYYY-MM-DD (server runs in UTC). */
+export function businessToday(now = new Date()) {
+  // en-CA formats dates as YYYY-MM-DD.
+  return new Intl.DateTimeFormat("en-CA", { timeZone: BUSINESS_TIME_ZONE }).format(now);
+}
+
 /** True for anything that arrived within the last 24 hours. */
 export function isRecent(date: string | Date | null | undefined, now = new Date()) {
   if (!date) return false;
