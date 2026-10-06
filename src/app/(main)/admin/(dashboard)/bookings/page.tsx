@@ -9,7 +9,7 @@ import { Card } from "@/components/admin/ui/Card";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { Pagination } from "@/components/admin/ui/Pagination";
 import { SimpleTable } from "@/components/admin/ui/SimpleTable";
-import { formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
+import { formatCurrency, formatDate, formatTime, formatReceived } from "@/lib/admin/format";
 
 export const metadata: Metadata = { title: "Bookings" };
 
@@ -30,7 +30,7 @@ export default async function BookingsPage({
   const supabase = await createClient();
   let query = supabase
     .from("bookings")
-    .select("id, booking_reference, pickup, dropoff, trip_date, trip_time, status, payment_status, total, currency, customers(full_name), drivers(full_name)", { count: "exact" })
+    .select("id, booking_reference, pickup, dropoff, trip_date, trip_time, status, payment_status, total, currency, created_at, customers(full_name), drivers(full_name)", { count: "exact" })
     .is("deleted_at", null)
     .order("trip_date", { ascending: false })
     .range(from, from + PAGE_SIZE - 1);
@@ -88,6 +88,7 @@ export default async function BookingsPage({
             { header: "Total", cell: (b) => formatCurrency(b.total, b.currency) },
             { header: "Payment", cell: (b) => <StatusBadge status={b.payment_status} /> },
             { header: "Status", cell: (b) => <StatusBadge status={b.status} /> },
+            { header: "Received", cell: (b) => <span className="text-xs text-admin-stone whitespace-nowrap">{formatReceived(b.created_at)}</span> },
           ]}
         />
         <Pagination page={page} pageSize={PAGE_SIZE} total={count ?? 0} basePath="/admin/bookings" searchParams={{ q, status }} />

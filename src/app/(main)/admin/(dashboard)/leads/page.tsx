@@ -9,7 +9,7 @@ import { Card } from "@/components/admin/ui/Card";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { Pagination } from "@/components/admin/ui/Pagination";
 import { SimpleTable } from "@/components/admin/ui/SimpleTable";
-import { formatCurrency, formatDate } from "@/lib/admin/format";
+import { formatCurrency, formatDate, formatTime, formatReceived, isRecent } from "@/lib/admin/format";
 
 export const metadata: Metadata = { title: "Leads" };
 
@@ -30,7 +30,7 @@ export default async function LeadsPage({
   const supabase = await createClient();
   let query = supabase
     .from("leads")
-    .select("id, lead_number, full_name, phone, email, source, status, estimated_value, currency, next_follow_up_at, created_at", { count: "exact" })
+    .select("id, lead_number, full_name, phone, email, source, status, pickup, dropoff, trip_date, trip_time, estimated_value, currency, next_follow_up_at, created_at", { count: "exact" })
     .is("deleted_at", null)
     .order("created_at", { ascending: false })
     .range(from, from + PAGE_SIZE - 1);
@@ -83,10 +83,20 @@ export default async function LeadsPage({
               ),
             },
             { header: "Contact", cell: (l) => l.phone ?? l.email ?? "—" },
+            { header: "Route", cell: (l) => (l.pickup || l.dropoff ? `${l.pickup ?? "—"} → ${l.dropoff ?? "—"}` : "—") },
+            { header: "Trip", cell: (l) => (l.trip_date ? `${formatDate(l.trip_date)} ${formatTime(l.trip_time)}` : "—") },
             { header: "Source", cell: (l) => l.source },
             { header: "Est. value", cell: (l) => (l.estimated_value ? formatCurrency(l.estimated_value, l.currency) : "—") },
             { header: "Next follow-up", cell: (l) => (l.next_follow_up_at ? formatDate(l.next_follow_up_at) : "—") },
             { header: "Status", cell: (l) => <StatusBadge status={l.status} /> },
+            {
+              header: "Received",
+              cell: (l) => (
+                <span className={`text-xs whitespace-nowrap ${isRecent(l.created_at) && l.status === "NEW" ? "font-semibold text-red-700" : "text-admin-stone"}`}>
+                  {formatReceived(l.created_at)}
+                </span>
+              ),
+            },
           ]}
         />
         <Pagination page={page} pageSize={PAGE_SIZE} total={count ?? 0} basePath="/admin/leads" searchParams={{ q, status }} />

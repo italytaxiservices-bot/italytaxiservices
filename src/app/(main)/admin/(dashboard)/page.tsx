@@ -5,7 +5,7 @@ import { getCurrentProfile } from "@/lib/auth/dal";
 import { canViewFinance, canManageCrm, canManageOps } from "@/lib/auth/roles";
 import { getDashboardData } from "@/lib/admin/dashboard";
 import { DATE_RANGE_LABELS, type DateRangeKey } from "@/lib/admin/date-range";
-import { formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
+import { formatCurrency, formatDate, formatTime, formatReceived, isRecent } from "@/lib/admin/format";
 import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { StatCard, Card } from "@/components/admin/ui/Card";
 import { StatusBadge } from "@/components/admin/ui/Badge";
@@ -80,6 +80,35 @@ export default async function DashboardPage({
       </section>
 
       <section className="mb-8">
+        <ListCard title="New booking requests (website)" viewAllHref="/admin/leads">
+          {data.recentLeads.length === 0 ? (
+            <EmptyState title="No booking requests yet" />
+          ) : (
+            data.recentLeads.map((l: any) => (
+              <Row key={l.id} href={`/admin/leads/${l.id}`}>
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-admin-ink flex items-center gap-2">
+                    {l.full_name}
+                    {isRecent(l.created_at) && l.status === "NEW" ? (
+                      <span className="text-[10px] font-semibold uppercase tracking-wide bg-red-600 text-white px-1.5 py-0.5 rounded-sm">New</span>
+                    ) : null}
+                  </p>
+                  <p className="text-xs text-admin-stone truncate">
+                    {l.pickup ?? "—"} → {l.dropoff ?? "—"}
+                    {l.trip_date ? ` · Trip ${formatDate(l.trip_date)} ${formatTime(l.trip_time)}` : ""}
+                  </p>
+                </div>
+                <div className="text-right shrink-0">
+                  <p className="text-xs font-medium text-admin-ink">{formatReceived(l.created_at)}</p>
+                  <StatusBadge status={l.status} />
+                </div>
+              </Row>
+            ))
+          )}
+        </ListCard>
+      </section>
+
+      <section className="mb-8">
         <h2 className="text-sm font-semibold text-admin-ink-soft mb-3">Operations</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
           <StatCard label="Today's trips" value={data.operational?.todays_trips ?? 0} />
@@ -143,6 +172,7 @@ export default async function DashboardPage({
                 <div>
                   <p className="text-sm font-medium text-admin-ink">{b.booking_reference}</p>
                   <p className="text-xs text-admin-stone">{b.customers?.full_name} · {b.pickup} → {b.dropoff}</p>
+                  <p className="text-xs text-admin-stone">Received {formatReceived(b.created_at)}</p>
                 </div>
                 <StatusBadge status={b.status} />
               </Row>

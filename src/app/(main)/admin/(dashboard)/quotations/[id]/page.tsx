@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Download } from "lucide-react";
+import { Download, Mail } from "lucide-react";
+import { formatDateTime } from "@/lib/admin/format";
 import { requireUser } from "@/lib/auth/dal";
 import { canManageCrm } from "@/lib/auth/roles";
 import { createClient } from "@/lib/supabase/server";
@@ -103,15 +104,30 @@ export default async function QuotationDetailPage({ params }: { params: Promise<
 
         {canEdit ? (
           <div className="space-y-4">
+            {quotation.status !== "CONVERTED" ? (
+              <Section title="Email PDF to client">
+                <form action={sendQuotation.bind(null, id)} className="p-4 space-y-2">
+                  <label className="block text-xs text-admin-stone">Client email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    defaultValue={(quotation as any).customers?.email ?? ""}
+                    placeholder="client@example.com"
+                    className="input-luxe text-sm"
+                  />
+                  <button type="submit" className="w-full inline-flex items-center justify-center gap-1.5 text-sm bg-admin-navy text-admin-ivory px-3 py-2 rounded-sm hover:bg-admin-navy-deep">
+                    <Mail className="h-4 w-4" /> {quotation.sent_at ? "Resend quotation + PDF" : "Send quotation + PDF"}
+                  </button>
+                  {quotation.sent_at ? (
+                    <p className="text-xs text-admin-stone">Last sent {formatDateTime(quotation.sent_at)}</p>
+                  ) : null}
+                </form>
+              </Section>
+            ) : null}
+
             <Section title="Actions">
               <div className="p-4 space-y-2">
-                {quotation.status === "DRAFT" || quotation.status === "SENT" ? (
-                  <form action={sendQuotation.bind(null, id)}>
-                    <button type="submit" className="w-full text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-admin-ivory-deep">
-                      Mark as sent
-                    </button>
-                  </form>
-                ) : null}
                 {quotation.status !== "ACCEPTED" && quotation.status !== "CONVERTED" ? (
                   <form action={markQuotationAccepted.bind(null, id)}>
                     <button type="submit" className="w-full text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-admin-ivory-deep">

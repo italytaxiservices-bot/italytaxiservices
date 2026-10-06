@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Section } from "@/components/admin/ui/Section";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { LeadForm } from "@/components/admin/leads/LeadForm";
-import { formatDate, formatDateTime, formatTime } from "@/lib/admin/format";
+import { formatDate, formatDateTime, formatTime, formatReceived } from "@/lib/admin/format";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import {
   updateLead,
@@ -63,7 +63,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
     <div>
       <PageHeader
         title={lead.full_name}
-        description={lead.lead_number}
+        description={`${lead.lead_number} · Received ${formatReceived(lead.created_at)}`}
         actions={<StatusBadge status={lead.status} />}
       />
 

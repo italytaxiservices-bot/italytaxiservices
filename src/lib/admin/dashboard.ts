@@ -53,13 +53,14 @@ export async function getDashboardData(range: DateRangeKey) {
     pendingQuotationsRes,
     followUpsDueRes,
     unassignedTripsRes,
+    recentLeadsRes,
   ] = await Promise.all([
     supabase.rpc("dashboard_operational_kpis", { p_today: today }).single(),
     supabase.rpc("dashboard_crm_kpis", { p_from: fromIso, p_to: toIso }).single(),
     supabase.rpc("dashboard_finance_kpis", { p_from: fromIso, p_to: toIso, p_today: today }).single(),
     supabase
       .from("bookings")
-      .select("id, booking_reference, pickup, dropoff, trip_date, trip_time, status, customers(full_name)")
+      .select("id, booking_reference, pickup, dropoff, trip_date, trip_time, status, created_at, customers(full_name)")
       .is("deleted_at", null)
       .order("created_at", { ascending: false })
       .limit(5),
@@ -98,6 +99,14 @@ export async function getDashboardData(range: DateRangeKey) {
       .not("status", "in", "(CANCELLED,COMPLETED,NO_SHOW)")
       .order("trip_date", { ascending: true })
       .limit(5),
+    // Public website bookings land in `leads` (see api/booking), so this is
+    // where brand-new requests show up first.
+    supabase
+      .from("leads")
+      .select("id, lead_number, full_name, pickup, dropoff, trip_date, trip_time, status, source, created_at")
+      .is("deleted_at", null)
+      .order("created_at", { ascending: false })
+      .limit(8),
   ]);
 
   return {
@@ -111,5 +120,6 @@ export async function getDashboardData(range: DateRangeKey) {
     pendingQuotations: pendingQuotationsRes.data ?? [],
     followUpsDue: followUpsDueRes.data ?? [],
     unassignedTrips: unassignedTripsRes.data ?? [],
+    recentLeads: recentLeadsRes.data ?? [],
   };
 }

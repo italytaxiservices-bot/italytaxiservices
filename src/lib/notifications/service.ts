@@ -18,10 +18,13 @@ const OPT_OUT_ELIGIBLE: EmailTemplateKey[] = ["quotation_reminder", "review_requ
  * the notifications table intentionally has no client-facing insert policy
  * (see 20260909120900_rls.sql) — this is the one sanctioned write path.
  *
- * Never throws: a failed send is logged, not surfaced to the caller, so a
- * broken mail provider can't block the booking/payment/quotation action
- * that triggered it.
+ * Never throws: a failed send is recorded, not thrown, so a broken mail
+ * provider can't block the booking/payment/quotation action that
+ * triggered it. Callers that want to tell staff whether the email went out
+ * can inspect the returned result.
  */
+export type NotifyResult = { sent: true } | { sent: false; error: string };
+
 export async function notifyCustomer(params: {
   templateKey: EmailTemplateKey;
   to: string | null | undefined;
@@ -30,14 +33,14 @@ export async function notifyCustomer(params: {
   relatedEntityId: string;
   attachments?: { filename: string; content: Buffer; contentType?: string }[];
   bcc?: string;
-}) {
-  if (!params.to) return;
+}): Promise<NotifyResult> {
+  if (!params.to) return { sent: false, error: "No recipient email address" };
 
   const admin = createAdminClient();
 
   if (OPT_OUT_ELIGIBLE.includes(params.templateKey)) {
     const { data: customer } = await admin.from("customers").select("opt_out_marketing").eq("email", params.to).maybeSingle();
-    if (customer?.opt_out_marketing) return;
+    if (customer?.opt_out_marketing) return { sent: false, error: "Customer opted out" };
   }
 
   const { data: override } = await admin
@@ -69,7 +72,7 @@ export async function notifyCustomer(params: {
     if (notification) {
       await admin.from("notifications").update({ status: "FAILED", error: "No sender email configured" }).eq("id", notification.id);
     }
-    return;
+    return { sent: false, error: "No sender email configured" };
   }
 
   try {
@@ -77,12 +80,12 @@ export async function notifyCustomer(params: {
     if (notification) {
       await admin.from("notifications").update({ status: "SENT", sent_at: new Date().toISOString() }).eq("id", notification.id);
     }
+    return { sent: true };
   } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
     if (notification) {
-      await admin
-        .from("notifications")
-        .update({ status: "FAILED", error: err instanceof Error ? err.message : String(err) })
-        .eq("id", notification.id);
+      await admin.from("notifications").update({ status: "FAILED", error: message }).eq("id", notification.id);
     }
+    return { sent: false, error: message };
   }
 }

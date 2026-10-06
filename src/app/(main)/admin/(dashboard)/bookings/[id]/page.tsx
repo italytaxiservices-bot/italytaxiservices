@@ -10,7 +10,7 @@ import { StatusBadge } from "@/components/admin/ui/Badge";
 import { EntityPicker } from "@/components/admin/ui/EntityPicker";
 import { ConfirmButton } from "@/components/admin/ui/ConfirmButton";
 import { BookingForm } from "@/components/admin/bookings/BookingForm";
-import { formatDateTime, formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
+import { formatDateTime, formatCurrency, formatDate, formatTime, formatReceived } from "@/lib/admin/format";
 import { updateBooking, setBookingStatus, assignDriverAndVehicle, cancelBookingWithDetails, markNoShowWithDetails, deleteBooking } from "@/lib/admin/actions/bookings";
 import { createInvoiceForBooking } from "@/lib/admin/actions/invoices";
 import { buildWhatsAppLink } from "@/lib/notifications/whatsapp";
@@ -115,7 +115,7 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
     <div>
       <PageHeader
         title={booking.booking_reference}
-        description={(booking as any).customers?.full_name}
+        description={`${(booking as any).customers?.full_name ?? ""} · Received ${formatReceived(booking.created_at)}`}
         actions={
           <div className="flex items-center gap-2">
             <StatusBadge status={booking.payment_status} />

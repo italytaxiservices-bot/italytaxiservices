@@ -217,57 +217,82 @@ export async function updateQuotation(id: string, _prevState: FormState, formDat
   redirect(`/admin/quotations/${id}?success=Changes+saved`);
 }
 
-export async function sendQuotation(id: string) {
+/**
+ * Emails the quotation PDF to the client and marks it SENT. The recipient
+ * comes from the form (pre-filled with the customer's email, editable so
+ * staff can send to a different address), and the outcome is reported
+ * back through the flash banner so staff know whether it actually went out.
+ */
+export async function sendQuotation(id: string, formData?: FormData) {
   await requireRole(MANAGE_CRM);
   const supabase = await createClient();
-  const { error } = await supabase
-    .from("quotations")
-    .update({ status: "SENT", sent_at: new Date().toISOString() })
-    .eq("id", id);
-  if (error) throw new Error(error.message);
+  const page = `/admin/quotations/${id}`;
 
   const { data: quotation } = await supabase
     .from("quotations")
-    .select("quotation_number, total, currency, valid_until, pickup, dropoff, trip_date, trip_time, customers(full_name, email)")
+    .select("quotation_number, status, total, currency, valid_until, pickup, dropoff, trip_date, trip_time, customers(full_name, email)")
     .eq("id", id)
     .maybeSingle();
-  const customer = (quotation as any)?.customers;
-  if (quotation && customer?.email) {
-    // Best-effort PDF attachment — a failed render must never block the
-    // email itself (the customer should still get the quotation summary
-    // even if the PDF generation has a problem).
-    let attachments: { filename: string; content: Buffer }[] | undefined;
-    try {
-      const doc = await getQuotationPdfDocument(id);
-      if (doc) {
-        const buffer = await renderToBuffer(doc.element as any);
-        attachments = [{ filename: doc.filename, content: buffer }];
-      }
-    } catch (err) {
-      console.error("quotation PDF attachment failed", err instanceof Error ? err.message : err);
-    }
+  if (!quotation) redirect(`${page}?error=${encodeURIComponent("Quotation not found.")}`);
+  const customer = (quotation as any).customers;
 
-    await notifyCustomer({
-      templateKey: "quotation_sent",
-      to: customer.email,
-      vars: {
-        customer_name: customer.full_name ?? "",
-        quotation_number: quotation.quotation_number,
-        total: formatCurrency(quotation.total, quotation.currency),
-        valid_until: quotation.valid_until ? formatDate(quotation.valid_until) : "—",
-        pickup: quotation.pickup ?? "",
-        dropoff: quotation.dropoff ?? "",
-        date: quotation.trip_date ? formatDate(quotation.trip_date) : "",
-        time: quotation.trip_time ? formatTime(quotation.trip_time) : "",
-        pdf_note: attachments ? " (attached as a PDF)" : "",
-      },
-      relatedEntityType: "quotation",
-      relatedEntityId: id,
-      attachments,
-    });
+  const to = String(formData?.get("email") ?? customer?.email ?? "").trim();
+  if (!z.string().email().safeParse(to).success) {
+    redirect(`${page}?error=${encodeURIComponent("Enter a valid client email address to send the quotation.")}`);
   }
 
-  revalidatePath(`/admin/quotations/${id}`);
+  // Best-effort PDF attachment — a failed render must never block the
+  // email itself (the customer should still get the quotation summary
+  // even if the PDF generation has a problem).
+  let attachments: { filename: string; content: Buffer }[] | undefined;
+  try {
+    const doc = await getQuotationPdfDocument(id);
+    if (doc) {
+      const buffer = await renderToBuffer(doc.element as any);
+      attachments = [{ filename: doc.filename, content: buffer }];
+    }
+  } catch (err) {
+    console.error("quotation PDF attachment failed", err instanceof Error ? err.message : err);
+  }
+
+  const result = await notifyCustomer({
+    templateKey: "quotation_sent",
+    to,
+    vars: {
+      customer_name: customer?.full_name ?? "",
+      quotation_number: quotation.quotation_number,
+      total: formatCurrency(quotation.total, quotation.currency),
+      valid_until: quotation.valid_until ? formatDate(quotation.valid_until) : "—",
+      pickup: quotation.pickup ?? "",
+      dropoff: quotation.dropoff ?? "",
+      date: quotation.trip_date ? formatDate(quotation.trip_date) : "",
+      time: quotation.trip_time ? formatTime(quotation.trip_time) : "",
+      pdf_note: attachments ? " (attached as a PDF)" : "",
+    },
+    relatedEntityType: "quotation",
+    relatedEntityId: id,
+    attachments,
+  });
+
+  if (!result.sent) {
+    revalidatePath(page);
+    redirect(`${page}?error=${encodeURIComponent(`Email not sent: ${result.error}`)}`);
+  }
+
+  // Only advance DRAFT → SENT; a resend must not knock a VIEWED/ACCEPTED
+  // quotation back to SENT.
+  const { error } = await supabase
+    .from("quotations")
+    .update(quotation.status === "DRAFT" ? { status: "SENT", sent_at: new Date().toISOString() } : { sent_at: new Date().toISOString() })
+    .eq("id", id);
+  if (error) console.error("quotation sent_at update failed", error.message);
+
+  await supabase.rpc("log_activity", { p_action: "quotation.emailed", p_entity_type: "quotation", p_entity_id: id, p_metadata: { to } });
+
+  revalidatePath(page);
+  revalidatePath("/admin/quotations");
+  const note = attachments ? "with PDF attached" : "(PDF could not be generated — summary only)";
+  redirect(`${page}?success=${encodeURIComponent(`Quotation emailed to ${to} ${note}`)}`);
 }
 
 export async function markQuotationAccepted(id: string) {
