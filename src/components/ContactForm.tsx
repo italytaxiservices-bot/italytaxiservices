@@ -81,7 +81,7 @@ export default function ContactForm() {
         Send Message
       </button>
       {status === 'error' && (
-        <p className="text-red-500 text-xs text-center">Something went wrong — please try WhatsApp or email instead.</p>
+        <p className="text-red-500 text-xs text-center">Something went wrong — please email us instead.</p>
       )}
     </form>
   )

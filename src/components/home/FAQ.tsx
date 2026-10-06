@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'How do I book a transfer?',
-    a: 'Simply fill in the quote form on this page, or message us directly on WhatsApp. We will confirm your transfer details and send a fixed price quote. Once you confirm, your booking is secured.',
+    a: 'Simply fill in the quote form on this page, or email us. We will confirm your transfer details and send a fixed price quote. Once you confirm, your booking is secured.',
   },
   {
     q: 'Can I book a one-way transfer to a specific hotel or villa?',
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: 'How far in advance should I book?',
-    a: "We recommend booking at least 24–48 hours in advance to guarantee availability. For peak summer dates, weekends, and public holidays in Italy, we recommend booking as early as possible. We do accept last-minute bookings subject to availability — contact us via WhatsApp.",
+    a: "We recommend booking at least 24–48 hours in advance to guarantee availability. For peak summer dates, weekends, and public holidays in Italy, we recommend booking as early as possible. We do accept last-minute bookings subject to availability — send us a request through the form or by email.",
   },
 ]
 

@@ -54,7 +54,7 @@ We cover all areas of Milan: the city centre, Duomo, Navigli, Porta Nuova, Brera
         },
         {
           q: 'What happens if my flight is delayed?',
-          a: 'We monitor your flight in real time. If your flight is delayed, your driver will wait — at no extra charge. We ask that you WhatsApp us if your delay is more than 2 hours.',
+          a: 'We monitor your flight in real time. If your flight is delayed, your driver will wait — at no extra charge. We ask that you contact us if your delay is more than 2 hours.',
         },
         {
           q: 'Can I get a return transfer from Milan to Malpensa?',

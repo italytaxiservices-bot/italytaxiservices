@@ -46,7 +46,7 @@ We monitor your flight in real time. Whether your flight arrives on time, early,
       tips={[
         'Terminal 1 handles most international flights; Terminal 2 is primarily easyJet. Both are connected by free shuttle. Please confirm your terminal when booking.',
         'Your driver will be waiting in the arrivals hall with a name board displaying your name. Baggage claim and customs take approximately 30–60 minutes after landing.',
-        'We monitor your flight live. If delayed, your driver waits at no extra charge. If significantly early, please WhatsApp us and we will do our best to bring your pickup forward.',
+        'We monitor your flight live. If delayed, your driver waits at no extra charge. If significantly early, please contact us and we will do our best to bring your pickup forward.',
         'The journey to Milan city centre takes 45–60 minutes under normal conditions, and 60–80 minutes to Lake Como. Allow extra time during rush hours (07:00–09:30 and 17:00–19:30).',
         'Our vehicles comfortably accommodate all standard luggage plus extra bags. If you have oversized items (golf clubs, skis, wheelchairs), please mention this when booking.',
       ]}

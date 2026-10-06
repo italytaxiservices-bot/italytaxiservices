@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 const steps = [
-  { num: '01', title: 'Request a Booking', body: 'Fill in your route, date, and vehicle via the form or WhatsApp. Takes under 2 minutes.' },
+  { num: '01', title: 'Request a Booking', body: 'Fill in your route, date, and vehicle via the booking form. Takes under 2 minutes.' },
   { num: '02', title: 'Get Fixed Quote',   body: 'We confirm your exact fare before any payment. Price locked — no meter, no surprises.' },
   { num: '03', title: 'Meet Your Chauffeur', body: 'Name board at arrivals. We track your flight live — delays handled automatically.' },
 ]

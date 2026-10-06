@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 import Header from './Header'
 import Footer from './Footer'
-import FloatingWhatsApp from './FloatingWhatsApp'
 import CookieConsent from './CookieConsent'
 import LanguageSelector from '@/components/LanguageSelector'
 
@@ -22,7 +21,6 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
-      <FloatingWhatsApp />
       <CookieConsent />
 
       {/* Google Analytics */}

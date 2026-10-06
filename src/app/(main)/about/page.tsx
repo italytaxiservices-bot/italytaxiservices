@@ -98,7 +98,7 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'You Request a Quote', desc: 'Fill in our transfer form or contact us via WhatsApp with your journey details.' },
+              { step: '01', title: 'You Request a Quote', desc: 'Fill in our transfer form or email us with your journey details.' },
               { step: '02', title: 'We Match You', desc: 'We find the best licensed NCC partner for your route, vehicle preference, and timing.' },
               { step: '03', title: 'Fixed Price Confirmed', desc: 'You receive a confirmed quote at a fixed price — including all tolls and taxes.' },
               { step: '04', title: 'Your Driver Arrives', desc: 'Your NCC chauffeur meets you as agreed, and takes you directly to your destination.' },
@@ -195,7 +195,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Book Your Transfer?</h2>
           <p className="text-gray-600 mb-8">
-            Contact us via WhatsApp or fill in our quote form. We&apos;ll reply within minutes with a fixed-price quote.
+            Fill in our quote form or email us. We&apos;ll reply within minutes with a fixed-price quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
