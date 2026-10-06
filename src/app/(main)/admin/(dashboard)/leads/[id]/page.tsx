@@ -8,8 +8,9 @@ import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Section } from "@/components/admin/ui/Section";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { LeadForm } from "@/components/admin/leads/LeadForm";
-import { formatDate, formatDateTime, formatTime, formatReceived } from "@/lib/admin/format";
+import { formatDateTime, formatReceived } from "@/lib/admin/format";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
+import { leadBriefing } from "@/lib/admin/driverBriefingText";
 import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
 import {
   updateLead,
@@ -45,21 +46,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
   const canEdit = canManageCrm(profile.role);
   const driverLog = await getDriverBriefingLog("lead", id);
 
-  const driverBriefing = [
-    `🚖 BOOKING ${lead.lead_number}`,
-    ``,
-    `📅 Date: ${formatDate(lead.trip_date)}`,
-    `⏰ Time: ${formatTime(lead.trip_time)}`,
-    `📍 Pickup: ${lead.pickup ?? "—"}`,
-    `🏁 Drop-off: ${lead.dropoff ?? "—"}`,
-    ``,
-    `👤 Passenger: ${lead.full_name}`,
-    lead.phone ? `📞 Phone: ${lead.phone}` : null,
-    `👥 Passengers: ${lead.passengers ?? "—"}`,
-    lead.notes ? `📝 Notes:\n${lead.notes}` : null,
-  ]
-    .filter((line) => line !== null)
-    .join("\n");
+  const driverBriefing = leadBriefing(lead);
 
   return (
     <div>

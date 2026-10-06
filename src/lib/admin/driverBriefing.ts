@@ -24,6 +24,29 @@ export async function getDriverNotifiedIds(entityType: "booking" | "lead", entit
   return new Set((data ?? []).map((n) => n.entity_id));
 }
 
+/** Latest "sent to driver" note per booking/lead, for list views. */
+export async function getLatestDriverBriefings(
+  entityType: "booking" | "lead",
+  entityIds: string[]
+): Promise<Map<string, { note: string; created_at: string }>> {
+  const latest = new Map<string, { note: string; created_at: string }>();
+  if (entityIds.length === 0) return latest;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("internal_notes")
+    .select("entity_id, note, created_at")
+    .eq("entity_type", entityType)
+    .in("entity_id", entityIds)
+    .ilike("note", `${DRIVER_BRIEFING_NOTE_PREFIX}%`)
+    .order("created_at", { ascending: false });
+  for (const n of data ?? []) {
+    if (!latest.has(n.entity_id)) {
+      latest.set(n.entity_id, { note: n.note.slice(DRIVER_BRIEFING_NOTE_PREFIX.length).trim(), created_at: n.created_at });
+    }
+  }
+  return latest;
+}
+
 export async function getDriverBriefingLog(entityType: "booking" | "lead", entityId: string): Promise<DriverBriefingLogEntry[]> {
   const supabase = await createClient();
   const { data } = await supabase

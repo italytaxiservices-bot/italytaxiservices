@@ -49,5 +49,6 @@ export async function logDriverBriefingSent(input: {
   if (error) return { ok: false as const, error: error.message };
 
   revalidatePath(`/admin/${input.entityType}s/${input.entityId}`);
+  revalidatePath("/admin/by-city");
   return { ok: true as const };
 }

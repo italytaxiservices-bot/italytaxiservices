@@ -18,6 +18,7 @@ import { changedFields, formatDiffValue } from "@/lib/admin/activityDiff";
 import { InternalNotes } from "@/components/admin/notes/InternalNotes";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
+import { bookingBriefing } from "@/lib/admin/driverBriefingText";
 
 export const metadata: Metadata = { title: "Booking" };
 
@@ -88,30 +89,11 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
   const totalTripExpenses = driverCost + vehicleCost + otherCost;
   const estimatedProfit = Number(booking.total) - Number(booking.tax_amount) - totalTripExpenses;
 
-  // Driver-facing summary: trip logistics + passenger contact only. Prices
-  // and internal notes are left out on purpose.
-  const customer = (booking as any).customers;
-  const driverBriefing = [
-    `🚖 BOOKING ${booking.booking_reference}`,
-    ``,
-    `📅 Date: ${formatDate(booking.trip_date)}`,
-    `⏰ Time: ${formatTime(booking.trip_time)}`,
-    `📍 Pickup: ${booking.pickup}`,
-    `🏁 Drop-off: ${booking.dropoff}`,
-    ``,
-    `👤 Passenger: ${customer?.full_name ?? "—"}`,
-    customer?.phone ? `📞 Phone: ${customer.phone}` : null,
-    `👥 Passengers: ${booking.passengers ?? "—"}`,
-    booking.luggage != null ? `🧳 Luggage: ${booking.luggage}` : null,
-    (booking as any).vehicles?.name ? `🚘 Vehicle: ${(booking as any).vehicles.name}` : null,
-    booking.flight_number ? `✈️ Flight: ${booking.flight_number}${booking.flight_terminal ? ` (Terminal ${booking.flight_terminal})` : ""}` : null,
-    booking.flight_arrival_time ? `🛬 Arrival: ${formatDateTime(booking.flight_arrival_time)}` : null,
-    booking.meet_and_greet_notes ? `🪧 Meet & greet: ${booking.meet_and_greet_notes}` : null,
-    booking.special_requests ? `📝 Notes: ${booking.special_requests}` : null,
-    booking.customer_notes ? `💬 Customer notes: ${booking.customer_notes}` : null,
-  ]
-    .filter((line) => line !== null)
-    .join("\n");
+  const driverBriefing = bookingBriefing({
+    ...booking,
+    customer: (booking as any).customers,
+    vehicleName: (booking as any).vehicles?.name,
+  });
 
   return (
     <div>
