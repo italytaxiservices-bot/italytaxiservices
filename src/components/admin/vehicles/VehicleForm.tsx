@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import type { FormState } from "@/lib/admin/actions/vehicles";
 
 type Vehicle = {
@@ -36,9 +37,10 @@ export function VehicleForm({
   submitLabel?: string;
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
 
   return (
-    <form action={formAction} className="space-y-4 max-w-xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-4 max-w-xl">
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Name" name="name" defaultValue={vehicle?.name} required />
         <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import type { FormState } from "@/lib/admin/actions/drivers";
 
 type Driver = {
@@ -24,9 +25,10 @@ export function DriverForm({
   submitLabel?: string;
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
 
   return (
-    <form action={formAction} className="space-y-4 max-w-xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-4 max-w-xl">
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Full name" name="full_name" defaultValue={driver?.full_name} required />
         <Field label="Nationality" name="nationality" defaultValue={driver?.nationality ?? ""} />

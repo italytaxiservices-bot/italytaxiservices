@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import { updateCompanySettings, type FormState } from "@/lib/admin/actions/settings";
 
 type CompanySettings = {
@@ -27,9 +28,10 @@ type CompanySettings = {
 
 export function SettingsForm({ settings }: { settings: CompanySettings }) {
   const [state, formAction, pending] = useActionState<FormState, FormData>(updateCompanySettings, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
 
   return (
-    <form action={formAction} className="space-y-8 max-w-3xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-8 max-w-3xl">
       <fieldset className="space-y-4">
         <legend className="text-sm font-semibold text-admin-ink mb-2">Company</legend>
         <div className="grid sm:grid-cols-2 gap-4">

@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/auth/dal";
 import { MANAGE_OPS, ADMIN_ONLY } from "@/lib/auth/roles";
+import { resolveCustomerFromForm } from "@/lib/admin/actions/customers";
 import { notifyCustomer } from "@/lib/notifications/service";
 import { formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
 import type { Json } from "@/lib/supabase/types";
@@ -27,7 +28,8 @@ async function logActivitySafe(
 }
 
 const BookingSchema = z.object({
-  customer_id: z.string().uuid("Select a customer."),
+  // Validated by resolveCustomerFromForm (picked id or inline new customer).
+  customer_id: z.string().optional(),
   quotation_id: z.string().uuid().optional().or(z.literal("")),
   pickup: z.string().trim().min(1, "Pickup is required."),
   dropoff: z.string().trim().min(1, "Drop-off is required."),
@@ -69,6 +71,8 @@ export async function createBooking(_prevState: FormState, formData: FormData): 
   const profile = await requireRole(MANAGE_OPS);
   const parsed = parseBookingForm(formData);
   if (!parsed.success) return { error: parsed.error };
+  const customer = await resolveCustomerFromForm(formData);
+  if ("error" in customer) return { error: customer.error };
 
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -76,7 +80,7 @@ export async function createBooking(_prevState: FormState, formData: FormData): 
     .insert({
       // Filled in by the assign_booking_reference trigger.
       booking_reference: undefined!,
-      customer_id: parsed.data.customer_id,
+      customer_id: customer.id,
       quotation_id: toNullable(parsed.data.quotation_id),
       pickup: parsed.data.pickup,
       dropoff: parsed.data.dropoff,
@@ -123,6 +127,8 @@ export async function updateBooking(id: string, _prevState: FormState, formData:
   const profile = await requireRole(MANAGE_OPS);
   const parsed = parseBookingForm(formData);
   if (!parsed.success) return { error: parsed.error };
+  const customer = await resolveCustomerFromForm(formData);
+  if ("error" in customer) return { error: customer.error };
 
   const supabase = await createClient();
 
@@ -172,7 +178,7 @@ export async function updateBooking(id: string, _prevState: FormState, formData:
   const { error } = await supabase
     .from("bookings")
     .update({
-      customer_id: parsed.data.customer_id,
+      customer_id: customer.id,
       pickup: parsed.data.pickup,
       dropoff: parsed.data.dropoff,
       trip_date: parsed.data.trip_date,

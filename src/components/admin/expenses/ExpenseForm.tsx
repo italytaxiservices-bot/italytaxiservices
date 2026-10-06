@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import { EntityPicker } from "@/components/admin/ui/EntityPicker";
 import { createExpense, type FormState } from "@/lib/admin/actions/expenses";
 
@@ -8,9 +9,10 @@ const CATEGORIES = ["DRIVER", "FUEL", "TOLL", "PARKING", "MAINTENANCE", "AIRPORT
 
 export function ExpenseForm({ today }: { today: string }) {
   const [state, formAction, pending] = useActionState<FormState, FormData>(createExpense, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
 
   return (
-    <form action={formAction} className="space-y-4 max-w-xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-4 max-w-xl">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-admin-ink-soft mb-1">Category</label>

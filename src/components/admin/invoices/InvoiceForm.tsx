@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import { EntityPicker } from "@/components/admin/ui/EntityPicker";
 import { LineItemsEditor, type LineItem } from "@/components/admin/quotations/LineItemsEditor";
 import { SUPPORTED_CURRENCIES } from "@/lib/pricing/currencies";
@@ -18,13 +19,14 @@ export function InvoiceForm({
   defaultBookingLabel?: string;
 }) {
   const [state, formAction, pending] = useActionState<FormState, FormData>(createManualInvoice, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
   const [discount, setDiscount] = useState(0);
   const [taxRate, setTaxRate] = useState(0);
   const [currency, setCurrency] = useState("EUR");
   const [items, setItems] = useState<LineItem[]>([{ description: "", quantity: 1, unit_price: 0 }]);
 
   return (
-    <form action={formAction} className="space-y-6 max-w-3xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-6 max-w-3xl">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-admin-ink-soft mb-1">

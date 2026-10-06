@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/auth/dal";
 import { MANAGE_CRM } from "@/lib/auth/roles";
+import { resolveCustomerFromForm } from "@/lib/admin/actions/customers";
 import { notifyCustomer } from "@/lib/notifications/service";
 import { formatCurrency, formatDate, formatTime } from "@/lib/admin/format";
 import { recordDiscountIfNeeded } from "@/lib/admin/actions/discounts";
@@ -22,7 +23,8 @@ const ItemSchema = z.object({
 });
 
 const QuotationSchema = z.object({
-  customer_id: z.string().uuid("Select a customer."),
+  // Validated by resolveCustomerFromForm (picked id or inline new customer).
+  customer_id: z.string().optional(),
   lead_id: z.string().uuid().optional().or(z.literal("")),
   pickup: z.string().trim().optional().or(z.literal("")),
   dropoff: z.string().trim().optional().or(z.literal("")),
@@ -87,6 +89,8 @@ export async function createQuotation(_prevState: FormState, formData: FormData)
   const profile = await requireRole(MANAGE_CRM);
   const parsed = parseQuotationForm(formData);
   if (!parsed.success) return { error: parsed.error };
+  const customer = await resolveCustomerFromForm(formData);
+  if ("error" in customer) return { error: customer.error };
 
   const supabase = await createClient();
   const { data: quotation, error } = await supabase
@@ -94,7 +98,7 @@ export async function createQuotation(_prevState: FormState, formData: FormData)
     .insert({
       // Filled in by the assign_quotation_number trigger.
       quotation_number: undefined!,
-      customer_id: parsed.data.customer_id,
+      customer_id: customer.id,
       lead_id: toNullable(parsed.data.lead_id),
       pickup: toNullable(parsed.data.pickup),
       dropoff: toNullable(parsed.data.dropoff),
@@ -160,12 +164,14 @@ export async function updateQuotation(id: string, _prevState: FormState, formDat
   const profile = await requireRole(MANAGE_CRM);
   const parsed = parseQuotationForm(formData);
   if (!parsed.success) return { error: parsed.error };
+  const customer = await resolveCustomerFromForm(formData);
+  if ("error" in customer) return { error: customer.error };
 
   const supabase = await createClient();
   const { error } = await supabase
     .from("quotations")
     .update({
-      customer_id: parsed.data.customer_id,
+      customer_id: customer.id,
       pickup: toNullable(parsed.data.pickup),
       dropoff: toNullable(parsed.data.dropoff),
       trip_date: toNullable(parsed.data.trip_date),

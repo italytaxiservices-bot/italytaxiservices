@@ -84,6 +84,36 @@ export async function ensureCustomerFromContact(input: {
   return data.id;
 }
 
+/**
+ * Resolves the customer for a booking/quotation form (see CustomerField):
+ * either the picked customer_id, or a customer found/created from the
+ * inline new_customer_* fields. Call it only after the rest of the form has
+ * validated, so a typo elsewhere never leaves a stray customer behind.
+ */
+export async function resolveCustomerFromForm(formData: FormData): Promise<{ id: string } | { error: string }> {
+  const field = (key: string) => String(formData.get(key) ?? "").trim();
+
+  if (field("customer_mode") !== "new") {
+    const id = field("customer_id");
+    return z.string().uuid().safeParse(id).success ? { id } : { error: "Select a customer from the list, or switch to “+ New customer”." };
+  }
+
+  const name = field("new_customer_name");
+  const phone = field("new_customer_phone");
+  const email = field("new_customer_email");
+  if (!name) return { error: "Enter the new customer's name." };
+  if (!phone && !email) return { error: "Enter a phone or email for the new customer." };
+  if (email && !z.string().email().safeParse(email).success) return { error: "Enter a valid customer email." };
+
+  try {
+    const id = await ensureCustomerFromContact({ full_name: name, phone: phone || null, email: email || null, whatsapp: phone || null });
+    revalidatePath("/admin/customers");
+    return { id };
+  } catch (err) {
+    return { error: err instanceof Error ? err.message : "Could not create the customer." };
+  }
+}
+
 function parseCustomerForm(formData: FormData) {
   const raw = Object.fromEntries(formData);
   return CustomerSchema.safeParse({ ...raw, credit_limit: raw.credit_limit || undefined });

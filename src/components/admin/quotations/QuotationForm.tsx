@@ -2,6 +2,8 @@
 
 import { useActionState, useState } from "react";
 import { EntityPicker } from "@/components/admin/ui/EntityPicker";
+import { CustomerField } from "@/components/admin/ui/CustomerField";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import { LineItemsEditor, type LineItem, type ServiceOption } from "@/components/admin/quotations/LineItemsEditor";
 import { PriceSuggestionPanel } from "@/components/admin/quotations/PriceSuggestionPanel";
 import { SUPPORTED_CURRENCIES } from "@/lib/pricing/currencies";
@@ -44,6 +46,7 @@ export function QuotationForm({
   services?: ServiceOption[];
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
   const [discount, setDiscount] = useState(defaults?.discount ?? 0);
   const [taxRate, setTaxRate] = useState(defaults?.tax_rate ?? 0);
   const [items, setItems] = useState<LineItem[]>(defaults?.items?.length ? defaults.items : [{ description: "", quantity: 1, unit_price: 0 }]);
@@ -63,24 +66,13 @@ export function QuotationForm({
   }
 
   return (
-    <form action={formAction} className="space-y-6 max-w-3xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-6 max-w-3xl">
       {defaults?.lead_id ? <input type="hidden" name="lead_id" value={defaults.lead_id} /> : null}
       {pricingBreakdown ? <input type="hidden" name="pricing_breakdown" value={JSON.stringify(pricingBreakdown)} /> : null}
 
+      <CustomerField defaultValue={defaults?.customer_id} defaultLabel={defaults?.customer_label} />
+
       <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-admin-ink-soft mb-1">
-            Customer <span className="text-red-600">*</span>
-          </label>
-          <EntityPicker
-            entity="customers"
-            name="customer_id"
-            defaultValue={defaults?.customer_id}
-            defaultLabel={defaults?.customer_label}
-            placeholder="Search customers…"
-            required
-          />
-        </div>
         <div className="grid grid-cols-2 gap-2">
           <div>
             <label className="block text-sm font-medium text-admin-ink-soft mb-1">Currency</label>

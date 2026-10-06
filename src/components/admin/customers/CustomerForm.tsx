@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import type { FormState } from "@/lib/admin/actions/customers";
 
 type Customer = {
@@ -30,10 +31,11 @@ export function CustomerForm({
   submitLabel?: string;
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
   const [customerType, setCustomerType] = useState(customer?.customer_type ?? "INDIVIDUAL");
 
   return (
-    <form action={formAction} className="space-y-4 max-w-2xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-4 max-w-2xl">
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Full name" name="full_name" defaultValue={customer?.full_name} required />
         <div>

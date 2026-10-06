@@ -2,6 +2,8 @@
 
 import { useActionState } from "react";
 import { EntityPicker } from "@/components/admin/ui/EntityPicker";
+import { CustomerField } from "@/components/admin/ui/CustomerField";
+import { useNoResetSubmit } from "@/components/admin/ui/useNoResetSubmit";
 import { SUPPORTED_CURRENCIES } from "@/lib/pricing/currencies";
 import type { FormState } from "@/lib/admin/actions/bookings";
 
@@ -46,17 +48,13 @@ export function BookingForm({
   isEdit?: boolean;
 }) {
   const [state, formAction, pending] = useActionState(action, undefined);
+  const onSubmit = useNoResetSubmit(formAction);
 
   return (
-    <form action={formAction} className="space-y-4 max-w-2xl">
+    <form action={formAction} onSubmit={onSubmit} className="space-y-4 max-w-2xl">
       {defaults?.quotation_id ? <input type="hidden" name="quotation_id" value={defaults.quotation_id} /> : null}
 
-      <div>
-        <label className="block text-sm font-medium text-admin-ink-soft mb-1">
-          Customer <span className="text-red-600">*</span>
-        </label>
-        <EntityPicker entity="customers" name="customer_id" defaultValue={defaults?.customer_id} defaultLabel={defaults?.customer_label} placeholder="Search customers…" required />
-      </div>
+      <CustomerField defaultValue={defaults?.customer_id} defaultLabel={defaults?.customer_label} />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <Field label="Pickup" name="pickup" defaultValue={defaults?.pickup} required />
