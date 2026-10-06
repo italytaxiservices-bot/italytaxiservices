@@ -1,6 +1,6 @@
 import "server-only";
 
-import { sendMail } from "@/lib/mailer";
+import { sendMail, DEFAULT_SENDER } from "@/lib/mailer";
 import { renderEmail, renderEmailFromRaw, type EmailTemplateKey, type TemplateVars } from "@/lib/notifications/templates";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { siteConfig } from "@/lib/siteConfig";
@@ -64,7 +64,7 @@ export async function notifyCustomer(params: {
     .select("id")
     .single();
 
-  const from = process.env.MAIL_FROM_BOOKING || process.env.GMAIL_USER;
+  const from = process.env.MAIL_FROM_BOOKING || DEFAULT_SENDER;
   if (!from) {
     if (notification) {
       await admin.from("notifications").update({ status: "FAILED", error: "No sender email configured" }).eq("id", notification.id);

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendMail } from "@/lib/mailer";
+import { sendMail, DEFAULT_SENDER, NOTIFY_EMAIL } from "@/lib/mailer";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { notifyCustomer } from "@/lib/notifications/service";
 import { formatDate, formatTime } from "@/lib/admin/format";
@@ -90,13 +90,14 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const from = process.env.MAIL_FROM_BOOKING || process.env.GMAIL_USER;
-  const to = process.env.MAIL_TO_BOOKING;
+  // Save the lead first: if email is misconfigured or Gmail rejects the send,
+  // the booking still shows up in the admin panel instead of being lost.
+  const leadId = await recordLead(data);
 
-  if (!from || !to) {
-    console.error("Booking email not configured: missing MAIL_FROM_BOOKING/MAIL_TO_BOOKING env vars");
-    return NextResponse.json({ ok: false, error: "Server not configured" }, { status: 500 });
-  }
+  const from = process.env.MAIL_FROM_BOOKING || DEFAULT_SENDER;
+  // Fall back to the real mailbox when MAIL_TO_BOOKING isn't set, rather
+  // than refusing the booking outright.
+  const to = process.env.MAIL_TO_BOOKING || NOTIFY_EMAIL;
 
   const subject = `New Booking Request — ${data.pickup} → ${data.destination}`;
   const text = [
@@ -125,10 +126,11 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("Failed to send booking email", err);
-    return NextResponse.json({ ok: false, error: "Failed to send" }, { status: 502 });
+    // Only fail the form if the booking wasn't saved anywhere either.
+    if (!leadId) {
+      return NextResponse.json({ ok: false, error: "Failed to send" }, { status: 502 });
+    }
   }
-
-  const leadId = await recordLead(data);
 
   // Best-effort customer confirmation — a phone-only contact has no email
   // to send to, and any failure here must never fail the form submission

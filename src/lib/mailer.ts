@@ -1,14 +1,22 @@
 import nodemailer from 'nodemailer'
 
-const smtpUser = process.env.SMTP_USER ?? ''
-const smtpPass = process.env.SMTP_PASS ?? ''
+// GMAIL_USER / GMAIL_APP_PASSWORD are the names the admin System and
+// Settings pages document, so accept them as well as the SMTP_* names —
+// otherwise a deploy configured per those docs has no transporter and every
+// email is silently skipped. Google shows app passwords in 4-char groups;
+// strip the spaces in case they were pasted as shown.
+const smtpUser = (process.env.SMTP_USER || process.env.GMAIL_USER || '').trim()
+const smtpPass = (process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD || '').replace(/\s+/g, '')
 
 // booking@/info@ are forwarding aliases that redirect back to smtpUser's own
 // inbox. Sending notifications there (from that same account) creates a
 // send-to-self loop that Gmail silently drops or spam-flags due to DMARC
 // misalignment on the forwarded copy — so notifications go straight to the
 // real mailbox instead.
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || smtpUser
+export const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || smtpUser
+
+/** The authenticated mailbox — the From address Gmail SMTP will accept. */
+export const DEFAULT_SENDER = smtpUser
 
 const transporter = smtpUser && smtpPass
   ? nodemailer.createTransport({
@@ -128,9 +136,10 @@ export async function sendMail(options: {
   bcc?: string
   attachments?: { filename: string; content: Buffer; contentType?: string }[]
 }) {
+  // Throw instead of silently skipping, so callers record a real failure
+  // rather than reporting a send that never happened.
   if (!transporter) {
-    console.error('SMTP not configured — skipping email:', options.subject)
-    return
+    throw new Error('SMTP not configured (set GMAIL_USER + GMAIL_APP_PASSWORD, or SMTP_USER + SMTP_PASS)')
   }
   await transporter.sendMail({
     from: options.from || `"Italy Taxi Services" <${smtpUser}>`,

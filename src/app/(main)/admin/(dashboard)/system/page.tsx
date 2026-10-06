@@ -53,8 +53,8 @@ export default async function SystemHealthPage() {
     { name: "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", present: Boolean(process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY) },
     { name: "SUPABASE_SERVICE_ROLE_KEY", present: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY) },
     { name: "CRON_SECRET", present: Boolean(process.env.CRON_SECRET) },
-    { name: "GMAIL_USER", present: Boolean(process.env.GMAIL_USER) },
-    { name: "GMAIL_APP_PASSWORD", present: Boolean(process.env.GMAIL_APP_PASSWORD) },
+    { name: "GMAIL_USER (or SMTP_USER)", present: Boolean(process.env.GMAIL_USER || process.env.SMTP_USER) },
+    { name: "GMAIL_APP_PASSWORD (or SMTP_PASS)", present: Boolean(process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASS) },
     { name: "MAIL_FROM_BOOKING", present: Boolean(process.env.MAIL_FROM_BOOKING) },
     { name: "MAIL_TO_BOOKING", present: Boolean(process.env.MAIL_TO_BOOKING) },
   ];

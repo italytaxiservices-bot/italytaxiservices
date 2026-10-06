@@ -8,7 +8,8 @@ import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Section } from "@/components/admin/ui/Section";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { LeadForm } from "@/components/admin/leads/LeadForm";
-import { formatDateTime } from "@/lib/admin/format";
+import { formatDate, formatDateTime, formatTime } from "@/lib/admin/format";
+import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import {
   updateLead,
   setLeadStatus,
@@ -41,6 +42,22 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
   ]);
 
   const canEdit = canManageCrm(profile.role);
+
+  const driverBriefing = [
+    `🚖 BOOKING ${lead.lead_number}`,
+    ``,
+    `📅 Date: ${formatDate(lead.trip_date)}`,
+    `⏰ Time: ${formatTime(lead.trip_time)}`,
+    `📍 Pickup: ${lead.pickup ?? "—"}`,
+    `🏁 Drop-off: ${lead.dropoff ?? "—"}`,
+    ``,
+    `👤 Passenger: ${lead.full_name}`,
+    lead.phone ? `📞 Phone: ${lead.phone}` : null,
+    `👥 Passengers: ${lead.passengers ?? "—"}`,
+    lead.notes ? `📝 Notes:\n${lead.notes}` : null,
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
 
   return (
     <div>
@@ -77,6 +94,10 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         </div>
 
         <div className="space-y-4">
+          <Section title="Copy for driver">
+            <DriverBriefing text={driverBriefing} />
+          </Section>
+
           {canEdit ? (
             <Section title="Pipeline">
               <div className="p-4 space-y-3">
