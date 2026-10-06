@@ -12,6 +12,7 @@ import { businessToday, formatDate, formatTime, formatReceived } from "@/lib/adm
 import { CITY_LABELS, CITY_ORDER, tripCity, type CityKey } from "@/lib/admin/cities";
 import { bookingBriefing, leadBriefing } from "@/lib/admin/driverBriefingText";
 import { getLatestDriverBriefings } from "@/lib/admin/driverBriefing";
+import { mainDriversFor } from "@/lib/admin/cityDrivers";
 
 export const metadata: Metadata = { title: "Trips by city" };
 
@@ -126,14 +127,23 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
     experience.set(c, perDriver);
   }
   const allDrivers = (driversRes.data ?? []).map((d) => ({ id: d.id, name: d.full_name, phone: d.whatsapp || d.phone }));
-  function driversFor(city: CityKey): { local: (DriverOption & { trips: number })[]; options: DriverOption[] } {
+  function driversFor(city: CityKey) {
     const counts = experience.get(city) ?? new Map<string, number>();
+    const { matched: main, missing } = mainDriversFor(city, allDrivers);
+    const mainIds = new Set(main.map((d) => d.id));
     const local = allDrivers
       .filter((d) => counts.has(d.id))
       .map((d) => ({ ...d, trips: counts.get(d.id)!, hint: `${counts.get(d.id)} trips here` }))
       .sort((a, b) => b.trips - a.trips);
-    const others = allDrivers.filter((d) => !counts.has(d.id));
-    return { local, options: [...local, ...others] };
+    const options: DriverOption[] = [
+      ...main.map((d) => ({ ...d, hint: `⭐ main driver for ${CITY_LABELS[city]}` })),
+      ...local.filter((d) => !mainIds.has(d.id)),
+      ...allDrivers.filter((d) => !mainIds.has(d.id) && !counts.has(d.id)),
+    ];
+    // Default for every trip in the city: the configured main driver, else
+    // the only driver with history here.
+    const defaultId = main[0]?.id ?? (local.length === 1 ? local[0].id : null);
+    return { main, missing, local, options, defaultId };
   }
 
   const [bookingSent, leadSent] = await Promise.all([
@@ -190,18 +200,36 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
         <div className="space-y-6">
           {cities.map((city) => {
             const items = trips.filter((t) => t.city === city);
-            const { local, options } = driversFor(city);
+            const { main, missing, local, options, defaultId } = driversFor(city);
             return (
               <section key={city}>
                 <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
                   <h2 className="text-base font-semibold text-admin-ink">
                     📍 {CITY_LABELS[city]} <span className="text-sm font-normal text-admin-stone">· {items.length} trips</span>
                   </h2>
-                  <p className="text-xs text-admin-stone">
-                    {local.length > 0
-                      ? `Drivers who've worked here: ${local.slice(0, 5).map((d) => `${d.name} (${d.trips})`).join(", ")}`
-                      : "No past trips here yet — choose any driver"}
-                  </p>
+                  <div className="text-xs text-right">
+                    {main.length > 0 ? (
+                      <p className="font-semibold text-admin-ink">
+                        ⭐ Driver: {main.map((d) => `${d.name}${d.phone ? ` (${d.phone})` : " — no phone saved"}`).join(", ")}
+                      </p>
+                    ) : null}
+                    {missing.length > 0 ? (
+                      <p className="text-red-700">
+                        ⚠️ {missing.join(", ")} not found in{" "}
+                        <Link href="/admin/drivers/new" className="underline">
+                          Drivers
+                        </Link>{" "}
+                        — add them with their WhatsApp number
+                      </p>
+                    ) : null}
+                    {main.length === 0 && missing.length === 0 ? (
+                      <p className="text-admin-stone">
+                        {local.length > 0
+                          ? `Drivers who've worked here: ${local.slice(0, 5).map((d) => `${d.name} (${d.trips})`).join(", ")}`
+                          : "No driver set for this city — choose any driver"}
+                      </p>
+                    ) : null}
+                  </div>
                 </div>
                 <Card>
                   <ul className="divide-y divide-admin-line">
@@ -243,7 +271,7 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
                               entityType={t.kind}
                               entityId={t.id}
                               drivers={options}
-                              defaultDriverId={t.driverId ?? (local.length === 1 ? local[0].id : null)}
+                              defaultDriverId={t.driverId ?? defaultId}
                               sentLabel={sent ? `${sent.note} · ${formatReceived(sent.created_at)}` : null}
                             />
                           ) : null}

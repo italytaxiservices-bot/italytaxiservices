@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { MapPin, Calendar, Clock, Users, Car, User, Phone, Mail, Loader2, CheckCircle, ArrowLeftRight, ArrowRight } from 'lucide-react'
+import { DIAL_CODES, toInternationalPhone } from '@/lib/phone'
 
 const schema = z.object({
   tripType:       z.enum(['one-way', 'round-trip']),
@@ -17,9 +18,19 @@ const schema = z.object({
   passengers:     z.string().min(1, 'Select passengers'),
   vehicle:        z.string().min(1, 'Select vehicle type'),
   name:           z.string().min(2, 'Enter your name'),
-  phone:          z.string().min(7, 'Enter a valid phone number'),
+  phoneCountry:   z.string().optional(),
+  phone:          z.string().min(6, 'Enter your phone / WhatsApp number'),
   email:          z.string().email('Enter a valid email'),
   notes:          z.string().optional(),
+}).superRefine((v, ctx) => {
+  // We contact customers on WhatsApp, which needs the full international number.
+  if (v.phone && !toInternationalPhone(v.phoneCountry, v.phone)) {
+    ctx.addIssue({
+      code: 'custom',
+      path: ['phone'],
+      message: v.phoneCountry || /^(\+|00)/.test(v.phone.trim()) ? 'Enter a valid phone number' : 'Select your country code',
+    })
+  }
 })
 
 type FormData = z.infer<typeof schema>
@@ -64,7 +75,11 @@ export default function QuoteForm() {
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, source_url: window.location.href }),
+        body: JSON.stringify({
+          ...data,
+          phone: toInternationalPhone(data.phoneCountry, data.phone) ?? data.phone,
+          source_url: window.location.href,
+        }),
       })
       if (!res.ok) throw new Error('Request failed')
       setSubmitted(true)
@@ -286,8 +301,24 @@ export default function QuoteForm() {
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                 </div>
                 <div>
-                  <label className={lbl} style={{ color: GOLD }}><span className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> Phone</span></label>
-                  <input {...register('phone')} placeholder="+39 or international number" className={inp(errors.phone)} style={inpStyle(errors.phone)} />
+                  <label className={lbl} style={{ color: GOLD }}><span className="flex items-center gap-1.5"><Phone className="w-3 h-3" /> Phone / WhatsApp (with country code)</span></label>
+                  <div className="flex gap-2">
+                    <select
+                      {...register('phoneCountry')}
+                      defaultValue=""
+                      aria-label="Country code"
+                      className={`w-[38%] shrink-0 border rounded-sm px-2 py-3 text-sm focus:outline-none ${errors.phone ? 'border-red-300 bg-red-50' : 'bg-white focus:border-amber-500'}`}
+                      style={inpStyle(errors.phone)}
+                    >
+                      <option value="" disabled>Country code</option>
+                      {DIAL_CODES.map((d) => (
+                        <option key={`${d.code}-${d.country}`} value={d.code}>
+                          {d.flag} +{d.code} {d.country}
+                        </option>
+                      ))}
+                    </select>
+                    <input {...register('phone')} type="tel" inputMode="tel" placeholder="Phone number" className={inp(errors.phone)} style={inpStyle(errors.phone)} />
+                  </div>
                   {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                 </div>
                 <div>

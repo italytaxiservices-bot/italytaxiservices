@@ -10,6 +10,7 @@ import { EmptyState } from "@/components/admin/ui/EmptyState";
 import { LeadContactButtons } from "@/components/admin/leads/LeadContactButtons";
 import { businessToday, formatDate, formatTime, formatReceived } from "@/lib/admin/format";
 import { siteConfig } from "@/lib/siteConfig";
+import { hasCountryCode } from "@/lib/phone";
 
 export const metadata: Metadata = { title: "Upcoming trips" };
 
@@ -142,6 +143,9 @@ export default async function UpcomingLeadsPage({ searchParams }: { searchParams
                             <p className="text-xs text-admin-stone">
                               {[phone, l.email].filter(Boolean).join(" · ") || "No contact details"} · Received {formatReceived(l.created_at)}
                             </p>
+                            {phone && !hasCountryCode(phone) ? (
+                              <p className="text-xs text-red-700 font-medium">⚠️ Phone has no country code — WhatsApp may open the wrong number. Fix it on the lead page.</p>
+                            ) : null}
                             {contact ? (
                               <p className="text-xs text-emerald-700 font-medium">
                                 ✅ {contact.note} · {formatReceived(contact.created_at)}

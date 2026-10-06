@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { sendBookingNotification, sendCustomerBookingConfirmation } from '@/lib/mailer'
+import { toInternationalPhone } from '@/lib/phone'
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,9 +17,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
+    // Staff reach customers on WhatsApp, which needs the international
+    // number — QuoteForm sends "+<code> <number>"; reject anything without one.
+    const internationalPhone = toInternationalPhone(null, String(phone))
+    if (!internationalPhone) {
+      return NextResponse.json({ error: 'Please include your country code in the phone number' }, { status: 400 })
+    }
+
     const lead = {
       name: String(name).trim(),
-      phone: String(phone).trim(),
+      phone: internationalPhone,
       email: String(email ?? '').trim(),
       pickup: String(pickup).trim(),
       dropoff: String(dropoff).trim(),
