@@ -10,6 +10,7 @@ import { StatusBadge } from "@/components/admin/ui/Badge";
 import { LeadForm } from "@/components/admin/leads/LeadForm";
 import { formatDate, formatDateTime, formatTime, formatReceived } from "@/lib/admin/format";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
+import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
 import {
   updateLead,
   setLeadStatus,
@@ -42,6 +43,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
   ]);
 
   const canEdit = canManageCrm(profile.role);
+  const driverLog = await getDriverBriefingLog("lead", id);
 
   const driverBriefing = [
     `🚖 BOOKING ${lead.lead_number}`,
@@ -95,7 +97,12 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
 
         <div className="space-y-4">
           <Section title="Copy for driver">
-            <DriverBriefing text={driverBriefing} />
+            <DriverBriefing
+              text={driverBriefing}
+              entityType="lead"
+              entityId={id}
+              history={driverLog.map((e) => ({ id: e.id, note: e.note, by: e.by, createdLabel: formatReceived(e.created_at) }))}
+            />
           </Section>
 
           {canEdit ? (

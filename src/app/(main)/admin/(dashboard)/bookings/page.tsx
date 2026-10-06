@@ -9,6 +9,7 @@ import { Card } from "@/components/admin/ui/Card";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { Pagination } from "@/components/admin/ui/Pagination";
 import { SimpleTable } from "@/components/admin/ui/SimpleTable";
+import { getDriverNotifiedIds } from "@/lib/admin/driverBriefing";
 import { formatCurrency, formatDate, formatTime, formatReceived } from "@/lib/admin/format";
 
 export const metadata: Metadata = { title: "Bookings" };
@@ -39,6 +40,7 @@ export default async function BookingsPage({
   if (q) query = query.ilike("booking_reference", `%${q}%`);
 
   const { data: bookings, count } = await query;
+  const notified = await getDriverNotifiedIds("booking", (bookings ?? []).map((b) => b.id));
 
   return (
     <div>
@@ -88,6 +90,7 @@ export default async function BookingsPage({
             { header: "Total", cell: (b) => formatCurrency(b.total, b.currency) },
             { header: "Payment", cell: (b) => <StatusBadge status={b.payment_status} /> },
             { header: "Status", cell: (b) => <StatusBadge status={b.status} /> },
+            { header: "Driver told", cell: (b) => (notified.has(b.id) ? <span className="text-xs text-emerald-700 font-semibold">✅ Sent</span> : <span className="text-xs text-admin-stone">—</span>) },
             { header: "Received", cell: (b) => <span className="text-xs text-admin-stone whitespace-nowrap">{formatReceived(b.created_at)}</span> },
           ]}
         />

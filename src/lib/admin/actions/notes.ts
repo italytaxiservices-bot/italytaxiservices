@@ -4,6 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth/dal";
+import { DRIVER_BRIEFING_NOTE_PREFIX } from "@/lib/admin/driverBriefing";
 
 const NoteSchema = z.object({ note: z.string().trim().min(1, "Note can't be empty.") });
 
@@ -22,4 +23,31 @@ export async function addInternalNote(entityType: string, entityId: string, form
   if (error) throw new Error(error.message);
 
   revalidatePath(`/admin/${entityType}s/${entityId}`);
+}
+
+/**
+ * Records that the trip details went to a driver (WhatsApp or copied), so
+ * anyone opening the booking can see the driver has already been told.
+ */
+export async function logDriverBriefingSent(input: {
+  entityType: "booking" | "lead";
+  entityId: string;
+  method: "whatsapp" | "copy";
+  driverName?: string | null;
+}) {
+  const profile = await requireUser();
+  const supabase = await createClient();
+
+  const who = input.driverName ? `driver ${input.driverName}` : "driver";
+  const how = input.method === "whatsapp" ? `sent to ${who} via WhatsApp` : `copied to send to ${who}`;
+  const { error } = await supabase.from("internal_notes").insert({
+    entity_type: input.entityType,
+    entity_id: input.entityId,
+    note: `${DRIVER_BRIEFING_NOTE_PREFIX} Booking details ${how}`,
+    created_by: profile.id,
+  });
+  if (error) return { ok: false as const, error: error.message };
+
+  revalidatePath(`/admin/${input.entityType}s/${input.entityId}`);
+  return { ok: true as const };
 }

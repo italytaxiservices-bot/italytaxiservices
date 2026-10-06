@@ -17,6 +17,7 @@ import { buildWhatsAppLink } from "@/lib/notifications/whatsapp";
 import { changedFields, formatDiffValue } from "@/lib/admin/activityDiff";
 import { InternalNotes } from "@/components/admin/notes/InternalNotes";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
+import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
 
 export const metadata: Metadata = { title: "Booking" };
 
@@ -68,6 +69,7 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
   ]);
 
   const canEdit = canManageOps(profile.role);
+  const driverLog = canEdit ? await getDriverBriefingLog("booking", id) : [];
   const isTerminal = booking.status === "COMPLETED" || booking.status === "CANCELLED" || booking.status === "NO_SHOW";
 
   // Estimated per-trip profitability: revenue - tax - driver cost - vehicle
@@ -277,7 +279,14 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
         {canEdit ? (
           <div className="space-y-4">
             <Section title="Copy for driver">
-              <DriverBriefing text={driverBriefing} driverPhone={(booking as any).drivers?.phone} />
+              <DriverBriefing
+                text={driverBriefing}
+                entityType="booking"
+                entityId={id}
+                driverName={(booking as any).drivers?.full_name}
+                driverPhone={(booking as any).drivers?.phone}
+                history={driverLog.map((e) => ({ id: e.id, note: e.note, by: e.by, createdLabel: formatReceived(e.created_at) }))}
+              />
             </Section>
 
             <Section title="Trip status">

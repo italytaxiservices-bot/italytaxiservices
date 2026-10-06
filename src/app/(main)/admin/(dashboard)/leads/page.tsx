@@ -9,6 +9,7 @@ import { Card } from "@/components/admin/ui/Card";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { Pagination } from "@/components/admin/ui/Pagination";
 import { SimpleTable } from "@/components/admin/ui/SimpleTable";
+import { getDriverNotifiedIds } from "@/lib/admin/driverBriefing";
 import { formatCurrency, formatDate, formatTime, formatReceived, isRecent } from "@/lib/admin/format";
 
 export const metadata: Metadata = { title: "Leads" };
@@ -39,6 +40,7 @@ export default async function LeadsPage({
   if (q) query = query.or(`full_name.ilike.%${q}%,email.ilike.%${q}%,phone.ilike.%${q}%,lead_number.ilike.%${q}%`);
 
   const { data: leads, count } = await query;
+  const notified = await getDriverNotifiedIds("lead", (leads ?? []).map((l) => l.id));
 
   return (
     <div>
@@ -89,6 +91,7 @@ export default async function LeadsPage({
             { header: "Est. value", cell: (l) => (l.estimated_value ? formatCurrency(l.estimated_value, l.currency) : "—") },
             { header: "Next follow-up", cell: (l) => (l.next_follow_up_at ? formatDate(l.next_follow_up_at) : "—") },
             { header: "Status", cell: (l) => <StatusBadge status={l.status} /> },
+            { header: "Driver told", cell: (l) => (notified.has(l.id) ? <span className="text-xs text-emerald-700 font-semibold">✅ Sent</span> : <span className="text-xs text-admin-stone">—</span>) },
             {
               header: "Received",
               cell: (l) => (
