@@ -5,12 +5,10 @@ import type { CityKey } from "@/lib/admin/cities";
  * pre-selected on every trip in that city, so sending is copy → WhatsApp.
  * Names are matched (case-insensitively) against active drivers in
  * Admin → Drivers, which is where the WhatsApp number comes from.
- * First name in each list is the default.
+ * First name in each list is the default. Drivers whose number we have
+ * directly belong in CITY_PARTNERS below instead.
  */
-export const CITY_MAIN_DRIVERS: Partial<Record<CityKey, string[]>> = {
-  rome: ["Carlos Rodriguez"],
-  milan: ["Mohsin"],
-};
+export const CITY_MAIN_DRIVERS: Partial<Record<CityKey, string[]>> = {};
 
 /**
  * Outside drivers and partner companies we hand trips to, per city. They
@@ -30,6 +28,28 @@ export type CityPartner = {
 };
 
 export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
+  rome: [
+    {
+      slug: "carlos-rodriguez",
+      kind: "driver",
+      name: "Carlos Rodriguez",
+      phone: "+39 352 233 4674",
+      email: "luxwaydrivers@gmail.com",
+      website: "https://luxwayrome.com/",
+      description: "Driver for Rome transfers (Luxway Rome)",
+    },
+  ],
+  milan: [
+    {
+      slug: "mohsin",
+      kind: "driver",
+      name: "Mohsin",
+      phone: "+39 320 094 4260",
+      email: null,
+      website: null,
+      description: "Driver for Milan transfers",
+    },
+  ],
   bari: [
     {
       slug: "romeo-stramaglia",
