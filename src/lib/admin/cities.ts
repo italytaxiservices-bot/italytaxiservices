@@ -50,7 +50,7 @@ const ALIASES: [CityKey, string[]][] = [
   ["bologna", ["bologna", "blq", "rimini", "rmi"]],
   ["turin", ["turin", "torino", "trn", "caselle"]],
   ["genoa", ["genoa", "genova", "goa", "portofino", "cinque terre", "la spezia", "santa margherita"]],
-  ["verona", ["verona", "vrn", "garda", "lake garda", "sirmione"]],
+  ["verona", ["verona", "vrn", "catullo", "villafranca", "garda", "lake garda", "sirmione", "valpolicella"]],
   [
     "bari",
     [
