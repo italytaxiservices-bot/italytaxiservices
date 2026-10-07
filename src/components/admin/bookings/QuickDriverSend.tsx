@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { MessageCircle, Copy, Check } from "lucide-react";
+import { MessageCircle, Copy, Check, Mail } from "lucide-react";
 import { logDriverBriefingSent } from "@/lib/admin/actions/notes";
 
-export type DriverOption = { id: string; name: string; phone: string | null; hint?: string };
+export type DriverOption = { id: string; name: string; phone: string | null; email?: string | null; hint?: string };
 
 /**
  * Compact "send this trip to a driver" control for list views (By city):
@@ -35,12 +35,14 @@ export function QuickDriverSend({
   const driver = drivers.find((d) => d.id === driverId) ?? null;
   const digits = driver?.phone?.replace(/[^\d]/g, "") ?? "";
 
-  function record(method: "whatsapp" | "copy") {
+  function record(method: "whatsapp" | "copy" | "email") {
     setJustSent(true);
     startTransition(async () => {
-      await logDriverBriefingSent({ entityType, entityId, method, driverName: driver?.name ?? null });
+      await logDriverBriefingSent({ entityType, entityId, method, driverName: driver?.name ?? null, isPartner: driver?.id.startsWith("partner:") });
     });
   }
+
+  const subject = `New transfer: ${text.split("\n")[0].replace(/^\W+/, "")}`;
 
   async function copy() {
     try {
@@ -65,7 +67,7 @@ export function QuickDriverSend({
     <div className="space-y-1.5">
       <div className="flex flex-wrap items-center gap-1.5">
         <select value={driverId} onChange={(e) => setDriverId(e.target.value)} className="input-luxe text-xs py-1 max-w-[200px]">
-          <option value="">Choose driver…</option>
+          <option value="">Choose driver / partner…</option>
           {drivers.map((d) => (
             <option key={d.id} value={d.id}>
               {d.name}
@@ -86,6 +88,15 @@ export function QuickDriverSend({
         >
           <MessageCircle className="h-3.5 w-3.5" /> {driver ? `WhatsApp ${driver.name.split(" ")[0]}` : "WhatsApp"}
         </a>
+        {driver?.email ? (
+          <a
+            href={`mailto:${driver.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`}
+            onClick={() => record("email")}
+            className={`${btn} border-admin-line hover:bg-admin-ivory-deep`}
+          >
+            <Mail className="h-3.5 w-3.5" /> Email
+          </a>
+        ) : null}
         <button type="button" onClick={() => setShowText((v) => !v)} className="text-xs text-admin-stone hover:underline">
           {showText ? "Hide text" : "View text"}
         </button>

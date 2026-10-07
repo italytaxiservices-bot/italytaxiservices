@@ -32,14 +32,20 @@ export async function addInternalNote(entityType: string, entityId: string, form
 export async function logDriverBriefingSent(input: {
   entityType: "booking" | "lead";
   entityId: string;
-  method: "whatsapp" | "copy";
+  method: "whatsapp" | "copy" | "email";
   driverName?: string | null;
+  /** Partner companies are named as-is, not as "driver X". */
+  isPartner?: boolean;
 }) {
   const profile = await requireUser();
   const supabase = await createClient();
 
-  const who = input.driverName ? `driver ${input.driverName}` : "driver";
-  const how = input.method === "whatsapp" ? `sent to ${who} via WhatsApp` : `copied to send to ${who}`;
+  const who = input.driverName ? (input.isPartner ? input.driverName : `driver ${input.driverName}`) : "driver";
+  const how = {
+    whatsapp: `sent to ${who} via WhatsApp`,
+    email: `emailed to ${who}`,
+    copy: `copied to send to ${who}`,
+  }[input.method];
   const { error } = await supabase.from("internal_notes").insert({
     entity_type: input.entityType,
     entity_id: input.entityId,

@@ -12,6 +12,43 @@ export const CITY_MAIN_DRIVERS: Partial<Record<CityKey, string[]>> = {
   milan: ["Mohsin"],
 };
 
+/**
+ * Partner companies we hand trips to in cities we don't cover ourselves.
+ * A city with a partner shows it first and pre-selected on every trip, on
+ * Trips by city and on the booking/lead pages.
+ */
+export type CityPartner = {
+  /** Stable id, used as the picker value ("partner:<slug>"). */
+  slug: string;
+  name: string;
+  phone: string;
+  email: string | null;
+  website: string | null;
+  description: string;
+};
+
+export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
+  bari: [
+    {
+      slug: "pugliacab",
+      name: "Puglia Cab (NCC Bari)",
+      phone: "+39 346 615 3134",
+      email: "nccbariaeroporto@gmail.com",
+      website: "https://pugliacab.com/",
+      description: "Premium chauffeur service in Bari & all of Puglia · airports, ports, stations, private tours & events · Mercedes V-Class & E-Class",
+    },
+  ],
+};
+
+export function partnersFor(city: CityKey): CityPartner[] {
+  return CITY_PARTNERS[city] ?? [];
+}
+
+/** A partner as an entry in the driver picker. */
+export function partnerOption(p: CityPartner) {
+  return { id: `partner:${p.slug}`, name: p.name, phone: p.phone, email: p.email, hint: "🤝 partner company" };
+}
+
 const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
 
 /** Active drivers matching the configured names for a city, in config order. */

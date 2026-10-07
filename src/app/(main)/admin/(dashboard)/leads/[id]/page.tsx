@@ -10,6 +10,7 @@ import { StatusBadge } from "@/components/admin/ui/Badge";
 import { LeadForm } from "@/components/admin/leads/LeadForm";
 import { formatDateTime, formatReceived } from "@/lib/admin/format";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
+import { CityPartnerSection } from "@/components/admin/bookings/CityPartnerSection";
 import { leadBriefing } from "@/lib/admin/driverBriefingText";
 import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
 import {
@@ -83,6 +84,15 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
         </div>
 
         <div className="space-y-4">
+          <CityPartnerSection
+            pickup={lead.pickup}
+            dropoff={lead.dropoff}
+            text={driverBriefing}
+            entityType="lead"
+            entityId={id}
+            sentLabel={driverLog[0] ? `${driverLog[0].note} · ${formatReceived(driverLog[0].created_at)}` : null}
+          />
+
           <Section title="Copy for driver">
             <DriverBriefing
               text={driverBriefing}

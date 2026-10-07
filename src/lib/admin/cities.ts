@@ -51,7 +51,14 @@ const ALIASES: [CityKey, string[]][] = [
   ["turin", ["turin", "torino", "trn", "caselle"]],
   ["genoa", ["genoa", "genova", "goa", "portofino", "cinque terre", "la spezia", "santa margherita"]],
   ["verona", ["verona", "vrn", "garda", "lake garda", "sirmione"]],
-  ["bari", ["bari", "bri", "brindisi", "bds", "puglia", "apulia", "lecce", "polignano", "monopoli"]],
+  [
+    "bari",
+    [
+      "bari", "bri", "palese", "karol wojtyla", "brindisi", "bds", "puglia", "apulia", "lecce", "polignano", "monopoli",
+      "ostuni", "alberobello", "fasano", "savelletri", "locorotondo", "martina franca", "cisternino", "castellana grotte",
+      "matera", "otranto", "gallipoli", "trani", "taranto", "foggia", "vieste", "salento",
+    ],
+  ],
   ["catania", ["catania", "cta", "taormina", "fontanarossa"]],
   ["palermo", ["palermo", "pmo", "punta raisi"]],
   ["cagliari", ["cagliari", "cag", "elmas"]],

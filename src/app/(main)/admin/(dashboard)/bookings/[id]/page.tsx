@@ -17,6 +17,7 @@ import { buildWhatsAppLink } from "@/lib/notifications/whatsapp";
 import { changedFields, formatDiffValue } from "@/lib/admin/activityDiff";
 import { InternalNotes } from "@/components/admin/notes/InternalNotes";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
+import { CityPartnerSection } from "@/components/admin/bookings/CityPartnerSection";
 import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
 import { bookingBriefing } from "@/lib/admin/driverBriefingText";
 
@@ -260,6 +261,15 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
 
         {canEdit ? (
           <div className="space-y-4">
+            <CityPartnerSection
+              pickup={booking.pickup}
+              dropoff={booking.dropoff}
+              text={driverBriefing}
+              entityType="booking"
+              entityId={id}
+              sentLabel={driverLog[0] ? `${driverLog[0].note} · ${formatReceived(driverLog[0].created_at)}` : null}
+            />
+
             <Section title="Copy for driver">
               <DriverBriefing
                 text={driverBriefing}

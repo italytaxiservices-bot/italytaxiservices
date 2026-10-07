@@ -12,7 +12,8 @@ import { businessToday, formatDate, formatTime, formatReceived } from "@/lib/adm
 import { CITY_LABELS, CITY_ORDER, tripCity, type CityKey } from "@/lib/admin/cities";
 import { bookingBriefing, leadBriefing } from "@/lib/admin/driverBriefingText";
 import { getLatestDriverBriefings } from "@/lib/admin/driverBriefing";
-import { mainDriversFor } from "@/lib/admin/cityDrivers";
+import { mainDriversFor, partnersFor, partnerOption } from "@/lib/admin/cityDrivers";
+import { PartnerCard } from "@/components/admin/bookings/PartnerCard";
 
 export const metadata: Metadata = { title: "Trips by city" };
 
@@ -135,15 +136,17 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
       .filter((d) => counts.has(d.id))
       .map((d) => ({ ...d, trips: counts.get(d.id)!, hint: `${counts.get(d.id)} trips here` }))
       .sort((a, b) => b.trips - a.trips);
+    const partners = partnersFor(city);
     const options: DriverOption[] = [
+      ...partners.map(partnerOption),
       ...main.map((d) => ({ ...d, hint: `⭐ main driver for ${CITY_LABELS[city]}` })),
       ...local.filter((d) => !mainIds.has(d.id)),
       ...allDrivers.filter((d) => !mainIds.has(d.id) && !counts.has(d.id)),
     ];
-    // Default for every trip in the city: the configured main driver, else
-    // the only driver with history here.
-    const defaultId = main[0]?.id ?? (local.length === 1 ? local[0].id : null);
-    return { main, missing, local, options, defaultId };
+    // Default for every trip in the city: the partner company, else the
+    // configured main driver, else the only driver with history here.
+    const defaultId = (partners[0] && partnerOption(partners[0]).id) ?? main[0]?.id ?? (local.length === 1 ? local[0].id : null);
+    return { partners, main, missing, local, options, defaultId };
   }
 
   const [bookingSent, leadSent] = await Promise.all([
@@ -200,7 +203,7 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
         <div className="space-y-6">
           {cities.map((city) => {
             const items = trips.filter((t) => t.city === city);
-            const { main, missing, local, options, defaultId } = driversFor(city);
+            const { partners, main, missing, local, options, defaultId } = driversFor(city);
             return (
               <section key={city}>
                 <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
@@ -222,7 +225,7 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
                         — add them with their WhatsApp number
                       </p>
                     ) : null}
-                    {main.length === 0 && missing.length === 0 ? (
+                    {partners.length === 0 && main.length === 0 && missing.length === 0 ? (
                       <p className="text-admin-stone">
                         {local.length > 0
                           ? `Drivers who've worked here: ${local.slice(0, 5).map((d) => `${d.name} (${d.trips})`).join(", ")}`
@@ -231,6 +234,13 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
                     ) : null}
                   </div>
                 </div>
+                {partners.length > 0 ? (
+                  <div className="mb-2 space-y-1.5">
+                    {partners.map((p) => (
+                      <PartnerCard key={p.slug} partner={p} cityLabel={CITY_LABELS[city]} />
+                    ))}
+                  </div>
+                ) : null}
                 <Card>
                   <ul className="divide-y divide-admin-line">
                     {items.map((t) => {
