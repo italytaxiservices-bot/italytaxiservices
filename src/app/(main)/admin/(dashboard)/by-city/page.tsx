@@ -10,7 +10,7 @@ import { EmptyState } from "@/components/admin/ui/EmptyState";
 import { QuickDriverSend, type DriverOption } from "@/components/admin/bookings/QuickDriverSend";
 import { businessToday, formatDate, formatTime, formatReceived } from "@/lib/admin/format";
 import { CITY_LABELS, CITY_ORDER, tripCity, type CityKey } from "@/lib/admin/cities";
-import { bookingBriefing, leadBriefing } from "@/lib/admin/driverBriefingText";
+import { bookingBriefing, leadBriefing, givenToLabel } from "@/lib/admin/driverBriefingText";
 import { getLatestDriverBriefings } from "@/lib/admin/driverBriefing";
 import { mainDriversFor, partnersFor, partnerOption } from "@/lib/admin/cityDrivers";
 import { PartnerList } from "@/components/admin/bookings/PartnerCard";
@@ -280,7 +280,7 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
                               entityId={t.id}
                               drivers={options}
                               defaultDriverId={t.driverId ?? defaultId}
-                              sentLabel={sent ? `${sent.note} · ${formatReceived(sent.created_at)}` : null}
+                              sentLabel={sent ? `Given to ${givenToLabel(sent.note)} · ${formatReceived(sent.created_at)}` : null}
                             />
                           ) : null}
                         </li>

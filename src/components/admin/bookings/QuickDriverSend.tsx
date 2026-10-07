@@ -29,14 +29,14 @@ export function QuickDriverSend({
   const [driverId, setDriverId] = useState(defaultDriverId ?? "");
   const [showText, setShowText] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [justSent, setJustSent] = useState(false);
+  const [justSent, setJustSent] = useState<string | null>(null);
   const [, startTransition] = useTransition();
 
   const driver = drivers.find((d) => d.id === driverId) ?? null;
   const digits = driver?.phone?.replace(/[^\d]/g, "") ?? "";
 
   function record(method: "whatsapp" | "copy" | "email") {
-    setJustSent(true);
+    setJustSent(driver?.name ?? "driver");
     startTransition(async () => {
       await logDriverBriefingSent({ entityType, entityId, method, driverName: driver?.name ?? null, isPartner: driver?.id.startsWith("partner:") });
     });
@@ -101,7 +101,7 @@ export function QuickDriverSend({
           {showText ? "Hide text" : "View text"}
         </button>
         {justSent ? (
-          <span className="text-xs font-semibold text-emerald-700">✅ Logged</span>
+          <span className="text-xs font-semibold text-emerald-700">✅ Given to {justSent}</span>
         ) : sentLabel ? (
           <span className="text-xs font-semibold text-emerald-700">✅ {sentLabel}</span>
         ) : (

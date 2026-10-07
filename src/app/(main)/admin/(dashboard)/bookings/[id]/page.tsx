@@ -18,8 +18,8 @@ import { changedFields, formatDiffValue } from "@/lib/admin/activityDiff";
 import { InternalNotes } from "@/components/admin/notes/InternalNotes";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import { CityPartnerSection } from "@/components/admin/bookings/CityPartnerSection";
-import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
-import { bookingBriefing } from "@/lib/admin/driverBriefingText";
+import { getDriverBriefingLog, getDriverPickerOptions } from "@/lib/admin/driverBriefing";
+import { bookingBriefing, givenToLabel } from "@/lib/admin/driverBriefingText";
 
 export const metadata: Metadata = { title: "Booking" };
 
@@ -71,7 +71,9 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
   ]);
 
   const canEdit = canManageOps(profile.role);
-  const driverLog = canEdit ? await getDriverBriefingLog("booking", id) : [];
+  const [driverLog, driverOptions] = canEdit
+    ? await Promise.all([getDriverBriefingLog("booking", id), getDriverPickerOptions(booking.pickup, booking.dropoff)])
+    : [[], []];
   const isTerminal = booking.status === "COMPLETED" || booking.status === "CANCELLED" || booking.status === "NO_SHOW";
 
   // Estimated per-trip profitability: revenue - tax - driver cost - vehicle
@@ -267,7 +269,7 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
               text={driverBriefing}
               entityType="booking"
               entityId={id}
-              sentLabel={driverLog[0] ? `${driverLog[0].note} · ${formatReceived(driverLog[0].created_at)}` : null}
+              sentLabel={driverLog[0] ? `Given to ${givenToLabel(driverLog[0].note)} · ${formatReceived(driverLog[0].created_at)}` : null}
             />
 
             <Section title="Copy for driver">
@@ -275,8 +277,12 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
                 text={driverBriefing}
                 entityType="booking"
                 entityId={id}
-                driverName={(booking as any).drivers?.full_name}
-                driverPhone={(booking as any).drivers?.phone}
+                options={driverOptions}
+                // The assigned driver if there is one, else the city default driver/partner.
+                defaultDriverId={
+                  driverOptions.find((o) => o.id === (booking as any).drivers?.id || o.name === (booking as any).drivers?.full_name)?.id ??
+                  driverOptions.find((o) => o.id.includes(":"))?.id
+                }
                 history={driverLog.map((e) => ({ id: e.id, note: e.note, by: e.by, createdLabel: formatReceived(e.created_at) }))}
               />
             </Section>

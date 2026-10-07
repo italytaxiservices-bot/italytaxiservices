@@ -11,8 +11,8 @@ import { LeadForm } from "@/components/admin/leads/LeadForm";
 import { formatDateTime, formatReceived } from "@/lib/admin/format";
 import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import { CityPartnerSection } from "@/components/admin/bookings/CityPartnerSection";
-import { leadBriefing } from "@/lib/admin/driverBriefingText";
-import { getDriverBriefingLog } from "@/lib/admin/driverBriefing";
+import { leadBriefing, givenToLabel } from "@/lib/admin/driverBriefingText";
+import { getDriverBriefingLog, getDriverPickerOptions } from "@/lib/admin/driverBriefing";
 import {
   updateLead,
   setLeadStatus,
@@ -45,7 +45,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
   ]);
 
   const canEdit = canManageCrm(profile.role);
-  const driverLog = await getDriverBriefingLog("lead", id);
+  const [driverLog, driverOptions] = await Promise.all([getDriverBriefingLog("lead", id), getDriverPickerOptions(lead.pickup, lead.dropoff)]);
 
   const driverBriefing = leadBriefing(lead);
 
@@ -90,7 +90,7 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
             text={driverBriefing}
             entityType="lead"
             entityId={id}
-            sentLabel={driverLog[0] ? `${driverLog[0].note} · ${formatReceived(driverLog[0].created_at)}` : null}
+            sentLabel={driverLog[0] ? `Given to ${givenToLabel(driverLog[0].note)} · ${formatReceived(driverLog[0].created_at)}` : null}
           />
 
           <Section title="Copy for driver">
@@ -98,6 +98,8 @@ export default async function LeadDetailPage({ params }: { params: Promise<{ id:
               text={driverBriefing}
               entityType="lead"
               entityId={id}
+              options={driverOptions}
+              defaultDriverId={driverOptions.find((o) => o.id.includes(":"))?.id}
               history={driverLog.map((e) => ({ id: e.id, note: e.note, by: e.by, createdLabel: formatReceived(e.created_at) }))}
             />
           </Section>

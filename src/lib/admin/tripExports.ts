@@ -3,7 +3,8 @@ import "server-only";
 import { createClient } from "@/lib/supabase/server";
 import { businessToday, formatDateTime } from "@/lib/admin/format";
 import { CITY_LABELS, tripCity } from "@/lib/admin/cities";
-import { getDriverNotifiedIds } from "@/lib/admin/driverBriefing";
+import { getLatestDriverBriefings } from "@/lib/admin/driverBriefing";
+import { givenToLabel } from "@/lib/admin/driverBriefingText";
 
 /**
  * Full-detail spreadsheet exports of bookings and website requests (leads)
@@ -136,11 +137,11 @@ export async function runTripExport(filters: TripExportFilters): Promise<Table> 
         bounds
       )
     );
-    const notified = await getDriverNotifiedIds("booking", rows.map((r) => r.id));
+    const given = await getLatestDriverBriefings("booking", rows.map((r) => r.id));
     return {
       columns: [
         "Reference", "Received", "Trip date", "Time", "Pickup", "Drop-off", "City",
-        "Customer", "Phone", "Email", "Passengers", "Luggage", "Vehicle", "Driver", "Driver told",
+        "Customer", "Phone", "Email", "Passengers", "Luggage", "Vehicle", "Driver", "Given to driver", "Given at",
         "Flight", "Status", "Payment", "Price", "Discount", "Tax", "Total", "Currency",
         "Special requests", "Customer notes", "Internal notes", "Source",
       ],
@@ -148,7 +149,7 @@ export async function runTripExport(filters: TripExportFilters): Promise<Table> 
         b.booking_reference, formatDateTime(b.created_at), b.trip_date, (b.trip_time ?? "").slice(0, 5), b.pickup, b.dropoff,
         CITY_LABELS[tripCity(b.pickup, b.dropoff)],
         b.customers?.full_name ?? "", b.customers?.phone ?? "", b.customers?.email ?? "", b.passengers, b.luggage,
-        b.vehicles?.name ?? "", b.drivers?.full_name ?? "", notified.has(b.id) ? "Yes" : "No",
+        b.vehicles?.name ?? "", b.drivers?.full_name ?? "", given.has(b.id) ? givenToLabel(given.get(b.id)!.note) : "", given.has(b.id) ? formatDateTime(given.get(b.id)!.created_at) : "",
         [b.flight_number, b.flight_terminal ? `T${b.flight_terminal}` : null].filter(Boolean).join(" "),
         b.status, b.payment_status, money(b.price), money(b.discount), money(b.tax_amount), money(b.total), b.currency,
         b.special_requests ?? "", b.customer_notes ?? "", b.internal_notes ?? "", b.source ?? "",
@@ -168,16 +169,16 @@ export async function runTripExport(filters: TripExportFilters): Promise<Table> 
       bounds
     )
   );
-  const notified = await getDriverNotifiedIds("lead", rows.map((r) => r.id));
+  const given = await getLatestDriverBriefings("lead", rows.map((r) => r.id));
   return {
     columns: [
       "Lead #", "Received", "Trip date", "Time", "Pickup", "Drop-off", "City",
-      "Name", "Phone", "Email", "Passengers", "Status", "Driver told", "Source", "Est. value", "Currency", "Notes",
+      "Name", "Phone", "Email", "Passengers", "Status", "Given to driver", "Given at", "Source", "Est. value", "Currency", "Notes",
     ],
     rows: rows.map((l) => [
       l.lead_number, formatDateTime(l.created_at), l.trip_date ?? "", (l.trip_time ?? "").slice(0, 5), l.pickup ?? "", l.dropoff ?? "",
       CITY_LABELS[tripCity(l.pickup, l.dropoff)],
-      l.full_name, l.whatsapp || l.phone || "", l.email ?? "", l.passengers, l.status, notified.has(l.id) ? "Yes" : "No",
+      l.full_name, l.whatsapp || l.phone || "", l.email ?? "", l.passengers, l.status, given.has(l.id) ? givenToLabel(given.get(l.id)!.note) : "", given.has(l.id) ? formatDateTime(given.get(l.id)!.created_at) : "",
       l.source ?? "", money(l.estimated_value), l.currency ?? "", l.notes ?? "",
     ]),
   };

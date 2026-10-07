@@ -6,6 +6,43 @@ import { formatDate, formatDateTime, formatTime } from "@/lib/admin/format";
  * out on purpose.
  */
 
+export type BriefingMethod = "whatsapp" | "email" | "copy";
+
+/**
+ * Reads back who a trip was given to from a logged briefing note (see
+ * logDriverBriefingSent), e.g. "Booking details sent to driver Romeo
+ * Stramaglia via WhatsApp" → { recipient: "Romeo Stramaglia", method: "whatsapp" }.
+ * The prefix is optional so both raw and already-stripped notes work.
+ */
+export function parseBriefingNote(note: string): { recipient: string | null; method: BriefingMethod | null } {
+  const body = note.replace(/^Driver briefing:\s*/, "").replace(/^Booking details\s+/, "");
+  const patterns: [RegExp, BriefingMethod][] = [
+    [/^sent to (.+?) via WhatsApp$/i, "whatsapp"],
+    [/^emailed to (.+)$/i, "email"],
+    [/^copied to send to (.+)$/i, "copy"],
+  ];
+  for (const [re, method] of patterns) {
+    const m = body.match(re);
+    if (m) {
+      const who = m[1].replace(/^driver\s+/i, "").trim();
+      return { recipient: who && who.toLowerCase() !== "driver" ? who : null, method };
+    }
+  }
+  return { recipient: null, method: null };
+}
+
+export const BRIEFING_METHOD_LABELS: Record<BriefingMethod, string> = {
+  whatsapp: "WhatsApp",
+  email: "Email",
+  copy: "Copied",
+};
+
+/** "Romeo Stramaglia · WhatsApp" (or "Unknown driver · Copied" when no name was chosen). */
+export function givenToLabel(note: string) {
+  const { recipient, method } = parseBriefingNote(note);
+  return `${recipient ?? "Unknown driver"}${method ? ` · ${BRIEFING_METHOD_LABELS[method]}` : ""}`;
+}
+
 export type BriefingBooking = {
   booking_reference: string;
   trip_date: string;
