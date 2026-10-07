@@ -47,11 +47,16 @@ export default async function BookingsPage({
       <PageHeader
         title="Bookings"
         actions={
-          canManageOps(profile.role) ? (
-            <Link href="/admin/bookings/new" className="inline-flex items-center gap-1.5 bg-admin-navy text-admin-ivory text-sm font-semibold px-4 py-2 rounded-sm hover:bg-admin-navy-deep">
-              <Plus className="h-4 w-4" /> New booking
-            </Link>
-          ) : undefined
+          <>
+            {profile.role !== "DISPATCHER" ? (
+              <a href="/admin/exports/trips?dataset=bookings&period=all" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">⬇ Export to sheet</a>
+            ) : null}
+            {canManageOps(profile.role) ? (
+              <Link href="/admin/bookings/new" className="inline-flex items-center gap-1.5 bg-admin-navy text-admin-ivory text-sm font-semibold px-4 py-2 rounded-sm hover:bg-admin-navy-deep">
+                <Plus className="h-4 w-4" /> New booking
+              </Link>
+            ) : null}
+          </>
         }
       />
 

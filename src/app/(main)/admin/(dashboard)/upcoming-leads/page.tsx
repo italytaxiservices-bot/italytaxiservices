@@ -84,9 +84,14 @@ export default async function UpcomingLeadsPage({ searchParams }: { searchParams
         title="Upcoming trips (leads)"
         description={`Enquiries with a trip date from ${formatDate(today)} onwards, soonest first. Message them one by one.`}
         actions={
-          <Link href="/admin/leads" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">
-            All leads
-          </Link>
+          <>
+            {profile.role !== "DISPATCHER" ? (
+              <a href="/admin/exports/trips?dataset=leads&period=upcoming" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">⬇ Export to sheet</a>
+            ) : null}
+            <Link href="/admin/leads" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">
+              All leads
+            </Link>
+          </>
         }
       />
 

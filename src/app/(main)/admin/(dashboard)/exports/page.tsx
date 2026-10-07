@@ -11,6 +11,7 @@ import { EmptyState } from "@/components/admin/ui/EmptyState";
 import { DATE_RANGE_LABELS, type DateRangeKey } from "@/lib/admin/date-range";
 import { REPORT_LABELS, type ReportKey } from "@/lib/admin/reports";
 import { formatDateTime } from "@/lib/admin/format";
+import { TRIP_DATASET_LABELS, TRIP_PERIOD_LABELS, type TripDataset, type TripPeriod } from "@/lib/admin/tripExports";
 
 export const metadata: Metadata = { title: "Export center" };
 
@@ -55,6 +56,55 @@ export default async function ExportsPage({ searchParams }: { searchParams: Prom
         }
       />
 
+      <Section title="Bookings & website requests → Excel / Google Sheets">
+        <form action="/admin/exports/trips" method="get" className="p-4 grid sm:grid-cols-2 lg:grid-cols-6 gap-3 items-end">
+          <label className="block text-xs text-admin-stone lg:col-span-2">
+            What
+            <select name="dataset" defaultValue="bookings" className="input-luxe mt-1">
+              {(Object.keys(TRIP_DATASET_LABELS) as TripDataset[]).map((k) => (
+                <option key={k} value={k}>
+                  {TRIP_DATASET_LABELS[k]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-xs text-admin-stone">
+            Period
+            <select name="period" defaultValue="upcoming" className="input-luxe mt-1">
+              {(Object.keys(TRIP_PERIOD_LABELS) as TripPeriod[]).map((k) => (
+                <option key={k} value={k}>
+                  {TRIP_PERIOD_LABELS[k]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-xs text-admin-stone">
+            Filter by
+            <select name="by" defaultValue="trip" className="input-luxe mt-1">
+              <option value="trip">Trip date</option>
+              <option value="received">Date received</option>
+            </select>
+          </label>
+          <label className="block text-xs text-admin-stone">
+            From (custom)
+            <input type="date" name="from" className="input-luxe mt-1" />
+          </label>
+          <label className="block text-xs text-admin-stone">
+            To (custom)
+            <input type="date" name="to" className="input-luxe mt-1" />
+          </label>
+          <button type="submit" className="lg:col-span-6 inline-flex items-center justify-center gap-2 bg-admin-navy text-admin-ivory text-sm font-semibold px-4 py-2.5 rounded-sm hover:bg-admin-navy-deep">
+            <Download className="h-4 w-4" /> Download spreadsheet (.csv)
+          </button>
+        </form>
+        <p className="px-4 pb-4 text-xs text-admin-stone">
+          Every column: received time, trip date &amp; time, pickup, drop-off, city, customer, phone, email, passengers, driver, whether the driver was
+          told, flight, status, payment, prices and notes. Opens directly in Excel; in Google Sheets use File → Import → Upload. &quot;From / To&quot; are used
+          when Period is &quot;Custom dates&quot;.
+        </p>
+      </Section>
+
+      <div className="mt-4" />
       <Section title="Quick export">
         <div className="p-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {QUICK_EXPORT_KEYS.map((key) => (
@@ -98,7 +148,11 @@ export default async function ExportsPage({ searchParams }: { searchParams: Prom
                   {logs.map((log) => (
                     <tr key={log.id}>
                       <td className="px-4 py-2.5">{log.profiles?.full_name ?? "Unknown"}</td>
-                      <td className="px-4 py-2.5">{REPORT_LABELS[log.dataset as ReportKey] ?? log.dataset}</td>
+                      <td className="px-4 py-2.5">
+                        {REPORT_LABELS[log.dataset as ReportKey] ??
+                          TRIP_DATASET_LABELS[log.dataset.replace(/^trips_/, "") as TripDataset] ??
+                          log.dataset}
+                      </td>
                       <td className="px-4 py-2.5 text-xs text-admin-stone">{log.filters ? JSON.stringify(log.filters) : "—"}</td>
                       <td className="px-4 py-2.5 text-right">{log.row_count}</td>
                       <td className="px-4 py-2.5">

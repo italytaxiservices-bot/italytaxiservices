@@ -52,6 +52,9 @@ export default async function LeadsPage({
             <Link href="/admin/upcoming-leads" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">
               📅 Upcoming trips
             </Link>
+            {profile.role !== "DISPATCHER" ? (
+              <a href="/admin/exports/trips?dataset=leads&period=all&by=received" className="text-sm border border-admin-line px-3 py-2 rounded-sm hover:bg-white">⬇ Export to sheet</a>
+            ) : null}
             {canManageCrm(profile.role) ? (
               <Link href="/admin/leads/new" className="inline-flex items-center gap-1.5 bg-admin-navy text-admin-ivory text-sm font-semibold px-4 py-2 rounded-sm hover:bg-admin-navy-deep">
                 <Plus className="h-4 w-4" /> New lead
