@@ -59,7 +59,7 @@ const ALIASES: [CityKey, string[]][] = [
       "matera", "otranto", "gallipoli", "trani", "taranto", "foggia", "vieste", "salento",
     ],
   ],
-  ["catania", ["catania", "cta", "taormina", "fontanarossa"]],
+  ["catania", ["catania", "cta", "fontanarossa", "taormina", "giardini naxos", "etna", "acireale", "siracusa", "syracuse", "ortigia", "noto"]],
   ["palermo", ["palermo", "pmo", "punta raisi"]],
   ["cagliari", ["cagliari", "cag", "elmas"]],
   ["olbia", ["olbia", "olb", "costa smeralda", "porto cervo"]],

@@ -28,6 +28,17 @@ export type CityPartner = {
 };
 
 export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
+  catania: [
+    {
+      slug: "giuseppe-nicotra",
+      kind: "driver",
+      name: "Giuseppe Nicotra",
+      phone: "+39 349 462 9666",
+      email: "nccetnamare@gmail.com",
+      website: "https://transferetnamare.it/",
+      description: "Transfer Etna Mare · Catania airport, Taormina, Etna & eastern Sicily",
+    },
+  ],
   rome: [
     {
       slug: "carlos-rodriguez",
