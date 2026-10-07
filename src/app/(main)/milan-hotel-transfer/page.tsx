@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, ArrowDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import QuoteForm from '@/components/home/QuoteForm'
 import ImageSlot from '@/components/editorial/ImageSlot'
 import StickyQuoteBar from '@/components/editorial/StickyQuoteBar'
@@ -9,41 +9,68 @@ import { siteConfig } from '@/lib/siteConfig'
 import { vehicles } from '@/data/fleet'
 
 /*
- * Editorial landing page for airport ↔ hotel transfers in Milan.
+ * Editorial landing page for private transfers between Milan's airports and
+ * Milan hotels (both directions), plus hotel-to-address journeys in the city.
  *
- * Photos live in public/images/milan-hotel/ and were supplied for THIS page
- * only — don't reuse them elsewhere.
+ * Photos in public/images/milan-hotel/ were supplied for THIS page only —
+ * don't reuse them elsewhere. They are similar shots, so each is used at a
+ * different size and crop to keep the rhythm varied.
  *
  * Facts come from the site's own data and policies: Malpensa 48 km /
  * 45–60 min to Milan (data/routes.ts), Linate 7 km and Bergamo 45 km from the
  * centre (data/airports.ts), T1/T2 split, name-board meet & greet, flight
  * monitoring, 60 min free waiting and what a quote includes (terms), hotel
  * entrance + luggage assistance (hotel/cruise pages), child seats on request
- * (FAQ), vehicles (data/fleet.ts). No prices.
+ * (FAQ), vehicle categories (data/fleet.ts). No prices, no capacities.
  */
 
 const PATH = '/milan-hotel-transfer'
-const TITLE = 'Milan Hotel Transfer | Private Airport to Hotel Chauffeur'
+const TITLE = 'Milan Hotel Transfer | Private Airport & Chauffeur Service'
 const DESCRIPTION =
-  'Private transfers between Malpensa, Linate or Bergamo airport and your Milan hotel, in either direction. Door to door, sized to your luggage, fixed quote.'
+  'Private transfers between Malpensa, Linate or Bergamo airport and your Milan hotel — and back. A chauffeur, a vehicle sized to your luggage, a fixed quote.'
 
 export const metadata: Metadata = {
   // absolute: the layout's "| Italy Taxi Services" suffix would make this too long.
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PATH },
-  openGraph: { type: 'website', siteName: siteConfig.name, url: PATH, title: TITLE, description: DESCRIPTION, images: ['/images/milan-hotel/hero.webp'] },
-  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/images/milan-hotel/hero.webp'] },
+  openGraph: {
+    type: 'website',
+    siteName: siteConfig.name,
+    url: PATH,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ['/images/milan-hotel/milan-hotel-transfer.webp'],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/images/milan-hotel/milan-hotel-transfer.webp'] },
 }
 
 const P = 'images/milan-hotel'
 const PHOTOS = {
-  hero: { file: `${P}/hero`, size: '1600 × 2000', brief: 'Milan hotel entrance, chauffeur loading luggage, Duomo behind', alt: 'Private chauffeur loading a suitcase into a black Mercedes outside a hotel by Milan Cathedral', position: 'center 60%' },
-  doorToDoor: { file: `${P}/door-to-door`, size: '2000 × 1250', brief: 'Van at a hotel entrance, chauffeur unloading, guest walking in', alt: 'Chauffeur unloading suitcases from a Mercedes van as a guest walks into a Milan hotel', position: 'center 60%' },
-  arrival: { file: `${P}/airport-arrival`, size: '1400 × 1750', brief: 'Travellers with suitcases meeting a chauffeur at the airport kerb', alt: 'Two travellers with suitcases walking to a waiting van and chauffeur outside an airport terminal', position: 'center 55%' },
-  pickup: { file: `${P}/hotel-pickup`, size: '2000 × 1300', brief: 'Chauffeur holding the van door for guests outside a Milan hotel', alt: 'Chauffeur holding the door of a Mercedes van for two guests leaving a Milan hotel', position: 'center 50%' },
-  vclass: { file: `${P}/v-class`, size: '2000 × 1300', brief: 'Mercedes V-Class at a hotel entrance, sliding door open', alt: 'Mercedes V-Class for private Milan hotel transfers, parked at a hotel entrance near the Duomo', position: 'center 55%' },
-  luggage: { file: `${P}/luggage`, size: '1400 × 1750', brief: 'Suitcases packed in the van boot at a hotel door', alt: 'Large suitcases and cabin bags packed into the boot of a van outside a hotel', position: 'center 60%' },
+  hero: {
+    file: `${P}/milan-hotel-transfer`, size: '2000 × 1300', brief: 'Chauffeur at a Milan hotel entrance with the Duomo',
+    alt: 'Chauffeur holding the door of a Mercedes van for a guest outside a hotel near Milan Cathedral', position: '40% center',
+  },
+  arrive: {
+    file: `${P}/milan-airport-hotel-transfer`, size: '2000 × 1300', brief: 'Guests arriving at a Milan hotel with suitcases',
+    alt: 'Two guests with suitcases arriving at a Milan hotel as the chauffeur loads their luggage', position: 'center 55%',
+  },
+  hotelDoor: {
+    file: `${P}/milan-hotel-chauffeur`, size: '2400 × 1000', brief: 'Chauffeur loading luggage at a hotel door',
+    alt: 'Chauffeur loading luggage outside a Milan hotel', position: 'center 62%',
+  },
+  vehicle: {
+    file: `${P}/milan-private-transfer-vehicle`, size: '1600 × 1200', brief: 'Mercedes V-Class at the kerb',
+    alt: 'Black Mercedes van with its sliding door open outside a hotel in central Milan', position: '72% center',
+  },
+  luggage: {
+    file: `${P}/milan-transfer-luggage`, size: '1400 × 1750', brief: 'Suitcases going into the van boot',
+    alt: 'Chauffeur placing a suitcase into the boot of a van outside a Milan hotel', position: '60% center',
+  },
+  closing: {
+    file: `${P}/milan-hotel-airport-transfer`, size: '1600 × 1300', brief: 'Evening departure from a Milan hotel',
+    alt: 'Evening departure from a Milan hotel, chauffeur waiting beside the van', position: '45% center',
+  },
 }
 
 const INK = '#1a1410'
@@ -56,46 +83,42 @@ const BODY = '#5a5248'
 const MUTED = '#8a8076'
 const serif = { fontFamily: 'var(--font-serif), Georgia, serif' }
 const eyebrow = 'text-[11px] uppercase tracking-[0.28em] font-semibold'
-const link = 'underline underline-offset-4 decoration-1 hover:decoration-2'
+const link = 'underline underline-offset-4 decoration-1 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2'
 
 const faqs = [
   {
-    question: 'How much is a private hotel transfer in Milan?',
+    question: 'Do you provide hotel transfers from Milan Malpensa Airport?',
     answer:
-      'It is quoted per journey, because it depends on the airport, your hotel, the vehicle and the time. The quote is fixed and includes motorway tolls and VAT where applicable. Send your details through the form and you will have the price before you book.',
+      'Yes. Your driver meets you in the arrivals hall at Terminal 1 or Terminal 2 with a name board and drives you straight to your hotel. Your flight is monitored, and the driver waits up to 60 minutes after the actual landing time at no extra charge.',
   },
   {
-    question: 'Can I book a transfer from Malpensa Airport to my Milan hotel?',
+    question: 'Can I book a transfer from Linate Airport to my Milan hotel?',
+    answer: 'Yes. Linate is about 7 km from the city centre, so it is the shortest of Milan’s airport-to-hotel transfers.',
+  },
+  {
+    question: 'Can you collect me from a Milan hotel and take me to the airport?',
     answer:
-      'Yes. The driver meets you in the arrivals hall at Terminal 1 or Terminal 2 and drives you directly to your hotel. Allow roughly 45–60 minutes to central Milan, more in heavy traffic.',
+      'Yes — to Malpensa, Linate or Bergamo. Give us your hotel, flight time and airport, and we will agree a pickup time with you. Choose Round Trip in the form to book arrival and departure together.',
   },
   {
-    question: 'Do you provide transfers from Linate Airport?',
-    answer: 'Yes. Linate is the closest airport to the city, about 7 km from the centre, so it is the shortest of the three hotel transfers.',
-  },
-  {
-    question: 'Can I book from Bergamo Airport to a Milan hotel?',
+    question: 'Do you provide transfers to hotels outside central Milan?',
     answer:
-      'Yes. Bergamo Orio al Serio (BGY) is about 45 km from central Milan and is where many Ryanair and other low-cost flights arrive. The pickup works the same way as at Malpensa.',
+      'Yes. Hotels and private addresses outside the centre — Bicocca, Fiera Milano in Rho, or further out — work the same way. Give the full address when you ask for a quote.',
   },
   {
-    question: 'Can I book a Mercedes V-Class?',
+    question: 'Can I book a private vehicle for my family?',
     answer:
-      'Yes — the Premium Van is a Mercedes-Benz V-Class or similar, for up to seven passengers. Choose it in the vehicle field, or describe your luggage and we will suggest it if it is needed.',
+      'Yes. The vehicle is booked for your party alone. Child seats can be requested when booking — tell us how many and the children’s ages.',
   },
   {
-    question: 'Can I book a Milan hotel to airport transfer?',
+    question: 'Can I travel with several large suitcases?',
     answer:
-      'Yes. Give us the hotel, your flight time and the airport, and we will agree a pickup time. Choose Round Trip in the form to quote your arrival and departure together.',
+      'Yes, as long as we know about them when we quote. Tell us how many large suitcases and cabin bags you have, and we will send a vehicle with room for all of them.',
   },
   {
-    question: 'What information do I need to provide for a quote?',
+    question: 'Can I request a Mercedes V-Class or a larger vehicle?',
     answer:
-      'The airport and your hotel name and address, the date and time (or flight number), number of passengers, how many suitcases and cabin bags, and anything special such as child seats.',
-  },
-  {
-    question: 'Can I book an early-morning or late-night transfer?',
-    answer: 'Yes, subject to availability — so book early-morning departures and late arrivals in advance rather than on the day.',
+      'Yes. The Premium Van is a Mercedes-Benz V-Class or similar. Choose it in the form; for a bigger group, tell us the numbers and we will quote what fits.',
   },
 ]
 
@@ -107,12 +130,12 @@ export default function MilanHotelTransferPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Milan hotel transfer',
-    serviceType: 'Private airport to hotel transfer',
+    serviceType: 'Private transfer between Milan airports and hotels',
     description: DESCRIPTION,
     url: `${siteConfig.domain}${PATH}`,
     provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.domain, email: siteConfig.email },
     areaServed: [
-      { '@type': 'City', name: 'Milan', containedInPlace: { '@type': 'AdministrativeArea', name: 'Lombardy' } },
+      { '@type': 'City', name: 'Milan', alternateName: 'Milano', containedInPlace: { '@type': 'AdministrativeArea', name: 'Lombardy' } },
       { '@type': 'Airport', name: 'Milan Malpensa Airport', iataCode: 'MXP' },
       { '@type': 'Airport', name: 'Milan Linate Airport', iataCode: 'LIN' },
       { '@type': 'Airport', name: 'Bergamo Orio al Serio Airport', iataCode: 'BGY' },
@@ -131,397 +154,344 @@ export default function MilanHotelTransferPage() {
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema(faqs)} />
 
-      {/* ───────────────── HERO ───────────────── */}
-      <section className="pt-28 lg:pt-36 pb-12 lg:pb-16">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1">
-            <nav className="flex flex-wrap items-center gap-2 text-xs mb-10" style={{ color: MUTED }} aria-label="Breadcrumb">
+      {/* ───────────────── HERO ─────────────────
+          Image-led: the photo takes the larger share; copy sits in a
+          narrower column with the trust row underneath. */}
+      <section className="pt-28 lg:pt-32 pb-14 lg:pb-20">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 lg:order-2">
+            <ImageSlot {...PHOTOS.hero} priority className="aspect-[4/3] lg:aspect-[5/4] w-full" sizes="(min-width: 1024px) 55vw, 100vw" tone="dark" />
+          </div>
+          <div className="lg:col-span-5 lg:order-1">
+            <nav className="flex flex-wrap items-center gap-2 text-xs mb-8" style={{ color: MUTED }} aria-label="Breadcrumb">
               <Link href="/" className="hover:underline">Home</Link>
               <span>/</span>
               <Link href="/hotel-transfers" className="hover:underline">Hotel Transfers</Link>
               <span>/</span>
               <span style={{ color: GOLD }}>Milan</span>
             </nav>
-            <p className={`${eyebrow} mb-6`} style={{ color: GOLD }}>Airport → Milan Hotel</p>
-            <h1 className="font-bold text-balance leading-[1.02] mb-7" style={{ ...serif, color: INK, fontSize: 'clamp(2.5rem, 5.4vw, 4.6rem)', letterSpacing: '-0.015em' }}>
+            <p className={`${eyebrow} mb-5`} style={{ color: GOLD }}>Milano · Malpensa · Linate · Bergamo</p>
+            <h1 className="font-bold text-balance leading-[1.02] mb-6" style={{ ...serif, color: INK, fontSize: 'clamp(2.5rem, 5vw, 4.4rem)', letterSpacing: '-0.015em' }}>
               Milan Hotel Transfer
             </h1>
-            <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: BODY }}>
-              Private, door-to-door transfers between Milan’s airports and hotels across the city, arranged around your
-              arrival, departure and luggage.
+            <p className="text-lg leading-relaxed mb-9 max-w-md" style={{ color: BODY }}>
+              Private airport and hotel transfers across Milan, with a chauffeur waiting for you at the right place and the right time.
             </p>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Link href="#quote-form" className="group inline-flex items-center gap-3 text-sm font-semibold px-8 py-4" style={{ background: INK, color: IVORY, letterSpacing: '0.06em' }}>
-                Get a Fixed Quote
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-10">
+              <Link
+                href="#booking"
+                className="group inline-flex items-center gap-3 text-sm font-semibold px-8 py-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+                style={{ background: INK, color: IVORY, letterSpacing: '0.06em', outlineColor: GOLD }}
+              >
+                Book Your Transfer
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <Link href="#booking" className={`text-sm font-medium ${link}`} style={{ color: INK }}>
-                Book Your Transfer
+              <Link href="#quote-form" className={`text-sm font-medium ${link}`} style={{ color: INK }}>
+                Get a Quote
               </Link>
             </div>
-          </div>
-          <div className="lg:col-span-6 order-1 lg:order-2">
-            <ImageSlot {...PHOTOS.hero} priority className="aspect-[4/3] lg:aspect-[4/5] w-full" sizes="(min-width: 1024px) 45vw, 100vw" tone="dark" />
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────────── ROUTE INDICATOR ───────────────── */}
-      <section aria-label="Airports served" className="border-y" style={{ borderColor: LINE, background: '#fff' }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 py-8 lg:py-10 grid md:grid-cols-[1fr_auto_auto_auto_auto] items-center gap-5 md:gap-8">
-          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-            {[['MXP', 'Malpensa'], ['LIN', 'Linate'], ['BGY', 'Bergamo']].map(([code, name]) => (
-              <p key={code} className="text-sm" style={{ color: BODY }}>
-                <span className="text-2xl lg:text-3xl font-bold mr-2" style={{ ...serif, color: INK }}>{code}</span>
-                <span className="hidden sm:inline">{name} Airport</span>
-              </p>
-            ))}
-          </div>
-          <ArrowRight aria-hidden="true" className="hidden md:block w-5 h-5" style={{ color: GOLD }} />
-          <ArrowDown aria-hidden="true" className="md:hidden w-5 h-5" style={{ color: GOLD }} />
-          <p className="text-sm font-semibold tracking-wide" style={{ color: INK }}>Private chauffeur</p>
-          <ArrowRight aria-hidden="true" className="hidden md:block w-5 h-5" style={{ color: GOLD }} />
-          <ArrowDown aria-hidden="true" className="md:hidden w-5 h-5" style={{ color: GOLD }} />
-          <p className="text-2xl lg:text-3xl font-bold" style={{ ...serif, color: INK }}>Your Milan hotel</p>
-        </div>
-      </section>
-
-      {/* ───────────────── IN SHORT (direct answers) ───────────────── */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
-          <h2 className="lg:col-span-3 text-2xl font-bold" style={{ ...serif, color: INK }}>In short</h2>
-          <dl className="lg:col-span-9 grid sm:grid-cols-2 gap-x-12 gap-y-8">
-            {[
-              ['What is a Milan hotel transfer?', 'A private, pre-booked car and driver taking you between a Milan airport and your hotel or other accommodation — only your party in the vehicle.'],
-              ['Which airports?', 'Milan Malpensa (MXP), Milan Linate (LIN) and Bergamo Orio al Serio (BGY).'],
-              ['Straight from Malpensa to my hotel?', 'Yes. The driver meets you in arrivals and drives directly to the hotel address you give us.'],
-              ['And back to the airport?', 'Yes — hotel to airport transfers work the same way, and both can be quoted together.'],
-            ].map(([q, a]) => (
-              <div key={q} className="border-t pt-4" style={{ borderColor: LINE }}>
-                <dt className="font-semibold mb-2" style={{ ...serif, color: INK }}>{q}</dt>
-                <dd className="text-sm leading-relaxed" style={{ color: BODY }}>{a}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ───────────────── DOOR TO DOOR ───────────────── */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <ImageSlot {...PHOTOS.doorToDoor} className="lg:col-span-7 aspect-[16/10] w-full" sizes="(min-width: 1024px) 55vw, 100vw" />
-          <div className="lg:col-span-5 its-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-8" style={{ ...serif, color: INK }}>From the Airport Door to Your Hotel Door</h2>
-            <ol className="space-y-5">
-              {[
-                ['You land', 'Passport control, then the baggage hall. Nobody is rushing you — the driver’s time is set from your actual landing.'],
-                ['Your driver is in arrivals', 'Holding a board with your name, inside the arrivals hall rather than somewhere outside.'],
-                ['Bags go in once', 'The driver helps with the luggage and loads it; you don’t lift it again until the hotel.'],
-                ['Straight to the hotel', 'No stops on the way and nobody else to drop off first.'],
-                ['Out at the entrance', 'Cases unloaded at the hotel door, and you’re at reception.'],
-              ].map(([t, d], i) => (
-                <li key={t} className="grid grid-cols-[2rem_1fr] gap-3">
-                  <span className="text-xs pt-1" style={{ color: GOLD }}>{String(i + 1).padStart(2, '0')}</span>
-                  <div>
-                    <p className="font-semibold" style={{ ...serif, color: INK }}>{t}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: BODY }}>{d}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────────── THREE AIRPORTS ───────────────── */}
-      <section className="py-20 lg:py-28" style={{ background: INK }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-6 mb-14">
-            <h2 className="lg:col-span-6 text-3xl lg:text-4xl font-bold text-balance leading-tight" style={{ ...serif, color: IVORY }}>Milan’s Three Main Airports</h2>
-            <p className="lg:col-span-5 lg:col-start-8 text-base leading-relaxed self-end" style={{ color: 'rgba(250,247,242,0.6)' }}>
-              Which airport you land at changes the journey more than anything else — from a short city run to most of an hour on the motorway.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 border-t" style={{ borderColor: 'rgba(201,168,76,0.3)' }}>
-            {[
-              {
-                code: 'MXP', name: 'Milan Malpensa', href: '/malpensa-airport-transfer', anchor: 'Malpensa pickups in detail',
-                facts: 'About 48 km from the city · usually 45–60 min',
-                text: 'The largest airport in northern Italy and where most long-haul and international flights land. Terminal 1 handles most international flights; Terminal 2 is used mainly by easyJet.',
-              },
-              {
-                code: 'LIN', name: 'Milan Linate', href: '/linate-airport-transfer', anchor: 'transfers from Linate',
-                facts: 'About 7 km from the centre',
-                text: 'Milan’s city airport, mostly domestic and European flights. The shortest hotel transfer of the three — convenient if you’re staying centrally or have a meeting soon after landing.',
-              },
-              {
-                code: 'BGY', name: 'Bergamo Orio al Serio', href: '/bergamo-airport-transfer', anchor: 'Bergamo Airport transfers',
-                facts: 'About 45 km from central Milan',
-                text: 'A major low-cost hub used by Ryanair and others. Many travellers staying in Milan arrive here; the pickup works exactly as it does at Malpensa.',
-              },
-            ].map((a, i) => (
-              <div key={a.code} className={`pt-8 pb-10 md:pr-8 ${i > 0 ? 'md:border-l md:pl-8 border-t md:border-t-0' : ''}`} style={{ borderColor: 'rgba(201,168,76,0.2)' }}>
-                <p className="font-bold leading-none mb-4" style={{ ...serif, color: BRIGHT_GOLD, fontSize: 'clamp(3rem, 6vw, 4.5rem)' }}>{a.code}</p>
-                <h3 className="text-lg font-semibold mb-1" style={{ ...serif, color: IVORY }}>{a.name}</h3>
-                <p className="text-xs mb-4" style={{ color: 'rgba(250,247,242,0.45)' }}>{a.facts}</p>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(250,247,242,0.7)' }}>{a.text}</p>
-                <Link href={a.href} className={`text-sm ${link}`} style={{ color: BRIGHT_GOLD }}>{a.anchor}</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────────── ACROSS MILAN ───────────────── */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-4 its-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Hotel Transfers Across Milan</h2>
-            <p className="text-base leading-relaxed mb-4" style={{ color: BODY }}>
-              We drive to hotels and private addresses throughout the city. What matters is the exact address: Milan has
-              several hotels with similar names, and parts of the historic centre are pedestrianised, so the right drop-off
-              point isn’t always the street the hotel’s name suggests.
-            </p>
-            <p className="text-base leading-relaxed" style={{ color: BODY }}>
-              Staying near the Duomo, in Brera or by Porta Nuova? Give us the hotel name and street address when you ask for a quote.
-            </p>
-          </div>
-          <dl className="lg:col-span-7 lg:col-start-6 grid sm:grid-cols-2 gap-x-10">
-            {[
-              ['Duomo & Montenapoleone', 'The historic centre and the fashion district around it.'],
-              ['Brera', 'Galleries and narrow streets just north of the Duomo.'],
-              ['Porta Nuova', 'The business district around Garibaldi station.'],
-              ['CityLife & MiCo', 'The towers and the MiCo convention centre on the west side.'],
-              ['Navigli', 'The canal district south-west of the centre.'],
-              ['Bicocca', 'North Milan — university, offices and hotels.'],
-              ['Fiera Milano (Rho)', 'The trade fair grounds north-west of the city, on the Malpensa side.'],
-              ['Anywhere else', 'Private addresses, apartments and hotels outside the centre.'],
-            ].map(([area, note]) => (
-              <div key={area} className="py-4 border-b" style={{ borderColor: LINE }}>
-                <dt className="font-semibold" style={{ ...serif, color: INK }}>{area}</dt>
-                <dd className="text-sm" style={{ color: BODY }}>{note}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      {/* ───────────────── ARRIVING ───────────────── */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <ImageSlot {...PHOTOS.arrival} className="lg:col-span-5 aspect-[4/5] w-full max-w-md lg:max-w-none" sizes="(min-width: 1024px) 40vw, 100vw" />
-          <div className="lg:col-span-6 lg:col-start-7 its-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Arriving in Milan?</h2>
-            <p className="text-base leading-relaxed mb-6" style={{ color: BODY }}>
-              Your flight is monitored, so the pickup follows a delay or an early landing without you calling anyone. The
-              driver waits in the arrivals hall with your name on a board, and waits up to 60 minutes after the updated
-              landing time at no extra charge — normally plenty for passport control and bags.
-            </p>
-            <p className="text-[11px] uppercase tracking-[0.22em] mb-3" style={{ color: MUTED }}>When booking, tell us</p>
-            <ul className="grid grid-cols-2 gap-x-6 text-sm" style={{ color: INK }}>
-              {['Airport (and terminal)', 'Flight number', 'Arrival date', 'Landing time', 'Hotel or address', 'Passengers', 'Suitcases & cabin bags', 'Child seats, if any'].map((i) => (
-                <li key={i} className="py-2.5 border-b" style={{ borderColor: LINE }}>{i}</li>
+            {/* 2×2 on mobile, a single ruled line from sm up */}
+            <ul className="grid grid-cols-2 gap-y-2 sm:flex sm:flex-wrap text-xs tracking-wide border-t pt-5" style={{ borderColor: LINE, color: MUTED }}>
+              {['Private vehicle', 'Hotel pickup', 'Airport transfers', 'Professional chauffeur'].map((t, i) => (
+                <li key={t} className={`py-1 sm:pr-4 ${i > 0 ? 'sm:pl-4 sm:border-l' : ''}`} style={{ borderColor: LINE }}>{t}</li>
               ))}
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ───────────────── HOTEL PICKUP ───────────────── */}
-      <section className="py-20 lg:py-28" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-          <div className="lg:col-span-5 lg:order-2 its-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Your Hotel Pickup</h2>
-            <p className="text-base leading-relaxed mb-6" style={{ color: BODY }}>
-              Going the other way, the driver comes to your hotel entrance at the agreed time and helps with the bags. Large
-              hotels sometimes have more than one entrance or a separate drop-off lane — if yours does, or the concierge has
-              told you where cars wait, include it.
+      {/* ───────────────── THE TRAVEL PROBLEM ───────────────── */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 mb-14 lg:mb-20">
+            <h2 className="lg:col-span-5 text-3xl lg:text-[2.6rem] font-bold text-balance leading-[1.1] its-reveal" style={{ ...serif, color: INK }}>
+              Arrive in Milan. Leave the Airport Behind.
+            </h2>
+            <div className="lg:col-span-6 lg:col-start-7 space-y-5 text-base leading-relaxed its-reveal" style={{ color: BODY }}>
+              <p>
+                Malpensa, where most international flights land, is about 48 km from the city. After a long flight and a wait
+                at baggage reclaim, the last thing most people want is to work out the airport train, a metro change and
+                which exit of the station their hotel is near — with every suitcase, and maybe a child, in tow.
+              </p>
+              <p>
+                The simplest way from a Milan airport to your hotel is a private transfer: one car, booked in advance, that
+                takes you from the arrivals hall to the hotel entrance without changing between services. It works the other
+                way too — a pickup at your hotel for an early flight, arranged the day before rather than at 5 a.m.
+              </p>
+            </div>
+          </div>
+          <ImageSlot {...PHOTOS.arrive} className="w-full aspect-[16/10] lg:aspect-[21/10]" sizes="(min-width: 1280px) 1200px, 100vw" />
+        </div>
+      </section>
+
+      {/* ───────────────── AIRPORT → HOTEL ───────────────── */}
+      <section className="py-20 lg:py-28" style={{ background: INK }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: IVORY }}>From Milan Airport to Your Hotel</h2>
+            <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(250,247,242,0.65)' }}>
+              We provide private transfers from all three airports that serve Milan — Malpensa, Linate and Bergamo — to hotels
+              and private addresses throughout the city. Which one you land at decides how long the drive is.
             </p>
-            <dl className="text-sm">
+            <p className="text-sm" style={{ color: 'rgba(250,247,242,0.5)' }}>
+              More on each airport:{' '}
+              <Link href="/malpensa-airport-transfer" className={link} style={{ color: BRIGHT_GOLD }}>Malpensa</Link>,{' '}
+              <Link href="/linate-airport-transfer" className={link} style={{ color: BRIGHT_GOLD }}>Linate</Link>,{' '}
+              <Link href="/bergamo-airport-transfer" className={link} style={{ color: BRIGHT_GOLD }}>Bergamo</Link>.
+            </p>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            {[
+              {
+                code: 'MXP', name: 'Milan Malpensa Airport',
+                fact: 'About 48 km · usually 45–60 minutes to the centre',
+                text: 'Northern Italy’s largest airport and the arrival point for most long-haul and international flights. Terminal 1 handles most international flights; Terminal 2 is used mainly by easyJet. The driver meets you in arrivals at either.',
+              },
+              {
+                code: 'LIN', name: 'Milan Linate Airport',
+                fact: 'About 7 km from the centre',
+                text: 'Milan’s city airport, close enough that the transfer to a central hotel is short — useful when you land with a meeting or a dinner booking not long after.',
+              },
+              {
+                code: 'BGY', name: 'Bergamo Airport (Orio al Serio)',
+                fact: 'About 45 km from central Milan',
+                text: 'A major low-cost hub used by Ryanair and others. Plenty of people staying in Milan fly in here; the pickup and the drive to your hotel work just as they do from Malpensa.',
+              },
+            ].map((a, i) => (
+              <div key={a.code} className={`grid grid-cols-[4.5rem_1fr] sm:grid-cols-[6.5rem_1fr] gap-4 sm:gap-8 py-8 ${i > 0 ? 'border-t' : ''}`} style={{ borderColor: 'rgba(201,168,76,0.2)' }}>
+                <p className="font-bold leading-none" style={{ ...serif, color: BRIGHT_GOLD, fontSize: 'clamp(2rem, 4vw, 3rem)' }}>{a.code}</p>
+                <div>
+                  <h3 className="text-lg font-semibold" style={{ ...serif, color: IVORY }}>{a.name}</h3>
+                  <p className="text-xs mb-3 mt-1" style={{ color: 'rgba(250,247,242,0.45)' }}>{a.fact}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(250,247,242,0.72)' }}>{a.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────── HOTELS ACROSS MILAN ───────────────── */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-8 mb-12">
+            <h2 className="lg:col-span-5 text-3xl lg:text-4xl font-bold text-balance leading-tight its-reveal" style={{ ...serif, color: INK }}>Hotels Across Milan</h2>
+            <p className="lg:col-span-6 lg:col-start-7 text-base leading-relaxed its-reveal" style={{ color: BODY }}>
+              We collect from and drop off at hotels and private addresses across Milan, as close to the door as vehicle access
+              allows. Parts of the historic centre are pedestrianised, and several hotels share similar names — so the full
+              street address matters more than the area.
+            </p>
+          </div>
+          <p className="text-lg lg:text-xl leading-[1.9]" style={{ ...serif, color: INK }}>
+            The <strong>Duomo</strong> and the streets around it; <strong>Montenapoleone</strong> and the fashion district;{' '}
+            <strong>Brera</strong>, just to the north; <strong>Porta Venezia</strong> and its side streets;{' '}
+            <strong>Porta Nuova</strong> and the towers around Garibaldi station; <strong>CityLife</strong> and the{' '}
+            <strong>MiCo</strong> convention centre on the west side; the canals of the <strong>Navigli</strong>;{' '}
+            <strong>Bicocca</strong> in the north; and <strong>Fiera Milano</strong> in Rho, out towards Malpensa.
+          </p>
+          <p className="text-sm mt-8" style={{ color: BODY }}>
+            Staying near the Duomo, in Brera or by Porta Nuova? Give us the hotel name and street address when you ask for a quote.
+          </p>
+        </div>
+      </section>
+
+      {/* ───────────────── HOTEL DOOR (full-bleed) ───────────────── */}
+      <section className="bg-white pb-20 lg:pb-28">
+        <ImageSlot {...PHOTOS.hotelDoor} className="w-full aspect-[16/10] md:aspect-[21/9]" sizes="100vw" />
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 relative -mt-10 md:-mt-24">
+          <div className="bg-white max-w-2xl p-8 lg:p-12 its-reveal" style={{ border: `1px solid ${LINE}` }}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>From the Hotel Door to Your Next Destination</h2>
+            <p className="text-base leading-relaxed mb-4" style={{ color: BODY }}>
+              On the way out, the chauffeur comes to your hotel entrance at the time you agreed and helps with the bags. There’s
+              no taxi rank to find and no hoping a car turns up at 5 a.m. — which matters most for early flights and for
+              families getting children and luggage out of the door at once.
+            </p>
+            <p className="text-base leading-relaxed" style={{ color: BODY }}>
+              From the hotel it’s a direct drive: to Malpensa, Linate or Bergamo, to another hotel or address in Milan, or
+              onward out of the city. For a car at your disposal by the hour, see our{' '}
+              <Link href="/milan-chauffeur-service" className={link} style={{ color: GOLD }}>private chauffeur service in Milan</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────── ARRIVAL JOURNEY LINE ───────────────── */}
+      <section className="py-20 lg:py-24" style={{ background: PAPER }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-6 mb-14">
+            <h2 className="lg:col-span-6 text-3xl lg:text-4xl font-bold text-balance leading-tight" style={{ ...serif, color: INK }}>Your Driver, Your Vehicle, No Guesswork</h2>
+            <p className="lg:col-span-5 lg:col-start-8 text-base leading-relaxed self-end" style={{ color: BODY }}>
+              Your flight is monitored, so the timing follows a delay or an early landing. The driver waits up to 60 minutes
+              after the actual landing at no extra charge — enough for passport control and bags.
+            </p>
+          </div>
+          <ol className="relative grid md:grid-cols-5 gap-8 md:gap-6">
+            <span aria-hidden="true" className="hidden md:block absolute top-[7px] left-0 right-0 h-px its-line-x" style={{ background: GOLD }} />
+            <span aria-hidden="true" className="md:hidden absolute top-2 bottom-2 left-[7px] w-px its-line-y" style={{ background: GOLD }} />
+            {[
+              ['Your flight lands', 'At Malpensa, Linate or Bergamo.'],
+              ['Collect your luggage', 'Take the time you need at baggage reclaim.'],
+              ['Meet your chauffeur', 'In the arrivals hall, holding a board with your name.'],
+              ['Bags into the car', 'The chauffeur helps with the luggage.'],
+              ['To your Milan hotel', 'A direct drive, no other stops.'],
+            ].map(([t, d], i, all) => (
+              <li key={t} className="relative pl-9 md:pl-0">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 md:static block w-[15px] h-[15px] rounded-full md:mb-5"
+                  style={{ background: i === 0 || i === all.length - 1 ? GOLD : PAPER, border: `1px solid ${GOLD}` }}
+                />
+                <p className="font-semibold mb-1" style={{ ...serif, color: INK, fontSize: '1.1rem' }}>{t}</p>
+                <p className="text-sm leading-relaxed" style={{ color: BODY }}>{d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ───────────────── VEHICLE ───────────────── */}
+      <section id="vehicles" className="py-20 lg:py-28 bg-white scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="lg:col-span-6 its-reveal">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>A Private Vehicle That Fits Your Journey</h2>
+            <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
+              Every transfer is a private vehicle for your party only. Which one depends on how many of you there are and,
+              just as much, on how many bags you’re bringing.
+            </p>
+            <div className="border-t" style={{ borderColor: INK }}>
+              <div className="py-5 border-b" style={{ borderColor: LINE }}>
+                <p className="font-semibold" style={{ ...serif, color: INK, fontSize: '1.15rem' }}>{van.name} — Mercedes V-Class</p>
+                <p className="text-sm" style={{ color: BODY }}>For families, groups and anyone with plenty of luggage.</p>
+              </div>
+              {others.map((v) => (
+                <div key={v.id} className="py-4 border-b flex flex-wrap justify-between gap-x-6" style={{ borderColor: LINE }}>
+                  <p className="font-medium" style={{ color: INK }}>{v.name}</p>
+                  <p className="text-sm" style={{ color: MUTED }}>{v.model}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm mt-6" style={{ color: BODY }}>
+              Specifications for each are on the <Link href="/fleet" className={link} style={{ color: GOLD }}>fleet page</Link>.
+            </p>
+          </div>
+          <ImageSlot {...PHOTOS.vehicle} className="lg:col-span-5 lg:col-start-8 aspect-[4/3] w-full" sizes="(min-width: 1024px) 40vw, 100vw" />
+        </div>
+      </section>
+
+      {/* ───────────────── LUGGAGE ───────────────── */}
+      <section className="py-20 lg:py-28" style={{ background: PAPER }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <ImageSlot {...PHOTOS.luggage} className="lg:col-span-4 aspect-[4/5] w-full max-w-sm lg:max-w-none" sizes="(min-width: 1024px) 32vw, 100vw" />
+          <div className="lg:col-span-7 lg:col-start-6 its-reveal">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Travelling With Luggage? We Plan Around It.</h2>
+            <p className="text-base leading-relaxed mb-5" style={{ color: BODY }}>
+              On an airport run, seats are rarely the problem — the boot is. Two people with two large suitcases and two cabin
+              bags is a different car from two people with a carry-on each. A family’s luggage for a week, golf clubs, a
+              pushchair or a business traveller’s sample cases change it again.
+            </p>
+            <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
+              So when you book, tell us the passengers and the bags, both ways if you’re booking a return. We arrange the
+              vehicle around them rather than finding out at the hotel door.
+            </p>
+            <dl className="grid sm:grid-cols-2 gap-x-10 text-sm">
               {[
-                ['Hotel', 'name and full street address'],
-                ['When', 'pickup date and time'],
-                ['Who', 'number of passengers'],
-                ['Luggage', 'suitcases and cabin bags'],
-                ['Where to', 'Malpensa, Linate or Bergamo — and your flight time'],
+                ['Large suitcases', 'how many checked-size cases'],
+                ['Cabin bags', 'carry-ons, backpacks, laptop bags'],
+                ['Bulky items', 'pushchair, golf clubs, skis'],
+                ['Children', 'ages, if child seats are needed'],
               ].map(([t, d]) => (
-                <div key={t} className="flex justify-between gap-6 py-3 border-b" style={{ borderColor: LINE }}>
+                <div key={t} className="py-3 border-b" style={{ borderColor: LINE }}>
                   <dt className="font-semibold" style={{ color: INK }}>{t}</dt>
-                  <dd className="text-right" style={{ color: BODY }}>{d}</dd>
+                  <dd style={{ color: BODY }}>{d}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <ImageSlot {...PHOTOS.pickup} className="lg:col-span-7 lg:order-1 aspect-[3/2] w-full" sizes="(min-width: 1024px) 55vw, 100vw" />
         </div>
       </section>
 
       {/* ───────────────── HOTEL → AIRPORT ───────────────── */}
       <section className="py-20 lg:py-28" style={{ background: INK }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <p className={`${eyebrow} mb-5`} style={{ color: BRIGHT_GOLD }}>The return</p>
-            <h2 className="font-bold leading-[1.05] mb-10" style={{ ...serif, color: IVORY, fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>
-              Hotel <span style={{ color: BRIGHT_GOLD }}>→</span> Airport
-            </h2>
-            <ol className="relative pl-8">
-              <span aria-hidden="true" className="absolute left-[6px] top-2 bottom-2 w-px its-line-y" style={{ background: BRIGHT_GOLD }} />
-              {['Your Milan hotel', 'Private pickup at the entrance', 'Malpensa, Linate or Bergamo', 'Check-in and departure'].map((s, i, all) => (
-                <li key={s} className="relative pb-7 last:pb-0">
-                  <span aria-hidden="true" className="absolute -left-8 top-1.5 w-[13px] h-[13px] rounded-full" style={{ background: i === 0 || i === all.length - 1 ? BRIGHT_GOLD : INK, border: `1px solid ${BRIGHT_GOLD}` }} />
-                  <p className="text-lg" style={{ ...serif, color: IVORY }}>{s}</p>
-                </li>
+            <h2 className="font-bold leading-[1.05] mb-8" style={{ ...serif, color: IVORY, fontSize: 'clamp(2rem, 4vw, 3.1rem)' }}>Hotel to Milan Airport</h2>
+            <ul className="space-y-3">
+              {['Milan hotel → Malpensa', 'Milan hotel → Linate', 'Milan hotel → Bergamo Airport'].map((r) => (
+                <li key={r} className="text-lg pb-3 border-b" style={{ ...serif, color: IVORY, borderColor: 'rgba(201,168,76,0.2)' }}>{r}</li>
               ))}
-            </ol>
+            </ul>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-16 its-reveal">
             <p className="text-base leading-relaxed mb-5" style={{ color: 'rgba(250,247,242,0.72)' }}>
-              We’ll agree the pickup time with you, working back from your flight. The things to allow for: checking out
-              and getting the bags down, Milan traffic at that hour — the drive to Malpensa or Bergamo is the longer one —
-              then your airline’s check-in and bag-drop deadline, security, and passport control if you’re flying outside
-              the Schengen area.
+              The same transfer works in reverse. We set the pickup time with you from your flight details, allowing for
+              checking out and bringing the bags down, Milan traffic at that hour — Malpensa and Bergamo are the longer
+              drives — and then your airline’s check-in and bag-drop deadlines and security.
             </p>
             <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(250,247,242,0.72)' }}>
-              Not sure what time to leave? Send the flight details and we’ll suggest one.
+              Not sure when to leave? Send the flight and we’ll suggest a pickup time.
             </p>
-            <Link href="#quote-form" className="group inline-flex items-center gap-3 text-sm font-semibold px-8 py-4" style={{ background: BRIGHT_GOLD, color: INK, letterSpacing: '0.06em' }}>
-              Book Your Airport Transfer
+            <Link
+              href="#booking"
+              className="group inline-flex items-center gap-3 text-sm font-semibold px-8 py-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ background: BRIGHT_GOLD, color: INK, letterSpacing: '0.06em', outlineColor: IVORY }}
+            >
+              Plan Your Airport Transfer
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ───────────────── SCENARIOS ───────────────── */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* ───────────────── USE CASES ───────────────── */}
+      <section className="py-20 lg:py-28">
         <div className="max-w-5xl mx-auto px-5 lg:px-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-12" style={{ ...serif, color: INK }}>Who books a hotel transfer in Milan</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-12" style={{ ...serif, color: INK }}>When a Hotel Transfer Makes Sense</h2>
           <div className="border-t" style={{ borderColor: INK }}>
             {[
-              ['International arrival', 'Landing at Malpensa after a long flight with checked bags, and going straight to a hotel in the centre without working out trains.'],
-              ['Family arrival', 'Two adults, children, four suitcases and a pushchair — one vehicle with room for all of it, child seats fitted.'],
-              ['Business trip', 'Landing at Linate and heading to a hotel near Porta Nuova or CityLife, with a meeting the same afternoon.'],
-              ['Late arrival', 'The last flight of the evening into Bergamo, and a car already arranged rather than a queue for whatever is left.'],
-              ['Onward connection', 'A night or two in Milan before a cruise or the next leg of the trip — we can arrange the onward transfer too.'],
+              ['Arriving after a long flight', 'Straight from the airport to your hotel without working out trains and metro lines you don’t know.'],
+              ['Travelling with children', 'One vehicle for everyone and every bag, with child seats on request.'],
+              ['Multiple suitcases', 'Tell us the passengers and the luggage when you book, and the right vehicle is arranged.'],
+              ['Early-morning departure', 'A hotel pickup booked ahead of your flight, so the morning starts without hunting for transport.'],
+              ['Business travel', 'Direct between Milan hotels, airports, offices and meeting venues such as MiCo or Fiera Milano.'],
             ].map(([label, text]) => (
-              <div key={label} className="grid md:grid-cols-[14rem_1fr] gap-2 md:gap-10 py-6 border-b" style={{ borderColor: LINE }}>
-                <p className="text-[11px] uppercase tracking-[0.22em] pt-1 font-semibold" style={{ color: GOLD }}>{label}</p>
+              <div key={label} className="grid md:grid-cols-[16rem_1fr] gap-1 md:gap-10 py-6 border-b" style={{ borderColor: LINE }}>
+                <h3 className="text-base font-semibold" style={{ ...serif, color: INK }}>{label}</h3>
                 <p className="text-base leading-relaxed" style={{ color: BODY }}>{text}</p>
               </div>
             ))}
           </div>
-          <p className="text-sm mt-6" style={{ color: BODY }}>
-            Sailing from Venice? See our <Link href="/milan-to-fusina-cruise-terminal-transfer" className={link} style={{ color: GOLD }}>Milan to Fusina cruise terminal transfer</Link>.
+          <p className="text-sm mt-8 leading-relaxed" style={{ color: BODY }}>
+            Heading beyond Milan from the airport? We also drive{' '}
+            <Link href="/malpensa-to-lake-como" className={link} style={{ color: GOLD }}>Malpensa to Lake Como</Link>,{' '}
+            <Link href="/malpensa-to-bellagio" className={link} style={{ color: GOLD }}>Bellagio</Link>,{' '}
+            <Link href="/malpensa-to-bergamo" className={link} style={{ color: GOLD }}>Bergamo</Link> and{' '}
+            <Link href="/malpensa-to-turin" className={link} style={{ color: GOLD }}>Turin</Link> — and from a Milan hotel to the{' '}
+            <Link href="/milan-to-fusina-cruise-terminal-transfer" className={link} style={{ color: GOLD }}>Fusina cruise terminal in Venice</Link>.
           </p>
         </div>
       </section>
 
-      {/* ───────────────── VEHICLES ───────────────── */}
-      <section id="vehicles" className="py-20 lg:py-28 scroll-mt-24" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-12 max-w-2xl" style={{ ...serif, color: INK }}>Choose the Right Vehicle for Your Luggage</h2>
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
-            <ImageSlot {...PHOTOS.vclass} className="lg:col-span-8 aspect-[16/10] w-full" sizes="(min-width: 1024px) 62vw, 100vw" />
-            <div className="lg:col-span-4 its-reveal">
-              <p className={`${eyebrow} mb-4`} style={{ color: GOLD }}>Families, groups, lots of bags</p>
-              <h3 className="text-3xl font-bold leading-tight mb-2" style={{ ...serif, color: INK }}>Mercedes V-Class</h3>
-              <p className="text-sm mb-6" style={{ color: MUTED }}>{van.name} · {van.model} · up to {van.passengers} passengers</p>
-              <p className="text-base leading-relaxed" style={{ color: BODY }}>
-                The one to choose when the bags outnumber the people, or when everyone needs to travel together. The right
-                vehicle depends on passengers, suitcases, cabin bags and how much room you’d like.
+      {/* ───────────────── BOOKING ───────────────── */}
+      <section id="booking" className="py-20 lg:py-28 scroll-mt-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-5 lg:pt-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Tell Us Where You’re Staying</h2>
+            <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
+              Your airport or pickup point, your hotel or destination, the date and time, how many of you and how much
+              luggage. We reply with a fixed quote, normally within two hours — nothing to pay when you send the request.
+            </p>
+            <div className="py-5 border-y" style={{ borderColor: LINE }}>
+              <p className="text-[11px] uppercase tracking-[0.22em] mb-2" style={{ color: GOLD }}>What the quote includes</p>
+              <p className="text-sm leading-relaxed" style={{ color: BODY }}>
+                The vehicle, the chauffeur, motorway tolls and VAT where applicable. Not included: parking the driver has to pay
+                on site, stops not agreed when booking, or waiting beyond 60 minutes at the airport. The price depends on the
+                airport, your hotel, the vehicle, passengers, luggage and time — so it’s quoted for your journey rather than published.
               </p>
             </div>
-          </div>
-          <div className="mt-14 grid sm:grid-cols-3 border-t" style={{ borderColor: LINE }}>
-            {others.map((v, i) => (
-              <div key={v.id} className={`pt-6 pb-2 ${i > 0 ? 'sm:border-l sm:pl-6' : ''} sm:pr-6`} style={{ borderColor: LINE }}>
-                <p className="font-semibold" style={{ ...serif, color: INK }}>{v.name}</p>
-                <p className="text-xs mb-2" style={{ color: GOLD }}>{v.model}</p>
-                <p className="text-sm" style={{ color: BODY }}>Up to {v.passengers} passengers, lighter luggage.</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-sm mt-6" style={{ color: BODY }}>
-            More on each car on the <Link href="/fleet" className={link} style={{ color: GOLD }}>fleet page</Link>.
-          </p>
-        </div>
-      </section>
-
-      {/* ───────────────── LUGGAGE ───────────────── */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-6 its-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Travelling With More Than a Carry-On?</h2>
-            <p className="text-base leading-relaxed mb-5" style={{ color: BODY }}>
-              Seats are rarely the problem on an airport run — boot space is. Three people fit easily in a sedan; three
-              people with three large suitcases and three cabin bags often don’t. A family’s luggage for a week, or a
-              business traveller’s sample cases, change the answer again.
+            <p className="text-sm mt-6" style={{ color: BODY }}>
+              Prefer email? <a href={`mailto:${siteConfig.email}`} className={link} style={{ color: GOLD }}>{siteConfig.email}</a> · <Link href="/contact" className={link} style={{ color: GOLD }}>contact page</Link>
             </p>
-            <p className="text-base leading-relaxed" style={{ color: BODY }}>
-              So when you ask for a quote, count the bags as well as the people: large suitcases, cabin bags, and anything
-              awkward like a pushchair or golf clubs. We’ll quote a car they fit in.
-            </p>
-          </div>
-          <ImageSlot {...PHOTOS.luggage} className="lg:col-span-5 lg:col-start-8 aspect-[4/5] w-full max-w-md lg:max-w-none" sizes="(min-width: 1024px) 40vw, 100vw" />
-        </div>
-      </section>
-
-      {/* ───────────────── COMPARISON ───────────────── */}
-      <section className="py-20 lg:py-24" style={{ background: PAPER }}>
-        <div className="max-w-5xl mx-auto px-5 lg:px-10">
-          <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-4" style={{ ...serif, color: INK }}>Why Book a Private Hotel Transfer?</h2>
-          <p className="text-base leading-relaxed mb-12 max-w-2xl" style={{ color: BODY }}>
-            Milan’s airports are well served by trains and buses, and they’re cheaper. Here’s the practical difference.
-          </p>
-          <div className="grid md:grid-cols-2 gap-10 md:gap-0">
-            <div className="md:pr-10">
-              <p className="text-lg font-semibold pb-4 mb-2 border-b" style={{ ...serif, color: INK, borderColor: INK }}>Private transfer</p>
-              <ul className="text-sm" style={{ color: INK }}>
-                {['Direct, airport to hotel', 'Door to door', 'Pre-booked, pickup follows your flight', 'Luggage loaded once', 'No change of train or bus', 'One vehicle for a family or group'].map((i) => (
-                  <li key={i} className="py-3 border-b" style={{ borderColor: LINE }}>{i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:pl-10 md:border-l" style={{ borderColor: LINE }}>
-              <p className="text-lg font-semibold pb-4 mb-2 border-b" style={{ ...serif, color: MUTED, borderColor: LINE }}>Public transport</p>
-              <ul className="text-sm" style={{ color: MUTED }}>
-                {['Usually train or bus, then metro, taxi or a walk', 'Ends at a station or stop', 'Runs to a timetable', 'Bags carried between services', 'Stations and stops to navigate', 'Cheaper per person, especially travelling light'].map((i) => (
-                  <li key={i} className="py-3 border-b" style={{ borderColor: LINE }}>{i}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ───────────────── PRICE + BOOKING ───────────────── */}
-      <section id="booking" className="py-20 lg:py-28 scroll-mt-24" style={{ background: INK }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5">
-            <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: IVORY }}>How Much Does a Milan Hotel Transfer Cost?</h2>
-            <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(250,247,242,0.65)' }}>
-              It depends on the airport, your hotel, the vehicle, the number of passengers and bags, the date and time, and
-              anything extra you need. We quote each journey as a fixed price, which includes motorway tolls and VAT where
-              applicable. It doesn’t include parking the driver has to pay on site, stops not agreed when booking, or
-              waiting beyond 60 minutes at the airport.
-            </p>
-            <p className="text-[11px] uppercase tracking-[0.22em] mb-5 mt-10" style={{ color: BRIGHT_GOLD }}>How booking works</p>
-            <ol className="space-y-4">
-              {[
-                ['Your details', 'where we collect you: the airport, or your hotel'],
-                ['Your journey', 'where you’re going: your hotel, or the airport'],
-                ['Your vehicle', 'how many passengers, and how much luggage'],
-                ['Your quote', 'a fixed price, normally within two hours'],
-                ['Confirm', 'accept the quote to book; nothing to pay when you ask'],
-              ].map(([t, d], i) => (
-                <li key={t} className="grid grid-cols-[2rem_1fr] gap-3">
-                  <span className="text-xs pt-1" style={{ color: BRIGHT_GOLD }}>{String(i + 1).padStart(2, '0')}</span>
-                  <p className="text-sm" style={{ color: 'rgba(250,247,242,0.85)' }}>
-                    <span className="font-semibold" style={{ color: IVORY }}>{t}</span> · {d}
-                  </p>
-                </li>
-              ))}
-            </ol>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 w-full max-w-[480px] mx-auto lg:max-w-none">
             <QuoteForm />
@@ -530,26 +500,13 @@ export default function MilanHotelTransferPage() {
       </section>
 
       {/* ───────────────── FAQ ───────────────── */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24" style={{ background: PAPER }}>
         <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <h2 className="text-3xl font-bold leading-tight mb-4" style={{ ...serif, color: INK }}>Questions</h2>
-            <p className="text-sm leading-relaxed mb-6" style={{ color: BODY }}>
-              Something else? Email <a href={`mailto:${siteConfig.email}`} className={link} style={{ color: GOLD }}>{siteConfig.email}</a> or use the{' '}
-              <Link href="/contact" className={link} style={{ color: GOLD }}>contact page</Link>.
-            </p>
-            <p className="text-xs leading-relaxed" style={{ color: MUTED }}>
-              Going further than Milan? <Link href="/malpensa-to-lake-como" className={link}>Lake Como</Link>,{' '}
-              <Link href="/malpensa-to-bellagio" className={link}>Bellagio</Link>,{' '}
-              <Link href="/malpensa-to-bergamo" className={link}>Bergamo</Link> and{' '}
-              <Link href="/malpensa-to-turin" className={link}>Turin</Link> from Malpensa, or a{' '}
-              <Link href="/milan-chauffeur-service" className={link}>private driver in Milan</Link> by the hour.
-            </p>
-          </div>
+          <h2 className="lg:col-span-4 text-3xl font-bold leading-tight" style={{ ...serif, color: INK }}>Questions</h2>
           <div className="lg:col-span-8 border-t" style={{ borderColor: INK }}>
             {faqs.map((f) => (
               <details key={f.question} className="group border-b" style={{ borderColor: LINE }}>
-                <summary className="cursor-pointer list-none flex justify-between items-center gap-6 py-5">
+                <summary className="cursor-pointer list-none flex justify-between items-center gap-6 py-5 focus-visible:outline-2 focus-visible:outline-offset-2" style={{ outlineColor: GOLD }}>
                   <h3 className="text-base font-semibold" style={{ ...serif, color: INK }}>{f.question}</h3>
                   <span aria-hidden="true" className="shrink-0 text-xl leading-none transition-transform duration-300 group-open:rotate-45" style={{ color: GOLD }}>+</span>
                 </summary>
@@ -560,7 +517,30 @@ export default function MilanHotelTransferPage() {
         </div>
       </section>
 
-      <StickyQuoteBar label="Get a Quote" hint="Airport ↔ Milan hotel · private transfer" />
+      {/* ───────────────── CLOSING ───────────────── */}
+      <section style={{ background: INK }}>
+        <div className="grid lg:grid-cols-2 items-stretch">
+          <ImageSlot {...PHOTOS.closing} className="aspect-[4/3] lg:aspect-auto lg:min-h-[34rem] w-full" sizes="(min-width: 1024px) 50vw, 100vw" tone="dark" />
+          <div className="px-6 py-16 lg:px-16 lg:py-24 flex flex-col justify-center">
+            <h2 className="font-bold text-balance leading-[1.08] mb-6" style={{ ...serif, color: IVORY, fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>
+              Your Milan Hotel Transfer, Arranged Properly.
+            </h2>
+            <p className="text-lg leading-relaxed mb-10 max-w-md" style={{ color: 'rgba(250,247,242,0.7)' }}>
+              Tell us your airport, hotel and travel details and we’ll help arrange the right private transfer for your journey.
+            </p>
+            <Link
+              href="#booking"
+              className="group self-start inline-flex items-center gap-3 text-sm font-semibold px-8 py-4 focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ background: BRIGHT_GOLD, color: INK, letterSpacing: '0.06em', outlineColor: IVORY }}
+            >
+              Request Your Transfer
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <StickyQuoteBar label="Book Your Transfer" hint="Airport ↔ Milan hotel · private transfer" />
     </div>
   )
 }
