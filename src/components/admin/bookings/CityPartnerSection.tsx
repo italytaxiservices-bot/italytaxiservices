@@ -1,5 +1,5 @@
 import { Section } from "@/components/admin/ui/Section";
-import { PartnerCard } from "@/components/admin/bookings/PartnerCard";
+import { PartnerList } from "@/components/admin/bookings/PartnerCard";
 import { QuickDriverSend } from "@/components/admin/bookings/QuickDriverSend";
 import { CITY_LABELS, tripCity } from "@/lib/admin/cities";
 import { partnerOption, partnersFor } from "@/lib/admin/cityDrivers";
@@ -32,9 +32,7 @@ export function CityPartnerSection({
   return (
     <Section title={`Driver / partner for ${CITY_LABELS[city]}`}>
       <div className="p-4 space-y-2">
-        {partners.map((p) => (
-          <PartnerCard key={p.slug} partner={p} cityLabel={CITY_LABELS[city]} />
-        ))}
+        <PartnerList partners={partners} cityLabel={CITY_LABELS[city]} />
         <QuickDriverSend text={text} entityType={entityType} entityId={entityId} drivers={options} defaultDriverId={options[0].id} sentLabel={sentLabel} />
       </div>
     </Section>

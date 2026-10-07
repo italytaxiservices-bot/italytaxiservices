@@ -13,7 +13,7 @@ import { CITY_LABELS, CITY_ORDER, tripCity, type CityKey } from "@/lib/admin/cit
 import { bookingBriefing, leadBriefing } from "@/lib/admin/driverBriefingText";
 import { getLatestDriverBriefings } from "@/lib/admin/driverBriefing";
 import { mainDriversFor, partnersFor, partnerOption } from "@/lib/admin/cityDrivers";
-import { PartnerCard } from "@/components/admin/bookings/PartnerCard";
+import { PartnerList } from "@/components/admin/bookings/PartnerCard";
 
 export const metadata: Metadata = { title: "Trips by city" };
 
@@ -235,10 +235,8 @@ export default async function TripsByCityPage({ searchParams }: { searchParams: 
                   </div>
                 </div>
                 {partners.length > 0 ? (
-                  <div className="mb-2 space-y-1.5">
-                    {partners.map((p) => (
-                      <PartnerCard key={p.slug} partner={p} cityLabel={CITY_LABELS[city]} />
-                    ))}
+                  <div className="mb-2">
+                    <PartnerList partners={partners} cityLabel={CITY_LABELS[city]} />
                   </div>
                 ) : null}
                 <Card>
