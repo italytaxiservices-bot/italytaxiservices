@@ -30,7 +30,7 @@ export function CityPartnerSection({
   const options = partners.map(partnerOption);
 
   return (
-    <Section title={`Partner for ${CITY_LABELS[city]}`}>
+    <Section title={`Driver / partner for ${CITY_LABELS[city]}`}>
       <div className="p-4 space-y-2">
         {partners.map((p) => (
           <PartnerCard key={p.slug} partner={p} cityLabel={CITY_LABELS[city]} />

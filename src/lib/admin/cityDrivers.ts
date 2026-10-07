@@ -13,13 +13,15 @@ export const CITY_MAIN_DRIVERS: Partial<Record<CityKey, string[]>> = {
 };
 
 /**
- * Partner companies we hand trips to in cities we don't cover ourselves.
- * A city with a partner shows it first and pre-selected on every trip, on
- * Trips by city and on the booking/lead pages.
+ * Outside drivers and partner companies we hand trips to, per city. They
+ * don't need to exist in Admin → Drivers. The first entry is pre-selected
+ * on every trip in that city, on Trips by city and on the booking/lead
+ * pages.
  */
 export type CityPartner = {
-  /** Stable id, used as the picker value ("partner:<slug>"). */
+  /** Stable id, used as the picker value ("partner:<slug>" / "citydriver:<slug>"). */
   slug: string;
+  kind: "driver" | "company";
   name: string;
   phone: string;
   email: string | null;
@@ -30,7 +32,17 @@ export type CityPartner = {
 export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
   bari: [
     {
+      slug: "romeo-stramaglia",
+      kind: "driver",
+      name: "Romeo Stramaglia",
+      phone: "+39 335 818 7628",
+      email: null,
+      website: null,
+      description: "Driver for Bari airport & Puglia transfers (e.g. Bari airport → Masseria Auraterrae)",
+    },
+    {
       slug: "pugliacab",
+      kind: "company",
       name: "Puglia Cab (NCC Bari)",
       phone: "+39 346 615 3134",
       email: "nccbariaeroporto@gmail.com",
@@ -44,9 +56,11 @@ export function partnersFor(city: CityKey): CityPartner[] {
   return CITY_PARTNERS[city] ?? [];
 }
 
-/** A partner as an entry in the driver picker. */
+/** A partner as an entry in the driver picker. Only companies get the "partner:" prefix (logged by name, not as "driver X"). */
 export function partnerOption(p: CityPartner) {
-  return { id: `partner:${p.slug}`, name: p.name, phone: p.phone, email: p.email, hint: "🤝 partner company" };
+  return p.kind === "company"
+    ? { id: `partner:${p.slug}`, name: p.name, phone: p.phone, email: p.email, hint: "🤝 partner company" }
+    : { id: `citydriver:${p.slug}`, name: p.name, phone: p.phone, email: p.email, hint: "⭐ local driver" };
 }
 
 const normalize = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");

@@ -1,11 +1,12 @@
 import type { CityPartner } from "@/lib/admin/cityDrivers";
 
-/** Contact card for a partner company that covers a city for us. */
+/** Contact card for an outside driver or partner company that covers a city for us. */
 export function PartnerCard({ partner, cityLabel }: { partner: CityPartner; cityLabel: string }) {
+  const isDriver = partner.kind === "driver";
   return (
     <div className="rounded-sm border border-sky-200 bg-sky-50 px-3 py-2 text-xs text-sky-900 space-y-0.5">
       <p className="font-semibold">
-        🤝 {partner.name} <span className="font-normal">· partner for {cityLabel}</span>
+        {isDriver ? "🚘" : "🤝"} {partner.name} <span className="font-normal">· {isDriver ? "driver" : "partner"} for {cityLabel}</span>
       </p>
       <p>{partner.description}</p>
       <p className="flex flex-wrap gap-x-3">
