@@ -36,11 +36,11 @@ export const metadata: Metadata = {
 
 const P = 'images/milan-fusina'
 const PHOTOS = {
-  hero: { file: `${P}/hero`, size: '1600 × 2000 (portrait)', brief: 'Milan at early morning — a chauffeur loading suitcases into a dark Mercedes outside a hotel', alt: 'Chauffeur loading cruise luggage into a Mercedes outside a Milan hotel' },
-  pickup: { file: `${P}/milan-pickup`, size: '1800 × 1200', brief: 'Milan hotel entrance or street (Brera, Duomo area), car waiting at the kerb', alt: 'Private car waiting outside a hotel in central Milan' },
-  vclass: { file: `${P}/v-class`, size: '2000 × 1300', brief: 'Mercedes V-Class, side or three-quarter view, sliding door open, clean background', alt: 'Mercedes-Benz V-Class with the sliding door open' },
-  luggage: { file: `${P}/luggage`, size: '1400 × 1750 (portrait)', brief: 'Large suitcases and carry-ons in a van boot, or lined up beside the car', alt: 'Cruise suitcases being loaded into a van' },
-  terminal: { file: `${P}/fusina`, size: '2000 × 1100 (wide)', brief: 'Venice lagoon at Fusina — water, a ship on the horizon, soft light', alt: 'The Venice lagoon near Fusina with a cruise ship in the distance' },
+  hero: { file: `${P}/hero`, size: '1600 × 2000 (portrait)', brief: 'Milan at early morning — a chauffeur loading suitcases into a dark Mercedes outside a hotel', alt: 'Chauffeur loading suitcases into a black Mercedes van outside a Milan hotel, with the Duomo behind', position: 'center 70%' },
+  pickup: { file: `${P}/milan-pickup`, size: '1800 × 1200', brief: 'Milan hotel entrance or street (Brera, Duomo area), car waiting at the kerb', alt: 'Chauffeur loading luggage into a Mercedes van at the entrance of a grand hotel in Milan', position: 'center 72%' },
+  vclass: { file: `${P}/v-class`, size: '2000 × 1300', brief: 'Mercedes V-Class, side or three-quarter view, sliding door open, clean background', alt: 'Black Mercedes-Benz V-Class with the sliding door open, showing cream leather seats', position: 'center 55%' },
+  luggage: { file: `${P}/luggage`, size: '1400 × 1750 (portrait)', brief: 'Large suitcases and carry-ons in a van boot, or lined up beside the car', alt: 'Suitcases and travel bags packed in the boot of a Mercedes van', position: 'center 65%' },
+  terminal: { file: `${P}/fusina`, size: '2000 × 1100 (wide)', brief: 'Venice lagoon at Fusina — water, a ship on the horizon, soft light', alt: 'Cruise ship moored at a terminal on the Venice lagoon at sunset', position: 'center 45%' },
 }
 
 const INK = '#1a1410'
@@ -154,7 +154,8 @@ export default function MilanToFusinaPage() {
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
             <ImageSlot {...PHOTOS.hero} priority className="aspect-[4/3] lg:aspect-[4/5] w-full" sizes="(min-width: 1024px) 45vw, 100vw" tone="dark" />
             {/* Minimal route overlay */}
-            <div className="absolute left-0 bottom-0 m-4 lg:m-6 px-5 py-4" style={{ background: 'rgba(250,247,242,0.94)' }}>
+            {/* Top-left on mobile (sky) so it never covers the people in the photo; bottom-left on desktop. */}
+            <div className="absolute left-0 top-0 lg:top-auto lg:bottom-0 m-3 lg:m-6 px-3.5 py-2.5 lg:px-5 lg:py-4" style={{ background: 'rgba(250,247,242,0.94)' }}>
               <p className="text-sm font-semibold" style={{ ...serif, color: INK }}>Milan</p>
               <ArrowDown className="w-3.5 h-3.5 my-1" style={{ color: GOLD }} />
               <p className="text-sm font-semibold" style={{ ...serif, color: INK }}>Fusina Cruise Terminal</p>

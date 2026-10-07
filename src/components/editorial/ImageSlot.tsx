@@ -27,6 +27,7 @@ export default function ImageSlot({
   priority = false,
   sizes = '(min-width: 1024px) 50vw, 100vw',
   tone = 'light',
+  position = 'center',
 }: {
   /** Path under public/ without extension, e.g. "images/milan-fusina/hero". */
   file: string
@@ -40,6 +41,8 @@ export default function ImageSlot({
   priority?: boolean
   sizes?: string
   tone?: 'light' | 'dark'
+  /** CSS object-position, to keep the subject in frame when the slot crops the photo. */
+  position?: string
 }) {
   const src = findImage(file)
 
@@ -53,6 +56,7 @@ export default function ImageSlot({
           priority={priority}
           sizes={sizes}
           className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+          style={{ objectPosition: position }}
         />
       </div>
     )
