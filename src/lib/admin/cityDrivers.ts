@@ -41,6 +41,15 @@ export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
       description: "Driver for Bari airport & Puglia transfers (e.g. Bari airport → Masseria Auraterrae)",
     },
     {
+      slug: "emanuele",
+      kind: "driver",
+      name: "Emanuele",
+      phone: "+39 347 103 6580",
+      email: null,
+      website: null,
+      description: "Driver for Bari airport & Puglia transfers (e.g. Bari airport → Masseria Auraterrae)",
+    },
+    {
       slug: "pugliacab",
       kind: "company",
       name: "Puglia Cab (NCC Bari)",
