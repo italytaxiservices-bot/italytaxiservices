@@ -35,7 +35,7 @@ export default function MalpensaTransferPage() {
         { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '60–80 min', priceFrom: 130 },
         { name: 'Bellagio', href: '/malpensa-to-bellagio', time: '75–90 min', priceFrom: 155 },
         { name: 'Lugano (CH)', href: '/malpensa-to-lugano', time: '60–75 min', priceFrom: 145 },
-        { name: 'Bergamo City', href: '/malpensa-to-bergamo', time: '50–65 min', priceFrom: 95 },
+        { name: 'Bergamo City', href: '/malpensa-to-bergamo', time: '60–90 min', priceFrom: 95 },
         { name: 'Turin', href: '/malpensa-to-turin', time: '90–110 min', priceFrom: 195 },
       ]}
       about={`Milan Malpensa Airport (MXP) is the largest international airport in northern Italy, handling over 28 million passengers per year. Located 48km northwest of Milan city centre, it serves as the primary gateway for visitors to Milan, Lake Como, Lombardy, and the wider northern Italy region.

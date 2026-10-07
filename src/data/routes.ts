@@ -158,9 +158,10 @@ export const routes: Route[] = [
     toSlug: 'bergamo-city',
     toName: 'Bergamo City',
     slug: 'malpensa-to-bergamo',
-    estimatedTime: '50–65 min',
+    // Was "50–65 min / 65 km" — closer to the straight-line distance; the road
+    // goes round Milan. Page copy says "a little over an hour"; confirm with drivers.
+    estimatedTime: '60–90 min',
     priceFrom: 95,
-    distance: '65 km',
     description: 'Private chauffeur transfer from Milan Malpensa Airport (MXP) to Bergamo city centre. Direct NCC service to the historic Città Alta and the modern lower town.',
     highlights: ['Direct route via A4/A8', 'Città Alta drop-off available', 'Meet & greet at arrivals', 'Fixed price'],
     metaTitle: 'Malpensa to Bergamo Transfer | Private Chauffeur | Italy Taxi Services',
