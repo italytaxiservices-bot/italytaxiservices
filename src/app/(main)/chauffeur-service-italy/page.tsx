@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Car, Clock, MapPin, Shield } from 'lucide-react'
@@ -55,11 +56,14 @@ export default function ChauffeurItalyPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Private Chauffeur Service — Italy</h1>
             <p className="text-gray-300 text-xl leading-relaxed">Professional NCC private chauffeur and transfer service across Italy. Fixed prices, licensed operators, premium vehicles. Available in every major Italian city and airport.</p>
             <div className="flex gap-4 mt-8">
-              <Link href="/#quote-form" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl hover:bg-gold-light transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="#quote-form" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl hover:bg-gold-light transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -119,7 +123,7 @@ export default function ChauffeurItalyPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Book Your Italian Transfer</h2>
           <p className="text-gray-400 mb-8">Fixed prices. Licensed NCC operators. Available across all of Italy.</p>
-          <Link href="/#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">
+          <Link href="#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

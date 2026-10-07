@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingSection from '@/components/booking/BookingSection'
 import { ArrowRight, MapPin } from 'lucide-react'
 import { RichText } from '@/components/ui/RichText'
 
@@ -67,7 +68,7 @@ export default function ContentPageTemplate({
             <h1 className="font-black leading-[1.05] mb-5" style={{ ...serifHeading, fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: CREAM }}>{title}</h1>
             <p className="text-base leading-relaxed max-w-xl" style={{ color: 'rgba(250,247,242,0.65)' }}>{description}</p>
             <div className="mt-8">
-              <Link href="/#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+              <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
                 Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -84,6 +85,9 @@ export default function ContentPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       {/* ── INTRO + SIDEBAR ── */}
       <section className="py-20 bg-white">
@@ -173,7 +177,7 @@ export default function ContentPageTemplate({
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <h2 className="text-2xl font-black mb-4" style={{ ...serifHeading, color: CREAM }}>{ctaTitle}</h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(250,247,242,0.55)' }}>{ctaDescription}</p>
-          <Link href="/#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+          <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
             Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

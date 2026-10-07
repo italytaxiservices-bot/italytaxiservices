@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Ship, Shield, Clock, MapPin } from 'lucide-react'
@@ -55,6 +56,9 @@ export default function CruiseTransfersPage() {
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -134,7 +138,7 @@ export default function CruiseTransfersPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Book Your Cruise Transfer</h2>
           <p className="text-gray-400 mb-8">Tell us your cruise line, ship name, port, and arrival/departure time. We handle the rest.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get Cruise Transfer Quote <ArrowRight className="w-4 h-4" /></Link>
+            <Link href="#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get Cruise Transfer Quote <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>

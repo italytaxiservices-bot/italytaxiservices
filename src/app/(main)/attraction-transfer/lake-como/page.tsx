@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Clock } from 'lucide-react'
@@ -45,6 +46,9 @@ export default function LacomoTransferPage() {
         </div>
       </section>
 
+      {/* ── BOOKING FORM ── */}
+      <BookingSection defaultDropoff="Lake Como" />
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16">
@@ -80,7 +84,7 @@ export default function LacomoTransferPage() {
       <section className="py-12 bg-navy">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Book Your Lake Como Transfer</h2>
-          <Link href="/#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" /></Link>
+          <Link href="#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingSection from '@/components/booking/BookingSection'
 import { ArrowRight, Clock, MapPin, Shield, CreditCard, Plane } from 'lucide-react'
 import type { BorderRoute } from '@/data/borders'
 
@@ -72,7 +73,7 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 mb-12">
-                <Link href="/#quote-form" className="btn-primary">
+                <Link href="#quote-form" className="btn-primary">
                   Book This Transfer
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -124,7 +125,7 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
                     <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>Fixed price from</span>
                     <span className="font-black text-xl" style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}>€{route.priceFrom}</span>
                   </div>
-                  <Link href="/#quote-form" className="btn-primary w-full justify-center rounded-sm py-3.5 text-xs">
+                  <Link href="#quote-form" className="btn-primary w-full justify-center rounded-sm py-3.5 text-xs">
                     Get Exact Price
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -134,6 +135,9 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection defaultPickup={route.fromName} defaultDropoff={route.toName} />
 
       {/* ── ABOUT ── */}
       <section className="py-24 bg-white">

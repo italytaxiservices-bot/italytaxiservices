@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Shield, CheckCircle, FileText, Car } from 'lucide-react'
@@ -38,6 +39,9 @@ export default function NccItalyPage() {
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -111,7 +115,7 @@ export default function NccItalyPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Book a Licensed NCC Transfer</h2>
           <p className="text-gray-400 mb-8">Fixed price. Licensed operator. Professional chauffeur. Available across Italy.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get a Free Quote <ArrowRight className="w-4 h-4" /></Link>
+            <Link href="#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get a Free Quote <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>

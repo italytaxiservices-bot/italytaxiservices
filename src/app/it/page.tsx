@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -133,7 +134,7 @@ export default function ItHomepage() {
               </div>
               <div className="px-7 py-6 space-y-4">
                 <Link
-                  href="/#quote-form"
+                  href="#quote-form"
                   className="w-full flex items-center justify-center gap-3 py-4 rounded-sm font-bold text-sm"
                   style={{ background: 'linear-gradient(135deg, #9A7A30, #C9A84C, #E0C070)', color: '#000' }}
                 >
@@ -176,6 +177,9 @@ export default function ItHomepage() {
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection locale="it" />
 
       {/* ── AEROPORTI ── */}
       <section className="py-28 bg-white">
@@ -327,7 +331,7 @@ export default function ItHomepage() {
             </div>
             <div className="flex flex-col gap-4">
               <Link
-                href="/#quote-form"
+                href="#quote-form"
                 className="flex items-center justify-center gap-3 font-bold py-5 rounded-sm text-sm"
                 style={{ background: 'linear-gradient(135deg, #9A7A30, #C9A84C, #E0C070)', color: '#000' }}
               >

@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from 'next'
+import BookingSection from '@/components/booking/BookingSection'
 import Link from 'next/link'
 import { ArrowRight, Clock, Shield, Plane, MapPin } from 'lucide-react'
 import { airports } from '@/data/airports'
@@ -60,7 +61,7 @@ export default function AirportTransfersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/#quote-form"
+                href="#quote-form"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl hover:bg-gold-light transition-colors"
               >
                 Book Airport Transfer <ArrowRight className="w-4 h-4" />
@@ -82,6 +83,9 @@ export default function AirportTransfersPage() {
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       {/* Airports by region */}
       {airportsByRegion.map(({ region, airports: regionAirports }) => (
@@ -168,7 +172,7 @@ export default function AirportTransfersPage() {
             Tell us your airport, arrival time, and destination. We&apos;ll send you a fixed-price quote within minutes.
           </p>
           <Link
-            href="/#quote-form"
+            href="#quote-form"
             className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors"
           >
             Get a Quote Now <ArrowRight className="w-4 h-4" />

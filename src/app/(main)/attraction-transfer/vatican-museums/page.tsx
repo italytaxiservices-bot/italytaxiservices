@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Clock } from 'lucide-react'
@@ -39,11 +40,14 @@ export default function VaticanTransferPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Vatican Museums Private Transfer</h1>
             <p className="text-gray-300 text-xl leading-relaxed">Private NCC transfer to the Vatican Museums, Sistine Chapel, and St Peter's Basilica. Drop-off at the Vatican Museums entrance on Viale Vaticano.</p>
             <div className="flex gap-4 mt-8">
-              <Link href="/#quote-form" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl">Book Transfer <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="#quote-form" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl">Book Transfer <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection defaultDropoff="Vatican Museums, Rome" />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -78,7 +82,7 @@ export default function VaticanTransferPage() {
       <section className="py-12 bg-navy">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Book Your Vatican Transfer</h2>
-          <Link href="/#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" /></Link>
+          <Link href="#quote-form" className="btn-gold-shimmer inline-flex items-center gap-2 font-bold px-8 py-4 rounded-2xl text-sm">Get a Fixed-Price Quote <ArrowRight className="w-4 h-4" /></Link>
         </div>
       </section>
     </div>

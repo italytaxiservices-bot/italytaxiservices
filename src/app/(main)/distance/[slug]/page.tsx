@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -33,7 +34,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
   if (!route) notFound()
 
   const related = distanceRoutes.filter((r) => route.relatedSlugs.includes(r.slug))
-  const transferHref = route.transferSlug ? `/${route.transferSlug}` : '/#quote-form'
+  const transferHref = route.transferSlug ? `/${route.transferSlug}` : '#quote-form'
 
   return (
     <div className="pt-16">
@@ -96,7 +97,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
                   Book Private Transfer
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/#quote-form" className="btn-ghost-dark">
+                <Link href="#quote-form" className="btn-ghost-dark">
                   Get a Quote
                 </Link>
               </div>
@@ -152,6 +153,9 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection defaultPickup={route.from} defaultDropoff={route.to} />
 
       {/* ── ABOUT ── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingSection from '@/components/booking/BookingSection'
 import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
@@ -89,7 +90,7 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
                 ))}
               </div>
 
-              <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+              <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
                 {t.bookTransfer} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -125,6 +126,9 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection locale={locale} defaultPickup={route.fromName} defaultDropoff={route.toName} />
 
       {/* ── VEHICLES ── */}
       <section className="py-20" style={{ background: CREAM }}>
@@ -203,7 +207,7 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <h2 className="text-2xl font-black mb-4" style={{ ...serifHeading, color: CREAM }}>{t.ctaTitle(route.fromName, route.toName)}</h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(250,247,242,0.55)' }}>{t.ctaDesc(formatPrice(route.priceFrom))}</p>
-          <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+          <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
             {t.bookNow(formatPrice(route.priceFrom))} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

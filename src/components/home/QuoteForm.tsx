@@ -48,7 +48,12 @@ const GOLD  = '#8B7340'
 const LINE  = '#E4DED3'
 const MUTED = '#9a8f83'
 
-export default function QuoteForm() {
+/**
+ * defaultPickup / defaultDropoff pre-fill the route on service pages
+ * (e.g. "Fiumicino Airport (FCO)" on the Fiumicino page); the customer can
+ * still change them.
+ */
+export default function QuoteForm({ defaultPickup, defaultDropoff }: { defaultPickup?: string; defaultDropoff?: string } = {}) {
   const [step, setStep]               = useState<1 | 2>(1)
   const [submitting, setSubmitting]   = useState(false)
   const [submitted, setSubmitted]     = useState(false)
@@ -56,7 +61,7 @@ export default function QuoteForm() {
 
   const { register, handleSubmit, trigger, getValues, watch, reset, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { tripType: 'one-way' },
+    defaultValues: { tripType: 'one-way', pickup: defaultPickup ?? '', dropoff: defaultDropoff ?? '' },
   })
 
   const tripType = watch('tripType')
@@ -105,7 +110,8 @@ export default function QuoteForm() {
   return (
     <div
       id="quote-form"
-      className="rounded-md overflow-hidden bg-white"
+      // scroll-mt keeps "#quote-form" links from hiding the form's top under the fixed header.
+      className="rounded-md overflow-hidden bg-white scroll-mt-28"
       style={{ border: `1px solid ${LINE}`, boxShadow: '0 30px 70px rgba(26,20,16,0.18)' }}
     >
       {/* ── Header ── */}

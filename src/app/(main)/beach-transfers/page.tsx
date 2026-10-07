@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Umbrella, Shield, Clock, MapPin, Sun, Wind } from 'lucide-react'
@@ -74,11 +75,14 @@ export default function BeachTransfersPage() {
           <p className="text-base leading-relaxed max-w-xl mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
             Private transfers to Italy&apos;s finest beaches — Amalfi, Positano, Cinque Terre, Sardinia, and beyond. Space for all your gear, air-conditioned comfort, fixed prices.
           </p>
-          <Link href="/#quote-form" className="btn-primary">
+          <Link href="#quote-form" className="btn-primary">
             Book Beach Transfer <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       {/* ── WHY PRIVATE ──────────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
@@ -171,7 +175,7 @@ export default function BeachTransfersPage() {
           <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-md mx-auto">
             Tell us your pickup, destination, and date. Fixed price confirmed in minutes — no surprises on the day.
           </p>
-          <Link href="/#quote-form" className="btn-primary">
+          <Link href="#quote-form" className="btn-primary">
             Get a Beach Transfer Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

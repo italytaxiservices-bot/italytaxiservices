@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingSection from '@/components/booking/BookingSection'
 import { ArrowRight, Clock, Shield, Plane } from 'lucide-react'
 import type { Airport } from '@/types'
 import { formatPrice } from '@/lib/utils'
@@ -86,7 +87,7 @@ export default function AirportPageTemplate({
             <p className="text-base leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(250,247,242,0.65)' }}>
               {airport.description} {t.suffix}
             </p>
-            <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+            <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
               {t.bookTransfer} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -103,6 +104,9 @@ export default function AirportPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection locale={locale} defaultPickup={`${airport.name} (${airport.code})`} />
 
       {/* ── POPULAR DESTINATIONS ── */}
       {popularDestinations.length > 0 && (
@@ -168,7 +172,7 @@ export default function AirportPageTemplate({
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <h2 className="text-2xl font-black mb-4" style={{ ...serifHeading, color: CREAM }}>{t.ctaTitle(airport.code)}</h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(250,247,242,0.55)' }}>{t.ctaDesc(airport.name)}</p>
-          <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+          <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
             {t.bookBtn} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

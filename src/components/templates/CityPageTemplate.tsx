@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingSection from '@/components/booking/BookingSection'
 import { ArrowRight, MapPin, Plane, Clock, Shield } from 'lucide-react'
 import type { City } from '@/types'
 import { airports } from '@/data/airports'
@@ -90,12 +91,15 @@ export default function CityPageTemplate({
             <p className="text-base leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(250,247,242,0.65)' }}>
               {city.description} {t.suffix}
             </p>
-            <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+            <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
               {t.bookTransfer} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection locale={locale} />
 
       {/* ── HIGHLIGHTS ── */}
       <section className="py-14" style={{ background: CREAM }}>
@@ -201,7 +205,7 @@ export default function CityPageTemplate({
         <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
           <h2 className="text-2xl font-black mb-4" style={{ ...serifHeading, color: CREAM }}>{t.ctaTitle(city.name)}</h2>
           <p className="text-sm mb-8" style={{ color: 'rgba(250,247,242,0.55)' }}>{t.ctaDesc(city.name, city.region)}</p>
-          <Link href={`${baseHref}/#quote-form`} className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
+          <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-8 py-4 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
             {t.getQuote} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

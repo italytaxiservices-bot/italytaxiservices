@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Building2, Shield, Clock, Star, MapPin, CreditCard } from 'lucide-react'
@@ -75,12 +76,15 @@ export default function HotelTransfersPage() {
             Door-to-door transfers to any hotel across Italy. Professional NCC chauffeurs, full luggage assistance, and fixed prices — from any airport, cruise port, station, or city address.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/#quote-form" className="btn-primary">
+            <Link href="#quote-form" className="btn-primary">
               Book Hotel Transfer <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       {/* ── WHAT'S INCLUDED ──────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
@@ -166,7 +170,7 @@ export default function HotelTransfersPage() {
           <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-md mx-auto">
             Pickup point, destination hotel, travel date. Fixed price confirmed in minutes.
           </p>
-          <Link href="/#quote-form" className="btn-primary">
+          <Link href="#quote-form" className="btn-primary">
             Get a Hotel Transfer Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

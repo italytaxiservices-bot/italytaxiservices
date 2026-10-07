@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Briefcase, Shield, Clock, Star, Users, CreditCard } from 'lucide-react'
@@ -36,6 +37,9 @@ export default function CorporatePage() {
           </div>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -102,7 +106,7 @@ export default function CorporatePage() {
           <h2 className="text-3xl font-bold text-white mb-4">Set Up a Corporate Account</h2>
           <p className="text-gray-400 mb-8">Contact us to discuss your company's Italian ground transport requirements. We offer volume pricing and monthly invoicing for regular clients.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get a Corporate Quote <ArrowRight className="w-4 h-4" /></Link>
+            <Link href="#quote-form" className="inline-flex items-center justify-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-colors">Get a Corporate Quote <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>

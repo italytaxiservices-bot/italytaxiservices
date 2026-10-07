@@ -1,3 +1,4 @@
+import BookingSection from '@/components/booking/BookingSection'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Plane, Car, Ship, Building2, Heart, Umbrella, Landmark, Clock, Star, Shield, Globe } from 'lucide-react'
@@ -65,11 +66,14 @@ export default function ServicesPage() {
           <p className="text-base leading-relaxed max-w-xl mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
             Airport pickups to cross-country journeys, beach trips to bespoke tours — every service is operated by licensed NCC chauffeurs at fixed, agreed prices.
           </p>
-          <Link href="/#quote-form" className="btn-primary">
+          <Link href="#quote-form" className="btn-primary">
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
+
+      {/* ── BOOKING FORM ── */}
+      <BookingSection />
 
       {/* ── SERVICES GRID ────────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
@@ -146,7 +150,7 @@ export default function ServicesPage() {
           <p className="text-gray-500 mb-8 text-sm leading-relaxed max-w-md mx-auto">
             Get a confirmed quote in under 2 minutes. Licensed drivers, door-to-door service, no hidden fees.
           </p>
-          <Link href="/#quote-form" className="btn-primary">
+          <Link href="#quote-form" className="btn-primary">
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
