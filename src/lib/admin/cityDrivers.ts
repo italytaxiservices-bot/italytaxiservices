@@ -27,6 +27,35 @@ export type CityPartner = {
   description: string;
 };
 
+// Milan-based providers that also cover Genoa ↔ Milan / Malpensa, listed under both cities.
+const CAR_DRIVER_MILANO: CityPartner = {
+  slug: "cardrivermilano",
+  kind: "company",
+  name: "CarDriverMilano",
+  phone: "+39 347 825 7440",
+  email: null,
+  website: null,
+  description: "Milan chauffeur · Milan / Malpensa transfers",
+};
+const TRANSFER_MILAN: CityPartner = {
+  slug: "transfermilan",
+  kind: "company",
+  name: "TransferMilan LLC",
+  phone: "+39 351 769 9952",
+  email: null,
+  website: null,
+  description: "Milan Malpensa airport transfers",
+};
+const NCC_MILANO_GENOA: CityPartner = {
+  slug: "ncc-milano-genoa",
+  kind: "company",
+  name: "NCC Milano Genoa",
+  phone: "+39 02 871 996 94",
+  email: null,
+  website: null,
+  description: "Long-distance Milan ↔ Genoa chauffeur transfers · landline, call (WhatsApp may not work)",
+};
+
 export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
   catania: [
     {
@@ -60,6 +89,41 @@ export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
       website: null,
       description: "Driver for Milan transfers",
     },
+    CAR_DRIVER_MILANO,
+    TRANSFER_MILAN,
+    NCC_MILANO_GENOA,
+  ],
+  genoa: [
+    {
+      slug: "ncc-aeroporto-genova-danilo",
+      kind: "company",
+      name: "NCC Aeroporto Genova (Danilo)",
+      phone: "+39 329 338 2777",
+      email: null,
+      website: null,
+      description: "NCC Transfer di Danilo · Genoa airport transfers, incl. Genoa → Milan Malpensa",
+    },
+    {
+      slug: "blurental-ncc-genova",
+      kind: "company",
+      name: "Blurental NCC Genova",
+      phone: "+39 010 705 1015",
+      email: null,
+      website: null,
+      description: "Genoa airport transfers · landline, call (WhatsApp may not work)",
+    },
+    {
+      slug: "mb-rent-car",
+      kind: "company",
+      name: "MB Rent Car s.r.l.",
+      phone: "+39 010 646 6818",
+      email: null,
+      website: null,
+      description: "Car hire with driver, Genoa · landline, call (WhatsApp may not work)",
+    },
+    NCC_MILANO_GENOA,
+    CAR_DRIVER_MILANO,
+    TRANSFER_MILAN,
   ],
   venice: [
     {
