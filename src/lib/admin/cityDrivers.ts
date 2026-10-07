@@ -50,6 +50,17 @@ export const CITY_PARTNERS: Partial<Record<CityKey, CityPartner[]>> = {
       description: "Driver for Milan transfers",
     },
   ],
+  venice: [
+    {
+      slug: "venice-car",
+      kind: "driver",
+      name: "Venice Car",
+      phone: "+39 388 252 6555",
+      email: null,
+      website: null,
+      description: "Driver for Venice transfers (Marco Polo, Treviso, Piazzale Roma, Mestre)",
+    },
+  ],
   florence: [
     {
       slug: "cristian-rocchigiani",
