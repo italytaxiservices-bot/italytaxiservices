@@ -388,3 +388,22 @@ html { scroll-behavior: smooth; }
 }
 .input-luxe:focus { border-color: var(--color-admin-gold); }
 .input-luxe::placeholder { color: #a39d90; }
+
+/* ─── Editorial route pages (e.g. /milan-to-fusina-cruise-terminal-transfer) ─── */
+/* Barely-there motion, CSS only: the route line draws once; sections fade up
+   on scroll where the browser supports scroll-driven animations. Both are
+   switched off for prefers-reduced-motion. */
+@keyframes its-line-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes its-line-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes its-reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.its-line-x { transform-origin: left center; animation: its-line-x 1.4s cubic-bezier(.2,.7,.2,1) .2s both; }
+.its-line-y { transform-origin: center top; animation: its-line-y 1.4s cubic-bezier(.2,.7,.2,1) .2s both; }
+
+@supports (animation-timeline: view()) {
+  .its-reveal { animation: its-reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 22%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .its-line-x, .its-line-y, .its-reveal { animation: none; transform: none; opacity: 1; }
+}
