@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Heart, Star, Shield, Car } from 'lucide-react'
@@ -30,16 +30,16 @@ export default function WeddingPage() {
       <section className="bg-navy py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Heart className="w-4 h-4" /> Wedding Specialist</div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Wedding Chauffeur Service — Italy</h1>
             <p className="text-gray-300 text-xl leading-relaxed">Immaculate luxury vehicles and professional NCC chauffeurs for your Italian wedding. Bridal cars, guest transfers, and full wedding-day logistics — across Tuscany, Lake Como, Amalfi Coast, and beyond.</p>
           </div>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

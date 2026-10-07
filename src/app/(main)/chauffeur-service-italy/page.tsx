@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Car, Clock, MapPin, Shield } from 'lucide-react'
@@ -51,6 +51,7 @@ export default function ChauffeurItalyPage() {
       <section className="bg-navy py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Car className="w-4 h-4" /> Nationwide Service</div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Private Chauffeur Service — Italy</h1>
@@ -59,11 +60,10 @@ export default function ChauffeurItalyPage() {
               <Link href="#quote-form" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl hover:bg-gold-light transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

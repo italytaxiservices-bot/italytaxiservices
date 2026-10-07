@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Plane, Car, Ship, Building2, Heart, Umbrella, Landmark, Clock, Star, Shield, Globe } from 'lucide-react'
@@ -53,6 +53,7 @@ export default function ServicesPage() {
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28">
+          <HeroWithForm>
           <div className="flex items-center gap-4 mb-6">
             <div className="gold-line" />
             <span className="section-label">Private Transfer Services · Italy</span>
@@ -69,11 +70,10 @@ export default function ServicesPage() {
           <Link href="#quote-form" className="btn-primary">
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       {/* ── SERVICES GRID ────────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>

@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Clock } from 'lucide-react'
@@ -30,6 +30,7 @@ export default function LacomoTransferPage() {
       <section className="bg-navy py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <HeroWithForm defaultDropoff="Lake Como">
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link><span>/</span>
             <Link href="/milan-chauffeur-service" className="hover:text-gold transition-colors">Milan</Link><span>/</span>
@@ -43,11 +44,10 @@ export default function LacomoTransferPage() {
               <Link href="/malpensa-to-lake-como" className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded-xl">See Malpensa → Como Route <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection defaultDropoff="Lake Como" />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

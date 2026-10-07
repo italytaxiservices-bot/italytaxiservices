@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import QuoteForm from '@/components/home/QuoteForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -121,44 +121,9 @@ export default function ItHomepage() {
               </div>
             </div>
 
-            {/* Right — contact card */}
-            <div
-              id="preventivo"
-              className="rounded-sm overflow-hidden"
-              style={{ background: 'rgba(10,10,10,0.9)', border: '1px solid rgba(201,168,76,0.15)', boxShadow: '0 32px 80px rgba(0,0,0,0.5)' }}
-            >
-              <div className="px-7 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(201,168,76,0.05)' }}>
-                <p className="text-white font-bold text-sm">Richiedi un Preventivo Gratuito</p>
-                <p className="text-[11px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>Ti ricontattiamo entro 2 ore · Nessun impegno</p>
-                <div className="mt-4 h-[2px] rounded-full" style={{ background: 'linear-gradient(90deg, #9A7A30, #C9A84C, #E0C070)' }} />
-              </div>
-              <div className="px-7 py-6 space-y-4">
-                <Link
-                  href="#quote-form"
-                  className="w-full flex items-center justify-center gap-3 py-4 rounded-sm font-bold text-sm"
-                  style={{ background: 'linear-gradient(135deg, #9A7A30, #C9A84C, #E0C070)', color: '#000' }}
-                >
-                  Richiedi Preventivo Gratuito
-                </Link>
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  {[
-                    { label: 'Milano', href: '/it/servizio-chauffeur-milano' },
-                    { label: 'Roma', href: '/it/servizio-chauffeur-roma' },
-                    { label: 'Venezia', href: '/it/servizio-chauffeur-venezia' },
-                    { label: 'Firenze', href: '/it/servizio-chauffeur-firenze' },
-                  ].map(({ label, href }) => (
-                    <Link key={label} href={href}
-                      className="py-3 text-center text-xs font-semibold rounded-sm transition-all"
-                      style={{ border: '1px solid rgba(201,168,76,0.15)', color: 'rgba(255,255,255,0.6)', background: 'rgba(255,255,255,0.03)' }}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-                <p className="text-center text-[11px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
-                  Nessuna commissione · Prezzo fisso garantito
-                </p>
-              </div>
+            {/* Right — booking form (was a card that only linked to the form) */}
+            <div id="preventivo" className="w-full max-w-[480px] mx-auto lg:max-w-none lg:mx-0">
+              <QuoteForm />
             </div>
           </div>
         </div>
@@ -178,8 +143,6 @@ export default function ItHomepage() {
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection locale="it" />
 
       {/* ── AEROPORTI ── */}
       <section className="py-28 bg-white">

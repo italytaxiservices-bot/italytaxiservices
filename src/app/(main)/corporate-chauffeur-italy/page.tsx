@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Briefcase, Shield, Clock, Star, Users, CreditCard } from 'lucide-react'
@@ -30,16 +30,16 @@ export default function CorporatePage() {
       <section className="bg-navy py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Briefcase className="w-4 h-4" /> Business Travel</div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Corporate Chauffeur Service — Italy</h1>
             <p className="text-gray-300 text-xl leading-relaxed">Professional NCC chauffeur service for businesses operating in Italy. Executive airport transfers, trade fair logistics, roadshows, and multi-city itineraries — all at fixed prices with business invoicing.</p>
           </div>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

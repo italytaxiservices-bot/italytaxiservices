@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from 'next'
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import Link from 'next/link'
 import { ArrowRight, Clock, Shield, Plane, MapPin } from 'lucide-react'
 import { airports } from '@/data/airports'
@@ -48,6 +48,7 @@ export default function AirportTransfersPage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
               <Plane className="w-4 h-4" />
@@ -68,6 +69,7 @@ export default function AirportTransfersPage() {
               </Link>
             </div>
           </div>
+          </HeroWithForm>
         </div>
       </section>
 
@@ -84,8 +86,6 @@ export default function AirportTransfersPage() {
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       {/* Airports by region */}
       {airportsByRegion.map(({ region, airports: regionAirports }) => (

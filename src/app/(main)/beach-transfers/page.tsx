@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, Umbrella, Shield, Clock, MapPin, Sun, Wind } from 'lucide-react'
@@ -62,6 +62,7 @@ export default function BeachTransfersPage() {
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28">
+          <HeroWithForm>
           <div className="flex items-center gap-4 mb-6">
             <div className="gold-line" />
             <span className="section-label">Beach Transfers · Italy</span>
@@ -78,11 +79,10 @@ export default function BeachTransfersPage() {
           <Link href="#quote-form" className="btn-primary">
             Book Beach Transfer <ArrowRight className="w-4 h-4" />
           </Link>
+          </HeroWithForm>
         </div>
       </section>
 
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       {/* ── WHY PRIVATE ──────────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>

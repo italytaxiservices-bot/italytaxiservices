@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import { ArrowRight, Clock, Shield, Plane } from 'lucide-react'
 import type { Airport } from '@/types'
 import { formatPrice } from '@/lib/utils'
@@ -76,7 +76,7 @@ export default function AirportPageTemplate({
             <span style={{ color: GOLD }}>{airport.name}</span>
           </nav>
 
-          <div className="max-w-3xl">
+          <HeroWithForm defaultPickup={`${airport.name} (${airport.code})`}>
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-sm" style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)' }}>
               <Plane className="w-3.5 h-3.5" style={{ color: GOLD }} />
               <span className="text-xs font-semibold tracking-wide" style={{ color: '#C9A84C' }}>{airport.code} · {airport.cityName}</span>
@@ -90,7 +90,7 @@ export default function AirportPageTemplate({
             <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
               {t.bookTransfer} <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </HeroWithForm>
         </div>
       </section>
 
@@ -104,9 +104,6 @@ export default function AirportPageTemplate({
           </div>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection locale={locale} defaultPickup={`${airport.name} (${airport.code})`} />
 
       {/* ── POPULAR DESTINATIONS ── */}
       {popularDestinations.length > 0 && (

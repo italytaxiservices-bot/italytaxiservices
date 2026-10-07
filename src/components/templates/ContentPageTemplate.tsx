@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import { ArrowRight, MapPin } from 'lucide-react'
 import { RichText } from '@/components/ui/RichText'
 
@@ -60,7 +60,7 @@ export default function ContentPageTemplate({
               </span>
             ))}
           </nav>
-          <div className="max-w-3xl">
+          <HeroWithForm>
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-sm" style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)' }}>
               <MapPin className="w-3.5 h-3.5" style={{ color: GOLD }} />
               <span className="text-xs font-semibold tracking-wide" style={{ color: '#C9A84C' }}>{badge}</span>
@@ -82,12 +82,9 @@ export default function ContentPageTemplate({
                 ))}
               </div>
             )}
-          </div>
+          </HeroWithForm>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection />
 
       {/* ── INTRO + SIDEBAR ── */}
       <section className="py-20 bg-white">

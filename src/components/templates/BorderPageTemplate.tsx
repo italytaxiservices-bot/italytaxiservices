@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import BookingSection from '@/components/booking/BookingSection'
+import QuoteForm from '@/components/home/QuoteForm'
 import { ArrowRight, Clock, MapPin, Shield, CreditCard, Plane } from 'lucide-react'
 import type { BorderRoute } from '@/data/borders'
 
@@ -32,7 +32,7 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
             <span style={{ color: '#C9A84C' }}>{route.fromName} → {route.toName}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[1fr_380px] gap-16 items-start">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-start">
 
             {/* Left */}
             <div>
@@ -59,6 +59,7 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
                 {[
                   { icon: Clock, label: 'Journey Time', value: route.estimatedTime },
                   { icon: MapPin, label: 'Distance', value: route.distance },
+                  { icon: Shield, label: 'Border crossing', value: route.crossingPoint },
                   { icon: CreditCard, label: 'Price From', value: `€${route.priceFrom}`, gold: true },
                 ].map(({ icon: Icon, label, value, gold }) => (
                   <div key={label} className="flex items-center gap-3 px-5 py-3 rounded-sm" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -90,54 +91,13 @@ export default function BorderPageTemplate({ route, about, tips, faqs, relatedRo
               </div>
             </div>
 
-            {/* Right — route card */}
-            <div className="rounded-sm overflow-hidden sticky top-24" style={{ background: 'rgba(10,10,10,0.9)', border: '1px solid rgba(201,168,76,0.15)' }}>
-              <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(201,168,76,0.05)' }}>
-                <p className="text-white font-bold text-sm">Route Summary</p>
-              </div>
-              <div className="p-6 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: '#C9A84C' }} />
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest mb-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>From</p>
-                    <p className="text-white text-sm font-semibold">{route.fromName}</p>
-                  </div>
-                </div>
-                <div className="ml-1 w-px h-6" style={{ background: 'rgba(201,168,76,0.2)' }} />
-                <div className="flex items-center gap-3">
-                  <div className="text-base shrink-0">{route.flag}</div>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest mb-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>Border Crossing</p>
-                    <p className="text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>{route.crossingPoint}</p>
-                  </div>
-                </div>
-                <div className="ml-1 w-px h-6" style={{ background: 'rgba(201,168,76,0.2)' }} />
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: '#E0C070' }} />
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest mb-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>To</p>
-                    <p className="text-white text-sm font-semibold">{route.toName}, {route.toCountry}</p>
-                  </div>
-                </div>
-
-                <div className="pt-4 mt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>Fixed price from</span>
-                    <span className="font-black text-xl" style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}>€{route.priceFrom}</span>
-                  </div>
-                  <Link href="#quote-form" className="btn-primary w-full justify-center rounded-sm py-3.5 text-xs">
-                    Get Exact Price
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
+            {/* Right — booking form (replaces the old route-summary card; its border crossing moved into the stats) */}
+            <div className="w-full max-w-[480px] mx-auto lg:max-w-none lg:mx-0">
+              <QuoteForm defaultPickup={route.fromName} defaultDropoff={route.toName} />
             </div>
           </div>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection defaultPickup={route.fromName} defaultDropoff={route.toName} />
 
       {/* ── ABOUT ── */}
       <section className="py-24 bg-white">

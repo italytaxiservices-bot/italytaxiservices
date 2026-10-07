@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
@@ -67,8 +67,7 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
             <span style={{ color: GOLD }}>{route.fromName} → {route.toName}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <HeroWithForm defaultPickup={route.fromName} defaultDropoff={route.toName}>
               <p className="text-xs uppercase tracking-[0.25em] font-semibold mb-5" style={{ color: GOLD }}>{t.badge}</p>
               <h1 className="font-black leading-[1.05] mb-5" style={{ ...serifHeading, fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: CREAM }}>
                 {route.fromName} to <span style={{ color: GOLD, fontStyle: 'italic' }}>{route.toName}</span>
@@ -93,10 +92,9 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
               <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
                 {t.bookTransfer} <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
 
-            {/* Route card */}
-            <div className="rounded-sm p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}>
+            {/* Route card — under the copy, since the booking form takes the right column */}
+            <div className="mt-8 rounded-sm p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}>
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: 'rgba(250,247,242,0.4)' }}>{t.pickup}</p>
@@ -123,12 +121,9 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
                 ))}
               </div>
             </div>
-          </div>
+          </HeroWithForm>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection locale={locale} defaultPickup={route.fromName} defaultDropoff={route.toName} />
 
       {/* ── VEHICLES ── */}
       <section className="py-20" style={{ background: CREAM }}>

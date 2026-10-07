@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import BookingSection from '@/components/booking/BookingSection'
+import HeroWithForm from '@/components/booking/HeroWithForm'
 import { ArrowRight, MapPin, Plane, Clock, Shield } from 'lucide-react'
 import type { City } from '@/types'
 import { airports } from '@/data/airports'
@@ -80,7 +80,7 @@ export default function CityPageTemplate({
             <span>/</span>
             <span style={{ color: GOLD }}>{t.breadcrumb(city.name)}</span>
           </nav>
-          <div className="max-w-3xl">
+          <HeroWithForm>
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-sm" style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)' }}>
               <MapPin className="w-3.5 h-3.5" style={{ color: GOLD }} />
               <span className="text-xs font-semibold tracking-wide" style={{ color: '#C9A84C' }}>{city.region}, Italy</span>
@@ -94,12 +94,9 @@ export default function CityPageTemplate({
             <Link href="#quote-form" className="inline-flex items-center gap-2 font-bold text-sm px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5" style={{ background: '#C9A84C', color: '#0f0d0a', letterSpacing: '0.04em' }}>
               {t.bookTransfer} <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </HeroWithForm>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection locale={locale} />
 
       {/* ── HIGHLIGHTS ── */}
       <section className="py-14" style={{ background: CREAM }}>

@@ -1,4 +1,4 @@
-import BookingSection from '@/components/booking/BookingSection'
+import QuoteForm from '@/components/home/QuoteForm'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -58,7 +58,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
             <span style={{ color: '#C9A84C' }}>{route.from} → {route.to}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[1fr_360px] gap-16 items-start">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-start">
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="gold-line" />
@@ -103,59 +103,13 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
               </div>
             </div>
 
-            {/* Route card */}
-            <div className="rounded-sm overflow-hidden" style={{ background: 'rgba(10,10,10,0.9)', border: '1px solid rgba(201,168,76,0.15)' }}>
-              <div className="px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(201,168,76,0.05)' }}>
-                <p className="text-white font-bold text-sm">Route Summary</p>
-              </div>
-              <div className="p-6 space-y-5">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: '#C9A84C' }} />
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest mb-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>From</p>
-                    <p className="text-white text-sm font-semibold">{route.from}</p>
-                  </div>
-                </div>
-                <div className="ml-1 w-px h-5" style={{ background: 'rgba(201,168,76,0.2)' }} />
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full shrink-0" style={{ background: '#E0C070' }} />
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest mb-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>To</p>
-                    <p className="text-white text-sm font-semibold">{route.to}</p>
-                  </div>
-                </div>
-
-                <div className="pt-4 space-y-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                  {[
-                    { label: 'Road distance', value: `${route.distanceKm} km` },
-                    { label: 'Drive time',    value: route.driveTime },
-                    { label: 'By train',      value: route.trainTime },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="flex justify-between items-center text-xs">
-                      <span style={{ color: 'rgba(255,255,255,0.4)' }}>{label}</span>
-                      <span className="font-semibold text-white">{value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>Private transfer from</span>
-                    <span className="font-black text-xl" style={{ fontFamily: 'var(--font-serif), Georgia, serif', color: '#C9A84C' }}>€{route.priceFrom}</span>
-                  </div>
-                  <Link href={transferHref} className="btn-primary w-full justify-center rounded-sm py-3.5 text-xs">
-                    Book This Transfer
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
+            {/* Booking form — replaces the route-summary card, which repeated the stats on the left */}
+            <div className="w-full max-w-[480px] mx-auto lg:max-w-none lg:mx-0">
+              <QuoteForm defaultPickup={route.from} defaultDropoff={route.to} />
             </div>
           </div>
         </div>
       </section>
-
-      {/* ── BOOKING FORM ── */}
-      <BookingSection defaultPickup={route.from} defaultDropoff={route.to} />
 
       {/* ── ABOUT ── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
