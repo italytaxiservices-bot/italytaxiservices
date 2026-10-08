@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { destinations } from '@/lib/data/destinations'
+import ImageSlot from '@/components/editorial/ImageSlot'
 
 const FEATURED = [
   { slug: 'lake-como',    highlight: 'Bellagio · Varenna · Menaggio' },
@@ -86,8 +87,15 @@ export default function DestinationsSection() {
               Licensed NCC operators for cross-border private transfers. Border crossing included, fixed price, door-to-door.
             </p>
 
-            {/* TODO: image */}
-            <div style={{ background: '#F0EBE1', borderRadius: '4px', height: '180px', marginBottom: '20px', border: '1px solid #E8E2D9' }} />
+            <ImageSlot
+              file="images/home/italy-switzerland-border-road"
+              alt="Black Mercedes on a lakeside road at the Italy–Switzerland border with the Alps behind"
+              brief="Alpine border road"
+              size="1920 × 720"
+              position="60% center"
+              className="h-[200px] w-full rounded-[4px] mb-5"
+              sizes="(min-width: 1024px) 520px, 100vw"
+            />
 
             <div className="space-y-0">
               {borders.map(({ label, href }, i) => (

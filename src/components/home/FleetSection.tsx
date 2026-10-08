@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Users, Briefcase, ArrowRight } from 'lucide-react'
 import { vehicles } from '@/data/fleet'
+import ImageSlot from '@/components/editorial/ImageSlot'
 
 export default function FleetSection() {
   return (
@@ -31,8 +32,14 @@ export default function FleetSection() {
               key={vehicle.id}
               style={{ border: '1px solid #E8E2D9', borderRadius: '4px', overflow: 'hidden', background: '#FAF7F2' }}
             >
-              {/* TODO: vehicle image */}
-              <div style={{ background: '#EDE8E0', height: '150px' }} />
+              <ImageSlot
+                file={`images/home/fleet-${vehicle.id}`}
+                alt={`${vehicle.name} — ${vehicle.model}`}
+                brief={vehicle.model}
+                size="1280 × 720"
+                className="h-[150px] w-full"
+                sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+              />
 
               <div className="p-5">
                 <h3

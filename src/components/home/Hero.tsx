@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import QuoteForm from './QuoteForm'
 import { airports } from '@/data/airports'
 import { destinations } from '@/lib/data/destinations'
@@ -14,8 +15,25 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAF7F2' }}>
 
-      {/* Subtle texture */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(45deg, #C9A84C 1px, transparent 1px), linear-gradient(-45deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+      {/* Background photo — car sits on the right, sunset sky on the left under the copy */}
+      <Image
+        src="/images/home/amalfi-coast-sunset-drive.webp"
+        alt="Black Mercedes chauffeur car on the Amalfi Coast road at sunset"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        style={{ objectPosition: '70% center' }}
+      />
+      {/* Cream wash: solid enough behind the copy to read, clear on the right so the car shows */}
+      <div
+        className="absolute inset-0 lg:hidden"
+        style={{ background: 'linear-gradient(180deg, rgba(250,247,242,0.94) 0%, rgba(250,247,242,0.86) 55%, rgba(250,247,242,0.7) 100%)' }}
+      />
+      <div
+        className="absolute inset-0 hidden lg:block"
+        style={{ background: 'linear-gradient(90deg, rgba(250,247,242,0.97) 0%, rgba(250,247,242,0.9) 38%, rgba(250,247,242,0.35) 62%, rgba(250,247,242,0) 80%)' }}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex-1 flex items-center max-w-6xl mx-auto w-full px-6 lg:px-10 pt-40 pb-14">

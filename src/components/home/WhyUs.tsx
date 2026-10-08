@@ -1,3 +1,5 @@
+import ImageSlot from '@/components/editorial/ImageSlot'
+
 const features = [
   {
     title: 'Coach-flat Rates',
@@ -28,8 +30,15 @@ export default function WhyUs() {
 
         <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
 
-          {/* TODO: image */}
-          <div style={{ background: '#EDE8E0', borderRadius: '4px', height: '440px' }} />
+          <ImageSlot
+            file="images/home/florence-hotel-chauffeur"
+            alt="NCC chauffeur loading a suitcase into a Mercedes outside a hotel in Florence"
+            brief="Chauffeur with luggage at a hotel"
+            size="1400 × 940"
+            position="45% center"
+            className="h-[320px] sm:h-[440px] w-full rounded-[4px]"
+            sizes="(min-width: 1024px) 540px, 100vw"
+          />
 
           {/* RIGHT — content */}
           <div>

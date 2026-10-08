@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ImageSlot from '@/components/editorial/ImageSlot'
 
 
 export default function FinalCTA() {
@@ -34,8 +35,16 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          {/* TODO: image */}
-          <div style={{ background: '#1e1c18', borderRadius: '4px', height: '300px', border: '1px solid rgba(201,168,76,0.1)' }} />
+          <ImageSlot
+            file="images/home/rome-colosseum-night"
+            alt="Chauffeur waiting beside a black Mercedes S-Class at the Colosseum at night"
+            brief="Chauffeur at the Colosseum at night"
+            size="1340 × 890"
+            position="60% center"
+            tone="dark"
+            className="h-[300px] w-full rounded-[4px]"
+            sizes="(min-width: 1024px) 400px, 100vw"
+          />
         </div>
       </div>
     </section>
