@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import ImageSlot from '@/components/editorial/ImageSlot'
 
 const steps = [
   { num: '01', title: 'Request a Booking', body: 'Fill in your route, date, and vehicle via the booking form. Takes under 2 minutes.' },
@@ -61,22 +62,16 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* RIGHT — blank phone/app mockup placeholder */}
+          {/* RIGHT — booking on a phone, Florence behind */}
           <div className="flex justify-center">
-            <div
-              style={{
-                background: '#EDE8E0',
-                borderRadius: '24px',
-                width: '280px',
-                height: '500px',
-                border: '8px solid #D8D0C4',
-                position: 'relative',
-                overflow: 'hidden',
-              }}
-            >
-              {/* Screen placeholder */}
-              <div style={{ background: '#F5F0E8', margin: '16px', borderRadius: '16px', height: 'calc(100% - 32px)' }} />
-            </div>
+            <ImageSlot
+              file="images/home/luxury-italy-transfer-booking"
+              alt="Traveller booking a private transfer on a phone with Florence Cathedral in the background"
+              brief="Booking a transfer on a phone"
+              size="1024 × 1536"
+              className="aspect-[2/3] w-full max-w-[360px] rounded-[4px]"
+              sizes="(min-width: 1024px) 360px, 90vw"
+            />
           </div>
         </div>
       </div>

@@ -33,10 +33,11 @@ export default function FleetSection() {
               style={{ border: '1px solid #E8E2D9', borderRadius: '4px', overflow: 'hidden', background: '#FAF7F2' }}
             >
               <ImageSlot
-                file={`images/home/fleet-${vehicle.id}`}
+                file={`images/Fleet/${vehicle.id}`}
                 alt={`${vehicle.name} — ${vehicle.model}`}
                 brief={vehicle.model}
-                size="1280 × 720"
+                size="1400 × 790"
+                position="center 70%"
                 className="h-[150px] w-full"
                 sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
               />
