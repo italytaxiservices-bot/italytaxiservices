@@ -4,7 +4,7 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Aeroporto Fiumicino FCO | NCC Roma',
-  description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €95, Civitavecchia €165, Napoli €490. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-fiumicino',
     languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/transfer-aeroporto-fiumicino',
     title: 'Transfer Privato Aeroporto Fiumicino FCO | NCC Roma | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €95, Civitavecchia €165, Napoli €490. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Aeroporto Fiumicino FCO | NCC Roma | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €65, Civitavecchia €110, Napoli €280. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Fiumicino Leonardo da Vinci (FCO). Roma da €95, Civitavecchia €165, Napoli €490. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
 }
@@ -35,12 +35,12 @@ export default function FiumicinoItPage() {
       baseHref="/it"
       airportTransfersHref="/it"
       popularDestinations={[
-        { name: 'Roma Centro Storico', href: '/it/fiumicino-roma', time: '40–55 min', priceFrom: 65 },
-        { name: 'Porto di Civitavecchia', href: '/it/fiumicino-civitavecchia', time: '75 min', priceFrom: 110 },
-        { name: 'Città del Vaticano', href: '/fiumicino-to-rome', time: '45 min', priceFrom: 70 },
-        { name: 'Napoli', href: '/rome-to-naples', time: '2h 30min', priceFrom: 260 },
-        { name: 'Costiera Amalfitana', href: '/it/roma-costiera-amalfitana', time: '3h', priceFrom: 380 },
-        { name: 'Firenze', href: '/it/servizio-chauffeur-firenze', time: '2h 45min', priceFrom: 320 },
+        { name: 'Roma Centro Storico', href: '/it/fiumicino-roma', time: '40–55 min', priceFrom: 95 },
+        { name: 'Porto di Civitavecchia', href: '/it/fiumicino-civitavecchia', time: '75 min', priceFrom: 165 },
+        { name: 'Città del Vaticano', href: '/fiumicino-to-rome', time: '45 min', priceFrom: 95 },
+        { name: 'Napoli', href: '/rome-to-naples', time: '2h 30min', priceFrom: 490 },
+        { name: 'Costiera Amalfitana', href: '/it/roma-costiera-amalfitana', time: '3h', priceFrom: 600 },
+        { name: 'Firenze', href: '/it/servizio-chauffeur-firenze', time: '2h 45min', priceFrom: 590 },
       ]}
       about={`L'Aeroporto Internazionale Leonardo da Vinci di Fiumicino (FCO) è il principale aeroporto di Roma e il più trafficato d'Italia, con oltre 40 milioni di passeggeri l'anno. Situato a circa 30 km a ovest del centro di Roma, Fiumicino è lo scalo principale per i voli intercontinentali da e per l'Italia.
 

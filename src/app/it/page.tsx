@@ -23,21 +23,21 @@ export const metadata: Metadata = {
 }
 
 const airports = [
-  { code: 'MXP', name: 'Milano Malpensa', href: '/it/transfer-aeroporto-malpensa', price: '€85' },
-  { code: 'FCO', name: 'Roma Fiumicino',  href: '/it/transfer-aeroporto-fiumicino', price: '€65' },
-  { code: 'VCE', name: 'Venezia Marco Polo', href: '/it/transfer-aeroporto-venezia', price: '€55' },
+  { code: 'MXP', name: 'Milano Malpensa', href: '/it/transfer-aeroporto-malpensa', price: '€120' },
+  { code: 'FCO', name: 'Roma Fiumicino',  href: '/it/transfer-aeroporto-fiumicino', price: '€95' },
+  { code: 'VCE', name: 'Venezia Marco Polo', href: '/it/transfer-aeroporto-venezia', price: '€60' },
   { code: 'LIN', name: 'Milano Linate',   href: '/linate-airport-transfer', price: '€65' },
-  { code: 'CIA', name: 'Roma Ciampino',   href: '/ciampino-airport-transfer', price: '€55' },
-  { code: 'FLR', name: 'Firenze',         href: '/florence-airport-transfer', price: '€55' },
+  { code: 'CIA', name: 'Roma Ciampino',   href: '/ciampino-airport-transfer', price: '€65' },
+  { code: 'FLR', name: 'Firenze',         href: '/florence-airport-transfer', price: '€60' },
 ]
 
 const routes = [
-  { from: 'Malpensa', to: 'Milano',             href: '/it/malpensa-milano',            time: '45–55 min', price: '€85' },
-  { from: 'Malpensa', to: 'Lago di Como',       href: '/it/malpensa-lago-como',         time: '60–80 min', price: '€130' },
-  { from: 'Fiumicino', to: 'Roma',              href: '/it/fiumicino-roma',             time: '35–50 min', price: '€65' },
-  { from: 'Fiumicino', to: 'Civitavecchia',     href: '/it/fiumicino-civitavecchia',    time: '60–75 min', price: '€110' },
-  { from: 'Roma', to: 'Costiera Amalfitana',    href: '/it/roma-costiera-amalfitana',   time: '3.5–4.5 h', price: '€380' },
-  { from: 'Firenze', to: 'Pisa',                href: '/it/firenze-pisa',               time: '50–65 min', price: '€95' },
+  { from: 'Malpensa', to: 'Milano',             href: '/it/malpensa-milano',            time: '45–55 min', price: '€120' },
+  { from: 'Malpensa', to: 'Lago di Como',       href: '/it/malpensa-lago-como',         time: '60–80 min', price: '€150' },
+  { from: 'Fiumicino', to: 'Roma',              href: '/it/fiumicino-roma',             time: '35–50 min', price: '€95' },
+  { from: 'Fiumicino', to: 'Civitavecchia',     href: '/it/fiumicino-civitavecchia',    time: '60–75 min', price: '€165' },
+  { from: 'Roma', to: 'Costiera Amalfitana',    href: '/it/roma-costiera-amalfitana',   time: '3.5–4.5 h', price: '€575' },
+  { from: 'Firenze', to: 'Pisa',                href: '/it/firenze-pisa',               time: '50–65 min', price: '€190' },
 ]
 
 const features = [

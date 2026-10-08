@@ -190,8 +190,10 @@ export async function updateQuotation(id: string, _prevState: FormState, formDat
       payment_terms: toNullable(parsed.data.payment_terms),
       terms_and_conditions: toNullable(parsed.data.terms_and_conditions),
       internal_notes: toNullable(parsed.data.internal_notes),
-      distance_km: parsed.distanceKm,
-      pricing_breakdown: parsed.pricingBreakdown,
+      // Only overwrite the stored pricing snapshot when the calculator was
+      // used in this edit — otherwise saving would wipe the driver price /
+      // commission recorded when the quote was first priced.
+      ...(parsed.pricingBreakdown ? { distance_km: parsed.distanceKm, pricing_breakdown: parsed.pricingBreakdown } : {}),
     })
     .eq("id", id);
   if (error) return { error: error.message };
@@ -358,6 +360,8 @@ export async function duplicateQuotation(id: string) {
       currency: original.currency,
       payment_terms: original.payment_terms,
       terms_and_conditions: original.terms_and_conditions,
+      distance_km: original.distance_km,
+      pricing_breakdown: original.pricing_breakdown,
       created_by: profile.id,
     })
     .select("id")

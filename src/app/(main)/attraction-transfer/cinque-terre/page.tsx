@@ -60,11 +60,11 @@ export default function CinqueTerreTransferPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Prices to Cinque Terre</h2>
               {[
-                { from: 'Genoa Airport (GOA)', time: '80 min', price: '€90' },
-                { from: 'Pisa Airport (PSA)', time: '90 min', price: '€100' },
-                { from: 'Florence', time: '2.5 hrs', price: '€150' },
-                { from: 'Genoa city', time: '70 min', price: '€80' },
-                { from: 'Livorno', time: '75 min', price: '€90' },
+                { from: 'Genoa Airport (GOA)', time: '80 min', price: '€215' },
+                { from: 'Pisa Airport (PSA)', time: '90 min', price: '€190' },
+                { from: 'Florence', time: '2.5 hrs', price: '€390' },
+                { from: 'Genoa city', time: '70 min', price: '€200' },
+                { from: 'Livorno', time: '75 min', price: '€215' },
               ].map(r => (
                 <div key={r.from} className="flex items-center justify-between p-4 bg-green-50 border border-green-100 rounded-xl">
                   <div>

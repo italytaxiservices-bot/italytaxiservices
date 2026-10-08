@@ -56,7 +56,7 @@ Operiamo anche verso le destinazioni più richieste dalla clientela internaziona
       services={[
         {
           title: 'Transfer Aeroporto Malpensa (MXP)',
-          description: 'Transfer privato dal più grande aeroporto della Lombardia. Da €85 per auto berlina. Monitoraggio volo e meet & greet inclusi.',
+          description: 'Transfer privato dal più grande aeroporto della Lombardia. Da €120 per auto berlina. Monitoraggio volo e meet & greet inclusi.',
         },
         {
           title: 'Transfer Aeroporto Linate (LIN)',
@@ -64,11 +64,11 @@ Operiamo anche verso le destinazioni più richieste dalla clientela internaziona
         },
         {
           title: 'Transfer Aeroporto Bergamo (BGY)',
-          description: 'Trasferimento dall\'aeroporto di Bergamo Orio al Serio verso Milano e tutta la Lombardia. Da €90.',
+          description: 'Trasferimento dall\'aeroporto di Bergamo Orio al Serio verso Milano e tutta la Lombardia. Da €120.',
         },
         {
           title: 'Servizio Lago di Como',
-          description: 'Transfer privato da Milano verso Como, Bellagio, Varenna, Cernobbio e tutte le località del lago. Da €130 da Malpensa.',
+          description: 'Transfer privato da Milano verso Como, Bellagio, Varenna, Cernobbio e tutte le località del lago. Da €145 da Malpensa.',
         },
         {
           title: 'Trasferimenti Aziendali',

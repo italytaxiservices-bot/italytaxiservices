@@ -93,7 +93,9 @@ const RateCardSchema = z.object({
   currency: z.enum(SUPPORTED_CURRENCIES),
   base_price: z.coerce.number().nonnegative(),
   price_per_km: z.coerce.number().nonnegative().optional(),
-  min_price: z.coerce.number().nonnegative().optional(),
+  // Required: without a floor, a short or distance-less trip is priced at
+  // the bare base fare, far below what any driver charges.
+  min_price: z.coerce.number().positive("Min price is required — set it to at least what a driver charges for the shortest trip."),
 });
 
 export async function createRateCard(formData: FormData): Promise<void> {

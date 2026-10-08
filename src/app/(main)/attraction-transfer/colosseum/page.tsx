@@ -61,10 +61,10 @@ export default function ColosseumTransferPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Options to the Colosseum</h2>
               {[
-                { from: 'Fiumicino Airport (FCO)', time: '40–50 min', price: '€70' },
-                { from: 'Ciampino Airport (CIA)', time: '30–40 min', price: '€60' },
-                { from: 'Rome city hotel', time: '15–30 min', price: '€45+' },
-                { from: 'Civitavecchia Cruise Port', time: '75 min', price: '€130' },
+                { from: 'Fiumicino Airport (FCO)', time: '40–50 min', price: '€95' },
+                { from: 'Ciampino Airport (CIA)', time: '30–40 min', price: '€65' },
+                { from: 'Rome city hotel', time: '15–30 min', price: '€55+' },
+                { from: 'Civitavecchia Cruise Port', time: '75 min', price: '€180' },
               ].map(r => (
                 <div key={r.from} className="flex items-center justify-between p-4 bg-green-50 border border-green-100 rounded-xl">
                   <div>

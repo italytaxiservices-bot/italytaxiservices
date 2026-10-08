@@ -62,19 +62,19 @@ Siamo specializzati anche nei transfer verso il porto di Civitavecchia (crociere
       services={[
         {
           title: 'Transfer Aeroporto Fiumicino (FCO)',
-          description: 'Transfer privato dal Leonardo da Vinci — il principale aeroporto di Roma. Da €65 per berlina. Meet & greet nel terminal arrivi.',
+          description: 'Transfer privato dal Leonardo da Vinci — il principale aeroporto di Roma. Da €95 per berlina. Meet & greet nel terminal arrivi.',
         },
         {
           title: 'Transfer Aeroporto Ciampino (CIA)',
-          description: 'Transfer dall\'aeroporto low-cost di Ciampino. Servizio puntuale per voli Ryanair, easyJet e altri vettori. Da €55.',
+          description: 'Transfer dall\'aeroporto low-cost di Ciampino. Servizio puntuale per voli Ryanair, easyJet e altri vettori. Da €65.',
         },
         {
           title: 'Transfer Porto Civitavecchia',
-          description: 'Trasferimento diretto da Roma al porto crocieristico di Civitavecchia. Ideale per imbarco e sbarco crociere. Da €110.',
+          description: 'Trasferimento diretto da Roma al porto crocieristico di Civitavecchia. Ideale per imbarco e sbarco crociere. Da €180.',
         },
         {
           title: 'Costiera Amalfitana',
-          description: 'Transfer privato da Roma verso Positano, Amalfi, Ravello e tutta la Costiera. Autisti esperti sulla SS163. Da €380.',
+          description: 'Transfer privato da Roma verso Positano, Amalfi, Ravello e tutta la Costiera. Autisti esperti sulla SS163. Da €575.',
         },
         {
           title: 'Tour e Escursioni',

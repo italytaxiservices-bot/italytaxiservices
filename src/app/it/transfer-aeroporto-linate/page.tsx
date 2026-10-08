@@ -4,7 +4,7 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano',
-  description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €140, Lago di Como €150. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-linate',
     languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/transfer-aeroporto-linate',
     title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €140, Lago di Como €150. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Aeroporto Linate LIN | NCC Milano | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €95, Lago di Como €150. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Linate (LIN). Centro Milano da €65, Malpensa €140, Lago di Como €150. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
 }
@@ -36,9 +36,9 @@ export default function LinateItPage() {
       airportTransfersHref="/it"
       popularDestinations={[
         { name: 'Centro Milano', href: '/it/servizio-chauffeur-milano', time: '20–30 min', priceFrom: 65 },
-        { name: 'Malpensa (MXP)', href: '/it/transfer-aeroporto-malpensa', time: '60 min', priceFrom: 95 },
+        { name: 'Malpensa (MXP)', href: '/it/transfer-aeroporto-malpensa', time: '60 min', priceFrom: 140 },
         { name: 'Stazione Centrale Milano', href: '/it/servizio-chauffeur-milano', time: '25 min', priceFrom: 70 },
-        { name: 'Bergamo (BGY)', href: '/it/transfer-aeroporto-bergamo', time: '55 min', priceFrom: 100 },
+        { name: 'Bergamo (BGY)', href: '/it/transfer-aeroporto-bergamo', time: '55 min', priceFrom: 110 },
         { name: 'Lago di Como', href: '/it/malpensa-lago-como', time: '75 min', priceFrom: 150 },
         { name: 'Monza', href: '/it/servizio-chauffeur-milano', time: '35 min', priceFrom: 80 },
       ]}

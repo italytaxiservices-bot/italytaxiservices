@@ -4,7 +4,7 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Malpensa Milano | NCC MXP Milano',
-  description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €85. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €120. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-milano',
     languages: { en: '/malpensa-to-milan', it: '/it/malpensa-milano', 'x-default': '/malpensa-to-milan' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/malpensa-milano',
     title: 'Transfer Privato Malpensa Milano | NCC MXP Milano | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €85. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €120. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Malpensa Milano | NCC MXP Milano | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €85. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa a Milano. Da €120. Prezzo fisso, meet & greet, monitoraggio volo inclusi. Prenota ora.',
     images: ['/logo.webp'],
   },
 }

@@ -41,7 +41,7 @@ export default function HomePage() {
         name: 'Private NCC Transfer Service Italy',
         description: 'Licensed NCC private chauffeur transfers across Italy. Airport transfers, city-to-city, Amalfi Coast, Lake Como, cruise ports. Fixed prices, meet & greet, 24/7.',
         url: '/',
-        priceFrom: 45,
+        priceFrom: 50,
       })} />
       <Hero />
       <AirportTransfers />

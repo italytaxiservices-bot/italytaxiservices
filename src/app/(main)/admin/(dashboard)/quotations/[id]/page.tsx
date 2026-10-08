@@ -10,6 +10,7 @@ import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Section } from "@/components/admin/ui/Section";
 import { StatusBadge } from "@/components/admin/ui/Badge";
 import { QuotationForm } from "@/components/admin/quotations/QuotationForm";
+import { DriverPricingSummary } from "@/components/admin/quotations/DriverPricingSummary";
 import {
   updateQuotation,
   sendQuotation,
@@ -104,6 +105,14 @@ export default async function QuotationDetailPage({ params }: { params: Promise<
 
         {canEdit ? (
           <div className="space-y-4">
+            <Section title="Driver price & commission">
+              <DriverPricingSummary
+                breakdown={quotation.pricing_breakdown}
+                customerPrice={Number(quotation.subtotal) - Number(quotation.discount)}
+                currency={quotation.currency}
+              />
+            </Section>
+
             {quotation.status !== "CONVERTED" ? (
               <Section title="Email PDF to client">
                 <form action={sendQuotation.bind(null, id)} className="p-4 space-y-2">

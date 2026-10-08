@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa',
-  description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €50, Taormina €120, Syracuse €115, Etna €85. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/catania-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/catania-airport-transfer',
     title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa | Italy Taxi Services',
-    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €50, Taormina €120, Syracuse €115, Etna €85. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Catania Airport Transfer | Private Chauffeur CTA Fontanarossa | Italy Taxi Services',
-    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €35, Taormina €65, Syracuse €70, Etna €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Catania Fontanarossa Airport (CTA). Catania €50, Taormina €120, Syracuse €115, Etna €85. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function CataniaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Catania City Centre', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 35 },
-        { name: 'Taormina', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 65 },
-        { name: 'Syracuse (Siracusa)', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 70 },
-        { name: 'Mount Etna', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 80 },
-        { name: 'Ragusa / Ibla', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 100 },
-        { name: 'Agrigento (Valley of Temples)', href: '/milan-chauffeur-service', time: '120 min', priceFrom: 130 },
+        { name: 'Catania City Centre', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 50 },
+        { name: 'Taormina', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 120 },
+        { name: 'Syracuse (Siracusa)', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 115 },
+        { name: 'Mount Etna', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 85 },
+        { name: 'Ragusa / Ibla', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 185 },
+        { name: 'Agrigento (Valley of Temples)', href: '/milan-chauffeur-service', time: '120 min', priceFrom: 280 },
       ]}
       about={`Catania Fontanarossa Airport (CTA) is Sicily's busiest airport, handling over 12 million passengers a year. Located just 7km south of Catania city centre, it is the main gateway to eastern Sicily — including Taormina, Mount Etna, Syracuse, and the Baroque towns of the Val di Noto.
 

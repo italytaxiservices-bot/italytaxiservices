@@ -4,7 +4,7 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Roma Costiera Amalfitana | NCC Positano Amalfi',
-  description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €380. Autisti esperti sulla SS163. Prenota ora.',
+  description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €575. Autisti esperti sulla SS163. Prenota ora.',
   alternates: {
     canonical: '/it/roma-costiera-amalfitana',
     languages: { en: '/rome-to-amalfi-coast', it: '/it/roma-costiera-amalfitana', 'x-default': '/rome-to-amalfi-coast' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/roma-costiera-amalfitana',
     title: 'Transfer Privato Roma Costiera Amalfitana | NCC Positano Amalfi | Italy Taxi Services',
-    description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €380. Autisti esperti sulla SS163. Prenota ora.',
+    description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €575. Autisti esperti sulla SS163. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Roma Costiera Amalfitana | NCC Positano Amalfi | Italy Taxi Services',
-    description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €380. Autisti esperti sulla SS163. Prenota ora.',
+    description: 'Transfer privato NCC da Roma alla Costiera Amalfitana. Positano, Amalfi, Ravello, Sorrento. Da €575. Autisti esperti sulla SS163. Prenota ora.',
     images: ['/logo.webp'],
   },
 }

@@ -55,11 +55,11 @@ Operiamo anche sulla tratta Firenze–Roma, uno dei percorsi interregionali più
       services={[
         {
           title: 'Transfer Aeroporto Firenze (FLR)',
-          description: 'Transfer dall\'Aeroporto Amerigo Vespucci di Firenze al centro storico e alle principali strutture ricettive. Da €55.',
+          description: 'Transfer dall\'Aeroporto Amerigo Vespucci di Firenze al centro storico e alle principali strutture ricettive. Da €60.',
         },
         {
           title: 'Transfer Aeroporto Pisa (PSA)',
-          description: 'Collegamento dall\'aeroporto Galileo Galilei di Pisa verso Firenze e tutta la Toscana. Da €95.',
+          description: 'Collegamento dall\'aeroporto Galileo Galilei di Pisa verso Firenze e tutta la Toscana. Da €190.',
         },
         {
           title: 'Tour Toscana Privati',
@@ -75,7 +75,7 @@ Operiamo anche sulla tratta Firenze–Roma, uno dei percorsi interregionali più
         },
         {
           title: 'Firenze → Roma',
-          description: 'Trasferimento interregionale Firenze–Roma in massimo comfort. Circa 3h via autostrada. Da €320.',
+          description: 'Trasferimento interregionale Firenze–Roma in massimo comfort. Circa 3h via autostrada. Da €580.',
         },
       ]}
     />

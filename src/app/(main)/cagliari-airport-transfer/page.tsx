@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas',
-  description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €50, Villasimius €105, Pula €75, Costa Rei €125. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/cagliari-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/cagliari-airport-transfer',
     title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas | Italy Taxi Services',
-    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €50, Villasimius €105, Pula €75, Costa Rei €125. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cagliari Airport Transfer | Private Chauffeur CAG Elmas | Italy Taxi Services',
-    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €35, Villasimius €60, Pula €50, Costa Rei €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Cagliari Elmas Airport (CAG). Cagliari city €50, Villasimius €105, Pula €75, Costa Rei €125. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function CagliariAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Cagliari City Centre', href: '/milan-chauffeur-service', time: '10–15 min', priceFrom: 35 },
-        { name: 'Villasimius', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 60 },
-        { name: 'Pula / Nora', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 50 },
-        { name: 'Costa Rei', href: '/milan-chauffeur-service', time: '70 min', priceFrom: 80 },
-        { name: 'Sant\'Antioco Island', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 90 },
-        { name: 'Chia Beach', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 55 },
+        { name: 'Cagliari City Centre', href: '/milan-chauffeur-service', time: '10–15 min', priceFrom: 50 },
+        { name: 'Villasimius', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 105 },
+        { name: 'Pula / Nora', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 75 },
+        { name: 'Costa Rei', href: '/milan-chauffeur-service', time: '70 min', priceFrom: 125 },
+        { name: 'Sant\'Antioco Island', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 150 },
+        { name: 'Chia Beach', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 90 },
       ]}
       about={`Cagliari Elmas Airport (CAG) is Sardinia's main airport, located just 7km north of Cagliari city centre. It serves as the gateway to southern Sardinia — including the crystal waters of Villasimius, the Roman ruins at Nora, and some of Italy's finest unspoilt beaches.
 

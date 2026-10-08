@@ -61,10 +61,10 @@ export default function VaticanTransferPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Options to the Vatican</h2>
               {[
-                { from: 'Fiumicino Airport (FCO)', time: '40–55 min', price: '€70' },
-                { from: 'Ciampino Airport (CIA)', time: '45–60 min', price: '€65' },
-                { from: 'Rome city hotel (central)', time: '15–25 min', price: '€45+' },
-                { from: 'Civitavecchia Port (day trip)', time: '75 min', price: '€140' },
+                { from: 'Fiumicino Airport (FCO)', time: '40–55 min', price: '€95' },
+                { from: 'Ciampino Airport (CIA)', time: '45–60 min', price: '€85' },
+                { from: 'Rome city hotel (central)', time: '15–25 min', price: '€55+' },
+                { from: 'Civitavecchia Port (day trip)', time: '75 min', price: '€180' },
               ].map(r => (
                 <div key={r.from} className="flex items-center justify-between p-4 bg-green-50 border border-green-100 rounded-xl">
                   <div>

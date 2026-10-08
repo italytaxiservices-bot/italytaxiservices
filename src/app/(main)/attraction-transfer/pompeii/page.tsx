@@ -61,12 +61,12 @@ export default function PompeiiTransferPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Options to Pompeii</h2>
               {[
-                { from: 'Naples Airport (NAP)', time: '40 min', price: '€55' },
-                { from: 'Naples City', time: '40 min', price: '€55' },
-                { from: 'Sorrento', time: '30 min', price: '€50' },
-                { from: 'Rome (day trip)', time: '2.5 hrs', price: '€320' },
+                { from: 'Naples Airport (NAP)', time: '40 min', price: '€80' },
+                { from: 'Naples City', time: '40 min', price: '€80' },
+                { from: 'Sorrento', time: '30 min', price: '€75' },
+                { from: 'Rome (day trip)', time: '2.5 hrs', price: '€750' },
                 { from: 'Amalfi / Positano', time: '60–80 min', price: '€90' },
-                { from: 'Fiumicino Airport', time: '2.5 hrs', price: '€330' },
+                { from: 'Fiumicino Airport', time: '2.5 hrs', price: '€505' },
               ].map(r => (
                 <div key={r.from} className="flex items-center justify-between p-4 bg-green-50 border border-green-100 rounded-xl">
                   <div>

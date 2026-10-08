@@ -31,12 +31,12 @@ export default function MarcoPoloTransferPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Mestre / Tronchetto', href: '/marco-polo-to-venice', time: '20–30 min', priceFrom: 50 },
+        { name: 'Mestre / Tronchetto', href: '/marco-polo-to-venice', time: '20–30 min', priceFrom: 60 },
         { name: 'Venice Cruise Terminal', href: '/venice-cruise-transfer', time: '30–40 min', priceFrom: 65 },
-        { name: 'Padua (Padova)', href: '/marco-polo-to-padua', time: '40–55 min', priceFrom: 80 },
-        { name: 'Verona', href: '/marco-polo-to-verona', time: '90–110 min', priceFrom: 150 },
-        { name: 'Treviso', href: '/marco-polo-to-treviso', time: '30–40 min', priceFrom: 65 },
-        { name: 'Bologna', href: '/venice-to-bologna', time: '2–2.5 hrs', priceFrom: 220 },
+        { name: 'Padua (Padova)', href: '/marco-polo-to-padua', time: '40–55 min', priceFrom: 110 },
+        { name: 'Verona', href: '/marco-polo-to-verona', time: '90–110 min', priceFrom: 260 },
+        { name: 'Treviso', href: '/marco-polo-to-treviso', time: '30–40 min', priceFrom: 80 },
+        { name: 'Bologna', href: '/venice-to-bologna', time: '2–2.5 hrs', priceFrom: 360 },
       ]}
       about={`Venice Marco Polo Airport (VCE) is the main international airport serving Venice and the wider Veneto region, located on the mainland 13km from Venice's historic islands. The airport is served by most major European and international airlines.
 

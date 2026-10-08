@@ -8,6 +8,7 @@ import { SimpleTable } from "@/components/admin/ui/SimpleTable";
 import { ConfirmButton } from "@/components/admin/ui/ConfirmButton";
 import { formatCurrency, formatDate } from "@/lib/admin/format";
 import { SUPPORTED_CURRENCIES } from "@/lib/pricing/currencies";
+import { minimumSafePrice, type VehicleCategoryKey } from "@/lib/pricing/engine";
 import {
   createRateCard,
   createRouteRate,
@@ -53,7 +54,18 @@ export default async function PricingSettingsPage() {
                 { header: "Currency", cell: (r) => r.currency },
                 { header: "Base", cell: (r) => formatCurrency(r.base_price, r.currency) },
                 { header: "Per km", cell: (r) => (r.price_per_km ? formatCurrency(r.price_per_km, r.currency) : "—") },
-                { header: "Min", cell: (r) => (r.min_price ? formatCurrency(r.min_price, r.currency) : "—") },
+                {
+                  header: "Min",
+                  cell: (r) =>
+                    r.min_price ? (
+                      formatCurrency(r.min_price, r.currency)
+                    ) : (
+                      <span className="text-red-700" title="No minimum — short trips can be priced at the bare base fare. Remove and re-add this card with a min price.">
+                        Not set ⚠
+                      </span>
+                    ),
+                },
+                { header: "Market check", cell: (r) => <RateCardCheck card={r} /> },
                 {
                   header: "",
                   cell: (r) => (
@@ -72,7 +84,7 @@ export default async function PricingSettingsPage() {
               <SelectField label="Currency" name="currency" options={SUPPORTED_CURRENCIES} />
               <NumberField label="Base price" name="base_price" />
               <NumberField label="Price / km" name="price_per_km" required={false} />
-              <NumberField label="Min price" name="min_price" required={false} />
+              <NumberField label="Min price" name="min_price" />
               <div className="sm:col-span-6">
                 <SubmitButton>Add rate card</SubmitButton>
               </div>
@@ -197,6 +209,36 @@ export default async function PricingSettingsPage() {
           </div>
         </Section>
       </div>
+    </div>
+  );
+}
+
+const CHECK_DISTANCES = [15, 50, 150, 300];
+
+/**
+ * What this card would charge at a few typical distances, red where it falls
+ * below the estimated driver cost + minimum margin — i.e. trips no driver
+ * will take at that price.
+ */
+function RateCardCheck({
+  card,
+}: {
+  card: { vehicle_category: VehicleCategoryKey; currency: string; base_price: number; price_per_km: number | null; min_price: number | null };
+}) {
+  if (card.currency !== "EUR") return <span className="text-admin-stone">EUR only</span>;
+  return (
+    <div className="text-[11px] leading-snug">
+      {CHECK_DISTANCES.map((km) => {
+        const price = Math.max(card.min_price ?? 0, card.base_price + (card.price_per_km ?? 0) * km);
+        const floor = minimumSafePrice(card.vehicle_category, km);
+        const low = price < floor;
+        return (
+          <div key={km} className={low ? "text-red-700" : "text-admin-stone"} title={low ? `Below the ~€${floor} minimum a driver will accept` : undefined}>
+            {km} km: {formatCurrency(price, card.currency)}
+            {low ? ` ⚠ min ${formatCurrency(floor, card.currency)}` : ""}
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Malpensa Lago di Como | NCC Como',
-  description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €150. Prezzo fisso. Prenota ora.',
   alternates: {
     canonical: '/it/malpensa-lago-como',
     languages: { en: '/malpensa-to-lake-como', it: '/it/malpensa-lago-como', 'x-default': '/malpensa-to-lake-como' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/malpensa-lago-como',
     title: 'Transfer Privato Malpensa Lago di Como | NCC Como | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €150. Prezzo fisso. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Malpensa Lago di Como | NCC Como | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €130. Prezzo fisso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto Malpensa al Lago di Como. Como, Bellagio, Varenna, Cernobbio. Da €150. Prezzo fisso. Prenota ora.',
     images: ['/logo.webp'],
   },
 }
@@ -55,7 +55,7 @@ Serviamo tutte le principali località del lago: Como città, Bellagio, Varenna,
         },
         {
           q: 'Quanto costa il transfer da Malpensa a Bellagio?',
-          a: 'Il transfer da Malpensa a Bellagio parte da €155 per berlina (fino a 3 passeggeri). Per il van V-Class (fino a 7 passeggeri) il prezzo è circa €230. I prezzi includono pedaggi e IVA.',
+          a: 'Il transfer da Malpensa a Bellagio parte da €190 per berlina (fino a 3 passeggeri). Per il van V-Class (fino a 7 passeggeri) il prezzo è circa €230. I prezzi includono pedaggi e IVA.',
         },
         {
           q: 'Posso fermarmi a Como città prima di proseguire verso Bellagio?',

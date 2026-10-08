@@ -53,7 +53,7 @@ export default function SEOContent() {
             <div id="malpensa">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/malpensa-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Milan Malpensa Airport Transfer (MXP) — from €85
+                  Milan Malpensa Airport Transfer (MXP) — from €120
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -81,7 +81,7 @@ export default function SEOContent() {
             <div id="fiumicino">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/fiumicino-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Rome Fiumicino Airport Transfer (FCO) — from €65
+                  Rome Fiumicino Airport Transfer (FCO) — from €95
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -108,7 +108,7 @@ export default function SEOContent() {
             <div id="marco-polo">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/marco-polo-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Venice Marco Polo Airport Transfer (VCE) — from €55
+                  Venice Marco Polo Airport Transfer (VCE) — from €60
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -146,7 +146,7 @@ export default function SEOContent() {
             <div id="florence-airport">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/florence-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Florence Airport Transfer (FLR) — from €55
+                  Florence Airport Transfer (FLR) — from €60
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -167,7 +167,7 @@ export default function SEOContent() {
             <div id="ciampino">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/ciampino-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Rome Ciampino Airport Transfer (CIA) — from €55
+                  Rome Ciampino Airport Transfer (CIA) — from €65
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -181,7 +181,7 @@ export default function SEOContent() {
             <div id="naples-airport">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
                 <Link href="/naples-airport-transfer" className="hover:text-amber-700 transition-colors">
-                  Naples Airport Transfer (NAP) — from €55
+                  Naples Airport Transfer (NAP) — from €60
                 </Link>
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -374,55 +374,55 @@ export default function SEOContent() {
             {[
               {
                 from: 'Malpensa', to: 'Milan', href: '/malpensa-to-milan',
-                time: '45–55 min', price: 'from €85',
+                time: '45–55 min', price: 'from €120',
                 desc: 'Italy\'s most-booked private transfer route. Direct from MXP Terminal 1 or 2 to any Milan address — hotel, apartment, or business address. No taxi queues, no trains, no luggage stress.',
                 links: [{ text: 'Malpensa Airport', href: '/malpensa-airport-transfer' }, { text: 'Milan chauffeur', href: '/milan-chauffeur-service' }],
               },
               {
                 from: 'Malpensa', to: 'Lake Como', href: '/malpensa-to-lake-como',
-                time: '60–80 min', price: 'from €130',
+                time: '60–80 min', price: 'from €145',
                 desc: 'The finest way to arrive at Lake Como — from the plane directly to your lakeside hotel in Bellagio, Varenna, Menaggio, or Tremezzo. No train connections, no ferry queues with luggage.',
                 links: [{ text: 'Malpensa Airport', href: '/malpensa-airport-transfer' }, { text: 'Lake Como transfer', href: '/attraction-transfer/lake-como' }],
               },
               {
                 from: 'Fiumicino', to: 'Rome', href: '/fiumicino-to-rome',
-                time: '35–50 min', price: 'from €65',
+                time: '35–50 min', price: 'from €95',
                 desc: 'Rome\'s airport to any address in the Eternal City — direct, door-to-door. Unlike the Leonardo Express train, we drop you at your hotel, not at Termini station.',
                 links: [{ text: 'Fiumicino Airport', href: '/fiumicino-airport-transfer' }, { text: 'Rome chauffeur', href: '/rome-chauffeur-service' }],
               },
               {
                 from: 'Fiumicino', to: 'Civitavecchia', href: '/fiumicino-to-civitavecchia',
-                time: '60–75 min', price: 'from €110',
+                time: '60–75 min', price: 'from €165',
                 desc: 'The ideal cruise connection — from Rome\'s airport directly to the Mediterranean\'s busiest cruise terminal. We handle MSC, Royal Caribbean, Norwegian, Princess, and all major cruise lines.',
                 links: [{ text: 'Fiumicino Airport', href: '/fiumicino-airport-transfer' }, { text: 'Cruise transfers', href: '/cruise-transfers' }],
               },
               {
                 from: 'Rome', to: 'Amalfi Coast', href: '/rome-to-amalfi-coast',
-                time: '3.5–4.5 hrs', price: 'from €350',
+                time: '3.5–4.5 hrs', price: 'from €575',
                 desc: 'One of Italy\'s great journeys. From Rome south through Campania to the UNESCO-listed Amalfi Coast — dropping you in Positano, Amalfi, Ravello, or Praiano.',
                 links: [{ text: 'Rome chauffeur', href: '/rome-chauffeur-service' }, { text: 'Amalfi Coast transfer', href: '/attraction-transfer/amalfi-coast' }],
               },
               {
                 from: 'Milan', to: 'Venice', href: '/milan-to-venice',
-                time: '2.5–3 hrs', price: 'from €220',
+                time: '2.5–3 hrs', price: 'from €565',
                 desc: 'Two of Italy\'s greatest cities, door to door on the A4 motorway. Stop for an espresso in Brescia or photograph Lake Garda on the way — it\'s your transfer, at your pace.',
                 links: [{ text: 'Milan chauffeur', href: '/milan-chauffeur-service' }, { text: 'Venice chauffeur', href: '/venice-chauffeur-service' }],
               },
               {
                 from: 'Florence', to: 'Siena', href: '/florence-to-siena',
-                time: '70–90 min', price: 'from €100',
+                time: '70–90 min', price: 'from €175',
                 desc: 'Through the heart of Chianti — vineyards, cypress alleys, and medieval hill towns. We offer the scenic Chiantigiana route or the faster superstrada, whichever you prefer.',
                 links: [{ text: 'Florence chauffeur', href: '/florence-chauffeur-service' }],
               },
               {
                 from: 'Florence', to: 'Pisa', href: '/florence-to-pisa',
-                time: '50–65 min', price: 'from €85',
+                time: '50–65 min', price: 'from €190',
                 desc: 'From Florence\'s artistic heart to Pisa\'s iconic Piazza dei Miracoli — the Leaning Tower, Cathedral, and Baptistery. Drop-off directly at the monument entrance.',
                 links: [{ text: 'Florence chauffeur', href: '/florence-chauffeur-service' }, { text: 'Pisa Airport', href: '/pisa-airport-transfer' }],
               },
               {
                 from: 'Malpensa', to: 'Bellagio', href: '/malpensa-to-bellagio',
-                time: '75–90 min', price: 'from €150',
+                time: '75–90 min', price: 'from €190',
                 desc: 'Bellagio — "the Pearl of Lake Como" — sits at the tip of the lake\'s central promontory. Our transfer drops you at the entrance to Villa Serbelloni or Grand Hotel Villa d\'Este.',
                 links: [{ text: 'Malpensa Airport', href: '/malpensa-airport-transfer' }, { text: 'Lake Como', href: '/attraction-transfer/lake-como' }],
               },

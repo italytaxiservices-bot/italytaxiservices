@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei',
-  description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
+  description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €190, Pisa city €60, Siena €260, Cinque Terre €190. Fixed prices. Book today.',
   alternates: { canonical: '/pisa-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/pisa-airport-transfer',
     title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei | Italy Taxi Services',
-    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €190, Pisa city €60, Siena €260, Cinque Terre €190. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pisa Airport Transfer | Private Chauffeur PSA Galileo Galilei | Italy Taxi Services',
-    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €95, Pisa city €30, Siena €130, Cinque Terre €120. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Pisa Galileo Galilei Airport (PSA). Florence from €190, Pisa city €60, Siena €260, Cinque Terre €190. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function PisaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Florence City', href: '/florence-chauffeur-service', time: '60–75 min', priceFrom: 95 },
-        { name: 'Pisa City Centre', href: '/florence-chauffeur-service', time: '10 min', priceFrom: 30 },
-        { name: 'Siena', href: '/florence-chauffeur-service', time: '90 min', priceFrom: 130 },
-        { name: 'Lucca', href: '/florence-chauffeur-service', time: '25 min', priceFrom: 50 },
-        { name: 'Cinque Terre', href: '/florence-chauffeur-service', time: '90 min', priceFrom: 120 },
-        { name: 'Florence Airport (FLR)', href: '/florence-airport-transfer', time: '60 min', priceFrom: 90 },
+        { name: 'Florence City', href: '/florence-chauffeur-service', time: '60–75 min', priceFrom: 190 },
+        { name: 'Pisa City Centre', href: '/florence-chauffeur-service', time: '10 min', priceFrom: 60 },
+        { name: 'Siena', href: '/florence-chauffeur-service', time: '90 min', priceFrom: 260 },
+        { name: 'Lucca', href: '/florence-chauffeur-service', time: '25 min', priceFrom: 85 },
+        { name: 'Cinque Terre', href: '/florence-chauffeur-service', time: '90 min', priceFrom: 190 },
+        { name: 'Florence Airport (FLR)', href: '/florence-airport-transfer', time: '60 min', priceFrom: 180 },
       ]}
       about={`Pisa Galileo Galilei Airport (PSA) is the main gateway to Tuscany for many travellers, serving Florence, Pisa, Lucca, Siena, and the Cinque Terre. The airport is located just 2km from the Leaning Tower of Pisa and 80km west of Florence.
 

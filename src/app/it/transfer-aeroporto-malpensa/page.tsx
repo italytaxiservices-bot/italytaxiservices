@@ -4,7 +4,7 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa',
-  description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €120, Lago di Como €150, Lugano €210. Meet & greet, monitoraggio volo. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-malpensa',
     languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/transfer-aeroporto-malpensa',
     title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €120, Lago di Como €150, Lugano €210. Meet & greet, monitoraggio volo. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Aeroporto Malpensa MXP | NCC Malpensa | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €85, Lago di Como €130, Lugano €170. Meet & greet, monitoraggio volo. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Malpensa (MXP). Milano da €120, Lago di Como €150, Lugano €210. Meet & greet, monitoraggio volo. Prenota ora.',
     images: ['/logo.webp'],
   },
 }
@@ -35,12 +35,12 @@ export default function MalpensaItPage() {
       baseHref="/it"
       airportTransfersHref="/it"
       popularDestinations={[
-        { name: 'Milano Centro', href: '/it/malpensa-milano', time: '45–60 min', priceFrom: 85 },
-        { name: 'Lago di Como', href: '/it/malpensa-lago-como', time: '60–75 min', priceFrom: 130 },
-        { name: 'Bellagio', href: '/malpensa-to-bellagio', time: '90 min', priceFrom: 155 },
-        { name: 'Lugano (CH)', href: '/malpensa-to-milan', time: '50 min', priceFrom: 120 },
-        { name: 'Bergamo', href: '/malpensa-airport-transfer', time: '65 min', priceFrom: 110 },
-        { name: 'Milano Stazione Centrale', href: '/it/malpensa-milano', time: '50 min', priceFrom: 90 },
+        { name: 'Milano Centro', href: '/it/malpensa-milano', time: '45–60 min', priceFrom: 120 },
+        { name: 'Lago di Como', href: '/it/malpensa-lago-como', time: '60–75 min', priceFrom: 150 },
+        { name: 'Bellagio', href: '/malpensa-to-bellagio', time: '90 min', priceFrom: 190 },
+        { name: 'Lugano (CH)', href: '/malpensa-to-milan', time: '50 min', priceFrom: 210 },
+        { name: 'Bergamo', href: '/malpensa-airport-transfer', time: '65 min', priceFrom: 205 },
+        { name: 'Milano Stazione Centrale', href: '/it/malpensa-milano', time: '50 min', priceFrom: 120 },
       ]}
       about={`L'Aeroporto di Milano Malpensa (MXP) è il più grande aeroporto della Lombardia e il secondo d'Italia per traffico passeggeri. Situato a circa 50 km a nord-ovest di Milano, Malpensa serve voli intercontinentali verso le principali destinazioni mondiali con oltre 25 milioni di passeggeri all'anno.
 

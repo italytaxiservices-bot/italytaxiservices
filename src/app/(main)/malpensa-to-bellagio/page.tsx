@@ -4,20 +4,20 @@ import { getRouteBySlug } from '@/data/routes'
 
 export const metadata: Metadata = {
   title: 'Malpensa to Bellagio Transfer | Private Chauffeur',
-  description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
+  description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €190. Direct service, meet & greet, fixed price. Book today.',
   alternates: { canonical: '/malpensa-to-bellagio' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/malpensa-to-bellagio',
     title: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Taxi Services',
-    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
+    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €190. Direct service, meet & greet, fixed price. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Malpensa to Bellagio Transfer | Private Chauffeur | Italy Taxi Services',
-    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €155. Direct service, meet & greet, fixed price. Book today.',
+    description: 'Private NCC transfer from Malpensa Airport to Bellagio, Lake Como. From €190. Direct service, meet & greet, fixed price. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -46,7 +46,7 @@ Bellagio has no train station — private transfer is the most convenient option
       faqs={[
         { q: 'Is there a train from Malpensa to Bellagio?', a: 'No. There is no direct train to Bellagio. The nearest train station is Varenna-Esino (on the eastern shore), requiring a change at Milan and a ferry from Varenna to Bellagio. Our direct private transfer is significantly faster and more convenient.' },
         { q: 'Can you drop me at the Bellagio ferry landing?', a: 'Yes. We drop off at the ferry landing (imbarcadero), hotels on the lakefront, or any specific address in Bellagio and the surrounding villages.' },
-        { q: 'What is the difference between Lake Como and Bellagio transfer prices?', a: 'Our Lake Como transfer (€130) covers Como city and the southern shore. The Bellagio transfer (€155) covers the additional 25km to the tip of the Lariano triangle — a more scenic but longer route.' },
+        { q: 'What is the difference between Lake Como and Bellagio transfer prices?', a: 'Our Lake Como transfer (€150) covers Como city and the southern shore. The Bellagio transfer (€190) covers the additional 25km to the tip of the Lariano triangle — a more scenic but longer route.' },
         { q: 'Can I stop in Como city on the way to Bellagio?', a: 'Yes. We can include a stop in Como city on request. This adds approximately 30–40 minutes to the journey and a small supplement. Please mention it at the time of booking.' },
       ]}
     />

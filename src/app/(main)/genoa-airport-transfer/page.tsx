@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Genoa Airport Transfer | Private Chauffeur GOA',
-  description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €40, Portofino €65, Cinque Terre €90, Santa Margherita €60. Fixed prices. Book today.',
+  description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €60, Portofino €110, Cinque Terre €215, Santa Margherita €100. Fixed prices. Book today.',
   alternates: { canonical: '/genoa-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/genoa-airport-transfer',
     title: 'Genoa Airport Transfer | Private Chauffeur GOA | Italy Taxi Services',
-    description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €40, Portofino €65, Cinque Terre €90, Santa Margherita €60. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €60, Portofino €110, Cinque Terre €215, Santa Margherita €100. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Genoa Airport Transfer | Private Chauffeur GOA | Italy Taxi Services',
-    description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €40, Portofino €65, Cinque Terre €90, Santa Margherita €60. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Genoa Cristoforo Colombo Airport (GOA). Genoa city €60, Portofino €110, Cinque Terre €215, Santa Margherita €100. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function GenoaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Genoa City Centre', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 40 },
-        { name: 'Portofino', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 65 },
-        { name: 'Santa Margherita Ligure', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 60 },
-        { name: 'Cinque Terre (La Spezia)', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 90 },
-        { name: 'Rapallo', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 55 },
-        { name: 'Milan', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 130 },
+        { name: 'Genoa City Centre', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 60 },
+        { name: 'Portofino', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 110 },
+        { name: 'Santa Margherita Ligure', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 100 },
+        { name: 'Cinque Terre (La Spezia)', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 215 },
+        { name: 'Rapallo', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 95 },
+        { name: 'Milan', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 310 },
       ]}
       about={`Genoa Cristoforo Colombo Airport (GOA) is one of Italy's most unique airports — built on a sea platform jutting into the Ligurian Sea, 6km west of Genoa city centre. It serves the Italian Riviera, Cinque Terre, Portofino, and connections to Milan.
 

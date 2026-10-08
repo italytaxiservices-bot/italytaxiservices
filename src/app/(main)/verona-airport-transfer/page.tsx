@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca',
-  description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €60, Lake Garda €85, Venice €260, Dolomites €355. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/verona-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/verona-airport-transfer',
     title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Taxi Services',
-    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €60, Lake Garda €85, Venice €260, Dolomites €355. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Verona Airport Transfer | Private Chauffeur VRN Villafranca | Italy Taxi Services',
-    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €45, Lake Garda €55, Venice €130, Dolomites €180. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Verona Villafranca Airport (VRN). Verona city €60, Lake Garda €85, Venice €260, Dolomites €355. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function VeronaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Verona City Centre', href: '/venice-chauffeur-service', time: '15–20 min', priceFrom: 45 },
-        { name: 'Lake Garda (Sirmione)', href: '/venice-chauffeur-service', time: '30 min', priceFrom: 55 },
-        { name: 'Lake Garda (Riva del Garda)', href: '/venice-chauffeur-service', time: '60 min', priceFrom: 90 },
-        { name: 'Venice', href: '/venice-chauffeur-service', time: '90 min', priceFrom: 130 },
-        { name: 'Dolomites / Bolzano', href: '/venice-chauffeur-service', time: '120 min', priceFrom: 180 },
-        { name: 'Brescia', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 70 },
+        { name: 'Verona City Centre', href: '/venice-chauffeur-service', time: '15–20 min', priceFrom: 60 },
+        { name: 'Lake Garda (Sirmione)', href: '/venice-chauffeur-service', time: '30 min', priceFrom: 85 },
+        { name: 'Lake Garda (Riva del Garda)', href: '/venice-chauffeur-service', time: '60 min', priceFrom: 205 },
+        { name: 'Venice', href: '/venice-chauffeur-service', time: '90 min', priceFrom: 260 },
+        { name: 'Dolomites / Bolzano', href: '/venice-chauffeur-service', time: '120 min', priceFrom: 355 },
+        { name: 'Brescia', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 145 },
       ]}
       about={`Verona Villafranca Airport (VRN) — officially Valerio Catullo Airport — serves the Veneto and Lake Garda region, located 12km south-west of Verona city centre. It is the most convenient airport for Lake Garda, the Dolomites, and Verona itself.
 

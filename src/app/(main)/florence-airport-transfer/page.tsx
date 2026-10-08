@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur',
-  description: 'Florence Airport (FLR) private transfer. From €30 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
+  description: 'Florence Airport (FLR) private transfer. From €60 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
   alternates: { canonical: '/florence-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/florence-airport-transfer',
     title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
-    description: 'Florence Airport (FLR) private transfer. From €30 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
+    description: 'Florence Airport (FLR) private transfer. From €60 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Florence Airport Transfer | Peretola FLR Private Chauffeur | Italy Taxi Services',
-    description: 'Florence Airport (FLR) private transfer. From €30 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
+    description: 'Florence Airport (FLR) private transfer. From €60 to city centre. Pisa, Siena, Tuscany tours covered. Meet & greet, no hidden fees. Fixed price guaranteed.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function FlorenceAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Florence City Centre', href: '/florence-chauffeur-service', time: '15–20 min', priceFrom: 55 },
-        { name: 'Pisa (Leaning Tower)', href: '/florence-to-pisa', time: '60 min', priceFrom: 95 },
-        { name: 'Siena', href: '/florence-chauffeur-service', time: '75 min', priceFrom: 110 },
-        { name: 'San Gimignano', href: '/florence-chauffeur-service', time: '80 min', priceFrom: 120 },
-        { name: 'Rome', href: '/florence-chauffeur-service', time: '2h 45min', priceFrom: 320 },
-        { name: 'Chianti Wine Region', href: '/florence-chauffeur-service', time: '45 min', priceFrom: 90 },
+        { name: 'Florence City Centre', href: '/florence-chauffeur-service', time: '15–20 min', priceFrom: 60 },
+        { name: 'Pisa (Leaning Tower)', href: '/florence-to-pisa', time: '60 min', priceFrom: 190 },
+        { name: 'Siena', href: '/florence-chauffeur-service', time: '75 min', priceFrom: 180 },
+        { name: 'San Gimignano', href: '/florence-chauffeur-service', time: '80 min', priceFrom: 145 },
+        { name: 'Rome', href: '/florence-chauffeur-service', time: '2h 45min', priceFrom: 580 },
+        { name: 'Chianti Wine Region', href: '/florence-chauffeur-service', time: '45 min', priceFrom: 95 },
       ]}
       about={`Florence Peretola Airport (FLR), officially named Amerigo Vespucci Airport, is located just 4 km from the historic centre of Florence — making it one of Italy's most convenient airports for central city access. The airport handles mainly domestic Italian routes and a selection of European connections.
 

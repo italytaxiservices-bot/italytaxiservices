@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi',
-  description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €60, Florence €245, Rimini €270, Modena €100. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/bologna-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/bologna-airport-transfer',
     title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Taxi Services',
-    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €60, Florence €245, Rimini €270, Modena €100. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bologna Airport Transfer | Private Chauffeur BLQ Marconi | Italy Taxi Services',
-    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €35, Florence €95, Rimini €110, Modena €55. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Bologna Marconi Airport (BLQ). Bologna city €60, Florence €245, Rimini €270, Modena €100. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function BolognaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Bologna City Centre', href: '/bologna-chauffeur-service', time: '15 min', priceFrom: 35 },
-        { name: 'Florence', href: '/florence-chauffeur-service', time: '75 min', priceFrom: 95 },
-        { name: 'Modena', href: '/bologna-chauffeur-service', time: '35 min', priceFrom: 55 },
-        { name: 'Ferrara', href: '/bologna-chauffeur-service', time: '45 min', priceFrom: 65 },
-        { name: 'Rimini', href: '/bologna-chauffeur-service', time: '75 min', priceFrom: 110 },
-        { name: 'Venice', href: '/venice-chauffeur-service', time: '90 min', priceFrom: 130 },
+        { name: 'Bologna City Centre', href: '/bologna-chauffeur-service', time: '15 min', priceFrom: 60 },
+        { name: 'Florence', href: '/florence-chauffeur-service', time: '75 min', priceFrom: 245 },
+        { name: 'Modena', href: '/bologna-chauffeur-service', time: '35 min', priceFrom: 100 },
+        { name: 'Ferrara', href: '/bologna-chauffeur-service', time: '45 min', priceFrom: 120 },
+        { name: 'Rimini', href: '/bologna-chauffeur-service', time: '75 min', priceFrom: 270 },
+        { name: 'Venice', href: '/venice-chauffeur-service', time: '90 min', priceFrom: 355 },
       ]}
       about={`Bologna Guglielmo Marconi Airport (BLQ) is the main airport of Emilia-Romagna, located just 6km north of Bologna city centre. Compact, efficient, and well-connected, BLQ serves as a convenient gateway to Florence, Venice, Modena (Ferrari, Lamborghini, Maserati country), and the Adriatic Riviera.
 

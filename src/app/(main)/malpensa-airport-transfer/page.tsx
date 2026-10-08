@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Malpensa Airport Transfer | Private Chauffeur MXP',
-  description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+  description: 'Milan Malpensa (MXP) private transfer. From €120 to Milan, €150 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
   alternates: { canonical: '/malpensa-airport-transfer', languages: { en: '/malpensa-airport-transfer', it: '/it/transfer-aeroporto-malpensa', 'x-default': '/malpensa-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/malpensa-airport-transfer',
     title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
-    description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+    description: 'Milan Malpensa (MXP) private transfer. From €120 to Milan, €150 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Malpensa Airport Transfer | Private Chauffeur MXP | Italy Taxi Services',
-    description: 'Milan Malpensa (MXP) private transfer. From €65 to Milan, €120 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
+    description: 'Milan Malpensa (MXP) private transfer. From €120 to Milan, €150 to Lake Como. Flight tracking, meet & greet, no surprises. Licensed NCC — instant fixed quote.',
     images: ['/logo.webp'],
   },
 }
@@ -31,12 +31,12 @@ export default function MalpensaTransferPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Milan City Centre', href: '/malpensa-to-milan', time: '45–60 min', priceFrom: 85 },
-        { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '60–80 min', priceFrom: 130 },
-        { name: 'Bellagio', href: '/malpensa-to-bellagio', time: '75–90 min', priceFrom: 155 },
-        { name: 'Lugano (CH)', href: '/malpensa-to-lugano', time: '60–75 min', priceFrom: 145 },
-        { name: 'Bergamo City', href: '/malpensa-to-bergamo', time: '60–90 min', priceFrom: 95 },
-        { name: 'Turin', href: '/malpensa-to-turin', time: '90–110 min', priceFrom: 195 },
+        { name: 'Milan City Centre', href: '/malpensa-to-milan', time: '45–60 min', priceFrom: 120 },
+        { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '60–80 min', priceFrom: 150 },
+        { name: 'Bellagio', href: '/malpensa-to-bellagio', time: '75–90 min', priceFrom: 190 },
+        { name: 'Lugano (CH)', href: '/malpensa-to-lugano', time: '60–75 min', priceFrom: 210 },
+        { name: 'Bergamo City', href: '/malpensa-to-bergamo', time: '60–90 min', priceFrom: 205 },
+        { name: 'Turin', href: '/malpensa-to-turin', time: '90–110 min', priceFrom: 300 },
       ]}
       about={`Milan Malpensa Airport (MXP) is the largest international airport in northern Italy, handling over 28 million passengers per year. Located 48km northwest of Milan city centre, it serves as the primary gateway for visitors to Milan, Lake Como, Lombardy, and the wider northern Italy region.
 

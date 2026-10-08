@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio',
-  description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €120, Lake Como €180, Brescia €120. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/bergamo-airport-transfer', languages: { en: '/bergamo-airport-transfer', it: '/it/transfer-aeroporto-bergamo', 'x-default': '/bergamo-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/bergamo-airport-transfer',
     title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio | Italy Taxi Services',
-    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €120, Lake Como €180, Brescia €120. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bergamo Airport Transfer | Private Chauffeur BGY Orio al Serio | Italy Taxi Services',
-    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €90, Lake Como €130, Brescia €80. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Bergamo Orio al Serio Airport (BGY). Milan from €120, Lake Como €180, Brescia €120. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function BergamoAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Milan City Centre', href: '/milan-chauffeur-service', time: '50–65 min', priceFrom: 90 },
-        { name: 'Milan Malpensa (MXP)', href: '/malpensa-airport-transfer', time: '60 min', priceFrom: 100 },
-        { name: 'Bergamo City', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 40 },
-        { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '80 min', priceFrom: 140 },
-        { name: 'Brescia', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 80 },
-        { name: 'Lake Garda', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 120 },
+        { name: 'Milan City Centre', href: '/milan-chauffeur-service', time: '50–65 min', priceFrom: 120 },
+        { name: 'Milan Malpensa (MXP)', href: '/malpensa-airport-transfer', time: '60 min', priceFrom: 205 },
+        { name: 'Bergamo City', href: '/milan-chauffeur-service', time: '15 min', priceFrom: 60 },
+        { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '80 min', priceFrom: 180 },
+        { name: 'Brescia', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 120 },
+        { name: 'Lake Garda', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 200 },
       ]}
       about={`Bergamo Orio al Serio Airport (BGY) is one of Italy's busiest low-cost hubs, handling over 15 million passengers a year — primarily Ryanair flights from across Europe. Despite being named Milan Bergamo by Ryanair, it is actually located 45km from Milan city centre and just 5km from Bergamo's stunning upper city.
 

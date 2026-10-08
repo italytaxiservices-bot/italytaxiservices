@@ -61,13 +61,13 @@ export default function AmalfiCoastTransferPage() {
             <div className="space-y-3">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Prices — Amalfi Coast</h2>
               {[
-                { from: 'Rome', to: 'Positano', time: '3–3.5 hrs', price: '€390' },
-                { from: 'Rome', to: 'Amalfi', time: '3.5 hrs', price: '€410' },
-                { from: 'Naples Airport', to: 'Positano', time: '80 min', price: '€120' },
-                { from: 'Naples Airport', to: 'Amalfi', time: '90 min', price: '€130' },
-                { from: 'Naples Airport', to: 'Ravello', time: '100 min', price: '€145' },
+                { from: 'Rome', to: 'Positano', time: '3–3.5 hrs', price: '€575' },
+                { from: 'Rome', to: 'Amalfi', time: '3.5 hrs', price: '€590' },
+                { from: 'Naples Airport', to: 'Positano', time: '80 min', price: '€145' },
+                { from: 'Naples Airport', to: 'Amalfi', time: '90 min', price: '€165' },
+                { from: 'Naples Airport', to: 'Ravello', time: '100 min', price: '€175' },
                 { from: 'Sorrento', to: 'Positano', time: '45 min', price: '€70' },
-                { from: 'Fiumicino Airport', to: 'Positano', time: '3.5 hrs', price: '€400' },
+                { from: 'Fiumicino Airport', to: 'Positano', time: '3.5 hrs', price: '€615' },
               ].map(r => (
                 <div key={r.from + r.to} className="flex items-center justify-between p-3 bg-green-50 border border-green-100 rounded-xl text-sm">
                   <div>

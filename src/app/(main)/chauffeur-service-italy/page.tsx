@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 }
 
 const services = [
-  { title: 'Airport Transfers', desc: 'Meet & greet at 19+ Italian airports. Flight monitoring, fixed prices.', href: '/airport-transfers', price: 'From €35' },
+  { title: 'Airport Transfers', desc: 'Meet & greet at 19+ Italian airports. Flight monitoring, fixed prices.', href: '/airport-transfers', price: 'From €50' },
   { title: 'City Chauffeur', desc: 'Professional driver for your time in the city — hotel, meetings, restaurants.', href: '/hourly-chauffeur-italy', price: 'From €80/hr' },
-  { title: 'Long-Distance', desc: 'Milan to Venice, Rome to Naples, Florence to Amalfi — door to door.', href: '/airport-transfers', price: 'From €95' },
+  { title: 'Long-Distance', desc: 'Milan to Venice, Rome to Naples, Florence to Amalfi — door to door.', href: '/airport-transfers', price: 'From €120' },
   { title: 'Corporate Travel', desc: 'Business transfers, trade fair logistics, executive airport runs.', href: '/corporate-chauffeur-italy', price: 'Invoice billing' },
-  { title: 'Cruise Ports', desc: 'Civitavecchia, Naples, Venice, Genoa — all cruise port connections.', href: '/cruise-transfers', price: 'From €50' },
+  { title: 'Cruise Ports', desc: 'Civitavecchia, Naples, Venice, Genoa — all cruise port connections.', href: '/cruise-transfers', price: 'From €65' },
   { title: 'Luxury & VIP', desc: 'S-Class, luxury SUV, senior chauffeur. Discreet, first-class service.', href: '/luxury-chauffeur-italy', price: 'Premium' },
   { title: 'Wedding Cars', desc: 'Bridal vehicles and guest transfers for Italian destination weddings.', href: '/wedding-chauffeur-italy', price: 'Custom quote' },
   { title: 'Hourly Hire', desc: 'Your own driver for half a day or a full day — total flexibility.', href: '/hourly-chauffeur-italy', price: 'From €80/hr' },

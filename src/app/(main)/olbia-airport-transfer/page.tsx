@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Olbia Airport Transfer | Private Chauffeur OLB Costa Smeralda',
-  description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €80, Olbia €35, Porto Rotondo €60, La Maddalena €70. Fixed prices. Book today.',
+  description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €100, Olbia €50, Porto Rotondo €60, La Maddalena €80. Fixed prices. Book today.',
   alternates: { canonical: '/olbia-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/olbia-airport-transfer',
     title: 'Olbia Airport Transfer | Private Chauffeur OLB Costa Smeralda | Italy Taxi Services',
-    description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €80, Olbia €35, Porto Rotondo €60, La Maddalena €70. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €100, Olbia €50, Porto Rotondo €60, La Maddalena €80. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Olbia Airport Transfer | Private Chauffeur OLB Costa Smeralda | Italy Taxi Services',
-    description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €80, Olbia €35, Porto Rotondo €60, La Maddalena €70. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Olbia Costa Smeralda Airport (OLB). Porto Cervo €100, Olbia €50, Porto Rotondo €60, La Maddalena €80. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function OlbiaAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Porto Cervo', href: '/milan-chauffeur-service', time: '30 min', priceFrom: 80 },
-        { name: 'Olbia City', href: '/milan-chauffeur-service', time: '10 min', priceFrom: 35 },
+        { name: 'Porto Cervo', href: '/milan-chauffeur-service', time: '30 min', priceFrom: 100 },
+        { name: 'Olbia City', href: '/milan-chauffeur-service', time: '10 min', priceFrom: 50 },
         { name: 'Porto Rotondo', href: '/milan-chauffeur-service', time: '25 min', priceFrom: 60 },
-        { name: 'Arzachena', href: '/milan-chauffeur-service', time: '20 min', priceFrom: 50 },
-        { name: 'La Maddalena (port)', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 70 },
-        { name: 'Palau (ferry to La Maddalena)', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 65 },
+        { name: 'Arzachena', href: '/milan-chauffeur-service', time: '20 min', priceFrom: 65 },
+        { name: 'La Maddalena (port)', href: '/milan-chauffeur-service', time: '40 min', priceFrom: 80 },
+        { name: 'Palau (ferry to La Maddalena)', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 80 },
       ]}
       about={`Olbia Costa Smeralda Airport (OLB) is the main gateway to north-east Sardinia and the exclusive Costa Smeralda — one of the Mediterranean's most glamorous resort areas. The airport is located just 4km from Olbia city and 30 minutes from Porto Cervo.
 

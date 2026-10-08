@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Linate Airport Transfer | Private Chauffeur LIN Milan',
-  description: 'Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
+  description: 'Milan Linate (LIN) private transfer. From €65 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
   alternates: { canonical: '/linate-airport-transfer', languages: { en: '/linate-airport-transfer', it: '/it/transfer-aeroporto-linate', 'x-default': '/linate-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/linate-airport-transfer',
     title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
-    description: 'Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
+    description: 'Milan Linate (LIN) private transfer. From €65 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Linate Airport Transfer | Private Chauffeur LIN Milan | Italy Taxi Services',
-    description: 'Milan Linate (LIN) private transfer. From €55 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
+    description: 'Milan Linate (LIN) private transfer. From €65 to city centre. Business-class chauffeur, meet & greet, no hidden fees. Licensed NCC — fixed price, book now.',
     images: ['/logo.webp'],
   },
 }
@@ -30,9 +30,9 @@ export default function LinatePage() {
       airport={airport}
       popularDestinations={[
         { name: 'Milan City Centre', href: '/milan-chauffeur-service', time: '20–30 min', priceFrom: 65 },
-        { name: 'Milan Malpensa (MXP)', href: '/malpensa-airport-transfer', time: '60 min', priceFrom: 95 },
+        { name: 'Milan Malpensa (MXP)', href: '/malpensa-airport-transfer', time: '60 min', priceFrom: 140 },
         { name: 'Milan Central Station', href: '/milan-chauffeur-service', time: '25 min', priceFrom: 70 },
-        { name: 'Bergamo (BGY Airport)', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 100 },
+        { name: 'Bergamo (BGY Airport)', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 110 },
         { name: 'Lake Como', href: '/malpensa-to-lake-como', time: '75 min', priceFrom: 150 },
         { name: 'Monza', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 80 },
       ]}

@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Fiumicino Airport Transfer | Private Chauffeur FCO',
-  description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+  description: 'Rome Fiumicino (FCO) private transfer. From €95 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
   alternates: { canonical: '/fiumicino-airport-transfer', languages: { en: '/fiumicino-airport-transfer', it: '/it/transfer-aeroporto-fiumicino', 'x-default': '/fiumicino-airport-transfer' } },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/fiumicino-airport-transfer',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+    description: 'Rome Fiumicino (FCO) private transfer. From €95 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fiumicino Airport Transfer | Private Chauffeur FCO | Italy Taxi Services',
-    description: 'Rome Fiumicino (FCO) private transfer. From €65 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
+    description: 'Rome Fiumicino (FCO) private transfer. From €95 to Rome city. Meet & greet, flight monitoring, no hidden fees. Licensed NCC. Get your fixed price in 2 min.',
     images: ['/logo.webp'],
   },
 }
@@ -29,17 +29,17 @@ const airport = getAirportBySlug('fiumicino')!
 export default function FiumicinoTransferPage() {
   return (
     <>
-      <JsonLd data={taxiServiceSchema({ name: 'Rome Fiumicino Airport Transfer', description: 'Private NCC transfer from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring, door-to-door to Rome city, Vatican, Civitavecchia.', url: '/fiumicino-airport-transfer', priceFrom: 65 })} />
+      <JsonLd data={taxiServiceSchema({ name: 'Rome Fiumicino Airport Transfer', description: 'Private NCC transfer from Rome Fiumicino Airport (FCO). Meet & greet, flight monitoring, door-to-door to Rome city, Vatican, Civitavecchia.', url: '/fiumicino-airport-transfer', priceFrom: 95 })} />
       <JsonLd data={breadcrumbSchema([{ name: 'Home', url: siteConfig.domain }, { name: 'Airport Transfers', url: `${siteConfig.domain}/airport-transfers` }, { name: 'Fiumicino Airport Transfer', url: `${siteConfig.domain}/fiumicino-airport-transfer` }])} />
       <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Rome City Centre', href: '/fiumicino-to-rome', time: '40–60 min', priceFrom: 65 },
-        { name: 'Civitavecchia Port', href: '/fiumicino-to-civitavecchia', time: '60–75 min', priceFrom: 110 },
-        { name: 'Vatican City', href: '/fiumicino-to-rome', time: '50–65 min', priceFrom: 65 },
-        { name: 'Tivoli', href: '/fiumicino-to-tivoli', time: '70–90 min', priceFrom: 120 },
-        { name: 'Naples', href: '/rome-to-naples', time: '2.5–3 hrs', priceFrom: 280 },
-        { name: 'Florence', href: '/rome-to-florence', time: '3–3.5 hrs', priceFrom: 350 },
+        { name: 'Rome City Centre', href: '/fiumicino-to-rome', time: '40–60 min', priceFrom: 95 },
+        { name: 'Civitavecchia Port', href: '/fiumicino-to-civitavecchia', time: '60–75 min', priceFrom: 165 },
+        { name: 'Vatican City', href: '/fiumicino-to-rome', time: '50–65 min', priceFrom: 95 },
+        { name: 'Tivoli', href: '/fiumicino-to-tivoli', time: '70–90 min', priceFrom: 155 },
+        { name: 'Naples', href: '/rome-to-naples', time: '2.5–3 hrs', priceFrom: 490 },
+        { name: 'Florence', href: '/rome-to-florence', time: '3–3.5 hrs', priceFrom: 590 },
       ]}
       about={`Rome Fiumicino Airport (FCO) — officially Leonardo da Vinci International Airport — is Italy's largest airport and one of Europe's major hubs, handling over 40 million passengers annually. Located 32km southwest of Rome city centre, it is the primary gateway for visitors to Rome, Lazio, and central Italy.
 

@@ -61,12 +61,12 @@ export default function LacomoTransferPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Transfer Prices to Lake Como</h2>
               {[
-                { from: 'Malpensa Airport (MXP)', to: 'Como / Cernobbio', time: '60–75 min', price: '€130' },
-                { from: 'Malpensa Airport (MXP)', to: 'Bellagio', time: '75–90 min', price: '€155' },
-                { from: 'Malpensa Airport (MXP)', to: 'Varenna', time: '90 min', price: '€165' },
-                { from: 'Milan City', to: 'Como', time: '45 min', price: '€90' },
-                { from: 'Milan City', to: 'Bellagio', time: '75 min', price: '€130' },
-                { from: 'Lugano (CH)', to: 'Bellagio / Varenna', time: '50 min', price: '€110' },
+                { from: 'Malpensa Airport (MXP)', to: 'Como / Cernobbio', time: '60–75 min', price: '€150' },
+                { from: 'Malpensa Airport (MXP)', to: 'Bellagio', time: '75–90 min', price: '€190' },
+                { from: 'Malpensa Airport (MXP)', to: 'Varenna', time: '90 min', price: '€235' },
+                { from: 'Milan City', to: 'Como', time: '45 min', price: '€120' },
+                { from: 'Milan City', to: 'Bellagio', time: '75 min', price: '€165' },
+                { from: 'Lugano (CH)', to: 'Bellagio / Varenna', time: '50 min', price: '€180' },
               ].map(r => (
                 <div key={r.from + r.to} className="flex items-center justify-between p-4 bg-green-50 border border-green-100 rounded-xl text-sm">
                   <div>

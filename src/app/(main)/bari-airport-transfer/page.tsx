@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla',
-  description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+  description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €50, Alberobello €120, Matera €120, Lecce €275, Polignano €80. Fixed prices. Book today.',
   alternates: { canonical: '/bari-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/bari-airport-transfer',
     title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla | Italy Taxi Services',
-    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €50, Alberobello €120, Matera €120, Lecce €275, Polignano €80. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bari Airport Transfer | Private Chauffeur BRI Karol Wojtyla | Italy Taxi Services',
-    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €40, Alberobello €65, Matera €90, Lecce €110, Polignano €55. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Bari Karol Wojtyla Airport (BRI). Bari city €50, Alberobello €120, Matera €120, Lecce €275, Polignano €80. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function BariAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Bari City Centre', href: '/milan-chauffeur-service', time: '20 min', priceFrom: 40 },
-        { name: 'Alberobello (Trulli)', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 65 },
-        { name: 'Matera', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 90 },
-        { name: 'Polignano a Mare', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 55 },
-        { name: 'Lecce', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 110 },
-        { name: 'Ostuni (White City)', href: '/milan-chauffeur-service', time: '70 min', priceFrom: 85 },
+        { name: 'Bari City Centre', href: '/milan-chauffeur-service', time: '20 min', priceFrom: 50 },
+        { name: 'Alberobello (Trulli)', href: '/milan-chauffeur-service', time: '55 min', priceFrom: 120 },
+        { name: 'Matera', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 120 },
+        { name: 'Polignano a Mare', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 80 },
+        { name: 'Lecce', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 275 },
+        { name: 'Ostuni (White City)', href: '/milan-chauffeur-service', time: '70 min', priceFrom: 150 },
       ]}
       about={`Bari Karol Wojtyla Airport (BRI) serves Puglia — one of Italy's most rapidly growing tourist destinations. Located 9km north-west of Bari city centre, it is the main gateway to Alberobello (UNESCO trulli), Matera (European Capital of Culture 2019), Polignano a Mare, Lecce (Baroque architecture), and the Adriatic coast.
 

@@ -35,11 +35,11 @@ export default function VeneziaMarcoPolo() {
       baseHref="/it"
       airportTransfersHref="/it"
       popularDestinations={[
-        { name: 'Venezia Mestre', href: '/marco-polo-airport-transfer', time: '20 min', priceFrom: 45 },
-        { name: 'Piazzale Roma (Venezia)', href: '/marco-polo-airport-transfer', time: '25 min', priceFrom: 55 },
+        { name: 'Venezia Mestre', href: '/marco-polo-airport-transfer', time: '20 min', priceFrom: 60 },
+        { name: 'Piazzale Roma (Venezia)', href: '/marco-polo-airport-transfer', time: '25 min', priceFrom: 60 },
         { name: 'Terminal Crociere Venezia', href: '/it/servizio-chauffeur-venezia', time: '30 min', priceFrom: 65 },
-        { name: 'Padova', href: '/marco-polo-airport-transfer', time: '45 min', priceFrom: 90 },
-        { name: 'Verona', href: '/marco-polo-airport-transfer', time: '75 min', priceFrom: 130 },
+        { name: 'Padova', href: '/marco-polo-airport-transfer', time: '45 min', priceFrom: 110 },
+        { name: 'Verona', href: '/marco-polo-airport-transfer', time: '75 min', priceFrom: 260 },
         { name: 'Treviso', href: '/marco-polo-airport-transfer', time: '35 min', priceFrom: 80 },
       ]}
       about={`L'Aeroporto di Venezia Marco Polo (VCE) è il principale scalo aeroportuale del Veneto e del Nord-Est Italia. Situato sulla terraferma, a circa 12 km dal centro di Venezia Mestre e 15 km da Piazzale Roma, l'aeroporto serve oltre 10 milioni di passeggeri l'anno.

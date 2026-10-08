@@ -111,13 +111,13 @@ export default function CruiseTransfersPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Popular Cruise Routes</h2>
               <div className="space-y-3">
                 {[
-                  { from: 'Fiumicino Airport', to: 'Civitavecchia Port', time: '75 min', price: '€110' },
-                  { from: 'Rome City', to: 'Civitavecchia Port', time: '75 min', price: '€120' },
-                  { from: 'Naples Airport', to: 'Naples Port', time: '25 min', price: '€55' },
-                  { from: 'Venice Airport', to: 'Venice Cruise Terminal', time: '30 min', price: '€75' },
-                  { from: 'Pisa Airport', to: 'Livorno Port', time: '30 min', price: '€65' },
-                  { from: 'Florence', to: 'Livorno Port', time: '80 min', price: '€110' },
-                  { from: 'Genoa Airport', to: 'Genoa Port', time: '20 min', price: '€50' },
+                  { from: 'Fiumicino Airport', to: 'Civitavecchia Port', time: '75 min', price: '€165' },
+                  { from: 'Rome City', to: 'Civitavecchia Port', time: '75 min', price: '€180' },
+                  { from: 'Naples Airport', to: 'Naples Port', time: '25 min', price: '€60' },
+                  { from: 'Venice Airport', to: 'Venice Cruise Terminal', time: '30 min', price: '€65' },
+                  { from: 'Pisa Airport', to: 'Livorno Port', time: '30 min', price: '€85' },
+                  { from: 'Florence', to: 'Livorno Port', time: '80 min', price: '€205' },
+                  { from: 'Genoa Airport', to: 'Genoa Port', time: '20 min', price: '€60' },
                 ].map((r, i) => (
                   <div key={i} className="flex items-center justify-between py-3 border-b border-gray-100 text-sm">
                     <span className="text-gray-700">{r.from} → {r.to}</span>

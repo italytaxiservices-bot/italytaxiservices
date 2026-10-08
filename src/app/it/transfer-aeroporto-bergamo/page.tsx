@@ -4,7 +4,7 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Transfer Privato Aeroporto Bergamo BGY | NCC Orio al Serio',
-  description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €90, Lago di Como €140, Brescia €80. Meet & greet incluso. Prenota ora.',
+  description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €120, Lago di Como €180, Brescia €120. Meet & greet incluso. Prenota ora.',
   alternates: {
     canonical: '/it/transfer-aeroporto-bergamo',
     languages: { en: '/bergamo-airport-transfer', it: '/it/transfer-aeroporto-bergamo', 'x-default': '/bergamo-airport-transfer' },
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Italy Taxi Services',
     url: '/it/transfer-aeroporto-bergamo',
     title: 'Transfer Privato Aeroporto Bergamo BGY | NCC Orio al Serio | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €90, Lago di Como €140, Brescia €80. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €120, Lago di Como €180, Brescia €120. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transfer Privato Aeroporto Bergamo BGY | NCC Orio al Serio | Italy Taxi Services',
-    description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €90, Lago di Como €140, Brescia €80. Meet & greet incluso. Prenota ora.',
+    description: 'Transfer privato NCC dall\'aeroporto di Bergamo Orio al Serio (BGY). Milano da €120, Lago di Como €180, Brescia €120. Meet & greet incluso. Prenota ora.',
     images: ['/logo.webp'],
   },
 }
@@ -35,12 +35,12 @@ export default function BergamoItPage() {
       baseHref="/it"
       airportTransfersHref="/it"
       popularDestinations={[
-        { name: 'Centro Milano', href: '/it/servizio-chauffeur-milano', time: '50–65 min', priceFrom: 90 },
-        { name: 'Malpensa (MXP)', href: '/it/transfer-aeroporto-malpensa', time: '60 min', priceFrom: 100 },
-        { name: 'Città di Bergamo', href: '/it/servizio-chauffeur-milano', time: '15 min', priceFrom: 40 },
-        { name: 'Lago di Como', href: '/it/malpensa-lago-como', time: '80 min', priceFrom: 140 },
-        { name: 'Brescia', href: '/it/servizio-chauffeur-milano', time: '45 min', priceFrom: 80 },
-        { name: 'Lago di Garda', href: '/it/servizio-chauffeur-milano', time: '75 min', priceFrom: 120 },
+        { name: 'Centro Milano', href: '/it/servizio-chauffeur-milano', time: '50–65 min', priceFrom: 120 },
+        { name: 'Malpensa (MXP)', href: '/it/transfer-aeroporto-malpensa', time: '60 min', priceFrom: 205 },
+        { name: 'Città di Bergamo', href: '/it/servizio-chauffeur-milano', time: '15 min', priceFrom: 60 },
+        { name: 'Lago di Como', href: '/it/malpensa-lago-como', time: '80 min', priceFrom: 180 },
+        { name: 'Brescia', href: '/it/servizio-chauffeur-milano', time: '45 min', priceFrom: 120 },
+        { name: 'Lago di Garda', href: '/it/servizio-chauffeur-milano', time: '75 min', priceFrom: 200 },
       ]}
       about={`L'Aeroporto di Bergamo Orio al Serio (BGY) è uno degli hub low-cost più trafficati d'Italia, con oltre 15 milioni di passeggeri all'anno — principalmente voli Ryanair da tutta Europa. Nonostante il nome commerciale "Milan Bergamo", si trova in realtà a 45 km da Milano e a soli 5 km dalla splendida Città Alta di Bergamo.
 

@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle',
-  description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
+  description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €65, Aosta €245, Lake Maggiore €280, Sestriere ski resort €245. Fixed prices. Book today.',
   alternates: { canonical: '/turin-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/turin-airport-transfer',
     title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle | Italy Taxi Services',
-    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €65, Aosta €245, Lake Maggiore €280, Sestriere ski resort €245. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Turin Airport Transfer | Private Chauffeur TRN Caselle | Italy Taxi Services',
-    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €50, Aosta €90, Lake Maggiore €100, Sestriere ski resort €120. Fixed prices. Book today.',
+    description: 'Private NCC transfer from Turin Caselle Airport (TRN). Turin city €65, Aosta €245, Lake Maggiore €280, Sestriere ski resort €245. Fixed prices. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function TurinAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Turin City Centre', href: '/milan-chauffeur-service', time: '25–35 min', priceFrom: 50 },
-        { name: 'Milan (MXP/MIL)', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 130 },
-        { name: 'Aosta', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 90 },
-        { name: 'Sestriere / Ski Resorts', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 120 },
-        { name: 'Lake Maggiore', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 100 },
-        { name: 'Barolo / Langhe Wine Region', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 80 },
+        { name: 'Turin City Centre', href: '/milan-chauffeur-service', time: '25–35 min', priceFrom: 65 },
+        { name: 'Milan (MXP/MIL)', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 295 },
+        { name: 'Aosta', href: '/milan-chauffeur-service', time: '75 min', priceFrom: 245 },
+        { name: 'Sestriere / Ski Resorts', href: '/milan-chauffeur-service', time: '90 min', priceFrom: 245 },
+        { name: 'Lake Maggiore', href: '/milan-chauffeur-service', time: '80 min', priceFrom: 280 },
+        { name: 'Barolo / Langhe Wine Region', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 175 },
       ]}
       about={`Turin Caselle International Airport (TRN) serves the Piedmont capital and the surrounding Alpine region. Located 15km north of Turin city centre, it is the gateway to the Valle d'Aosta, the Alpine ski resorts (Sestriere, Courmayeur), and the Langhe wine region — home to Barolo and Barbaresco.
 

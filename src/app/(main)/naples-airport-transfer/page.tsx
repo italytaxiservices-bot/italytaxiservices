@@ -6,20 +6,20 @@ import { siteConfig } from '@/lib/siteConfig'
 
 export const metadata: Metadata = {
   title: 'Naples Airport Transfer | Private Chauffeur NAP',
-  description: 'Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
+  description: 'Naples Airport (NAP) private transfer. From €60 Naples · €140 Sorrento · €145 Positano · €165 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
   alternates: { canonical: '/naples-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/naples-airport-transfer',
     title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
-    description: 'Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
+    description: 'Naples Airport (NAP) private transfer. From €60 Naples · €140 Sorrento · €145 Positano · €165 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Naples Airport Transfer | Private Chauffeur NAP | Italy Taxi Services',
-    description: 'Naples Airport (NAP) private transfer. From €45 Naples · €90 Sorrento · €120 Positano · €130 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
+    description: 'Naples Airport (NAP) private transfer. From €60 Naples · €140 Sorrento · €145 Positano · €165 Amalfi. Meet & greet, no hidden fees. Fixed price — book now.',
     images: ['/logo.webp'],
   },
 }
@@ -31,12 +31,12 @@ export default function NaplesAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Naples City Centre', href: '/naples-chauffeur-service', time: '20–30 min', priceFrom: 45 },
-        { name: 'Pompeii', href: '/naples-chauffeur-service', time: '40 min', priceFrom: 55 },
-        { name: 'Sorrento', href: '/naples-chauffeur-service', time: '60 min', priceFrom: 90 },
-        { name: 'Positano', href: '/naples-chauffeur-service', time: '80 min', priceFrom: 120 },
-        { name: 'Amalfi', href: '/naples-chauffeur-service', time: '90 min', priceFrom: 130 },
-        { name: 'Ravello', href: '/naples-chauffeur-service', time: '100 min', priceFrom: 145 },
+        { name: 'Naples City Centre', href: '/naples-chauffeur-service', time: '20–30 min', priceFrom: 60 },
+        { name: 'Pompeii', href: '/naples-chauffeur-service', time: '40 min', priceFrom: 80 },
+        { name: 'Sorrento', href: '/naples-chauffeur-service', time: '60 min', priceFrom: 140 },
+        { name: 'Positano', href: '/naples-chauffeur-service', time: '80 min', priceFrom: 145 },
+        { name: 'Amalfi', href: '/naples-chauffeur-service', time: '90 min', priceFrom: 165 },
+        { name: 'Ravello', href: '/naples-chauffeur-service', time: '100 min', priceFrom: 175 },
       ]}
       about={`Naples International Airport — Capodichino (NAP) is the main gateway to southern Italy and the Campania region. Located just 7km from Naples city centre, it is the closest major Italian airport to the Amalfi Coast, Sorrento, Pompeii, and Capri.
 

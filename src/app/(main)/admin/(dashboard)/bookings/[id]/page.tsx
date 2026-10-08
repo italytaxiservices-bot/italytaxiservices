@@ -20,6 +20,8 @@ import { DriverBriefing } from "@/components/admin/bookings/DriverBriefing";
 import { CityPartnerSection } from "@/components/admin/bookings/CityPartnerSection";
 import { getDriverBriefingLog, getDriverPickerOptions } from "@/lib/admin/driverBriefing";
 import { bookingBriefing, givenToLabel } from "@/lib/admin/driverBriefingText";
+import { DriverPricingSummary } from "@/components/admin/quotations/DriverPricingSummary";
+import { readDriverPrice } from "@/lib/pricing/engine";
 
 export const metadata: Metadata = { title: "Booking" };
 
@@ -82,7 +84,12 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
   // labeled "estimated" throughout since it's a derived figure, not an
   // accounting record.
   const expenseRows = tripExpenses ?? [];
-  const driverCost = expenseRows.filter((e) => e.category === "DRIVER").reduce((sum, e) => sum + Number(e.amount), 0);
+  const loggedDriverCost = expenseRows.filter((e) => e.category === "DRIVER").reduce((sum, e) => sum + Number(e.amount), 0);
+  // Until the driver's pay is logged as an expense, fall back to the driver
+  // price agreed when the quote was priced, so profit isn't overstated.
+  const agreedDriverPrice = readDriverPrice(booking.pricing_breakdown);
+  const driverCostFromQuote = loggedDriverCost === 0 && agreedDriverPrice !== null;
+  const driverCost = driverCostFromQuote ? agreedDriverPrice : loggedDriverCost;
   const vehicleCost = expenseRows
     .filter((e) => e.category === "FUEL" || e.category === "MAINTENANCE")
     .reduce((sum, e) => sum + Number(e.amount), 0);
@@ -171,12 +178,22 @@ export default async function BookingDetailPage({ params }: { params: Promise<{ 
             </div>
           </Section>
 
+          {canEdit || showFinance ? (
+            <Section title="Driver price & commission">
+              <DriverPricingSummary
+                breakdown={booking.pricing_breakdown}
+                customerPrice={Number(booking.price) - Number(booking.discount)}
+                currency={booking.currency}
+              />
+            </Section>
+          ) : null}
+
           {showFinance ? (
             <Section title="Estimated profitability">
               <div className="p-4 space-y-1.5 text-sm">
                 <Row label="Revenue" value={formatCurrency(booking.total, booking.currency)} />
                 <Row label="Tax" value={`-${formatCurrency(booking.tax_amount, booking.currency)}`} />
-                <Row label="Driver cost" value={`-${formatCurrency(driverCost, booking.currency)}`} />
+                <Row label={driverCostFromQuote ? "Driver cost (agreed in quote)" : "Driver cost"} value={`-${formatCurrency(driverCost, booking.currency)}`} />
                 <Row label="Vehicle cost (fuel/maintenance)" value={`-${formatCurrency(vehicleCost, booking.currency)}`} />
                 <Row label="Other trip expenses" value={`-${formatCurrency(otherCost, booking.currency)}`} />
                 <div className="flex items-center justify-between pt-2 border-t border-admin-line font-semibold text-admin-ink">

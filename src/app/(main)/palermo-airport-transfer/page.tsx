@@ -4,20 +4,20 @@ import { getAirportByCode } from '@/data/airports'
 
 export const metadata: Metadata = {
   title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino',
-  description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+  description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €75, Cefalù €165, Agrigento €230, Trapani €135. Fixed prices, meet & greet. Book today.',
   alternates: { canonical: '/palermo-airport-transfer' },
   openGraph: {
     type: 'website',
     siteName: 'Italy Taxi Services',
     url: '/palermo-airport-transfer',
     title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino | Italy Taxi Services',
-    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €75, Cefalù €165, Agrigento €230, Trapani €135. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Palermo Airport Transfer | Private Chauffeur PMO Falcone-Borsellino | Italy Taxi Services',
-    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €55, Cefalù €60, Agrigento €90, Trapani €70. Fixed prices, meet & greet. Book today.',
+    description: 'Private NCC transfer from Palermo Falcone-Borsellino Airport (PMO). Palermo €75, Cefalù €165, Agrigento €230, Trapani €135. Fixed prices, meet & greet. Book today.',
     images: ['/logo.webp'],
   },
 }
@@ -29,12 +29,12 @@ export default function PalermoAirportPage() {
     <AirportPageTemplate
       airport={airport}
       popularDestinations={[
-        { name: 'Palermo City Centre', href: '/milan-chauffeur-service', time: '35–45 min', priceFrom: 55 },
-        { name: 'Cefalù', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 60 },
-        { name: 'Agrigento (Valley of Temples)', href: '/milan-chauffeur-service', time: '100 min', priceFrom: 90 },
-        { name: 'Trapani', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 70 },
-        { name: 'Mondello Beach', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 60 },
-        { name: 'Monreale', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 50 },
+        { name: 'Palermo City Centre', href: '/milan-chauffeur-service', time: '35–45 min', priceFrom: 75 },
+        { name: 'Cefalù', href: '/milan-chauffeur-service', time: '50 min', priceFrom: 165 },
+        { name: 'Agrigento (Valley of Temples)', href: '/milan-chauffeur-service', time: '100 min', priceFrom: 230 },
+        { name: 'Trapani', href: '/milan-chauffeur-service', time: '60 min', priceFrom: 135 },
+        { name: 'Mondello Beach', href: '/milan-chauffeur-service', time: '45 min', priceFrom: 65 },
+        { name: 'Monreale', href: '/milan-chauffeur-service', time: '35 min', priceFrom: 75 },
       ]}
       about={`Palermo Falcone-Borsellino Airport (PMO) serves western Sicily and is named after the two anti-Mafia judges assassinated in 1992. The airport is located 35km west of Palermo city centre — the longest airport-to-city transfer of any major Sicilian airport.
 
