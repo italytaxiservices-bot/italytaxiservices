@@ -60,6 +60,22 @@ We cover all of Rome: the historic centre, Vatican, Trastevere, Prati, Parioli, 
           q: 'Can I book a transfer from Rome back to Fiumicino?',
           a: 'Yes. Return transfers from Rome to Fiumicino are available at any time — including very early morning departures from 03:00 onwards. Book both directions together for guaranteed availability.',
         },
+        {
+          q: 'How much is a taxi or private transfer from Fiumicino to Rome?',
+          a: 'Our fixed-price private transfer from Fiumicino to central Rome starts from €65 for a business sedan (up to 3 passengers). Unlike a metered taxi, the price is agreed before you travel and never changes — no traffic surcharges and no surprises on arrival.',
+        },
+        {
+          q: 'How far is Fiumicino Airport from Rome city centre?',
+          a: 'Fiumicino (Leonardo da Vinci) Airport is approximately 32 km southwest of central Rome. By private transfer this takes 40–60 minutes depending on traffic and your exact Rome address.',
+        },
+        {
+          q: 'Is a private transfer better than the Leonardo Express train?',
+          a: 'The Leonardo Express reaches Roma Termini in 32 minutes, but you then need a taxi or metro to your hotel with your luggage. A private transfer takes you straight from the arrivals hall to your door — ideal if you are not staying near Termini, travelling with family, or arriving late at night.',
+        },
+        {
+          q: 'What happens if my flight is delayed?',
+          a: 'We monitor your flight in real time using the flight number you provide. If it is delayed, your driver adjusts automatically and waits — there is no extra charge for reasonable delays.',
+        },
       ]}
     />
   )

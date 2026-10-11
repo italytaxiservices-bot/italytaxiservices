@@ -48,6 +48,10 @@ Compared to the Frecciarossa train (60–70 minutes station to station but requi
         { q: 'How does it compare to the high-speed train?', a: 'The Frecciarossa Rome–Naples takes 70 minutes (Termini to Napoli Centrale). However, private transfer is door-to-door — no taxis to/from train stations. For hotels not near the station, or with heavy luggage, private transfer is often faster overall.' },
         { q: 'Can you pick up from Fiumicino Airport instead of Rome centre?', a: 'Yes. We offer a direct Fiumicino to Naples transfer (slightly longer — 2.5–3 hours via A1). Great for arriving international passengers who want to skip Rome entirely.' },
         { q: 'What time should I book for the transfer?', a: 'Rome to Naples takes 2–2.5 hours. Traffic on the A1 near Rome can add 30–45 minutes in peak hours (7:30–9:30 and 17:00–19:30). We recommend allowing extra time if you have a connection in Naples.' },
+        { q: 'How much is a private transfer from Rome to Naples?', a: 'Our Rome to Naples private transfer starts from €260 for a business sedan (up to 3 passengers), with larger vehicles available for groups. The price is fixed, includes all motorway tolls, and is agreed before you book — no meter and no hidden surcharges.' },
+        { q: 'How far is Rome from Naples by road?', a: 'Rome to Naples is approximately 225 km by road via the A1 motorway, heading south through Lazio into Campania. The drive takes around 2–2.5 hours in normal traffic.' },
+        { q: 'Can you provide child seats for the Rome to Naples transfer?', a: 'Yes. Child and booster seats are available on request at no extra charge. Please tell us the ages of your children when booking so the correct seats are fitted.' },
+        { q: 'Can you also take us to Pompeii on the way?', a: 'Yes — Pompeii sits just south of Naples and is a popular stop on the Rome to Naples route. Let us know and we will build the visit into your itinerary with a fixed price.' },
       ]}
     />
   )

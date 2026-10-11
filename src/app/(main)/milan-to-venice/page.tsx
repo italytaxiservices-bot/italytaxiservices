@@ -48,6 +48,9 @@ For travellers with heavy luggage or families, private transfer is significantly
         { q: 'How does the price compare to the train?', a: 'The Frecciarossa train (Milan Centrale to Venezia Santa Lucia) costs €30–80 per person. A private transfer from €565 for 1–3 passengers costs more than the train, but it is door to door — no taxis to and from the stations, no carrying luggage onto the train, and you can stop on the way.' },
         { q: 'Can I travel from Malpensa Airport to Venice directly?', a: 'Yes. We offer a direct Malpensa to Venice transfer — please use our quote form and specify Malpensa Airport as pickup. This avoids going into Milan city centre and saves 45–60 minutes.' },
         { q: 'What if I want to stop in Verona on the way?', a: 'Yes, we can include a Verona stop (1–2 hours sightseeing) en route to Venice. This adds approximately 2–3 hours and a supplement. Please request this at booking.' },
+        { q: 'How far is Milan from Venice by road?', a: 'Milan to Venice is approximately 270 km via the A4 motorway (the "Serenissima"). The drive takes around 2.5–3 hours door to door depending on traffic and your exact drop-off point.' },
+        { q: 'Can we stop at Lake Garda on the way to Venice?', a: 'Yes — Lake Garda sits right on the Milan–Venice route. A stop in Sirmione or Desenzano del Garda is easy to add; just let us know when booking and we will quote the supplement and timing.' },
+        { q: 'Do you provide child seats for the Milan to Venice transfer?', a: 'Yes, child and booster seats are available at no extra charge. Please tell us your children\'s ages when booking so the right seats are fitted.' },
       ]}
     />
   )

@@ -60,6 +60,22 @@ We serve all Amalfi Coast destinations: Positano, Amalfi, Ravello, Praiano, Furo
           q: 'Can I book Fiumicino to Amalfi instead of Rome?',
           a: 'Yes. We can pick you up directly from Fiumicino Airport or any Rome hotel and transfer you to the Amalfi Coast. The journey time from Fiumicino is similar — approximately 3–3.5 hours.',
         },
+        {
+          q: 'How much is a private transfer from Rome to the Amalfi Coast?',
+          a: 'Our Rome to Amalfi Coast private transfer starts from €380 for a business sedan (up to 3 passengers). Larger Mercedes V-Class vehicles are available for groups of up to 7. The price is fixed, includes all tolls, and is agreed in writing before you book.',
+        },
+        {
+          q: 'How far is Rome from the Amalfi Coast?',
+          a: 'Rome to Positano is approximately 280 km by road — south on the A1 to Naples, then the A3 towards Salerno and finally the SS163 coastal road. Expect around 3.5–4 hours door to door depending on coastal traffic.',
+        },
+        {
+          q: 'Is there a direct train from Rome to the Amalfi Coast?',
+          a: 'No. There is no direct train to the Amalfi Coast. By public transport you would take a train from Rome to Naples or Salerno, then a local train and a crowded SITA bus along the coast. A private transfer is door-to-door with your luggage and far less stressful.',
+        },
+        {
+          q: 'Can we stop at Pompeii on the way to the Amalfi Coast?',
+          a: 'Yes — Pompeii is conveniently located between Naples and the coast, and a visit can be added to your Rome to Amalfi transfer. Let us know when booking and we will plan the timing and quote a fixed price.',
+        },
       ]}
     />
   )
