@@ -7,12 +7,15 @@ import { routes } from '@/data/routes'
 import { formatPrice } from '@/lib/utils'
 import RelatedLinks from '@/components/RelatedLinks'
 import { getCityRelatedLinks } from '@/lib/internalLinks'
+import { JsonLd, breadcrumbSchema, serviceSchema, faqSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 interface CityPageTemplateProps {
   city: City
   highlights: string[]
   about: string
   services: { title: string; description: string }[]
+  faqs?: { q: string; a: string }[]
   locale?: 'en' | 'it'
   baseHref?: string
   airportHrefFn?: (slug: string) => string
@@ -58,7 +61,7 @@ const T = {
 }
 
 export default function CityPageTemplate({
-  city, highlights, about, services, locale = 'en', baseHref = '',
+  city, highlights, about, services, faqs = [], locale = 'en', baseHref = '',
   airportHrefFn = (slug) => `/${slug}-airport-transfer`,
   routeHrefFn = (slug) => `/${slug}`,
 }: CityPageTemplateProps) {
@@ -69,9 +72,22 @@ export default function CityPageTemplate({
     r.fromSlug.includes(city.slug) || r.toSlug === city.slug ||
     cityAirports.some(a => r.fromSlug.includes(a.slug) || r.toSlug.includes(a.slug))
   ).slice(0, 6)
+  const isEn = locale === 'en'
+  const url = `${siteConfig.domain}/${city.slug}-chauffeur-service`
 
   return (
     <div>
+      {/* ── SEO: structured data ── */}
+      {isEn && (
+        <>
+          <JsonLd data={breadcrumbSchema([
+            { name: 'Home', url: siteConfig.domain },
+            { name: `${city.name} Chauffeur Service`, url },
+          ])} />
+          <JsonLd data={serviceSchema({ name: `Private Chauffeur Service ${city.name}`, description: city.description })} />
+          {faqs.length > 0 && <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />}
+        </>
+      )}
       {/* ── HERO ── */}
       <section className="pt-32 pb-20" style={{ background: '#0f0d0a' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -188,6 +204,23 @@ export default function CityPageTemplate({
                     <span className="font-bold text-sm" style={{ color: GOLD }}>{t.from} {formatPrice(route.priceFrom)}</span>
                   </div>
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── FAQs ── */}
+      {faqs.length > 0 && (
+        <section className="py-20" style={{ background: CREAM }}>
+          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+            <h2 className="text-2xl font-black mb-8" style={{ ...serifHeading, color: INK }}>Chauffeur Service {city.name} — FAQs</h2>
+            <div className="space-y-px">
+              {faqs.map((faq, i) => (
+                <div key={i} className="py-5" style={i < faqs.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}}>
+                  <h3 className="font-bold text-sm mb-2" style={{ color: INK }}>{faq.q}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: MUTED }}>{faq.a}</p>
+                </div>
               ))}
             </div>
           </div>

@@ -53,6 +53,13 @@ Rome's traffic can be unpredictable, particularly on major ring roads. Our profe
         'For Civitavecchia cruise port transfers, we recommend booking well in advance. We can accommodate early morning departures (04:00 onwards) — please specify when booking.',
         'NCC (pre-booked private chauffeur) is distinct from and must not be confused with Rome taxis. NCC services must be pre-booked and do not operate as street taxis.',
       ]}
+      faqs={[
+        { q: 'How much is a transfer from Fiumicino Airport to Rome?', a: 'A fixed-price private transfer from Fiumicino (FCO) to central Rome starts from €65 for a business sedan (up to 3 passengers). The price is agreed before you travel — no meter, no traffic surcharge, no surprises on arrival.' },
+        { q: 'How far is Fiumicino Airport from Rome city centre?', a: 'Fiumicino (Leonardo da Vinci) Airport is about 32 km southwest of central Rome, roughly 40–60 minutes by private transfer depending on traffic.' },
+        { q: 'Where will my driver meet me at Fiumicino?', a: 'Your driver waits in the arrivals hall of your terminal holding a name board. We track your flight, so if it is early or delayed the driver adjusts automatically and waits at no extra charge.' },
+        { q: 'Is a private transfer better than the Leonardo Express train?', a: 'The Leonardo Express reaches Roma Termini in 32 minutes, but you then need onward transport to your hotel with luggage. A private transfer is door-to-door from arrivals — ideal for families, late arrivals, or hotels away from Termini.' },
+        { q: 'Can you transfer from Fiumicino to Civitavecchia cruise port?', a: 'Yes. We offer direct Fiumicino to Civitavecchia transfers timed to your ship — approximately 60–75 minutes — so cruise passengers skip trains and taxis entirely.' },
+      ]}
     />
     </>
   )

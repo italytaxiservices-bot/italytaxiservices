@@ -48,6 +48,12 @@ Ciampino is notoriously busy during peak tourist season (June–September), with
         'If you need to connect to Fiumicino (FCO) for an onward flight, allow at least 2 hours for the Ciampino–Fiumicino inter-airport transfer.',
         'Ciampino is militarily managed — there is limited waiting space outside. Our driver coordinates arrival timing so you are met exactly when you clear customs.',
       ]}
+      faqs={[
+        { q: 'How much is a transfer from Ciampino Airport to Rome?', a: 'A fixed-price private transfer from Rome Ciampino (CIA) to the city centre starts from €55 for a business sedan. The price is agreed upfront — no meter and no surge, even late at night.' },
+        { q: 'How far is Ciampino Airport from Rome city centre?', a: 'Ciampino is about 15 km southeast of central Rome, roughly 25–40 minutes by private transfer depending on traffic.' },
+        { q: 'Where does my driver meet me at Ciampino?', a: 'Ciampino is a compact airport — your driver waits just outside arrivals with a name board and helps with your luggage. We track your flight and wait if it is delayed.' },
+        { q: 'Is a private transfer better than the Ciampino bus or taxi?', a: 'Shuttle buses only reach Termini station and then you need onward transport; metered taxis can vary in price. A private transfer is fixed-price and door-to-door from arrivals to your hotel — ideal for early or late Ryanair flights.' },
+      ]}
     />
   )
 }

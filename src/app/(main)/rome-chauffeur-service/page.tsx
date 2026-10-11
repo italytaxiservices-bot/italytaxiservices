@@ -65,6 +65,12 @@ Rome's traffic can be unpredictable. Our drivers know the city inside-out — th
           description: 'Hourly chauffeur hire for Vatican, Colosseum, and wider Rome tours. Full flexibility, professional driver.',
         },
       ]}
+      faqs={[
+        { q: 'How much does a private chauffeur in Rome cost?', a: 'Airport transfers from Fiumicino start at €65 and from Ciampino at €55. Full-day chauffeur hire and private tours are quoted at a fixed price based on your itinerary. Every price is agreed in advance — no meter.' },
+        { q: 'Can your Rome chauffeur access the ZTL limited-traffic zones?', a: 'Yes. Our licensed NCC drivers hold the permits needed to drop you as close to your hotel or destination as the ZTL rules allow in Rome\'s historic centre and Vatican area.' },
+        { q: 'Do you offer private tours of Rome and the Vatican?', a: 'Yes. We provide hourly and full-day chauffeur hire for the Colosseum, Vatican, Trastevere, Villa Borghese and beyond. Your driver handles parking and ZTL access while you explore.' },
+        { q: 'Can you drive us from Rome to the Amalfi Coast or Naples?', a: 'Yes. We run long-distance transfers from Rome to Naples (from €260), the Amalfi Coast (from €380), Florence and Civitavecchia cruise port — all door-to-door at fixed prices.' },
+      ]}
     />
   )
 }

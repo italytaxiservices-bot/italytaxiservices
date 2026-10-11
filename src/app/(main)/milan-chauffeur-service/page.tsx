@@ -65,6 +65,12 @@ All our Milan chauffeurs are professional, English-speaking, and fully licensed 
           description: 'Long-distance private transfers from Milan to Venice, Florence, Rome, Turin, Verona, and beyond.',
         },
       ]}
+      faqs={[
+        { q: 'How much is a private chauffeur in Milan?', a: 'Airport transfers start from €85 (Malpensa) and €65 (Linate). Hourly chauffeur hire and full-day bookings are quoted at a fixed price for your itinerary — agreed before you travel, with no meter.' },
+        { q: 'Do you cover both Malpensa and Linate airports?', a: 'Yes. We serve Malpensa (MXP), Linate (LIN) and Bergamo (BGY) with meet & greet and flight monitoring, plus direct transfers to Lake Como and the Italian Lakes.' },
+        { q: 'Can I hire a chauffeur in Milan for business or Fashion Week?', a: 'Yes. We provide discreet corporate and event chauffeur service across Milan — Fiera Milano, MiCo, Fashion Week and Salone del Mobile — with professional, English-speaking drivers.' },
+        { q: 'Can you take me from Milan to Lake Como?', a: 'Yes. Direct transfers from Milan or Malpensa to Como, Bellagio, Varenna and Menaggio start from around €110–130, straight to your lakeside hotel with no train or ferry changes.' },
+      ]}
     />
   )
 }

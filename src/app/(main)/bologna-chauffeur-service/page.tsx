@@ -47,6 +47,12 @@ Bologna Marconi Airport (BLQ) is just 6km from the city — one of Italy's most 
         { title: 'Adriatic Riviera', description: 'Transfer from Bologna to Rimini, Riccione, and the Adriatic beach resorts. 75 minutes via the A14 motorway.' },
         { title: 'Long-Distance Routes', description: 'Bologna to Venice, Milan, Rome, or Naples — comfortable private transfers with professional NCC chauffeurs.' },
       ]}
+      faqs={[
+        { q: 'How much is a chauffeur transfer from Bologna Airport?', a: 'A fixed-price private transfer from Bologna Marconi Airport (BLQ) to the city centre is a short 15-minute drive. Longer transfers to Florence, Rimini and across Emilia-Romagna are quoted at a fixed price before you travel.' },
+        { q: 'Can you arrange a Motor Valley tour from Bologna?', a: 'Yes. We provide private chauffeur tours to the Ferrari Museum in Maranello, the Lamborghini Museum in Sant\'Agata and the Pagani Atelier — the heart of Italy\'s Motor Valley.' },
+        { q: 'How long is Bologna to Florence by car?', a: 'About 75 minutes via the A1 motorway through the Apennine hills. A private transfer is door-to-door — convenient for groups or anyone with luggage.' },
+        { q: 'Do you cover Bologna\'s trade fairs and exhibitions?', a: 'Yes. We provide reliable NCC transfers for BolognaFiere events such as EIMA, SANA and Lineapelle, with professional drivers and fixed prices for business travellers.' },
+      ]}
     />
   )
 }

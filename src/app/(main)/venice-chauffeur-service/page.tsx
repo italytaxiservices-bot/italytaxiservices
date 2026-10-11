@@ -65,6 +65,12 @@ We handle all aspects of your Venice transfer — from the airport to your hotel
           description: 'Large group and family transfers with spacious vehicles. Cruise groups and wedding parties welcome.',
         },
       ]}
+      faqs={[
+        { q: 'Can a car drive into Venice?', a: 'No — Venice\'s historic centre is entirely car-free. Our chauffeur takes you by road to Piazzale Roma or the Tronchetto terminal, the closest points to the city, where vaporetti and water taxis continue your journey. We also cover mainland Mestre hotels directly.' },
+        { q: 'How much is a chauffeur transfer from Marco Polo Airport?', a: 'A fixed-price private transfer from Venice Marco Polo (VCE) starts from €55 to Piazzale Roma or Mestre. We can also coordinate an onward private water taxi to your hotel inside Venice.' },
+        { q: 'Do you serve the Venice cruise terminal?', a: 'Yes. We provide transfers to and from the Venice cruise port (Marittima) and Marco Polo Airport, timed to your ship and flight — ideal for groups with luggage.' },
+        { q: 'Can you drive us from Venice to Verona or the Dolomites?', a: 'Yes. We run day trips and transfers from Venice to Verona, Padua, the Prosecco Hills and the Dolomite ski resorts, all at fixed prices.' },
+      ]}
     />
   )
 }

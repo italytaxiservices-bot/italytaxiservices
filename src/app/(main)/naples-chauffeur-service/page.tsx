@@ -47,6 +47,12 @@ Naples has a reputation for chaotic traffic — our drivers are experienced loca
         { title: 'Cruise Port Connections', description: 'Transfer from Naples cruise terminals (Molo Beverello, Stazione Marittima) to airport, hotels, and Campania destinations.' },
         { title: 'Capri & Ischia Ferry Links', description: 'Transfer to Naples port (Beverello or Mergellina) for hydrofoils to Capri and Ischia. We coordinate timing with your ferry.' },
       ]}
+      faqs={[
+        { q: 'How much is a private transfer from Naples to the Amalfi Coast?', a: 'A fixed-price transfer from Naples (city or airport) to Positano or Amalfi starts from around €120–130, depending on your destination. The price is agreed upfront and includes tolls.' },
+        { q: 'How long does it take from Naples to Sorrento or Positano?', a: 'About 60–75 minutes to Sorrento and 75–90 minutes to Positano by private transfer along the SS163 coastal road — direct to your hotel, with no train or bus changes.' },
+        { q: 'Can you take us to Pompeii from Naples?', a: 'Yes. Pompeii is about 30–40 minutes from Naples and a popular stop on the way to the Amalfi Coast or Sorrento. We can drop you at the site entrance or wait and continue your journey.' },
+        { q: 'Do you serve the Capri and Ischia ferry terminals?', a: 'Yes. We transfer directly to Molo Beverello and Mergellina for hydrofoils and ferries to Capri, Ischia and Procida, coordinating timing with your ferry.' },
+      ]}
     />
   )
 }

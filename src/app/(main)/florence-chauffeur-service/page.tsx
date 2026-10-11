@@ -65,6 +65,12 @@ Florence is a compact historic city where private chauffeur hire gives you the f
           description: 'Long-distance private transfer from Florence to Rome. Skip the train — door to door comfort.',
         },
       ]}
+      faqs={[
+        { q: 'How much is a private chauffeur in Florence?', a: 'Airport transfers from Florence (FLR) start from €30 and from Pisa (PSA) from around €95. Tuscany day tours and full-day chauffeur hire are quoted at a fixed price for your itinerary — agreed before you travel.' },
+        { q: 'Can your Florence driver access the historic-centre ZTL?', a: 'Yes. Florence\'s entire historic centre is a ZTL limited-traffic zone. Our licensed NCC drivers hold the required permits and drop you as close to your hotel entrance as the rules allow.' },
+        { q: 'Do you offer Tuscany wine tours from Florence?', a: 'Yes. We provide private chauffeur tours through Chianti, to Siena, San Gimignano, Montalcino and the Tuscan vineyards — a comfortable, flexible alternative to a group bus tour.' },
+        { q: 'Can you drive us from Florence to Pisa or Cinque Terre?', a: 'Yes. Florence to Pisa starts from around €95, and we also run transfers to Siena, Lucca and the Cinque Terre gateway towns — all door-to-door at fixed prices.' },
+      ]}
     />
   )
 }

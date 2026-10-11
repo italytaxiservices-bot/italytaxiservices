@@ -50,6 +50,13 @@ Our NCC drivers know exactly which mainland access point best suits your hotel o
         'The airport is small and efficient. Baggage reclaim usually takes 15–30 minutes after landing. Your driver will be in the arrivals area.',
         'For Verona, Padua, or other Veneto cities, we provide direct long-distance private transfers from Marco Polo — no train connections required.',
       ]}
+      faqs={[
+        { q: 'How do I get from Venice Marco Polo Airport to Venice?', a: 'A private transfer takes you by road to Piazzale Roma or the Tronchetto car terminal — the closest points to Venice\'s historic centre — or directly to your hotel in Mestre. From Piazzale Roma, vaporetti and water taxis connect the whole city.' },
+        { q: 'How much is a transfer from Marco Polo Airport?', a: 'A fixed-price private transfer from Venice Marco Polo (VCE) starts from €55 for a business sedan. The price is agreed before you travel — no meter, no surprises.' },
+        { q: 'Can you arrange a water taxi connection?', a: 'Yes. We transfer you to the water-taxi pier and can coordinate a private water taxi onward to your hotel inside Venice if your accommodation is only reachable by water.' },
+        { q: 'How far is Marco Polo Airport from Venice?', a: 'Marco Polo Airport is about 13 km from Venice\'s historic centre on the mainland. By road to Piazzale Roma it is roughly 20–30 minutes.' },
+        { q: 'Do you cover Treviso Airport and Verona too?', a: 'Yes. We serve Treviso Airport (TSF) and also run transfers to Verona, Padua and the Dolomites. Just enter your pickup and destination in the quote form.' },
+      ]}
     />
   )
 }

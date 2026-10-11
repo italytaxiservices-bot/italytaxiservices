@@ -50,6 +50,13 @@ We monitor your flight in real time. Whether your flight arrives on time, early,
         'The journey to Milan city centre takes 45–60 minutes under normal conditions, and 60–80 minutes to Lake Como. Allow extra time during rush hours (07:00–09:30 and 17:00–19:30).',
         'Our vehicles comfortably accommodate all standard luggage plus extra bags. If you have oversized items (golf clubs, skis, wheelchairs), please mention this when booking.',
       ]}
+      faqs={[
+        { q: 'How much is a transfer from Malpensa Airport to Milan?', a: 'A fixed-price private transfer from Milan Malpensa (MXP) to central Milan starts from €85 for a business sedan (up to 3 passengers). The price is confirmed before you travel — no meter and no hidden extras.' },
+        { q: 'How far is Malpensa Airport from Milan city centre?', a: 'Malpensa is about 50 km northwest of Milan, roughly 45–60 minutes by private transfer via the A8 motorway depending on traffic.' },
+        { q: 'Can you take me from Malpensa directly to Lake Como?', a: 'Yes. We run direct Malpensa to Lake Como transfers (Como, Bellagio, Varenna, Menaggio) from around €130 — no trains or ferries needed, straight to your lakeside hotel.' },
+        { q: 'Which terminal do you serve at Malpensa?', a: 'We cover both Terminal 1 (international and full-service carriers) and Terminal 2 (low-cost). Your driver meets you in the arrivals hall of your terminal with a name board.' },
+        { q: 'Is the private transfer better than the Malpensa Express?', a: 'The Malpensa Express reaches Milano Centrale in about 50 minutes, but you still need onward transport to your hotel. A private transfer is door-to-door from arrivals — more convenient with luggage or for groups.' },
+      ]}
     />
   )
 }

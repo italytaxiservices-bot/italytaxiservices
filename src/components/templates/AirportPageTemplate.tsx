@@ -5,12 +5,15 @@ import type { Airport } from '@/types'
 import { formatPrice } from '@/lib/utils'
 import RelatedLinks from '@/components/RelatedLinks'
 import { getAirportRelatedLinks } from '@/lib/internalLinks'
+import { JsonLd, breadcrumbSchema, serviceSchema, faqSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 interface AirportPageTemplateProps {
   airport: Airport
   popularDestinations: { name: string; href: string; time: string; priceFrom: number }[]
   about: string
   tips: string[]
+  faqs?: { q: string; a: string }[]
   locale?: 'en' | 'it'
   baseHref?: string
   airportTransfersHref?: string
@@ -57,14 +60,28 @@ const T = {
 }
 
 export default function AirportPageTemplate({
-  airport, popularDestinations, about, tips, locale = 'en', baseHref = '', airportTransfersHref,
+  airport, popularDestinations, about, tips, faqs = [], locale = 'en', baseHref = '', airportTransfersHref,
 }: AirportPageTemplateProps) {
   const t = T[locale]
   const hubHref = airportTransfersHref ?? `${baseHref}/airport-transfers`
   const relatedLinks = locale === 'en' ? getAirportRelatedLinks(airport) : []
+  const isEn = locale === 'en'
+  const url = `${siteConfig.domain}/${airport.slug}-airport-transfer`
 
   return (
     <div>
+      {/* ── SEO: structured data ── */}
+      {isEn && (
+        <>
+          <JsonLd data={breadcrumbSchema([
+            { name: 'Home', url: siteConfig.domain },
+            { name: 'Airport Transfers', url: `${siteConfig.domain}/airport-transfers` },
+            { name: airport.name, url },
+          ])} />
+          <JsonLd data={serviceSchema({ name: `${airport.name} Private Transfer`, description: airport.description })} />
+          {faqs.length > 0 && <JsonLd data={faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })))} />}
+        </>
+      )}
       {/* ── HERO ── */}
       <section className="pt-32 pb-20" style={{ background: '#0f0d0a' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -160,6 +177,23 @@ export default function AirportPageTemplate({
           </div>
         </div>
       </section>
+
+      {/* ── FAQs ── */}
+      {faqs.length > 0 && (
+        <section className="py-20" style={{ background: CREAM }}>
+          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+            <h2 className="text-2xl font-black mb-8" style={{ ...serifHeading, color: INK }}>{airport.name} Transfer — FAQs</h2>
+            <div className="space-y-px">
+              {faqs.map((faq, i) => (
+                <div key={i} className="py-5" style={i < faqs.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}}>
+                  <h3 className="font-bold text-sm mb-2" style={{ color: INK }}>{faq.q}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: MUTED }}>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── RELATED LINKS ── */}
       <RelatedLinks title="Chauffeur Services & Nearby Airports" links={relatedLinks} />
