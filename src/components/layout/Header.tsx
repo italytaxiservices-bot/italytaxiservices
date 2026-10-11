@@ -22,7 +22,7 @@ const navLinks = [
       { label: 'Beach Transfers',        href: '/beach-transfers' },
       { label: 'Hourly Hire',            href: '/hourly-chauffeur-italy' },
       { label: 'Private Tours',          href: '/italy-private-tours' },
-      { label: 'Border Crossings',       href: '/international-border-crossing-transfers' },
+      { label: 'Border Crossings',       href: '/border-crossings' },
     ],
   },
   {

@@ -59,6 +59,7 @@ const cols = {
     { name: 'Rome → Amalfi Coast',       href: '/rome-to-amalfi-coast' },
     { name: 'Milan → Venice',            href: '/milan-to-venice' },
     { name: 'Florence → Pisa',           href: '/florence-to-pisa' },
+    { name: 'Border Crossings',          href: '/border-crossings' },
     { name: 'All Routes',                href: '/routes' },
   ],
   Destinations: [

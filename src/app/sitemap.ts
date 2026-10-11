@@ -6,6 +6,7 @@ import { fleet } from '@/lib/data/fleet'
 import { newRoutes } from '@/lib/data/routesIndex'
 import { blogPosts } from '@/lib/data/blog'
 import { distanceRoutes } from '@/lib/data/distances'
+import { borderRoutes } from '@/data/borders'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.italytaxiservices.com'
 
@@ -47,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...newRoutes.map((r) => `/routes/${r.slug}`),
     ...blogPosts.map((p) => `/blog/${p.slug}`),
     ...distanceRoutes.map((r) => `/distance/${r.slug}`),
+    ...borderRoutes.map((r) => `/border-crossings/${r.slug}`),
   ]
 
   const routes = [...staticRoutes, ...dynamicRoutes]

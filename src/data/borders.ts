@@ -191,3 +191,5 @@ export const bordersByCountry = {
   Austria: borderRoutes.filter(b => b.toCountryCode === 'AT'),
   Slovenia: borderRoutes.filter(b => b.toCountryCode === 'SI'),
 }
+
+export const getBorderRouteBySlug = (slug: string) => borderRoutes.find(b => b.slug === slug)
