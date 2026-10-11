@@ -60,6 +60,26 @@ Our chauffeurs drive this route regularly and use Mercedes E-Class, S-Class, or 
           q: 'Do you offer the reverse route, Florence to Rome?',
           a: 'Yes, we operate this route in both directions at the same fixed price.',
         },
+        {
+          q: 'How much is a private transfer from Rome to Florence?',
+          a: 'Our Rome to Florence private transfer starts from €350 for a business sedan (up to 3 passengers). Larger vehicles such as the Mercedes V-Class are available for groups of up to 7. The price is fixed, includes all motorway tolls, and is confirmed in writing before you book — no meter and no surprise surcharges.',
+        },
+        {
+          q: 'How far is Rome from Florence by road?',
+          a: 'Rome to Florence is approximately 280 km by road via the A1 "Autostrada del Sole", Italy\'s main north–south motorway. The drive takes around 3–3.5 hours depending on traffic.',
+        },
+        {
+          q: 'Can you collect us from Fiumicino or Ciampino Airport?',
+          a: 'Yes. We regularly collect passengers directly from Rome Fiumicino (FCO) and Ciampino (CIA) airports and drive straight to Florence, so you avoid changing from airport to train station. Just give us your flight number and we will track it and wait if the flight is delayed.',
+        },
+        {
+          q: 'Is the Rome to Florence transfer suitable for families with children?',
+          a: 'Absolutely. We provide child and booster seats on request at no extra charge, and our vehicles have plenty of room for luggage, prams and travel gear. Let us know the ages of your children when booking.',
+        },
+        {
+          q: 'Can the driver wait and take us back to Rome the same day?',
+          a: 'Yes — a round trip with waiting time is available, which works well for a day visit to Florence. Tell us your plans and we will quote a fixed price for the full day.',
+        },
       ]}
     />
   )

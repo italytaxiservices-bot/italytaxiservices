@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import HeroWithForm from '@/components/booking/HeroWithForm'
-import { ArrowRight, Clock, MapPin, Users, Briefcase } from 'lucide-react'
+import { ArrowRight, Clock, MapPin, Users, Briefcase, Check, X } from 'lucide-react'
 import type { Route } from '@/types'
 import { vehicles } from '@/data/fleet'
 import { formatPrice } from '@/lib/utils'
 import RelatedLinks from '@/components/RelatedLinks'
 import { getRouteRelatedLinks } from '@/lib/internalLinks'
+import { JsonLd, breadcrumbSchema, faqSchema, serviceSchema } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 
 interface RoutePageTemplateProps {
   route: Route
@@ -52,12 +54,45 @@ const T = {
 
 const serifHeading = { fontFamily: 'var(--font-serif), Georgia, serif' }
 
+// Qualitative transport comparison (truthful — no invented numbers).
+type Cell = 'yes' | 'no' | 'part'
+const COMPARE: { feature: string; transfer: Cell; train: Cell; taxi: Cell; rental: Cell }[] = [
+  { feature: 'Door-to-door, no connections', transfer: 'yes', train: 'no',   taxi: 'yes',  rental: 'yes' },
+  { feature: 'Fixed price agreed upfront',    transfer: 'yes', train: 'yes',  taxi: 'no',   rental: 'part' },
+  { feature: 'Meet & greet / name board',     transfer: 'yes', train: 'no',   taxi: 'no',   rental: 'no' },
+  { feature: 'Flight-delay monitoring',       transfer: 'yes', train: 'no',   taxi: 'no',   rental: 'no' },
+  { feature: 'No luggage restrictions',       transfer: 'yes', train: 'part', taxi: 'yes',  rental: 'yes' },
+  { feature: 'No driving / parking stress',   transfer: 'yes', train: 'yes',  taxi: 'yes',  rental: 'no' },
+  { feature: 'English-speaking driver',       transfer: 'yes', train: 'no',   taxi: 'part', rental: 'no' },
+]
+
+function CmpCell({ v }: { v: Cell }) {
+  if (v === 'yes') return <Check className="w-4 h-4 mx-auto" style={{ color: '#2f8f4e' }} />
+  if (v === 'no') return <X className="w-4 h-4 mx-auto" style={{ color: '#c7bdae' }} />
+  return <span className="text-xs" style={{ color: '#9a8f83' }}>partial</span>
+}
+
 export default function RoutePageTemplate({ route, about, included, faqs, locale = 'en', baseHref = '' }: RoutePageTemplateProps) {
   const t = T[locale]
   const relatedLinks = locale === 'en' ? getRouteRelatedLinks(route) : []
+  const isEn = locale === 'en'
+  const url = `${siteConfig.domain}/${route.slug}`
+  const faqSchemaItems = faqs.map((f) => ({ question: f.q, answer: f.a }))
 
   return (
     <div>
+      {/* ── SEO: structured data ── */}
+      {isEn && (
+        <>
+          <JsonLd data={breadcrumbSchema([
+            { name: 'Home', url: siteConfig.domain },
+            { name: 'Routes', url: `${siteConfig.domain}/routes` },
+            { name: `${route.fromName} to ${route.toName}`, url },
+          ])} />
+          <JsonLd data={serviceSchema({ name: `${route.fromName} to ${route.toName} Private Transfer`, description: route.description })} />
+          {faqs.length > 0 && <JsonLd data={faqSchema(faqSchemaItems)} />}
+        </>
+      )}
       {/* ── HERO ── */}
       <section className="pt-32 pb-20" style={{ background: '#0f0d0a' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -177,9 +212,47 @@ export default function RoutePageTemplate({ route, about, included, faqs, locale
         </div>
       </section>
 
+      {/* ── TRANSPORT COMPARISON ── */}
+      {isEn && (
+        <section className="py-20" style={{ background: CREAM }}>
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+            <h2 className="text-2xl font-black mb-3" style={{ ...serifHeading, color: INK }}>
+              {route.fromName} to {route.toName}: Private Transfer vs Train, Taxi &amp; Car Rental
+            </h2>
+            <p className="text-sm mb-8" style={{ color: MUTED }}>
+              How a private NCC transfer compares with the other ways to travel from {route.fromName} to {route.toName}.
+            </p>
+            <div className="overflow-x-auto bg-white rounded-sm" style={{ border: `1px solid ${LINE}` }}>
+              <table className="w-full text-sm" style={{ minWidth: '560px' }}>
+                <thead>
+                  <tr style={{ background: '#F0EBE1', borderBottom: `1px solid ${LINE}` }}>
+                    <th className="text-left font-bold py-3 px-4" style={{ color: INK }}>Feature</th>
+                    <th className="font-bold py-3 px-4 text-center" style={{ color: GOLD }}>Private Transfer</th>
+                    <th className="font-semibold py-3 px-4 text-center" style={{ color: MUTED }}>Train</th>
+                    <th className="font-semibold py-3 px-4 text-center" style={{ color: MUTED }}>Taxi</th>
+                    <th className="font-semibold py-3 px-4 text-center" style={{ color: MUTED }}>Car Rental</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARE.map((row, i) => (
+                    <tr key={row.feature} style={i < COMPARE.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}}>
+                      <td className="py-3 px-4" style={{ color: '#5a5248' }}>{row.feature}</td>
+                      <td className="py-3 px-4 text-center" style={{ background: 'rgba(139,115,64,0.05)' }}><CmpCell v={row.transfer} /></td>
+                      <td className="py-3 px-4 text-center"><CmpCell v={row.train} /></td>
+                      <td className="py-3 px-4 text-center"><CmpCell v={row.taxi} /></td>
+                      <td className="py-3 px-4 text-center"><CmpCell v={row.rental} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── FAQs ── */}
       {faqs.length > 0 && (
-        <section className="py-20" style={{ background: CREAM }}>
+        <section className="py-20 bg-white" style={{ borderTop: `1px solid ${LINE}` }}>
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
             <h2 className="text-2xl font-black mb-8" style={{ ...serifHeading, color: INK }}>{t.faqTitle(route.fromName, route.toName)}</h2>
             <div className="space-y-px">
