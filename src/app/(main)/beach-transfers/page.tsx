@@ -61,7 +61,7 @@ export default function BeachTransfersPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%)' }} />
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-28">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 py-28">
           <HeroWithForm>
           <div className="flex items-center gap-4 mb-6">
             <div className="gold-line" />
@@ -86,7 +86,7 @@ export default function BeachTransfersPage() {
 
       {/* ── WHY PRIVATE ──────────────────────────────────── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex items-center gap-4 mb-14">
             <div className="gold-line" />
             <span className="section-label">Why Private Over Public Transport</span>
@@ -105,7 +105,7 @@ export default function BeachTransfersPage() {
 
       {/* ── DESTINATIONS ─────────────────────────────────── */}
       <section className="py-24 grain" style={{ background: '#080808' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
 
             <div>

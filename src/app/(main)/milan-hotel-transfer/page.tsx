@@ -158,7 +158,7 @@ export default function MilanHotelTransferPage() {
           Image-led: the photo takes the larger share; copy sits in a
           narrower column with the trust row underneath. */}
       <section className="pt-28 lg:pt-32 pb-14 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 lg:order-2">
             <ImageSlot {...PHOTOS.hero} priority className="aspect-[4/3] lg:aspect-[5/4] w-full" sizes="(min-width: 1024px) 55vw, 100vw" tone="dark" />
           </div>
@@ -202,7 +202,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── THE TRAVEL PROBLEM ───────────────── */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 mb-14 lg:mb-20">
             <h2 className="lg:col-span-5 text-3xl lg:text-[2.6rem] font-bold text-balance leading-[1.1] its-reveal" style={{ ...serif, color: INK }}>
               Arrive in Milan. Leave the Airport Behind.
@@ -226,7 +226,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── AIRPORT → HOTEL ───────────────── */}
       <section className="py-20 lg:py-28" style={{ background: INK }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: IVORY }}>From Milan Airport to Your Hotel</h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(250,247,242,0.65)' }}>
@@ -298,7 +298,7 @@ export default function MilanHotelTransferPage() {
       {/* ───────────────── HOTEL DOOR (full-bleed) ───────────────── */}
       <section className="bg-white pb-20 lg:pb-28">
         <ImageSlot {...PHOTOS.hotelDoor} className="w-full aspect-[16/10] md:aspect-[21/9]" sizes="100vw" />
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 relative -mt-10 md:-mt-24">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 relative -mt-10 md:-mt-24">
           <div className="bg-white max-w-2xl p-8 lg:p-12 its-reveal" style={{ border: `1px solid ${LINE}` }}>
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>From the Hotel Door to Your Next Destination</h2>
             <p className="text-base leading-relaxed mb-4" style={{ color: BODY }}>
@@ -317,7 +317,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── ARRIVAL JOURNEY LINE ───────────────── */}
       <section className="py-20 lg:py-24" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-6 mb-14">
             <h2 className="lg:col-span-6 text-3xl lg:text-4xl font-bold text-balance leading-tight" style={{ ...serif, color: INK }}>Your Driver, Your Vehicle, No Guesswork</h2>
             <p className="lg:col-span-5 lg:col-start-8 text-base leading-relaxed self-end" style={{ color: BODY }}>
@@ -351,7 +351,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── VEHICLE ───────────────── */}
       <section id="vehicles" className="py-20 lg:py-28 bg-white scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-6 its-reveal">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>A Private Vehicle That Fits Your Journey</h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
@@ -380,7 +380,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── LUGGAGE ───────────────── */}
       <section className="py-20 lg:py-28" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <ImageSlot {...PHOTOS.luggage} className="lg:col-span-4 aspect-[4/5] w-full max-w-sm lg:max-w-none" sizes="(min-width: 1024px) 32vw, 100vw" />
           <div className="lg:col-span-7 lg:col-start-6 its-reveal">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Travelling With Luggage? We Plan Around It.</h2>
@@ -474,7 +474,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── BOOKING ───────────────── */}
       <section id="booking" className="py-20 lg:py-28 scroll-mt-20 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 lg:pt-4">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Tell Us Where You’re Staying</h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
@@ -501,7 +501,7 @@ export default function MilanHotelTransferPage() {
 
       {/* ───────────────── FAQ ───────────────── */}
       <section className="py-20 lg:py-24" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
           <h2 className="lg:col-span-4 text-3xl font-bold leading-tight" style={{ ...serif, color: INK }}>Questions</h2>
           <div className="lg:col-span-8 border-t" style={{ borderColor: INK }}>
             {faqs.map((f) => (

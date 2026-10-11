@@ -29,8 +29,8 @@ export default function LuxuryPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Star className="w-4 h-4" /> Premium Service</div>
@@ -43,7 +43,7 @@ export default function LuxuryPage() {
 
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Premium Fleet</h2>
             <p className="text-gray-500 max-w-xl mx-auto">Every vehicle is maintained to the highest standard. Maximum 4 years old, spotlessly clean, and driven by a professional NCC-licensed chauffeur.</p>
@@ -72,7 +72,7 @@ export default function LuxuryPage() {
       </section>
 
       <section className="py-20 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">The Italy Taxi Services Standard</h2>

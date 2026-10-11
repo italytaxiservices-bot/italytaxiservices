@@ -59,11 +59,11 @@ export default function DestinationsPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <span>/</span>
@@ -83,7 +83,7 @@ export default function DestinationsPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-16">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 space-y-16">
           {grouped.map((group) => (
             <div key={group.region}>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">{group.region}</h2>
@@ -92,7 +92,7 @@ export default function DestinationsPage() {
                   <Link
                     key={d.slug}
                     href={`/destinations/${d.slug}`}
-                    className="group p-6 bg-gray-50 border border-gray-100 rounded-2xl hover:border-gold/40 transition-colors"
+                    className="group p-6 bg-[#FAF7F2] border border-gray-100 rounded-2xl hover:border-gold/40 transition-colors"
                   >
                     <h3 className="font-bold text-gray-900 mb-2 group-hover:text-gold transition-colors">{d.name}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-4">{d.summary}</p>

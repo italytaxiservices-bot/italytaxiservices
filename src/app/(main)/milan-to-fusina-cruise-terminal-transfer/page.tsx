@@ -160,7 +160,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── HERO ───────────────── */}
       <section className="pt-28 lg:pt-32 pb-14 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 lg:order-2">
             <ImageSlot {...PHOTOS.hero} priority className="aspect-[4/3] lg:aspect-[5/4] w-full" sizes="(min-width: 1024px) 55vw, 100vw" tone="dark" />
           </div>
@@ -222,7 +222,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── HOTEL TO SHIP STORY ───────────────── */}
       <section className="py-20 lg:py-28" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <ImageSlot {...PHOTOS.story} className="lg:col-span-4 aspect-[3/4] lg:aspect-[9/16] w-full max-w-sm lg:max-w-none" sizes="(min-width: 1024px) 30vw, 100vw" />
           <div className="lg:col-span-7 lg:col-start-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-10" style={{ ...serif, color: INK }}>From Your Milan Hotel to the Ship</h2>
@@ -252,7 +252,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── HOTEL PICKUP ───────────────── */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10">
           <ImageSlot {...PHOTOS.pickup} className="w-full aspect-[16/10] lg:aspect-[2/1]" sizes="(min-width: 1280px) 1200px, 100vw" />
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 mt-10 lg:mt-14">
             <h2 className="lg:col-span-4 text-3xl lg:text-4xl font-bold text-balance leading-tight its-reveal" style={{ ...serif, color: INK }}>Pickup From Your Milan Hotel</h2>
@@ -277,7 +277,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── CRUISE LUGGAGE ───────────────── */}
       <section className="py-20 lg:py-28" style={{ background: INK }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-5 its-reveal">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: IVORY }}>Cruise Luggage Needs More Planning</h2>
             <p className="text-base leading-relaxed mb-5" style={{ color: 'rgba(250,247,242,0.7)' }}>
@@ -307,7 +307,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── VEHICLES ───────────────── */}
       <section id="vehicles" className="py-20 lg:py-28 bg-white scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <ImageSlot {...PHOTOS.vehicle} className="lg:col-span-7 aspect-[4/3] w-full" sizes="(min-width: 1024px) 55vw, 100vw" />
           <div className="lg:col-span-5 its-reveal">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Travel Comfortably With Your Luggage</h2>
@@ -500,7 +500,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── BOOKING ───────────────── */}
       <section id="booking" className="py-20 lg:py-28 scroll-mt-20 bg-white">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 lg:pt-4">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance leading-tight mb-6" style={{ ...serif, color: INK }}>Plan Your Transfer Around Your Cruise</h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: BODY }}>
@@ -528,7 +528,7 @@ export default function MilanToFusinaPage() {
 
       {/* ───────────────── FAQ ───────────────── */}
       <section className="py-20 lg:py-24" style={{ background: PAPER }}>
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
+        <div className="max-w-6xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10">
           <h2 className="lg:col-span-4 text-3xl font-bold leading-tight" style={{ ...serif, color: INK }}>Questions</h2>
           <div className="lg:col-span-8 border-t" style={{ borderColor: INK }}>
             {faqs.map((f) => (
@@ -551,7 +551,7 @@ export default function MilanToFusinaPage() {
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none lg:hidden" style={{ background: 'linear-gradient(to top, rgba(15,13,10,0.92) 0%, rgba(15,13,10,0.55) 38%, rgba(15,13,10,0) 65%)' }} />
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none hidden lg:block" style={{ background: 'linear-gradient(to right, rgba(15,13,10,0.9) 0%, rgba(15,13,10,0.7) 32%, rgba(15,13,10,0) 58%)' }} />
         <div className="absolute inset-x-0 bottom-0">
-          <div className="max-w-7xl mx-auto px-5 lg:px-10 pb-10 lg:pb-16">
+          <div className="max-w-6xl mx-auto px-5 lg:px-10 pb-10 lg:pb-16">
             <h2 className="font-bold text-balance leading-[1.06] mb-4 max-w-2xl" style={{ ...serif, color: IVORY, fontSize: 'clamp(1.9rem, 4vw, 3.2rem)' }}>
               Leave Milan. Arrive at the Cruise Terminal Ready.
             </h2>

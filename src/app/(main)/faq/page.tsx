@@ -44,11 +44,11 @@ export default function FaqPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <span>/</span>
@@ -73,7 +73,7 @@ export default function FaqPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">{category.title}</h2>
               <div className="space-y-5">
                 {category.items.map((faq, i) => (
-                  <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                  <div key={i} className="bg-[#FAF7F2] rounded-2xl p-6 border border-gray-100">
                     <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       <RichText text={faq.answer} />

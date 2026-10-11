@@ -37,8 +37,8 @@ export default function CruiseTransfersPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Ship className="w-4 h-4" /> Cruise Specialist</div>
@@ -50,7 +50,7 @@ export default function CruiseTransfersPage() {
       </section>
 
       <section className="bg-gold py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap justify-center gap-6 text-navy text-sm font-semibold">
             {['Ship Arrival Monitoring', 'Large Luggage Vehicles', 'Fixed Prices', 'Terminal-to-Terminal', '24/7 Service'].map(t => (
               <span key={t} className="flex items-center gap-1.5"><Shield className="w-4 h-4" /> {t}</span>
@@ -60,8 +60,8 @@ export default function CruiseTransfersPage() {
       </section>
 
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">Italian Cruise Ports — Transfer Guide</h2>
           <p className="text-gray-600 mb-10">Fixed-price private transfers from airports, hotels, and city centres to all major Italian cruise ports.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -86,7 +86,7 @@ export default function CruiseTransfersPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose NCC for Cruise Transfers?</h2>

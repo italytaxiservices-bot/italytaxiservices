@@ -49,7 +49,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%)' }} />
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 py-24">
           <nav className="flex items-center gap-2 text-xs mb-10" style={{ color: 'rgba(255,255,255,0.35)' }}>
             <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
             <span>/</span>
@@ -113,7 +113,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
 
       {/* ── ABOUT ── */}
       <section className="py-24" style={{ background: '#F5F0E8' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <div className="flex items-center gap-4 mb-6">
@@ -222,7 +222,7 @@ export default async function DistancePage({ params }: { params: Promise<{ slug:
       {/* ── RELATED ── */}
       {related.length > 0 && (
         <section className="py-16 grain" style={{ background: '#080808' }}>
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <p className="section-label mb-6">Related Distance Guides</p>
             <div className="flex flex-wrap gap-3">
               {related.map((r) => (

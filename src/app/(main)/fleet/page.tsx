@@ -63,11 +63,11 @@ export default function FleetPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
               <Star className="w-4 h-4" />
@@ -85,7 +85,7 @@ export default function FleetPage() {
 
       {/* Fleet */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="space-y-16">
             {vehicles.map((v, idx) => {
               const det = vehicleDetails.find(d => d.id === v.id)
@@ -97,7 +97,7 @@ export default function FleetPage() {
                       <div
                         className="absolute inset-0 opacity-[0.06]"
                         style={{
-                          backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+                          backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
                           backgroundSize: '30px 30px',
                         }}
                       />
@@ -157,8 +157,8 @@ export default function FleetPage() {
       </section>
 
       {/* Standards */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-16 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Fleet Standards</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -181,7 +181,7 @@ export default function FleetPage() {
 
       {/* Category detail pages */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Compare Vehicle Categories</h2>
           <p className="text-gray-600 mb-8 max-w-2xl">
             A closer look at capacity, luggage space and who each category suits best.
@@ -191,7 +191,7 @@ export default function FleetPage() {
               <Link
                 key={c.slug}
                 href={`/fleet/${c.slug}`}
-                className="px-5 py-2.5 bg-gray-50 border border-gray-100 rounded-full text-sm font-medium text-gray-700 hover:border-gold/40 hover:text-gray-900 transition-colors"
+                className="px-5 py-2.5 bg-[#FAF7F2] border border-gray-100 rounded-full text-sm font-medium text-gray-700 hover:border-gold/40 hover:text-gray-900 transition-colors"
               >
                 {c.name}
               </Link>

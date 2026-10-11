@@ -37,7 +37,7 @@ export default function DistanceListingPage() {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%)' }} />
         <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent 5%, #C9A84C 40%, #E0C070 60%, #C9A84C 80%, transparent 95%)' }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 py-24">
           <div className="flex items-center gap-4 mb-6">
             <div className="gold-line" />
             <span className="section-label">Distance Guides · Italy</span>
@@ -60,7 +60,7 @@ export default function DistanceListingPage() {
         if (!routes.length) return null
         return (
           <section key={label} className="py-16" style={{ background: label.includes('Milan') || label.includes('Venice') ? '#F5F0E8' : 'white' }}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="max-w-6xl mx-auto px-6 lg:px-10">
               <div className="flex items-center gap-4 mb-8">
                 <div className="gold-line" />
                 <span className="section-label">{label}</span>

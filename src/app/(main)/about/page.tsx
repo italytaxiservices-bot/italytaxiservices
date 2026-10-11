@@ -31,11 +31,11 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
               <Shield className="w-4 h-4" />
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
       {/* What is NCC */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">What is NCC?</h2>
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 { icon: Star, title: 'Fixed Price', desc: 'Your price is agreed before the journey. No meters, no surprises at your destination' },
                 { icon: CheckCircle, title: 'Fully Insured', desc: 'NCC vehicles carry specific commercial insurance covering all passengers' },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-gray-50 rounded-2xl p-5">
+                <div key={title} className="bg-[#FAF7F2] rounded-2xl p-5">
                   <Icon className="w-6 h-6 text-gold mb-3" />
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm">{title}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
@@ -88,8 +88,8 @@ export default function AboutPage() {
       </section>
 
       {/* How We Work */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">How We Work</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
       {/* Our Coverage */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Coverage</h2>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                   { title: 'Real Reviews', desc: 'We collect and publish genuine customer reviews to maintain quality accountability.' },
                   { title: '24/7 Support', desc: 'Our team is available around the clock to assist with bookings, changes, and emergencies.' },
                 ].map(({ title, desc }) => (
-                  <div key={title} className="flex items-start gap-4 bg-gray-50 rounded-xl p-4">
+                  <div key={title} className="flex items-start gap-4 bg-[#FAF7F2] rounded-xl p-4">
                     <div className="w-6 h-6 bg-gold rounded-full flex items-center justify-center shrink-0 mt-0.5">
                       <svg className="w-3.5 h-3.5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="py-16 bg-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { num: 'Licensed', label: 'NCC Operators' },
@@ -191,7 +191,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#FAF7F2]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Book Your Transfer?</h2>
           <p className="text-gray-600 mb-8">

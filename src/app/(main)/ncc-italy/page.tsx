@@ -28,8 +28,8 @@ export default function NccItalyPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
@@ -44,7 +44,7 @@ export default function NccItalyPage() {
 
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">NCC vs Taxi — The Key Differences</h2>
@@ -74,7 +74,7 @@ export default function NccItalyPage() {
                   { icon: CheckCircle, title: 'Fixed Price — Always', desc: 'Italian law requires NCC prices to be agreed before the journey begins. You know exactly what you pay — no meter surprises.' },
                   { icon: FileText, title: 'Transparent & Legal', desc: 'Unlike unlicensed private drivers (increasingly common at airports), NCC operators issue proper receipts and are accountable under Italian transport law.' },
                 ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                  <div key={title} className="flex gap-4 p-5 bg-[#FAF7F2] rounded-2xl border border-gray-100">
                     <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center shrink-0"><Icon className="w-5 h-5 text-gold" /></div>
                     <div>
                       <h3 className="font-bold text-gray-900 mb-1 text-sm">{title}</h3>
@@ -89,7 +89,7 @@ export default function NccItalyPage() {
       </section>
 
       <section className="py-20 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Where We Operate NCC Service</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

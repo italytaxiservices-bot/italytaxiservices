@@ -49,8 +49,8 @@ export default function ChauffeurItalyPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Car className="w-4 h-4" /> Nationwide Service</div>
@@ -65,8 +65,8 @@ export default function ChauffeurItalyPage() {
       </section>
 
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-[#FAF7F2]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-10">All Our Services</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map(s => (
@@ -81,11 +81,11 @@ export default function ChauffeurItalyPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-10">Cities We Serve</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {cities.map(c => (
-              <Link key={c.name} href={c.href} className="group flex items-center justify-between p-5 bg-gray-50 border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all">
+              <Link key={c.name} href={c.href} className="group flex items-center justify-between p-5 bg-[#FAF7F2] border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center"><MapPin className="w-4 h-4 text-gold" /></div>
                   <div>
@@ -101,7 +101,7 @@ export default function ChauffeurItalyPage() {
       </section>
 
       <section className="py-16 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
               { icon: Shield, stat: 'Licensed NCC', desc: 'All operators hold ministerial NCC licence' },

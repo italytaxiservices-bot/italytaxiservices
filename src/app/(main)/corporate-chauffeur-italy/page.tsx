@@ -28,8 +28,8 @@ export default function CorporatePage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Briefcase className="w-4 h-4" /> Business Travel</div>
@@ -42,7 +42,7 @@ export default function CorporatePage() {
 
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Corporate Travel Done Right</h2>
@@ -68,7 +68,7 @@ export default function CorporatePage() {
                 { icon: Clock, title: '24/7 Availability', desc: 'Early flights, late arrivals, last-minute requests — we operate around your schedule.' },
                 { icon: Shield, title: 'Licensed & Insured', desc: 'NCC licensed operators. Full commercial insurance. Verifiable documentation.' },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all">
+                <div key={title} className="bg-[#FAF7F2] rounded-2xl p-5 border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all">
                   <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center mb-3"><Icon className="w-5 h-5 text-gold" /></div>
                   <h3 className="font-bold text-gray-900 mb-1 text-sm">{title}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
@@ -80,7 +80,7 @@ export default function CorporatePage() {
       </section>
 
       <section className="py-16 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Key Business Events We Serve</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

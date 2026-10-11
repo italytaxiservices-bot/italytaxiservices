@@ -28,8 +28,8 @@ export default function ColosseumTransferPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm defaultDropoff="Colosseum, Rome">
           <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
             <Link href="/" className="hover:text-gold transition-colors">Home</Link><span>/</span>
@@ -50,7 +50,7 @@ export default function ColosseumTransferPage() {
 
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">About the Colosseum Transfer</h2>
@@ -74,7 +74,7 @@ export default function ColosseumTransferPage() {
                   <span className="text-green-600 font-black">from {r.price}</span>
                 </div>
               ))}
-              <div className="p-4 bg-gray-50 border border-gray-100 rounded-xl">
+              <div className="p-4 bg-[#FAF7F2] border border-gray-100 rounded-xl">
                 <div className="flex items-center gap-2 mb-2"><Shield className="w-4 h-4 text-green-600" /><span className="font-semibold text-gray-900 text-sm">What&apos;s included</span></div>
                 <ul className="text-xs text-gray-500 space-y-1">
                   <li>• Professional NCC licensed driver</li>

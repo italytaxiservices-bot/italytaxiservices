@@ -28,8 +28,8 @@ export default function WeddingPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6"><Heart className="w-4 h-4" /> Wedding Specialist</div>
@@ -42,7 +42,7 @@ export default function WeddingPage() {
 
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Your Perfect Wedding Car in Italy</h2>
@@ -75,7 +75,7 @@ export default function WeddingPage() {
                   { place: 'Venice', desc: 'Palazzo venues and transfers to Piazzale Roma. Coordination with water taxis.' },
                   { place: 'Florence', desc: 'Renaissance villas, Fiesole hillside venues, Chianti estates. Expert Florentine drivers.' },
                 ].map(({ place, desc }) => (
-                  <div key={place} className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <div key={place} className="p-4 bg-[#FAF7F2] rounded-xl border border-gray-100">
                     <p className="font-bold text-gray-900 text-sm mb-1">{place}</p>
                     <p className="text-xs text-gray-500">{desc}</p>
                   </div>

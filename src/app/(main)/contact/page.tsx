@@ -30,8 +30,8 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       <section className="bg-navy py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Contact Us</h1>
             <p className="text-gray-300 text-xl leading-relaxed">Get in touch for a quote, a question, or to book your private NCC transfer in Italy. We reply within 2 hours.</p>
@@ -40,13 +40,13 @@ export default function ContactPage() {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
               <div className="space-y-5">
                 <a href={`mailto:${EMAIL}`}
-                  className="flex items-center gap-5 p-6 bg-gray-50 border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all group">
+                  className="flex items-center gap-5 p-6 bg-[#FAF7F2] border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all group">
                   <div className="w-14 h-14 bg-navy rounded-2xl flex items-center justify-center shrink-0">
                     <Mail className="w-7 h-7 text-gold" />
                   </div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 </a>
 
                 <a href={`tel:${WHATSAPP}`}
-                  className="flex items-center gap-5 p-6 bg-gray-50 border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all group">
+                  className="flex items-center gap-5 p-6 bg-[#FAF7F2] border border-gray-100 rounded-2xl hover:border-green-200 hover:bg-green-50/40 transition-all group">
                   <div className="w-14 h-14 bg-navy rounded-2xl flex items-center justify-center shrink-0">
                     <Phone className="w-7 h-7 text-gold" />
                   </div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Send Us a Message</h2>

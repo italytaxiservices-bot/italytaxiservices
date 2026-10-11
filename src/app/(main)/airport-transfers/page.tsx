@@ -43,11 +43,11 @@ export default function AirportTransfersPage() {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'linear-gradient(#10b981 1px, transparent 1px), linear-gradient(90deg, #10b981 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#C9A84C 1px, transparent 1px), linear-gradient(90deg, #C9A84C 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <HeroWithForm>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm font-medium px-4 py-1.5 rounded-full mb-6">
@@ -75,7 +75,7 @@ export default function AirportTransfersPage() {
 
       {/* Trust strip */}
       <section className="bg-gold py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex flex-wrap justify-center gap-6 text-navy text-sm font-semibold">
             {['Meet & Greet Included', 'Flight Monitoring', 'Fixed Prices', 'Licensed NCC', '24/7 Service', 'No Hidden Fees'].map(t => (
               <span key={t} className="flex items-center gap-1.5">
@@ -89,8 +89,8 @@ export default function AirportTransfersPage() {
 
       {/* Airports by region */}
       {airportsByRegion.map(({ region, airports: regionAirports }) => (
-        <section key={region} className="py-20 bg-white first:bg-white [&:nth-child(even)]:bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <section key={region} className="py-20 bg-white first:bg-white [&:nth-child(even)]:bg-[#FAF7F2]">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="flex items-center gap-3 mb-10">
               <MapPin className="w-5 h-5 text-gold" />
               <h2 className="text-2xl font-bold text-gray-900">{region}</h2>
@@ -119,7 +119,7 @@ export default function AirportTransfersPage() {
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{airport.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {['Meet & Greet', 'Flight Monitoring', 'Fixed Price', '24/7'].map(t => (
-                        <span key={t} className="text-xs text-gray-500 bg-gray-50 border border-gray-100 px-2 py-1 rounded-full">{t}</span>
+                        <span key={t} className="text-xs text-gray-500 bg-[#FAF7F2] border border-gray-100 px-2 py-1 rounded-full">{t}</span>
                       ))}
                     </div>
                   </Link>
@@ -132,7 +132,7 @@ export default function AirportTransfersPage() {
 
       {/* Why private transfer */}
       <section className="py-20 bg-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Why Private NCC Over Taxi or Shuttle?</h2>
           </div>
@@ -165,7 +165,7 @@ export default function AirportTransfersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#FAF7F2]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Book Your Airport Transfer</h2>
           <p className="text-gray-600 mb-8">
